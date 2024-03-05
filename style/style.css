@@ -1,0 +1,52 @@
+* {
+  /* border: 1px solid #000; */
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+h2::before {
+  content: "✨";
+  color: #83b5aa;
+  /* margin-right: 2px; */
+  /* position: absolute; */
+}
+
+header {
+  box-shadow: 0 5px 10px gray;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f7f1e4;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+.title {
+  position: relative;
+  letter-spacing: 2px;
+  left: 7%;
+}
+
+code {
+  margin-left: 5px;
+  letter-spacing: 1px;
+}
