@@ -29,7 +29,7 @@ MyObj.then(function (data) {
         ? `<pre><code>${data[i][j].code}</code></pre>`
         : "";
 
-    console.log(contents);
+    // console.log(contents);
 
     contents = contents + caption + paragraph + HCode;
     // console.log(contents);

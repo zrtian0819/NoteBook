@@ -16,6 +16,7 @@ h5 {
   margin: 0;
   padding: 0;
   display: inline;
+  transition: 1s;
 }
 
 h2::before {
@@ -43,10 +44,21 @@ main {
 .title {
   position: relative;
   letter-spacing: 2px;
-  left: 7%;
+  left: 4%;
 }
 
 code {
   margin-left: 5px;
   letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .title {
+    letter-spacing: 1px;
+    left: 1%;
+  }
 }
