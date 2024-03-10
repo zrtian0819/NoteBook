@@ -1,7 +1,14 @@
 [
-  {
-    "title": "html基礎結構筆記",
-    "contents": "您好我是小天"
-  },
-  { "title": "基本結構", "contents": "" }
+  [
+    {
+      "cap": "HTML基礎程式碼結構",
+      "p": "以下是基礎程式碼的結構如下",
+      "code": "console.log('測試');\n\n\n\n\n\n"
+    },
+    {
+      "cap": "以下是假文字",
+      "p": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus amet quod,illo ducimus accusantium ipsa. Ad minus optio magni nam voluptatibus facere doloribus fugit voluptatum perferendis, quam ea voluptatem similique, repudiandae, omnis iste? Dolores impedit sequi rem quidem, quo quod    deserunt. Eos doloremque ea illum quae, itaque natus sunt vitae.",
+      "code": "alert('目前還有問題');\n\n\n\n\n\n fetch('url');"
+    }
+  ]
 ]

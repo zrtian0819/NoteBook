@@ -15,9 +15,26 @@ let MyObj = getJson();
 
 MyObj.then(function (data) {
   // 把連結顯示於頁面
+  let i = 0;
 
-  console.log(data);
-  console.log(data[0].contents);
-  main.innerHTML = data[0].contents;
-  // main.textContent = data[0].contents;
+  // console.log(data);
+  // console.log(data[i].contents);
+  let contents = "";
+
+  for (let j = 0; j < data[i].length; j++) {
+    let caption = data[i][j].cap !== "" ? `<h2>${data[i][j].cap}</h2>` : "";
+    let paragraph = data[i][j].p !== "" ? `<p>${data[i][j].p}</p>` : "";
+    let HCode =
+      data[i][j].code !== ""
+        ? `<pre><code>${data[i][j].code}</code></pre>`
+        : "";
+
+    console.log(contents);
+
+    contents = contents + caption + paragraph + HCode;
+    // console.log(contents);
+  }
+
+  main.innerHTML = contents;
+  hljs.highlightAll(); // 將程式碼渲染在頁面
 });
