@@ -11,6 +11,13 @@
       "code": "alert('目前還有問題');\n\n\n\n\n\n fetch('url');"
     },
     {
+      "cap": "取得螢幕寬度",
+      "p": "取得方式如下單位為px，但取得的值僅為純數值",
+      "code": "console.log(window.innerWidth)"
+    }
+  ],
+  [
+    {
       "cap": "",
       "p": "程式碼真的很好玩",
       "code": ""
