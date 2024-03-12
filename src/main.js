@@ -38,3 +38,25 @@ MyObj.then(function (data) {
   main.innerHTML = contents;
   hljs.highlightAll(); // 將程式碼渲染在頁面
 });
+
+// 按鈕的製作
+const Lbtn = document.querySelector(".selector");
+const Nlist = document.querySelector(".nevbar");
+
+console.log(Nlist);
+console.log(window.innerWidth);
+
+Lbtn.addEventListener("click", function () {
+  if (Nlist.style.width === "0%") {
+    if (window.innerWidth < 768) {
+      Nlist.style.width = "80%";
+    } else {
+      Nlist.style.width = "40%";
+    }
+
+    Nlist.style.opacity = "1";
+  } else {
+    Nlist.style.width = "0%";
+    Nlist.style.opacity = "0";
+  }
+});

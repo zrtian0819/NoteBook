@@ -1,6 +1,7 @@
 * {
   /* border: 1px solid #000; */
   box-sizing: border-box;
+  /* font-family: "微軟正黑體", serif; */
 }
 
 body,
@@ -30,7 +31,7 @@ header {
   box-shadow: 0 5px 10px gray;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   background-color: #f7f1e4;
   padding: 10px;
   margin-bottom: 20px;
@@ -50,8 +51,9 @@ main {
 
 .title {
   position: relative;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   left: 2%;
+  font-weight: 900;
 
   display: inline-block;
 }
@@ -76,6 +78,22 @@ main {
 code {
   margin-left: 5px;
   letter-spacing: 1px;
+}
+
+.nevbar {
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  height: 90%;
+  width: 0;
+  box-shadow: -5px 0 20px gray;
+  z-index: 10;
+  overflow-y: auto;
+  transition: 0.5s;
+  padding: 50px;
+
+  /* display: none; */
 }
 
 @media (max-width: 768px) {
