@@ -17,34 +17,48 @@ MyObj.then(function (data) {
   // 把連結顯示於頁面
   let i = 0;
 
-  // console.log(data);
-  // console.log(data[i].contents);
   let contents = "";
 
-  for (let j = 0; j < data[i].length; j++) {
-    let caption = data[i][j].cap !== "" ? `<h2>${data[i][j].cap}</h2>` : "";
-    let paragraph = data[i][j].p !== "" ? `<p>${data[i][j].p}</p>` : "";
-    let HCode =
-      data[i][j].code !== ""
-        ? `<pre><code>${data[i][j].code}</code></pre>`
-        : "";
+  // for (let j = 1; j < data[i].length; j++) {
+  //   let caption = data[i][j].cap !== "" ? `<h2>${data[i][j].cap}</h2>` : "";
+  //   let paragraph = data[i][j].p !== "" ? `<p>${data[i][j].p}</p>` : "";
+  //   let HCode =
+  //     data[i][j].code !== ""
+  //       ? `<pre><code>${data[i][j].code}</code></pre>`
+  //       : "";
+  //   contents = contents + caption + paragraph + HCode;
+  // }
 
-    // console.log(contents);
+  for (let j = 1; j < data[i].length; j++) {
+    let tag = data[i][j].tag;
+    let text = data[i][j].text;
+    let style = data[i][j].style !== "" ? ` style=${data[i][j].style}` : "";
+    let class_ = data[i][j].class !== "" ? ` style=${data[i][j].class}` : "";
+    let children = data[i][j].children;
 
-    contents = contents + caption + paragraph + HCode;
-    // console.log(contents);
+    // console.log(tag);
+
+    if (tag == "precode") {
+      let element = `<pre><code>${text}<code></pre>`;
+      console.log(element);
+      contents += element;
+    } else {
+      let element = `<${tag}${style}${class_}>${text}</${tag}>`;
+      console.log(element);
+      contents += element;
+    }
   }
 
-  main.innerHTML = contents;
-  hljs.highlightAll(); // 將程式碼渲染在頁面
+  main.innerHTML = contents; //內容渲染
+  hljs.highlightAll(); // 將程式碼style渲染在頁面
 });
 
 // 按鈕的製作
 const Lbtn = document.querySelector(".selector");
 const Nlist = document.querySelector(".nevbar");
 
-console.log(Nlist);
-console.log(window.innerWidth);
+// console.log(Nlist);
+// console.log(window.innerWidth);
 
 Lbtn.addEventListener("click", function () {
   if (Nlist.style.width === "0%") {

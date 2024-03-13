@@ -1,26 +1,27 @@
 [
   [
+    { "title": "HTML基礎程式碼結構" },
+
     {
-      "cap": "HTML基礎程式碼結構",
-      "p": "以下是基礎程式碼的結構如下",
-      "code": "console.log('測試');\n\n\n\n\n\n"
+      "tag": "h2",
+      "text": "HTML基礎程式碼結構",
+      "style": "",
+      "class": ""
     },
     {
-      "cap": "以下是假文字",
-      "p": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus amet quod,illo ducimus accusantium ipsa. Ad minus optio magni nam voluptatibus facere doloribus fugit voluptatum perferendis, quam ea voluptatem similique, repudiandae, omnis iste? Dolores impedit sequi rem quidem, quo quod    deserunt. Eos doloremque ea illum quae, itaque natus sunt vitae.",
-      "code": "alert('目前還有問題');\n\n\n\n\n\n fetch('url');"
-    },
-    {
-      "cap": "取得螢幕寬度",
-      "p": "取得方式如下單位為px，但取得的值僅為純數值",
-      "code": "console.log(window.innerWidth)"
-    }
-  ],
-  [
-    {
-      "cap": "",
-      "p": "程式碼真的很好玩",
-      "code": ""
+      "tag": "precode",
+      "text": "console.log(123) \n",
+      "style": "",
+      "class": "",
+      "children": [
+        {
+          "tag": "code",
+          "text": "console.log('測試');\n\n\n\n\n\n",
+          "style": "",
+          "class": "",
+          "children": []
+        }
+      ]
     }
   ]
 ]
