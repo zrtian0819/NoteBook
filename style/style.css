@@ -16,8 +16,16 @@ h4,
 h5 {
   margin: 0;
   padding: 0;
-  /* display: inline; */
+  /* font-family: "微軟正黑體", serif; */
   transition: 1s;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2 {
+  font-weight: 700;
 }
 
 h2::before {
