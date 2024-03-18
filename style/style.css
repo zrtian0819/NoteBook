@@ -61,7 +61,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color: #f7f1e4;
+  /* background-color: #f7f1e4; */
+  color: white;
+  background-color: #324939;
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -93,7 +95,7 @@ main {
 
   border-radius: 4px;
   background-color: #ea7756;
-  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.954);
+  /* box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.954); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +103,7 @@ main {
 }
 
 .selector:active {
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.191);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.191);
 }
 
 code {
@@ -110,9 +112,9 @@ code {
 }
 
 .nevbar {
-  background-color: white;
+  background-color: #edefe4;
   position: fixed;
-  top: 50px;
+  top: 0px;
   right: 0;
   /* height: calc(100vh + 50px); */
   height: 100%;
@@ -121,7 +123,7 @@ code {
   z-index: 10;
   overflow-y: auto;
   transition: 0.3s;
-  padding: 40px;
+  padding: 80px 20px 0 20px;
   opacity: 0;
 }
 

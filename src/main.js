@@ -1,5 +1,6 @@
 const main = document.querySelector(".MC");
 const ContList = document.querySelector(".Toc");
+const bodyP = document.querySelector("body");
 
 // let ContentCode = "";
 
@@ -81,6 +82,7 @@ const Nlist = document.querySelector(".nevbar");
 // console.log(window.innerWidth);
 
 Lbtn.addEventListener("click", clickNev);
+// bodyP.addEventListener("click", clickNev);
 
 function clickNev() {
   //開關導覽頁用的
