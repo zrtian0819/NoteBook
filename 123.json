@@ -1,7 +1,6 @@
 [
   [
-    { "title": "HTML基礎程式碼結構" },
-
+    { "title": "HTML的基礎知識點" },
     {
       "tag": "h2",
       "text": "HTML基礎程式碼結構",
@@ -10,13 +9,19 @@
     },
     {
       "tag": "p",
-      "text": "以下骨架為html最簡易的結構，其中head標籤放置網頁重要資訊",
+      "text": "以下骨架為html最簡易的結構，其中<head></head>標籤內放置網頁重要資訊；&lt;body&gt;&lt;/body&gt;內則放置顯示於頁面的物件；&lt;script&gt;&lt;/script&gt;內則放置程式碼。",
       "style": "",
       "class": ""
     },
     {
       "tag": "precode",
       "text": "&lt;html&gt;\n&lt;head&gt;\n&lt;meta charset='utf-8'/&gt;   &lt;--以utf-8編碼/--&gt;\n&lt;title&gt;人天的網頁&lt;/title&gt;\n\n&lt;style&gt;\n&lt;--這裡放CSS/--&gt;\n&lt;/&lt;style&gt;\n\n&lt;/head&gt;\n&lt;body&gt;\n&lt;h1&gt;&lt;/h1&gt;\n&lt;div&gt;&lt;/div&gt;\n\n&lt;script&gt;\n&lt;!--這裡放Javascript--&gt;\n&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "由此可知HTML是相當於網頁的骨架。",
       "style": "",
       "class": ""
     }

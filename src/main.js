@@ -19,6 +19,7 @@ getJson().then(function (data) {
   // 把連結顯示於頁面
   let i = 0;
 
+  //匯入導覽列的清單
   let toc = "";
   for (let k = 0; k < data.length; k++) {
     let linkTitle = data[k][0].title;
@@ -31,15 +32,22 @@ getJson().then(function (data) {
 
   let contents = "";
 
+  //匯入該頁的內容
+
+  //匯入標題
+  let MajorTilte = data[i][0].title;
+  contents = `<h1 style="margin-bottom:20px; font-size:1.6rem">✅${MajorTilte}</h1>`;
+
+  //匯入內容
   for (let j = 1; j < data[i].length; j++) {
     let tag = data[i][j].tag;
     let text = data[i][j].text;
     let style = data[i][j].style !== "" ? ` style=${data[i][j].style}` : "";
     let class_ = data[i][j].class !== "" ? ` style=${data[i][j].class}` : "";
-    let children = data[i][j].children;
+    // let children = data[i][j].children;
 
     if (tag == "precode") {
-      let element = `<pre><code>${text}<code></pre>`;
+      let element = `<pre><code>${text}</code></pre>`;
       // console.log(element);
       contents += element;
     } else {

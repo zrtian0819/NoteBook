@@ -16,20 +16,26 @@ h4,
 h5 {
   margin: 0;
   padding: 0;
-  /* font-family: "微軟正黑體", serif; */
+  font-family: "微軟正黑體" serif;
   transition: 1s;
 }
 
+p {
+  font-family: "Noto Serif TC";
+  font-weight: 500;
+}
+
 h1 {
-  font-weight: 900;
+  font-weight: 800;
 }
 
 h2 {
   font-weight: 700;
+  font-size: 1.2rem;
 }
 
 h2::before {
-  content: "✨";
+  content: "🔺";
   color: #83b5aa;
   /* margin-right: 2px; */
   /* position: absolute; */
@@ -90,19 +96,18 @@ code {
 
 .nevbar {
   background-color: white;
-  position: absolute;
+  position: fixed;
   top: 50px;
   right: 0;
-  height: calc(100vh + 50px);
+  /* height: calc(100vh + 50px); */
+  height: 100%;
   width: 0;
   box-shadow: -5px 0 20px gray;
   z-index: 10;
   overflow-y: auto;
-  transition: 0.5s;
+  transition: 0.3s;
   padding: 40px;
   opacity: 0;
-
-  /* display: none; */
 }
 
 @media (max-width: 768px) {
