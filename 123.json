@@ -1,6 +1,6 @@
 [
   [
-    { "title": "HTML的知識點" },
+    { "title": "01_HTML知識點" },
     {
       "tag": "h2",
       "text": "HTML基礎程式碼結構",
@@ -9,19 +9,49 @@
     },
     {
       "tag": "p",
-      "text": "以下骨架為html最簡易的結構，其中<head></head>標籤內放置網頁重要資訊；<body></body>內則放置顯示於頁面的物件；<script></script>內則放置程式碼。",
+      "text": "HTML相當於網頁的骨架。以下為HTML最簡易的結構，其中<head></head>標籤內放置網頁中不會被顯示的重要資訊；<body></body>內則放置顯示於頁面的物件；<script></script>內則放置JavaScript程式碼。",
       "style": "",
       "class": ""
     },
     {
       "tag": "precode",
-      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <--以utf-8編碼/-->\n<title>人天的網頁</title>\n\n<style>\n<--這裡放CSS/-->\n</<style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>",
+      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <!--以utf-8編碼-->\n<title>人天的網頁</title>\n\n<style>\n<!--這裡放CSS-->\n</<style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "引入CSS的方法",
       "style": "",
       "class": ""
     },
     {
       "tag": "p",
-      "text": "由此可知HTML是相當於網頁的骨架。",
+      "text": "將以下語句放入<meta></meta>則可匯入CSS，其中style.css是要匯入的檔名。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<link rel='stylesheet' href='style.css'>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "引入JavaScript的方法",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "將以下語句放入<body></body>標籤內的最下方可以引入Js，其中js/all.js是要匯入的檔名。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<script src='js/all.js'></script>",
       "style": "",
       "class": ""
     },
@@ -33,10 +63,91 @@
     },
     {
       "tag": "p",
-      "text": "語意標籤與<div></div>標籤的功能相同，但能讓使用者能更加容易辨識區塊中所放的內容為何。",
+      "text": "語意標籤與<div></div>標籤的功能相同，\n但能讓使用者或與人協作時能更加容易辨識區塊中所放的內容為何。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<header>放頁首、上方板塊、通常包含標題</header>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<nav>選單、導覽、常用於menu</nav>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<main>主要內容的區塊</main>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<aside>側欄、附加內容、廣告、非主要資訊</aside>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<article>文章內容</article>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<section>自訂的區塊，例如數篇摘要要組成的空間</section>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<mark>強調的內容區塊，像是螢光筆的部分</mark>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<time>顯示時間的區塊</time>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<details>定義可查看額外細節的部份</details>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<footer>頁尾，網頁最底部的區塊</footer>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "錨點",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "HTML中的錨點（Anchor）用法允許您在同一頁面內或不同頁面之間創建超連結，直接跳轉到指定的位置。這在長頁面或文檔中非常有用，可以快速導航到感興趣的部分。以下是HTML錨點的基本用法：",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<!--使用id創建錨點-->\n<h2 id='section1'>第一節</h2>\n\n<!--使用a標籤創建錨點的超連結-->\n<a href='#section1'>跳轉到第一節</a>\n\n\n<!--跨頁面的跳轉-->\n<a href='page2.html#section1'>前往第二頁的第一節</a>",
       "style": "",
       "class": ""
     }
   ],
-  [{ "title": "測試用2" }]
+  [{ "title": "測試頁2" }],
+  [{ "title": "測試頁3" }],
+  [{ "title": "測試頁4" }],
+  [{ "title": "測試頁5" }]
 ]
