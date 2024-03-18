@@ -53,7 +53,7 @@ getJson().then(function (data) {
     //匯入內容
     for (let j = 1; j < data[i].length; j++) {
       let tag = data[i][j].tag;
-      let text = data[i][j].text;
+      let text = escapeHtml(data[i][j].text); //轉換字符避免json中有"<"or">"會產生異常顯示
       let style = data[i][j].style !== "" ? ` style=${data[i][j].style}` : "";
       let class_ = data[i][j].class !== "" ? ` style=${data[i][j].class}` : "";
       // let children = data[i][j].children;
@@ -98,4 +98,13 @@ function clickNev() {
     Nlist.style.width = "0%";
     Nlist.style.opacity = "0";
   }
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }

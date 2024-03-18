@@ -1,6 +1,6 @@
 [
   [
-    { "title": "HTML的基礎知識點" },
+    { "title": "HTML的知識點" },
     {
       "tag": "h2",
       "text": "HTML基礎程式碼結構",
@@ -9,19 +9,31 @@
     },
     {
       "tag": "p",
-      "text": "以下骨架為html最簡易的結構，其中<head></head>標籤內放置網頁重要資訊；&lt;body&gt;&lt;/body&gt;內則放置顯示於頁面的物件；&lt;script&gt;&lt;/script&gt;內則放置程式碼。",
+      "text": "以下骨架為html最簡易的結構，其中<head></head>標籤內放置網頁重要資訊；<body></body>內則放置顯示於頁面的物件；<script></script>內則放置程式碼。",
       "style": "",
       "class": ""
     },
     {
       "tag": "precode",
-      "text": "&lt;html&gt;\n&lt;head&gt;\n&lt;meta charset='utf-8'/&gt;   &lt;--以utf-8編碼/--&gt;\n&lt;title&gt;人天的網頁&lt;/title&gt;\n\n&lt;style&gt;\n&lt;--這裡放CSS/--&gt;\n&lt;/&lt;style&gt;\n\n&lt;/head&gt;\n&lt;body&gt;\n&lt;h1&gt;&lt;/h1&gt;\n&lt;div&gt;&lt;/div&gt;\n\n&lt;script&gt;\n&lt;!--這裡放Javascript--&gt;\n&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
+      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <--以utf-8編碼/-->\n<title>人天的網頁</title>\n\n<style>\n<--這裡放CSS/-->\n</<style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>",
       "style": "",
       "class": ""
     },
     {
       "tag": "p",
       "text": "由此可知HTML是相當於網頁的骨架。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "語意標籤",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "語意標籤與<div></div>標籤的功能相同，但能讓使用者能更加容易辨識區塊中所放的內容為何。",
       "style": "",
       "class": ""
     }
