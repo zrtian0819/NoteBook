@@ -8,7 +8,7 @@ const bodyP = document.querySelector("body");
 
 async function getJson() {
   try {
-    const Obj = await fetch("./123.json");
+    const Obj = await fetch("./RenTianNote.json");
     const MyJson = await Obj.json();
 
     return MyJson;
@@ -64,7 +64,7 @@ getJson().then(function (data) {
         contents += element;
       } else if (tag == "img") {
         let element = `<${tag} src="${text}">`;
-        console.log(element);
+        // console.log(element);
         contents += element;
       } else {
         let element = `<${tag}${style}${class_}>${text}</${tag}>`;
@@ -93,6 +93,7 @@ function clickNev() {
   if (Nlist.style.width === "0%") {
     if (window.innerWidth < 768) {
       Nlist.style.width = "80%";
+      bodyP.classList.add("fade");
     } else {
       Nlist.style.width = "40%";
     }
@@ -101,6 +102,7 @@ function clickNev() {
   } else {
     Nlist.style.width = "0%";
     Nlist.style.opacity = "0";
+    bodyP.classList.remove("fade");
   }
 }
 
