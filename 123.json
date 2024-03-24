@@ -15,7 +15,7 @@
     },
     {
       "tag": "precode",
-      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <!--以utf-8編碼-->\n<title>人天的網頁</title>\n\n<style>\n<!--這裡放CSS-->\n</<style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>",
+      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <!--以utf-8編碼-->\n<title>人天的網頁</title>\n\n<style>\n<!--這裡放CSS-->\n</style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>",
       "style": "",
       "class": ""
     },
@@ -142,6 +142,66 @@
     {
       "tag": "precode",
       "text": "<!--使用id創建錨點-->\n<h2 id='section1'>第一節</h2>\n\n<!--使用a標籤創建錨點的超連結-->\n<a href='#section1'>跳轉到第一節</a>\n\n\n<!--跨頁面的跳轉-->\n<a href='page2.html#section1'>前往第二頁的第一節</a>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "表格的製作",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "以下是表格標籤所代表的意義：",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<table> <!-- 定義整個表格 -->\n<tr> <!-- table row -->\n<th> <!-- table heading -->\n<td> <!-- table data -->",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "<thead>標籤代表表頭，<tbody>代表表身，<tfoot>代表表尾。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<table>\n  <thead>\n    <tr>\n      <th colspan=3 >國立故宮博物院</th>  <!-- colspan=3 代表橫跨3欄位的意思 -->\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>所屬部門</th>\n      <th>員額</th>\n      <th>授權法源</th>\n    </tr>\n  </tbody>\n  <tr>\n    <td>行政院</td>\n    <td>502人</td>\n    <td>行政院故宮博物院組織法</td>\n  </tr>\n  <tfoot>\n    \n  </tfoot>\n</table>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "img",
+      "text": "./img/1_表格範例.png",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "表單的製作",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "⚠️form中有設定name屬性的資料才會送到後端。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<form action='' method='get' > <!-- 寄送隱密資訊要用POST method='post' 不然預設都是'get' -->\n  <label for='email'>帳號： </label>\n  <input id='email' type='text' name='email' required> <!-- required代表必填否則無法提交 -->\n  \n  <br>\n  <label for='passwords'>密碼： </label>\n  <input id='passwords' type='text' name='passwords' required>\n  \n  <br>\n  <button type='submit'>登入系統</button>\n</form>",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "img",
+      "text": "./img/2_表單範例.png",
       "style": "",
       "class": ""
     }

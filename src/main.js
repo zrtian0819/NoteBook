@@ -48,7 +48,7 @@ getJson().then(function (data) {
     //匯入該頁的內容
     //匯入標題
     let MajorTilte = data[i][0].title;
-    contents = `<h1 style="margin-bottom:20px; font-size:1.6rem">✅${MajorTilte}</h1>`;
+    contents = `<h1 style="margin-bottom:20px;">${MajorTilte}</h1>`;
 
     //匯入內容
     for (let j = 1; j < data[i].length; j++) {
@@ -61,6 +61,10 @@ getJson().then(function (data) {
       if (tag == "precode") {
         let element = `<pre><code>${text}</code></pre>`;
         // console.log(element);
+        contents += element;
+      } else if (tag == "img") {
+        let element = `<${tag} src="${text}">`;
+        console.log(element);
         contents += element;
       } else {
         let element = `<${tag}${style}${class_}>${text}</${tag}>`;

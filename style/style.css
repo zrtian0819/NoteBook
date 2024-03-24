@@ -16,22 +16,40 @@ h4,
 h5 {
   margin: 0;
   padding: 0;
-  font-family: "微軟正黑體" serif;
+  font-family: "微軟正黑體";
   transition: 1s;
 }
 
 p {
   font-family: "Noto Serif TC";
   font-weight: 500;
+  /* font-size: 0.9rem; */
 }
 
-h1 {
-  font-weight: 800;
+main h1 {
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #324939;
+  position: relative;
+  left: 15px;
+  /* display: inline-block; */
+  /* text-align: center; */
+}
+
+main h1::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #ea7756;
+  width: 15px;
+  height: 2.2rem;
+  left: -20px;
 }
 
 h2 {
-  font-weight: 700;
-  font-size: 1.2rem;
+  margin-top: 35px;
+  font-weight: 800;
+  font-size: 1.4rem;
 }
 
 h2::before {
@@ -126,6 +144,10 @@ code {
   transition: 0.3s;
   padding: 80px 20px 0 20px;
   opacity: 0;
+}
+
+img {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
