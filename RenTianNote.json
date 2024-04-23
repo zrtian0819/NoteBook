@@ -1,9 +1,9 @@
 [
   [
-    { "title": "01_HTML知識點筆記🚧" },
+    { "title": "HTML知識點筆記🚧" },
     {
       "tag": "h2",
-      "text": "HTML基礎程式碼結構",
+      "text": "HTML程式碼結構",
       "style": "",
       "class": ""
     },
@@ -207,7 +207,7 @@
     }
   ],
   [
-    { "title": "02_CSS的知識點筆記🚧" },
+    { "title": "CSS的知識點筆記🚧" },
     {
       "tag": "p",
       "text": "太過於基礎未來再更新!",
@@ -215,14 +215,94 @@
       "class": ""
     }
   ],
-  [{ "title": "03_JavaScript的知識點筆記🚧" }],
-  [{ "title": "04_DOM元素的操作🚧" }],
-  [{ "title": "05_Version Control🚧" }],
-  [{ "title": "06_Ajax🚧" }],
-  [{ "title": "07_Vue.js🚧" }],
-  [{ "title": "08_React.js🚧" }],
+  [{ "title": "JavaScript的知識點筆記🚧" }],
+  [{ "title": "DOM元素的操作🚧" }],
+  [{ "title": "Version Control🚧" }],
   [
-    { "title": "09_Node.js🚧" },
+    { "title": "Ajax🚧" },
+    {
+      "tag": "h2",
+      "text": "介紹",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "AJAX即「Asynchronous JavaScript and XML」(非同步的JavaScript與XML技術)，指的是一套綜合了多項技術的瀏覽器端網頁開發技術。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "AJAX在客戶端使用各種Web技術來創建異步(asynchronous)Web應用程序。應用程序可以在背景從服務器發送和獲得數據,而不干擾現有頁面的顯示和行為。通過將數據交換層與表示層分離,Ajax允許網頁以及擴展的Web應用程序動態地更改內容,而無需重新加載整個頁面。在實踐中,數據的傳送通常使用JSON而不是XML。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "常見的Ajax應用的例子是,我們在YouTube或是Google搜尋時,網站會根據我們前面打的幾個字,猜想我們想要搜尋的關鍵字是什麼。這就是不干擾現有頁面的顯示和行為的情況下,從服務器發送和獲得數據,並且更新網頁的方法。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "同步與異步",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "在計算機程式中，異步(asynchronous)代表著一個程式process獨立於其他process運行，而同步(synchronous)代表著一個process僅在某個其他process完成或移交後而運行。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "JavaScript有內建的asynchronous function，例如:",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "setTimeout( code, delay )",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "此函數會設置一個計時器，一旦計時器時間到，計時器就會執行一個函數或指定的一段代碼；其中code是delay結束時要執行的程式碼，delay是在執行指定的函數或代碼之前計時器等待的時間(以毫秒為單位)，如果省略此參數則預設值為0，表示立即執行。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "b",
+      "text": "異步函數範例:",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "console.log('start');\n\nsetTimeout(( )=>{\nconsole.log('Here is the code');\n},2000)\n\nconsole.log('end');\n\n\n//程式碼結果如下\n//start\n//end\n//Here is the code",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "Promise(重要✨)",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值。它有三種狀態:\npending(處理中)、fullfilled(已完成)、rejected(已拒絕)。",
+      "style": "",
+      "class": ""
+    }
+  ],
+  [{ "title": "Vue.js🚧" }],
+  [{ "title": "React.js🚧" }],
+  [
+    { "title": "Node.js🚧" },
     {
       "tag": "h2",
       "text": "介紹",
@@ -234,10 +314,16 @@
       "text": "Node.js 是一個開放原始碼且跨平台的 JavaScript 執行環境。它使用 Google Chrome 的核心 V8 JavaScript 引擎，在瀏覽器之外運行，這使得 Node.js 具有非常高的性能。\n\nNode.js 應用程式在單一進程中運行，而不是為每個請求創建新的執行緒。當 Node.js 執行 I/O 操作時，例如從網路讀取、訪問數據庫或文件系統時，Node.js 不會阻塞執行緒並浪費 CPU 週期等待，而是在收到回應後恢復操作。\n\n這使得 Node.js 能夠在單個服務器上處理成千上萬個並行連接，而無需引入管理線程並發的負擔，這可能是錯誤的重要來源。Node.js 具有獨特的優勢，因為數百萬為瀏覽器編寫 JavaScript 的前端開發人員現在能夠撰寫除客戶端代碼外的服務器端代碼，而無需學習完全不同的語言。\n\n在 Node.js 中，可以毫無問題地使用新的 ECMAScript 標準，因為您無需等待所有用戶更新其瀏覽器 - 您可以通過更改 Node.js 版本來決定使用哪個 ECMAScript 版本，您還可以通過運行帶有標誌的 Node.js 來啟用特定的實驗性功能。\n\n一個示例 Node.js 應用程式 Node.js 最常見的示例 Hello World 是一個 Web 服務器。要運行此片段，請將其保存為 server.js 文件，並在終端中運行 node server.js。此代碼首先包含了 Node.js 的 http 模塊。Node.js 擁有一個極好的 標準程式庫 ，包括對網絡的一流支援。http 的 createServer() 方法創建一個新的 HTTP 伺服器並返回它。伺服器被設置為在指定的端口和主機名上監聽。當伺服器準備就緒時，回調函數被調用，這個案例中通知我們伺服器正在運行。每當收到一個新的請求時，將調用 request 事件 ，提供兩個對象：請求（一個 http.IncomingMessage 對象）和回應（一個 http.ServerResponse 對象）。這兩個對象對於處理 HTTP 調用是必不可少的。",
       "style": "",
       "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "動態網頁與靜態網頁",
+      "style": "",
+      "class": ""
     }
   ],
   [
-    { "title": "10_Express.js🚧" },
+    { "title": "Express.js🚧" },
     {
       "tag": "h2",
       "text": "介紹",
@@ -264,5 +350,5 @@
       "class": ""
     }
   ],
-  [{ "title": "11_Restful API🚧" }]
+  [{ "title": "Restful API🚧" }]
 ]
