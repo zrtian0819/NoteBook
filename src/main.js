@@ -66,6 +66,10 @@ getJson().then(function (data) {
         let element = `<${tag} src="${text}">`;
         // console.log(element);
         contents += element;
+      } else if (tag == "a") {
+        let element = `<${tag} href="${text}">📌</${tag}>`;
+        // console.log(element);
+        contents += element;
       } else {
         let element = `<${tag}${style}${class_}>${text}</${tag}>`;
         // console.log(element);

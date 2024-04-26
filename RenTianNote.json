@@ -294,12 +294,117 @@
     },
     {
       "tag": "p",
-      "text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值。它有三種狀態:\npending(處理中)、fullfilled(已完成)、rejected(已拒絕)。",
+      "text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值。它有三種狀態:。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "mark",
+      "text": "pending(處理中)、fullfilled(已完成)、rejected(已拒絕)",
       "style": "",
       "class": ""
     }
   ],
-  [{ "title": "Vue.js🚧" }],
+  [
+    { "title": "Vue.js🚧" },
+    {
+      "tag": "b",
+      "text": "vue官方文檔",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "a",
+      "text": "https://vuejs.org/",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "介紹",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面123。無論是簡單還是複雜的界面，Vue 都可以勝任。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "Vue3 創建方法",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "Vue3官方推薦使用Vite新一代構建工具。其輕量快速能實現快速服務，支援TypeScript、JSX、CSS，按需求編譯不用像webpack等待整個應用編譯完成。以下為使用vite構建工具的創建命令。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "npm create vue@latest",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "Vue3 運行方法",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "npm run dev",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "h2",
+      "text": "main.js或main.ts程式碼架構",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "import { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "1. import { createApp } from 'vue'：這行程式碼從 Vue.js 框架中導入了 createApp 函數。createApp 是 Vue 3 中用於創建應用程式實例的入口函數。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "2. import App from './App.vue'：這行程式碼從當前目錄下的 App.vue 文件中導入了 App 組件。App.vue 通常是一個單文件組件，它包含了應用程式的根組件。",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "p",
+      "text": "3. createApp(App).mount('#app')：這行程式碼首先使用 createApp 函數創建了一個新的 Vue 應用程式實例，並將 App 組件作為根組件。然後，它調用了 mount 方法將應用程式掛載到 DOM 中的 #app 元素。",
+      "style": "",
+      "class": ""
+    },
+
+    {
+      "tag": "h2",
+      "text": "App.vue 基礎架構",
+      "style": "",
+      "class": ""
+    },
+    {
+      "tag": "precode",
+      "text": "<template>\n  <!--HTML-->\n</template>\n\n <script lang='ts'>  //代表使用ts語言\n  //JS或TS\n    export default {      //使用暴露才能在其他地方被import\n        name:'App'\n    }\n</script> \n\n<style>\n  /*CSS*/\n</style>",
+      "style": "",
+      "class": ""
+    }
+  ],
   [{ "title": "React.js🚧" }],
   [
     { "title": "Node.js🚧" },
@@ -350,5 +455,6 @@
       "class": ""
     }
   ],
-  [{ "title": "Restful API🚧" }]
+  [{ "title": "Restful API🚧" }],
+  [{ "title": "TypeScript🚧" }]
 ]

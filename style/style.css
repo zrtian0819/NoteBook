@@ -30,6 +30,15 @@ p {
   /* font-size: 0.9rem; */
 }
 
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+b {
+  color: #005597;
+}
+
 main h1 {
   font-weight: 900;
   font-size: 1.6rem;
