@@ -3,216 +3,146 @@
     { "title": "HTML知識點筆記🚧" },
     {
       "tag": "h2",
-      "text": "HTML程式碼結構",
-      "style": "",
-      "class": ""
+      "text": "HTML程式碼結構"
     },
     {
       "tag": "p",
-      "text": "HTML相當於網頁的骨架。以下為HTML最簡易的結構，其中<head></head>標籤內放置網頁中不會被顯示的重要資訊；<body></body>內則放置顯示於頁面的物件；<script></script>內則放置JavaScript程式碼。",
-      "style": "",
-      "class": ""
+      "text": "HTML相當於網頁的骨架。以下為HTML最簡易的結構，其中<head></head>標籤內放置網頁中不會被顯示的重要資訊；<body></body>內則放置顯示於頁面的物件；<script></script>內則放置JavaScript程式碼。"
     },
     {
       "tag": "precode",
-      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <!--以utf-8編碼-->\n<title>人天的網頁</title>\n\n<style>\n<!--這裡放CSS-->\n</style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>",
-      "style": "",
-      "class": ""
+      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <!--以utf-8編碼-->\n<title>人天的網頁</title>\n\n<style>\n<!--這裡放CSS-->\n</style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>"
     },
     {
       "tag": "h2",
-      "text": "引入CSS的方法",
-      "style": "",
-      "class": ""
+      "text": "引入CSS的方法"
     },
     {
       "tag": "p",
-      "text": "將以下語句放入<meta></meta>則可匯入CSS，其中style.css是要匯入的檔名。",
-      "style": "",
-      "class": ""
+      "text": "將以下語句放入<meta></meta>則可匯入CSS，其中style.css是要匯入的檔名。"
     },
     {
       "tag": "precode",
-      "text": "<link rel='stylesheet' href='style.css'>",
-      "style": "",
-      "class": ""
+      "text": "<link rel='stylesheet' href='style.css'>"
     },
     {
       "tag": "h2",
-      "text": "引入JavaScript的方法",
-      "style": "",
-      "class": ""
+      "text": "引入JavaScript的方法"
     },
     {
       "tag": "p",
-      "text": "將以下語句放入<body></body>標籤內的最下方可以引入Js，其中js/all.js是要匯入的檔名。",
-      "style": "",
-      "class": ""
+      "text": "將以下語句放入<body></body>標籤內的最下方可以引入Js，其中js/all.js是要匯入的檔名。"
     },
     {
       "tag": "precode",
-      "text": "<script src='js/all.js'></script>",
-      "style": "",
-      "class": ""
+      "text": "<script src='js/all.js'></script>"
     },
     {
       "tag": "h2",
-      "text": "語意標籤",
-      "style": "",
-      "class": ""
+      "text": "語意標籤"
     },
     {
       "tag": "p",
-      "text": "語意標籤與<div></div>標籤的功能相同，\n但能讓使用者或與人協作時能更加容易辨識區塊中所放的內容為何。",
-      "style": "",
-      "class": ""
+      "text": "語意標籤與<div></div>標籤的功能相同，\n但能讓使用者或與人協作時能更加容易辨識區塊中所放的內容為何。"
     },
     {
       "tag": "precode",
-      "text": "<header>放頁首、上方板塊、通常包含標題</header>",
-      "style": "",
-      "class": ""
+      "text": "<header>放頁首、上方板塊、通常包含標題</header>"
     },
     {
       "tag": "precode",
-      "text": "<nav>選單、導覽、常用於menu</nav>",
-      "style": "",
-      "class": ""
+      "text": "<nav>選單、導覽、常用於menu</nav>"
     },
     {
       "tag": "precode",
-      "text": "<main>主要內容的區塊</main>",
-      "style": "",
-      "class": ""
+      "text": "<main>主要內容的區塊</main>"
     },
     {
       "tag": "precode",
-      "text": "<aside>側欄、附加內容、廣告、非主要資訊</aside>",
-      "style": "",
-      "class": ""
+      "text": "<aside>側欄、附加內容、廣告、非主要資訊</aside>"
     },
     {
       "tag": "precode",
-      "text": "<article>文章內容</article>",
-      "style": "",
-      "class": ""
+      "text": "<article>文章內容</article>"
     },
     {
       "tag": "precode",
-      "text": "<section>自訂的區塊，例如數篇摘要要組成的空間</section>",
-      "style": "",
-      "class": ""
+      "text": "<section>自訂的區塊，例如數篇摘要要組成的空間</section>"
     },
     {
       "tag": "precode",
-      "text": "<mark>強調的內容區塊，像是螢光筆的部分</mark>",
-      "style": "",
-      "class": ""
+      "text": "<mark>強調的內容區塊，像是螢光筆的部分</mark>"
     },
     {
       "tag": "precode",
-      "text": "<time>顯示時間的區塊</time>",
-      "style": "",
-      "class": ""
+      "text": "<time>顯示時間的區塊</time>"
     },
     {
       "tag": "precode",
-      "text": "<details>定義可查看額外細節的部份</details>",
-      "style": "",
-      "class": ""
+      "text": "<details>定義可查看額外細節的部份</details>"
     },
     {
       "tag": "precode",
-      "text": "<footer>頁尾，網頁最底部的區塊</footer>",
-      "style": "",
-      "class": ""
+      "text": "<footer>頁尾，網頁最底部的區塊</footer>"
     },
     {
       "tag": "h2",
-      "text": "錨點",
-      "style": "",
-      "class": ""
+      "text": "錨點"
     },
     {
       "tag": "p",
-      "text": "HTML中的錨點（Anchor）用法允許您在同一頁面內或不同頁面之間創建超連結，直接跳轉到指定的位置。這在長頁面或文檔中非常有用，可以快速導航到感興趣的部分。以下是HTML錨點的基本用法：",
-      "style": "",
-      "class": ""
+      "text": "HTML中的錨點（Anchor）用法允許您在同一頁面內或不同頁面之間創建超連結，直接跳轉到指定的位置。這在長頁面或文檔中非常有用，可以快速導航到感興趣的部分。以下是HTML錨點的基本用法："
     },
     {
       "tag": "precode",
-      "text": "<!--使用id創建錨點-->\n<h2 id='section1'>第一節</h2>\n\n<!--使用a標籤創建錨點的超連結-->\n<a href='#section1'>跳轉到第一節</a>\n\n\n<!--跨頁面的跳轉-->\n<a href='page2.html#section1'>前往第二頁的第一節</a>",
-      "style": "",
-      "class": ""
+      "text": "<!--使用id創建錨點-->\n<h2 id='section1'>第一節</h2>\n\n<!--使用a標籤創建錨點的超連結-->\n<a href='#section1'>跳轉到第一節</a>\n\n\n<!--跨頁面的跳轉-->\n<a href='page2.html#section1'>前往第二頁的第一節</a>"
     },
     {
       "tag": "h2",
-      "text": "表格的製作",
-      "style": "",
-      "class": ""
+      "text": "表格的製作"
     },
     {
       "tag": "p",
-      "text": "以下是表格標籤所代表的意義：",
-      "style": "",
-      "class": ""
+      "text": "以下是表格標籤所代表的意義："
     },
     {
       "tag": "precode",
-      "text": "<table> <!-- 定義整個表格 -->\n<tr> <!-- table row -->\n<th> <!-- table heading -->\n<td> <!-- table data -->",
-      "style": "",
-      "class": ""
+      "text": "<table> <!-- 定義整個表格 -->\n<tr> <!-- table row -->\n<th> <!-- table heading -->\n<td> <!-- table data -->"
     },
     {
       "tag": "p",
-      "text": "<thead>標籤代表表頭，<tbody>代表表身，<tfoot>代表表尾。",
-      "style": "",
-      "class": ""
+      "text": "<thead>標籤代表表頭，<tbody>代表表身，<tfoot>代表表尾。"
     },
     {
       "tag": "precode",
-      "text": "<table>\n  <thead>\n    <tr>\n      <th colspan=3 >國立故宮博物院</th>  <!-- colspan=3 代表橫跨3欄位的意思 -->\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>所屬部門</th>\n      <th>員額</th>\n      <th>授權法源</th>\n    </tr>\n  </tbody>\n  <tr>\n    <td>行政院</td>\n    <td>502人</td>\n    <td>行政院故宮博物院組織法</td>\n  </tr>\n  <tfoot>\n    \n  </tfoot>\n</table>",
-      "style": "",
-      "class": ""
+      "text": "<table>\n  <thead>\n    <tr>\n      <th colspan=3 >國立故宮博物院</th>  <!-- colspan=3 代表橫跨3欄位的意思 -->\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>所屬部門</th>\n      <th>員額</th>\n      <th>授權法源</th>\n    </tr>\n  </tbody>\n  <tr>\n    <td>行政院</td>\n    <td>502人</td>\n    <td>行政院故宮博物院組織法</td>\n  </tr>\n  <tfoot>\n    \n  </tfoot>\n</table>"
     },
     {
       "tag": "img",
-      "text": "./img/1_表格範例.png",
-      "style": "",
-      "class": ""
+      "text": "./img/1_表格範例.png"
     },
     {
       "tag": "h2",
-      "text": "表單的製作",
-      "style": "",
-      "class": ""
+      "text": "表單的製作"
     },
     {
       "tag": "p",
-      "text": "⚠️form中有設定name屬性的資料才會送到後端。",
-      "style": "",
-      "class": ""
+      "text": "⚠️form中有設定name屬性的資料才會送到後端。"
     },
     {
       "tag": "precode",
-      "text": "<form action='' method='get' > <!-- 寄送隱密資訊要用POST method='post' 不然預設都是'get' -->\n  <label for='email'>帳號： </label>\n  <input id='email' type='text' name='email' required> <!-- required代表必填否則無法提交 -->\n  \n  <br>\n  <label for='passwords'>密碼： </label>\n  <input id='passwords' type='text' name='passwords' required>\n  \n  <br>\n  <button type='submit'>登入系統</button>\n</form>",
-      "style": "",
-      "class": ""
+      "text": "<form action='' method='get' > <!-- 寄送隱密資訊要用POST method='post' 不然預設都是'get' -->\n  <label for='email'>帳號： </label>\n  <input id='email' type='text' name='email' required> <!-- required代表必填否則無法提交 -->\n  \n  <br>\n  <label for='passwords'>密碼： </label>\n  <input id='passwords' type='text' name='passwords' required>\n  \n  <br>\n  <button type='submit'>登入系統</button>\n</form>"
     },
     {
       "tag": "img",
-      "text": "./img/2_表單範例.png",
-      "style": "",
-      "class": ""
+      "text": "./img/2_表單範例.png"
     }
   ],
   [
     { "title": "CSS的知識點筆記🚧" },
     {
       "tag": "p",
-      "text": "太過於基礎未來再更新!",
-      "style": "",
-      "class": ""
+      "text": "太過於基礎未來再更新!"
     }
   ],
   [{ "title": "JavaScript的知識點筆記🚧" }],
@@ -222,187 +152,158 @@
     { "title": "Ajax🚧" },
     {
       "tag": "h2",
-      "text": "介紹",
-      "style": "",
-      "class": ""
+      "text": "介紹"
     },
     {
       "tag": "p",
-      "text": "AJAX即「Asynchronous JavaScript and XML」(非同步的JavaScript與XML技術)，指的是一套綜合了多項技術的瀏覽器端網頁開發技術。",
-      "style": "",
-      "class": ""
+      "text": "AJAX即「Asynchronous JavaScript and XML」(非同步的JavaScript與XML技術)，指的是一套綜合了多項技術的瀏覽器端網頁開發技術。"
     },
     {
       "tag": "p",
-      "text": "AJAX在客戶端使用各種Web技術來創建異步(asynchronous)Web應用程序。應用程序可以在背景從服務器發送和獲得數據,而不干擾現有頁面的顯示和行為。通過將數據交換層與表示層分離,Ajax允許網頁以及擴展的Web應用程序動態地更改內容,而無需重新加載整個頁面。在實踐中,數據的傳送通常使用JSON而不是XML。",
-      "style": "",
-      "class": ""
+      "text": "AJAX在客戶端使用各種Web技術來創建異步(asynchronous)Web應用程序。應用程序可以在背景從服務器發送和獲得數據,而不干擾現有頁面的顯示和行為。通過將數據交換層與表示層分離,Ajax允許網頁以及擴展的Web應用程序動態地更改內容,而無需重新加載整個頁面。在實踐中,數據的傳送通常使用JSON而不是XML。"
     },
     {
       "tag": "p",
-      "text": "常見的Ajax應用的例子是,我們在YouTube或是Google搜尋時,網站會根據我們前面打的幾個字,猜想我們想要搜尋的關鍵字是什麼。這就是不干擾現有頁面的顯示和行為的情況下,從服務器發送和獲得數據,並且更新網頁的方法。",
-      "style": "",
-      "class": ""
+      "text": "常見的Ajax應用的例子是,我們在YouTube或是Google搜尋時,網站會根據我們前面打的幾個字,猜想我們想要搜尋的關鍵字是什麼。這就是不干擾現有頁面的顯示和行為的情況下,從服務器發送和獲得數據,並且更新網頁的方法。"
     },
     {
       "tag": "h2",
-      "text": "同步與異步",
-      "style": "",
-      "class": ""
+      "text": "同步與異步"
     },
     {
       "tag": "p",
-      "text": "在計算機程式中，異步(asynchronous)代表著一個程式process獨立於其他process運行，而同步(synchronous)代表著一個process僅在某個其他process完成或移交後而運行。",
-      "style": "",
-      "class": ""
+      "text": "在計算機程式中，異步(asynchronous)代表著一個程式process獨立於其他process運行，而同步(synchronous)代表著一個process僅在某個其他process完成或移交後而運行。"
     },
     {
       "tag": "p",
-      "text": "JavaScript有內建的asynchronous function，例如:",
-      "style": "",
-      "class": ""
+      "text": "JavaScript有內建的asynchronous function，例如:"
     },
     {
       "tag": "precode",
-      "text": "setTimeout( code, delay )",
-      "style": "",
-      "class": ""
+      "text": "setTimeout( code, delay )"
     },
     {
       "tag": "p",
-      "text": "此函數會設置一個計時器，一旦計時器時間到，計時器就會執行一個函數或指定的一段代碼；其中code是delay結束時要執行的程式碼，delay是在執行指定的函數或代碼之前計時器等待的時間(以毫秒為單位)，如果省略此參數則預設值為0，表示立即執行。",
-      "style": "",
-      "class": ""
+      "text": "此函數會設置一個計時器，一旦計時器時間到，計時器就會執行一個函數或指定的一段代碼；其中code是delay結束時要執行的程式碼，delay是在執行指定的函數或代碼之前計時器等待的時間(以毫秒為單位)，如果省略此參數則預設值為0，表示立即執行。"
     },
     {
       "tag": "b",
-      "text": "異步函數範例:",
-      "style": "",
-      "class": ""
+      "text": "異步函數範例:"
     },
     {
       "tag": "precode",
-      "text": "console.log('start');\n\nsetTimeout(( )=>{\nconsole.log('Here is the code');\n},2000)\n\nconsole.log('end');\n\n\n//程式碼結果如下\n//start\n//end\n//Here is the code",
-      "style": "",
-      "class": ""
+      "text": "console.log('start');\n\nsetTimeout(( )=>{\nconsole.log('Here is the code');\n},2000)\n\nconsole.log('end');\n\n\n//程式碼結果如下\n//start\n//end\n//Here is the code"
     },
     {
       "tag": "h2",
-      "text": "Promise(重要✨)",
-      "style": "",
-      "class": ""
+      "text": "Promise(重要✨)"
     },
     {
       "tag": "p",
-      "text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值。它有三種狀態:。",
-      "style": "",
-      "class": ""
+      "text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值。它有三種狀態:。"
     },
     {
       "tag": "mark",
-      "text": "pending(處理中)、fullfilled(已完成)、rejected(已拒絕)",
-      "style": "",
-      "class": ""
+      "text": "pending(處理中)、fullfilled(已完成)、rejected(已拒絕)"
     }
   ],
   [
     { "title": "Vue.js🚧" },
     {
       "tag": "b",
-      "text": "vue官方文檔",
-      "style": "",
-      "class": ""
+      "text": "vue官方文檔"
     },
     {
       "tag": "a",
-      "text": "https://vuejs.org/",
-      "style": "",
-      "class": ""
+      "text": "https://vuejs.org/"
     },
     {
       "tag": "h2",
-      "text": "介紹",
-      "style": "",
-      "class": ""
+      "text": "介紹"
     },
     {
       "tag": "p",
-      "text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面123。無論是簡單還是複雜的界面，Vue 都可以勝任。",
-      "style": "",
-      "class": ""
+      "text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面123。無論是簡單還是複雜的界面，Vue 都可以勝任。"
     },
     {
       "tag": "h2",
-      "text": "Vue3 創建方法",
-      "style": "",
-      "class": ""
+      "text": "Vue3 創建方法"
     },
     {
       "tag": "p",
-      "text": "Vue3官方推薦使用Vite新一代構建工具。其輕量快速能實現快速服務，支援TypeScript、JSX、CSS，按需求編譯不用像webpack等待整個應用編譯完成。以下為使用vite構建工具的創建命令。",
-      "style": "",
-      "class": ""
+      "text": "Vue3官方推薦使用Vite新一代構建工具。其輕量快速能實現快速服務，支援TypeScript、JSX、CSS，按需求編譯不用像webpack等待整個應用編譯完成。以下為使用vite構建工具的創建命令。"
     },
     {
       "tag": "precode",
-      "text": "npm create vue@latest",
-      "style": "",
-      "class": ""
+      "text": "npm create vue@latest"
     },
     {
       "tag": "h2",
-      "text": "Vue3 運行方法",
-      "style": "",
-      "class": ""
+      "text": "Vue3 運行方法"
     },
     {
       "tag": "precode",
-      "text": "npm run dev",
-      "style": "",
-      "class": ""
+      "text": "npm run dev"
+    },
+    {
+      "tag": "p",
+      "text": "終端機中使用此語法能夠像是go live一樣，開啟瀏覽器檢視所撰寫的網頁。"
     },
     {
       "tag": "h2",
-      "text": "main.js或main.ts程式碼架構",
-      "style": "",
-      "class": ""
+      "text": "main.js或main.ts程式碼架構"
     },
     {
       "tag": "precode",
-      "text": "import { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')",
-      "style": "",
-      "class": ""
+      "text": "import { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')"
     },
     {
       "tag": "p",
-      "text": "1. import { createApp } from 'vue'：這行程式碼從 Vue.js 框架中導入了 createApp 函數。createApp 是 Vue 3 中用於創建應用程式實例的入口函數。",
-      "style": "",
-      "class": ""
+      "text": "1. import { createApp } from 'vue'：這行程式碼從 Vue.js 框架中導入了 createApp 函數。createApp 是 Vue 3 中用於創建應用程式實例的入口函數。"
     },
     {
       "tag": "p",
-      "text": "2. import App from './App.vue'：這行程式碼從當前目錄下的 App.vue 文件中導入了 App 組件。App.vue 通常是一個單文件組件，它包含了應用程式的根組件。",
-      "style": "",
-      "class": ""
+      "text": "2. import App from './App.vue'：這行程式碼從當前目錄下的 App.vue 文件中導入了 App 組件。App.vue 通常是一個單文件組件，它包含了應用程式的根組件。"
     },
     {
       "tag": "p",
-      "text": "3. createApp(App).mount('#app')：這行程式碼首先使用 createApp 函數創建了一個新的 Vue 應用程式實例，並將 App 組件作為根組件。然後，它調用了 mount 方法將應用程式掛載到 DOM 中的 #app 元素。",
-      "style": "",
-      "class": ""
+      "text": "3. createApp(App).mount('#app')：這行程式碼首先使用 createApp 函數創建了一個新的 Vue 應用程式實例，並將 App 組件作為根組件。然後，它調用了 mount 方法將應用程式掛載到 DOM 中的 #app 元素。"
     },
-
     {
       "tag": "h2",
-      "text": "App.vue 基礎架構",
-      "style": "",
-      "class": ""
+      "text": "Vue元件的基礎架構"
     },
     {
       "tag": "precode",
-      "text": "<template>\n  <!--HTML-->\n</template>\n\n <script lang='ts'>  //代表使用ts語言\n  //JS或TS\n    export default {      //使用暴露才能在其他地方被import\n        name:'App'\n    }\n</script> \n\n<style>\n  /*CSS*/\n</style>",
-      "style": "",
-      "class": ""
+      "text": "<template>\n  <!--HTML-->\n</template>\n\n <script lang='ts'>  //代表使用ts語言\n  //JS或TS\n    export default {      //使用暴露才能在其他地方被import\n        name:'App'\n    }\n</script> \n\n<style>\n  /*CSS*/\n</style>"
+    },
+    {
+      "tag": "h2",
+      "text": "將Vue子元件(components)引入App.vue"
+    },
+    {
+      "tag": "b",
+      "text": "【极简Vue3】005 一个简单的效果"
+    },
+    {
+      "tag": "a",
+      "text": "https://youtu.be/UgT78vtiKUo?si=N0jfj-GTOTUHZ2aL"
+    },
+    {
+      "tag": "p",
+      "text": "必須讓根元件認識子元件(以Person.vue為例)，必須在根元件(App.vue)的<script></script>內撰寫以下語法:"
+    },
+    {
+      "tag": "precode",
+      "text": "<script>\nimport Person from '/components/Person.vue'  //引入元件\n\nexport default {\n    name:'App', //根元件名\n    components:{ Person }  //註冊元件\n}\n</script>"
+    },
+    {
+      "tag": "p",
+      "text": "其中 '/components/Person.vue' 是告訴 App.vue(根元件) 子元件從哪裡取用。 components:{ Person }則是用來註冊子元件，多個子元件需要用逗號隔開。這麼一來就可以在根元件的<template></template>中使用<Person/>來放入Person元件了!"
+    },
+    {
+      "tag": "precode",
+      "text": "<template>\n    <Person/>  <!--使用子元件-->\n</template>"
     }
   ],
   [{ "title": "React.js🚧" }],
@@ -410,49 +311,35 @@
     { "title": "Node.js🚧" },
     {
       "tag": "h2",
-      "text": "介紹",
-      "style": "",
-      "class": ""
+      "text": "介紹"
     },
     {
       "tag": "p",
-      "text": "Node.js 是一個開放原始碼且跨平台的 JavaScript 執行環境。它使用 Google Chrome 的核心 V8 JavaScript 引擎，在瀏覽器之外運行，這使得 Node.js 具有非常高的性能。\n\nNode.js 應用程式在單一進程中運行，而不是為每個請求創建新的執行緒。當 Node.js 執行 I/O 操作時，例如從網路讀取、訪問數據庫或文件系統時，Node.js 不會阻塞執行緒並浪費 CPU 週期等待，而是在收到回應後恢復操作。\n\n這使得 Node.js 能夠在單個服務器上處理成千上萬個並行連接，而無需引入管理線程並發的負擔，這可能是錯誤的重要來源。Node.js 具有獨特的優勢，因為數百萬為瀏覽器編寫 JavaScript 的前端開發人員現在能夠撰寫除客戶端代碼外的服務器端代碼，而無需學習完全不同的語言。\n\n在 Node.js 中，可以毫無問題地使用新的 ECMAScript 標準，因為您無需等待所有用戶更新其瀏覽器 - 您可以通過更改 Node.js 版本來決定使用哪個 ECMAScript 版本，您還可以通過運行帶有標誌的 Node.js 來啟用特定的實驗性功能。\n\n一個示例 Node.js 應用程式 Node.js 最常見的示例 Hello World 是一個 Web 服務器。要運行此片段，請將其保存為 server.js 文件，並在終端中運行 node server.js。此代碼首先包含了 Node.js 的 http 模塊。Node.js 擁有一個極好的 標準程式庫 ，包括對網絡的一流支援。http 的 createServer() 方法創建一個新的 HTTP 伺服器並返回它。伺服器被設置為在指定的端口和主機名上監聽。當伺服器準備就緒時，回調函數被調用，這個案例中通知我們伺服器正在運行。每當收到一個新的請求時，將調用 request 事件 ，提供兩個對象：請求（一個 http.IncomingMessage 對象）和回應（一個 http.ServerResponse 對象）。這兩個對象對於處理 HTTP 調用是必不可少的。",
-      "style": "",
-      "class": ""
+      "text": "Node.js 是一個開放原始碼且跨平台的 JavaScript 執行環境。它使用 Google Chrome 的核心 V8 JavaScript 引擎，在瀏覽器之外運行，這使得 Node.js 具有非常高的性能。\n\nNode.js 應用程式在單一進程中運行，而不是為每個請求創建新的執行緒。當 Node.js 執行 I/O 操作時，例如從網路讀取、訪問數據庫或文件系統時，Node.js 不會阻塞執行緒並浪費 CPU 週期等待，而是在收到回應後恢復操作。\n\n這使得 Node.js 能夠在單個服務器上處理成千上萬個並行連接，而無需引入管理線程並發的負擔，這可能是錯誤的重要來源。Node.js 具有獨特的優勢，因為數百萬為瀏覽器編寫 JavaScript 的前端開發人員現在能夠撰寫除客戶端代碼外的服務器端代碼，而無需學習完全不同的語言。\n\n在 Node.js 中，可以毫無問題地使用新的 ECMAScript 標準，因為您無需等待所有用戶更新其瀏覽器 - 您可以通過更改 Node.js 版本來決定使用哪個 ECMAScript 版本，您還可以通過運行帶有標誌的 Node.js 來啟用特定的實驗性功能。\n\n一個示例 Node.js 應用程式 Node.js 最常見的示例 Hello World 是一個 Web 服務器。要運行此片段，請將其保存為 server.js 文件，並在終端中運行 node server.js。此代碼首先包含了 Node.js 的 http 模塊。Node.js 擁有一個極好的 標準程式庫 ，包括對網絡的一流支援。http 的 createServer() 方法創建一個新的 HTTP 伺服器並返回它。伺服器被設置為在指定的端口和主機名上監聽。當伺服器準備就緒時，回調函數被調用，這個案例中通知我們伺服器正在運行。每當收到一個新的請求時，將調用 request 事件 ，提供兩個對象：請求（一個 http.IncomingMessage 對象）和回應（一個 http.ServerResponse 對象）。這兩個對象對於處理 HTTP 調用是必不可少的。"
     },
     {
       "tag": "h2",
-      "text": "動態網頁與靜態網頁",
-      "style": "",
-      "class": ""
+      "text": "動態網頁與靜態網頁"
     }
   ],
   [
     { "title": "Express.js🚧" },
     {
       "tag": "h2",
-      "text": "介紹",
-      "style": "",
-      "class": ""
+      "text": "介紹"
     },
     {
       "tag": "precode",
-      "text": "npm install express",
-      "style": "",
-      "class": ""
+      "text": "npm install express"
     },
     {
       "tag": "p",
-      "text": "Express.js是針對Node.js的應用框架，建構在Node.js之上，其主要目的是為了對Node.js架設的後端伺服器簡化程式碼，並且增加開發速度(叫做Express的原由)。要使用Express，我們只需要在work directory中做以上指令↑",
-      "style": "",
-      "class": ""
+      "text": "Express.js是針對Node.js的應用框架，建構在Node.js之上，其主要目的是為了對Node.js架設的後端伺服器簡化程式碼，並且增加開發速度(叫做Express的原由)。要使用Express，我們只需要在work directory中做以上指令↑"
     },
 
     {
       "tag": "precode",
-      "text": "const express = require('express');\nconst app = express( );\n\n\n\n//port, callback\napp.listen(3000, ()=>{\n    console.log('伺服器正在聆聽port 3000...')\n});",
-      "style": "",
-      "class": ""
+      "text": "const express = require('express');\nconst app = express( );\n\n\n\n//port, callback\napp.listen(3000, ()=>{\n    console.log('伺服器正在聆聽port 3000...')\n});"
     }
   ],
   [{ "title": "Restful API🚧" }],
