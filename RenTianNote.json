@@ -218,6 +218,14 @@
       "text": "https://vuejs.org/"
     },
     {
+      "tag": "b",
+      "text": "尚硅谷禹神新版Vue3"
+    },
+    {
+      "tag": "a",
+      "text": "https://www.youtube.com/watch?v=d5mrJfl6UWM&list=PLmOn9nNkQxJEnGM4Jf0liBcyedAtuQq-O"
+    },
+    {
       "tag": "h2",
       "text": "介紹"
     },
@@ -275,7 +283,7 @@
     },
     {
       "tag": "precode",
-      "text": "<template>\n  <!--HTML-->\n</template>\n\n <script lang='ts'>  //代表使用ts語言\n  //JS或TS\n    export default {      //使用暴露才能在其他地方被import\n        name:'App'\n    }\n</script> \n\n<style>\n  /*CSS*/\n</style>"
+      "text": "<template>\n  <!--HTML-->\n</template>\n\n <script lang='ts'>   //lang='ts'代表使用ts語言\n  //JS或TS\n    export default {      //使用暴露才能在其他地方被import\n        name:'App'\n    }\n</script> \n\n<style>\n  /*CSS*/\n</style>"
     },
     {
       "tag": "h2",
@@ -295,7 +303,7 @@
     },
     {
       "tag": "precode",
-      "text": "<script>\nimport Person from '/components/Person.vue'  //引入元件\n\nexport default {\n    name:'App', //根元件名\n    components:{ Person }  //註冊元件\n}\n</script>"
+      "text": "<script>\nimport Person from '/components/Person.vue'  //引入元件\n\nexport default {\n    name:'App',   //根元件名\n    components:{ Person }    //註冊元件\n}\n</script>"
     },
     {
       "tag": "p",
@@ -304,6 +312,58 @@
     {
       "tag": "precode",
       "text": "<template>\n    <Person/>  <!--使用子元件-->\n</template>"
+    },
+    {
+      "tag": "h2",
+      "text": "setup"
+    },
+    {
+      "tag": "p",
+      "text": "setup 是 Vue3中的一個新的配置項，值是一個函數，它是Components API 組合式API的表演舞台，組件中所用到的 數據、方法、計算屬性、監視等等都配置在setup中，其有以下特點:"
+    },
+    {
+      "tag": "mark",
+      "text": "1. setup 函數返回的對象中的內容可直接在模板中使用。"
+    },
+    {
+      "tag": "mark",
+      "text": "2. setup 中訪問的this是undefined。"
+    },
+    {
+      "tag": "mark",
+      "text": "3. setup 會在beforeCreate之前調用，他是領先所有鉤子執行的。"
+    },
+    {
+      "tag": "precode",
+      "text": "<script>\nexport default {\n    name:'App',\n    components:{ Person }\n    setup( ){\n      //將數據、方法配置於此處\n\n       return{  } //將配置好的數據方法等放於return內交出去   \n    } \n}\n</script>"
+    },
+    {
+      "tag": "p",
+      "text": "Vue3的語法中，其實還是可以撰寫Vue2的語法data()來配置數據或方法等數據，其中setup()中寫的數據是可以利用Vue2中寫的data()讀取到的，由此可知，setup()比data()配置的還更早，所以Vue3的setup()語法中是讀取不到data()的；故建議Vue3語法不要跟Vue2語法混用。"
+    },
+    {
+      "tag": "precode",
+      "text": "data( ){\n    return{\n        c: this.name  //會讀取到張三\n    },\n\nsetup( ){\n    let name = '張三'\n}"
+    },
+    {
+      "tag": "h3",
+      "text": "🍬setup的語法糖"
+    },
+    {
+      "tag": "p",
+      "text": "setup( )語法使用到的數據等資料在配置時都一定要使用 return 才能讓模板讀取，所以Vue官方提供了一個語法糖，能夠讓寫法變得更單純簡單。撰寫方法如下，我們須要另外寫一處setup的標籤，且內部不用再寫setup()和return，直接寫數據和方法即可達到自動回傳數據到模板的功能。"
+    },
+    {
+      "tag": "precode",
+      "text": "<script>\nexport default {\n    name:'App',\n    components:{ Person }\n}\n</script>\n\n<script lang='ts' setup>\n    let a = 123\n\n    function SayHello( ){\n        console.log( 'Hello' )\n    } \n</script>"
+    },
+    {
+      "tag": "h2",
+      "text": "配置響應式數據"
+    },
+    {
+      "tag": "p",
+      "text": "  "
     }
   ],
   [{ "title": "React.js🚧" }],
