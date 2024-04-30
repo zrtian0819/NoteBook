@@ -357,9 +357,94 @@
       "tag": "precode",
       "text": "<script>\nexport default {\n    name:'App',\n    components:{ Person }\n}\n</script>\n\n<script lang='ts' setup>\n    let a = 123\n\n    function SayHello( ){\n        console.log( 'Hello' )\n    } \n</script>"
     },
+
+    {
+      "tag": "h3",
+      "text": "🪄setup定義元件名的插件"
+    },
+    {
+      "tag": "p",
+      "text": "在尚硅谷中提供一辦法，就是安裝插件。我們可以在終端機視窗中打以下安裝指令:"
+    },
+    {
+      "tag": "precode",
+      "text": "npm i vite-plugin-vue-setup-extend -D"
+    },
+    {
+      "tag": "p",
+      "text": "並且必須在vite.config.js或vite.config.ts的檔案中新增兩行程式碼於以下位置:"
+    },
+    {
+      "tag": "precode",
+      "text": "import VueSetupExtend from 'vite-plugin-vue-setup-extend'   //引入插件\n\n VueSetupExtend()   //調用插件"
+    },
+    {
+      "tag": "precode",
+      "text": "import { fileURLToPath, URL } from 'node:url'\n\nimport { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\nimport VueSetupExtend from 'vite-plugin-vue-setup-extend'      //新增，其中VueSetupExtend是自由取名的\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n    plugins: [\n      vue(),\n      VueSetupExtend()   //新增，追加調用\n    ],\n    resolve: {\n      alias: {\n          @': fileURLToPath(new URL('./src', import.meta.url))\n      }\n    }\n})"
+    },
+    {
+      "tag": "p",
+      "text": "完成以上步驟以後，我們就將以下程式碼:"
+    },
+    {
+      "tag": "precode",
+      "text": "<script>\nexport default {\n    name:'Person',\n}\n</script>\n\n<script lang='ts' setup>\n\n</script>"
+    },
+    {
+      "tag": "p",
+      "text": "取代成以下程式碼:"
+    },
+    {
+      "tag": "precode",
+      "text": "<script lang='ts' setup name='Person'>\n\n<script>"
+    },
     {
       "tag": "h2",
       "text": "配置響應式數據"
+    },
+    {
+      "tag": "h3",
+      "text": "ref( )"
+    },
+    {
+      "tag": "a",
+      "text": "https://youtu.be/t5XjTkbiSYE?si=AxDZJQLSpQoIgGxG"
+    },
+    {
+      "tag": "p",
+      "text": "ref()是一個Vue3中定義基本類型響應式數據的函數，其語法如下:"
+    },
+    {
+      "tag": "precode",
+      "text": "<script>\n    import { ref } from 'vue'    //引入Vue中的ref函數\n\n\n    //let 響應式變數 = ref(初始值)  例如:\n    let name = ref('張小天')\n    let age = ref(18)\n</script>"
+    },
+    {
+      "tag": "p",
+      "text": "使用此語法時須要注意，若要在JS中操作數據，需要在數據後加.value，但在模板中卻不需要加.value；對於let name = ref('張小天')來說，name不是響應式的，name.value才是響應式的。"
+    },
+    {
+      "tag": "precode",
+      "text": "<template>\n    <h2>姓名:{{ name }}</h2>    <!-- 不需要加.value -->\n</template>\n\n\n<script>\n    name.value = '張大天'    //要加.value\n</script>"
+    },
+    {
+      "tag": "h3",
+      "text": "reactive( )"
+    },
+    {
+      "tag": "a",
+      "text": "https://youtu.be/VdeQ0g0AV_g?si=EKb6xNIECkgVn5Pe"
+    },
+    {
+      "tag": "p",
+      "text": "reactive()是一個Vue3中「只能」定義物件類型響應式數據的函數，其語法如下:"
+    },
+    {
+      "tag": "precode",
+      "text": "<script>\n    import {reactive} from 'vue'    //引入Vue中的reactive函數\n\n    let car =reactive({brand:'奔馳',price:100})\n    let games = reactive([\n        {id:'aysdytfsatr01',name:'王者榮耀'},\n        {id:'aysdytfsatr02',name:'原神'},\n        {id:'aysdytfsatr03',name:'三國志'}\n    ])\n\n    // 方法\n    function changePrice(){\n      car.price += 10\n      console.log(car.price)\n    }\n\n    function changeFirstGame(){\n      games[0].name = '流星蝴蝶劍'\n      console.log(games[0].name)\n    }\n</script>"
+    },
+    {
+      "tag": "p",
+      "text": "此語法可以讓物件中深層式的數據都成為響應式，並且在JS與模板中並不需要加上.value就可以使用數據，"
     },
     {
       "tag": "p",

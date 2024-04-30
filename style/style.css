@@ -27,6 +27,8 @@ h5 {
 p {
   font-family: "Noto Serif TC", "微軟正黑體";
   font-weight: 500;
+  letter-spacing: 2px;
+  color: rgb(19, 19, 19);
   /* font-size: 0.9rem; */
 }
 
@@ -69,6 +71,8 @@ h2 {
   margin-top: 30px;
   font-weight: 800;
   font-size: 1.4rem;
+  transition: 0.3s;
+  padding: 3px 0 3px 0;
 }
 
 h2::before {
@@ -78,10 +82,15 @@ h2::before {
   /* position: absolute; */
 }
 
+h2:hover {
+  background-color: #32493934;
+  /* color: white; */
+}
+
 h3 {
   margin-top: 20px;
   color: white;
-  background-color: #324939;
+  background-color: #6e8c77;
   padding: 5px;
   display: inline-block;
 }
