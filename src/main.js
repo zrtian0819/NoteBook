@@ -42,6 +42,8 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
+  LoadContents(6); //開發時暫時調用
+
   function LoadContents(code) {
     // 把連結顯示於頁面
     let i = code;
@@ -90,7 +92,7 @@ const Nlist = document.querySelector(".nevbar");
 // console.log(window.innerWidth);
 
 Lbtn.addEventListener("click", clickNev);
-// bodyP.addEventListener("click", clickNev);
+// bodyP.addEventListener("click",clickNev);
 
 function clickNev() {
   //開關導覽頁用的

@@ -29,13 +29,15 @@ p {
   font-weight: 500;
   letter-spacing: 2px;
   color: rgb(19, 19, 19);
+  /* display: inline; */
   /* font-size: 0.9rem; */
 }
 
 mark {
-  display: block;
+  display: inline-block;
   background-color: #f7c633;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 a {
@@ -45,6 +47,8 @@ a {
 
 b {
   color: #005597;
+  display: block;
+  margin-bottom: 3px;
 }
 
 main h1 {

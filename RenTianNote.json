@@ -145,7 +145,73 @@
       "text": "太過於基礎未來再更新!"
     }
   ],
-  [{ "title": "JavaScript的知識點筆記🚧" }],
+  [
+    { "title": "JavaScript🚧" },
+    {
+      "tag": "mark",
+      "text": "以下收錄一些重要知識點。"
+    },
+    {
+      "tag": "h2",
+      "text": "介紹"
+    },
+    {
+      "tag": "p",
+      "text": "JavaScript（簡稱 JS）是一種跨平台、面向對象的腳本語言，它在 Web 頁面中實現互動功能，例如動畫、可點擊的按鈕、菜單等，是 Web 開發人員必須學習的三門語言之一，它控制網頁的行為，並與 HTML 和 CSS 一起工作。此外，它還有高級的服務端版本，例如 「Node.js」，可以在 Web 上添加更多功能，不僅僅是下載文件，還包括多台電腦之間的協同合作。以下式一些特點:"
+    },
+    {
+      "tag": "b",
+      "text": "1. 輕量級：JavaScript 是一種輕量級的編程語言。"
+    },
+    {
+      "tag": "b",
+      "text": "2. 可插入 HTML 頁面：我們可以將 JavaScript 插入到 HTML 頁面中，並由所有現代瀏覽器執行。"
+    },
+    {
+      "tag": "b",
+      "text": "3. 動態、弱型別、基於原型的物件導向程式語言：JavaScript 具有這些特性，使其適合用於 Web 開發。"
+    },
+    {
+      "tag": "h2",
+      "text": "解構賦值"
+    },
+    {
+      "tag": "p",
+      "text": "解構賦值（Destructuring Assignment）是 JavaScript 中的一個新特性，它允許我們從陣列或物件中提取資料並賦值給獨立的變數。"
+    },
+    {
+      "tag": "h3",
+      "text": "1.陣列解構"
+    },
+    {
+      "tag": "precode",
+      "text": "const colors = ['red', 'green', 'blue'];\nconst [firstColor, secondColor, thirdColor] = colors;\nconsole.log(firstColor); // 'red'\nconsole.log(secondColor); // 'green'\nconsole.log(thirdColor); // 'blue'"
+    },
+    {
+      "tag": "h3",
+      "text": "2.物件解構"
+    },
+    {
+      "tag": "precode",
+      "text": "const person = { name: 'Alice', age: 30 };\nconst { name, age } = person;\nconsole.log(name); // 'Alice'\nconsole.log(age); // 30"
+    },
+    {
+      "tag": "h3",
+      "text": "3.預設值"
+    },
+    {
+      "tag": "precode",
+      "text": "let a, b;\n[a = 5, b = 7] = [1];\nconsole.log(a); // 1\nconsole.log(b); // 7"
+    },
+    {
+      "tag": "h3",
+      "text": "4.其餘元素"
+    },
+    {
+      "tag": "precode",
+      "text": "const [a, ...b] = [1, 2, 3];\nconsole.log(a); // 1\nconsole.log(b); // [2, 3]"
+    }
+  ],
   [{ "title": "DOM元素的操作🚧" }],
   [{ "title": "Version Control🚧" }],
   [
@@ -187,7 +253,7 @@
       "text": "此函數會設置一個計時器，一旦計時器時間到，計時器就會執行一個函數或指定的一段代碼；其中code是delay結束時要執行的程式碼，delay是在執行指定的函數或代碼之前計時器等待的時間(以毫秒為單位)，如果省略此參數則預設值為0，表示立即執行。"
     },
     {
-      "tag": "b",
+      "tag": "h3",
       "text": "異步函數範例:"
     },
     {
@@ -210,7 +276,7 @@
   [
     { "title": "Vue.js🚧" },
     {
-      "tag": "b",
+      "tag": "mark",
       "text": "vue官方文檔"
     },
     {
@@ -218,7 +284,7 @@
       "text": "https://vuejs.org/"
     },
     {
-      "tag": "b",
+      "tag": "mark",
       "text": "尚硅谷禹神新版Vue3"
     },
     {
@@ -231,7 +297,7 @@
     },
     {
       "tag": "p",
-      "text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面123。無論是簡單還是複雜的界面，Vue 都可以勝任。"
+      "text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面。無論是簡單還是複雜的界面，Vue 都可以勝任。"
     },
     {
       "tag": "h2",
@@ -290,7 +356,7 @@
       "text": "將Vue子元件(components)引入App.vue"
     },
     {
-      "tag": "b",
+      "tag": "mark",
       "text": "【极简Vue3】005 一个简单的效果"
     },
     {
@@ -322,15 +388,15 @@
       "text": "setup 是 Vue3中的一個新的配置項，值是一個函數，它是Components API 組合式API的表演舞台，組件中所用到的 數據、方法、計算屬性、監視等等都配置在setup中，其有以下特點:"
     },
     {
-      "tag": "mark",
+      "tag": "b",
       "text": "1. setup 函數返回的對象中的內容可直接在模板中使用。"
     },
     {
-      "tag": "mark",
+      "tag": "b",
       "text": "2. setup 中訪問的this是undefined。"
     },
     {
-      "tag": "mark",
+      "tag": "b",
       "text": "3. setup 會在beforeCreate之前調用，他是領先所有鉤子執行的。"
     },
     {
@@ -412,7 +478,7 @@
     },
     {
       "tag": "p",
-      "text": "ref()是一個Vue3中定義基本類型響應式數據的函數，其語法如下:"
+      "text": "ref()是一個Vue3中可以定義基本類型的響應式數據的函數，其語法範例如下:"
     },
     {
       "tag": "precode",
@@ -420,11 +486,27 @@
     },
     {
       "tag": "p",
-      "text": "使用此語法時須要注意，若要在JS中操作數據，需要在數據後加.value，但在模板中卻不需要加.value；對於let name = ref('張小天')來說，name不是響應式的，name.value才是響應式的。"
+      "text": "使用此語法時須要注意，若要在JS中操作數據，需要在數據後加.value，但在<template>模板(以下稱模板)中卻不需要加.value；對於let name = ref('張小天')來說，name不是響應式的，name.value才是響應式的。"
     },
     {
       "tag": "precode",
-      "text": "<template>\n    <h2>姓名:{{ name }}</h2>    <!-- 不需要加.value -->\n</template>\n\n\n<script>\n    name.value = '張大天'    //要加.value\n</script>"
+      "text": "<template>\n    <h2>姓名:{{ name }}</h2>    <!-- 不需要加.value -->\n</template>\n\n\n<script>\n    name.value = '張大天'    //此處要加.value才能操作數據\n</script>"
+    },
+    {
+      "tag": "p",
+      "text": "ref()其實也是可以在Vue3中定義物件類型的響應式數據的函數，但其最根本的程式碼仍舊會調用到reactive()讓物件成為響應式數據。"
+    },
+    {
+      "tag": "precode",
+      "text": "let car = ref({brand:'賓士',price:100})"
+    },
+    {
+      "tag": "mark",
+      "text": "😮若用ref( )定義了物件以後可以透過操作.value來更改數據，其物件仍然式響應式。"
+    },
+    {
+      "tag": "precode",
+      "text": "let car = ref({brand:'賓士',price:100})\n\n//例如調用了以下函式數據仍然式響應式\nfunction changeCar( ){\n    car.value = {brand:'BMW' , price:90}\n}\n"
     },
     {
       "tag": "h3",
@@ -436,7 +518,7 @@
     },
     {
       "tag": "p",
-      "text": "reactive()是一個Vue3中「只能」定義物件類型響應式數據的函數，其語法如下:"
+      "text": "reactive()是一個Vue3中「只能」定義物件類型響應式數據的函數，其語法範例如下:"
     },
     {
       "tag": "precode",
@@ -444,11 +526,89 @@
     },
     {
       "tag": "p",
-      "text": "此語法可以讓物件中深層式的數據都成為響應式，並且在JS與模板中並不需要加上.value就可以使用數據，"
+      "text": "此語法可以讓物件中每一層的數據都成為響應式的，並且在JS與模板中並不須要加上.value就可以操控數據。"
+    },
+    {
+      "tag": "mark",
+      "text": "😮若用reactive( )定義了物件以後，若把整個物件改掉，則會失去響應式功能。"
+    },
+    {
+      "tag": "precode",
+      "text": "let car = reactive({brand:'賓士',price:100})\n\n//例如調用了以下函式去替換了整個物件，就會失去響應式功能，頁面也不會有任何反應\nfunction changeCar( ){\n    car = {brand:'BMW' , price:90}\n}\n"
     },
     {
       "tag": "p",
-      "text": "  "
+      "text": "我們可以透過Object.assign(Original_Objec,New_Object)函數來重新指派物件。"
+    },
+    {
+      "tag": "precode",
+      "text": "function changeCar( ){\n    //其中Object.assign(原物件,指派的新物件)\n    Object.assign(car,{brand:'賓士',price:100})\n}"
+    },
+
+    {
+      "tag": "h3",
+      "text": "🔔ref( ) 與 reactive( ) 使用原則"
+    },
+    {
+      "tag": "b",
+      "text": "1.若是需要一個基本類型的響應式數據，必須使用ref()。"
+    },
+    {
+      "tag": "b",
+      "text": "2.若是需要一個響應式物件，但其內部層級不深，ref(),reactive()都可以使用。"
+    },
+    {
+      "tag": "b",
+      "text": "3.若是需要一個響應式物件，層級較深，則推薦使用reactive()。"
+    },
+    {
+      "tag": "h2",
+      "text": "toRef 與 toRefs"
+    },
+    {
+      "tag": "mark",
+      "text": "【极简Vue3】015 toRefs与toRef"
+    },
+    {
+      "tag": "a",
+      "text": "https://youtu.be/a9QAmiVjlPI?si=553tkw7lrW341Yfx"
+    },
+    {
+      "tag": "p",
+      "text": "toRef( )和toRefs( )是Vue3中的兩個特殊函數，都是把一個被定義的響應式物件解構放置於另外的變數，並且使其變數仍然維持響應式狀態。例如以下範例利用toRefs( )將person.name和person.age中的數據解構出來，並且用name和age變數放置解構出來的值，其中toRefs會將每個解構出來的值加上一層ref( )使其維持在響應是狀態，person.name與解構出來的name.value是連動的，person.age與解構出來的age.value也是連動的。"
+    },
+    {
+      "tag": "precode",
+      "text": "//toRef(物件變數,物件中的屬性)，處理單一數據(不常用)。\n\nimport { reactive, toRef } from 'vue';\n\nconst info = reactive({\n  name: 'Tony',\n  greet: 'Hello',\n});\n\n// 複製 info 中的 greet 屬性並轉換為 ref\nconst rGreet = toRef(info, 'greet');\n\n// 修改 rGreet 的值\nconst onChangeGreet = () => {\n  rGreet.value = 'world!';\n};"
+    },
+
+    {
+      "tag": "precode",
+      "text": "//toRefs(物件變數)，處理多個數據(較常用)\n\n。import {reactive, toRefs} from 'vue'\n\n//數據\nlet person = reactive(\n    name:'張小天 ' ,\n    age: 18\n}\n\nlet {name, age} = toRefs(person)\n\n// 方法\nfunction changeName(){\n    name.value += '~'\n    console.log(name. value, person.name)  //兩數據得出的結果會一樣。\n}"
+    },
+    {
+      "tag": "h2",
+      "text": "計算屬性(computed)"
+    },
+    {
+      "tag": "mark",
+      "text": "【极简Vue3】016 computed计算属性"
+    },
+    {
+      "tag": "a",
+      "text": "https://youtu.be/9PhQoYMQjWw?si=-BUmF9vM1kC2Sf0I"
+    },
+    {
+      "tag": "p",
+      "text": "...🚧"
+    },
+    {
+      "tag": "h2",
+      "text": "監視屬性(watch)"
+    },
+    {
+      "tag": "p",
+      "text": "...🚧"
     }
   ],
   [{ "title": "React.js🚧" }],
