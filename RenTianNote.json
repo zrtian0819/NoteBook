@@ -584,7 +584,7 @@
 
     {
       "tag": "precode",
-      "text": "//toRefs(物件變數)，處理多個數據(較常用)\n\n。import {reactive, toRefs} from 'vue'\n\n//數據\nlet person = reactive(\n    name:'張小天 ' ,\n    age: 18\n}\n\nlet {name, age} = toRefs(person)\n\n// 方法\nfunction changeName(){\n    name.value += '~'\n    console.log(name. value, person.name)  //兩數據得出的結果會一樣。\n}"
+      "text": "//toRefs(物件變數)，處理多個數據(較常用)\n\nimport {reactive, toRefs} from 'vue'\n\n//數據\nlet person = reactive(\n    name:'張小天 ' ,\n    age: 18\n}\n\nlet {name, age} = toRefs(person)\n\n// 方法\nfunction changeName(){\n    name.value += '~'\n    console.log(name. value, person.name)  //兩數據得出的結果會一樣。\n}"
     },
     {
       "tag": "h2",

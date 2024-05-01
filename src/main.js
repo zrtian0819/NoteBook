@@ -42,7 +42,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  LoadContents(6); //開發時暫時調用
+  // LoadContents(6); //開發時暫時調用
 
   function LoadContents(code) {
     // 把連結顯示於頁面
