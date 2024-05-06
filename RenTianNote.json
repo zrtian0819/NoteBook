@@ -538,7 +538,7 @@
     },
     {
       "tag": "p",
-      "text": "我們可以透過Object.assign(Original_Objec,New_Object)函數來重新指派物件。"
+      "text": "我們可以透過Object.assign(原物件,新物件)函數來重新指派物件。"
     },
     {
       "tag": "precode",
@@ -600,11 +600,43 @@
     },
     {
       "tag": "p",
-      "text": "...🚧"
+      "text": "計算屬性(computed properties)是一個強大的功能，它允許你聲明一個依賴於其他響應式數據屬性的屬性，並且這個屬性的值會根據其依賴的數據變化而自動更新。以下為計算屬性的特點及尚硅谷示例："
+    },
+    {
+      "tag": "b",
+      "text": "1. 計算屬性是基於其依賴關係進行緩存的，只有在其相關依賴發生改變時才會重新求值。"
+    },
+    {
+      "tag": "b",
+      "text": "2. 它通常用於處理一些複雜的邏輯，例如根據其他數據的變化來計算一個值。"
+    },
+    {
+      "tag": "precode",
+      "text": "<template>\n    <div class='person'>\n    姓：<input type='text' v-model='firstName'> <br>\n    名：<input type='text' v-model='lastName'> <br>\n    全名：<span>{{ fullName }}</span><br>\n    </div>\n</template>\n\n<script lang='ts' setup name='Person'>\n    import {ref, computed} from 'vue'     //引入computed\n\n    let firstName = ref('zhang')\n    let lastName = ref('san')\n\n    let fullName = computed(()=>{\n        return firstName. value. slice(0,1). toUpperCase() + firstName.value.slice(1)   //定義為較複雜的計算並回傳\n    }\n\n</script>"
+    },
+    {
+      "tag": "h3",
+      "text": "如何直接更動計算屬性?"
+    },
+    {
+      "tag": "p",
+      "text": "計算屬性通常只能讀寫不能改動，但利用以下特殊方式可以將計算屬性的值做更動。"
+    },
+    {
+      "tag": "precode",
+      "text": "\n    let fullName = computed({\n        get( ){\n             return firstName. value. slice(0,1). toUpperCase() + firstName.value.slice(1)\n        },\n        set( val ){    //用set接收計算屬性被更改的觸發函數，並接收val\n\n              //此處再利用客製方法將val去更動此計算屬性所依賴的響應式數據，計算屬性就會被更動\n\n        }\n    })\n"
     },
     {
       "tag": "h2",
       "text": "監視屬性(watch)"
+    },
+    {
+      "tag": "mark",
+      "text": "【极简Vue3】017 watch监视 情况一"
+    },
+    {
+      "tag": "a",
+      "text": "https://youtu.be/c2ZaqEyLVZI?si=O599YaKmK-EZZ_cr"
     },
     {
       "tag": "p",

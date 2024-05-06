@@ -42,7 +42,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  // LoadContents(6); //開發時暫時調用
+  LoadContents(6); //開發時暫時調用
 
   function LoadContents(code) {
     // 把連結顯示於頁面
@@ -120,3 +120,25 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
+//滾動滑鼠打開與收合navbar的功能
+const navbar = document.getElementById("navbar");
+let prevScrollPos = window.pageYOffset;
+
+// 監聽滾動事件
+window.addEventListener("scroll", () => {
+  const currentScrollPos = window.pageYOffset;
+  // console.log(prevScrollPos + " | " + currentScrollPos);
+  // 判斷滾動方向
+  if (prevScrollPos > currentScrollPos) {
+    // 向上滾動，顯示導覽列
+    navbar.style.transition = "0.5s";
+    navbar.style.top = "0";
+  } else {
+    // 向下滾動，隱藏導覽列
+    navbar.style.transition = "3s";
+    navbar.style.top = "-100px";
+  }
+
+  prevScrollPos = currentScrollPos;
+});

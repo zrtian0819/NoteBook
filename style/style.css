@@ -7,6 +7,7 @@
 body,
 html {
   margin: 0;
+  /* overflow: hidden; */
 }
 
 body {
@@ -159,6 +160,7 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .selector:active {
