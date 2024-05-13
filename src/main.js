@@ -42,7 +42,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  LoadContents(6); //開發時暫時調用
+  LoadContents(5); //開發時暫時調用
 
   function LoadContents(code) {
     // 把連結顯示於頁面
@@ -132,11 +132,11 @@ window.addEventListener("scroll", () => {
   // 判斷滾動方向
   if (prevScrollPos > currentScrollPos) {
     // 向上滾動，顯示導覽列
-    navbar.style.transition = "0.5s";
+    navbar.style.transition = "0.3s";
     navbar.style.top = "0";
   } else {
     // 向下滾動，隱藏導覽列
-    navbar.style.transition = "3s";
+    navbar.style.transition = "2s";
     navbar.style.top = "-100px";
   }
 

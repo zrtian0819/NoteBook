@@ -194,7 +194,11 @@ code {
 }
 
 img {
-  width: 80%;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px #e1e1e1;
 }
 
 @media (max-width: 768px) {

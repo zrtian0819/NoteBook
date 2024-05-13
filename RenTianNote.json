@@ -266,11 +266,55 @@
     },
     {
       "tag": "p",
-      "text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值。它有三種狀態:。"
+      "text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值，且它有三種狀態:。"
     },
     {
-      "tag": "mark",
-      "text": "pending(處理中)、fullfilled(已完成)、rejected(已拒絕)"
+      "tag": "b",
+      "text": "🔴pending(處理中)：初始狀態擱置中。"
+    },
+    {
+      "tag": "b",
+      "text": "🔴fullfilled(已完成)：表示操作成功地完成。"
+    },
+    {
+      "tag": "b",
+      "text": "🔴rejected(已拒絕)：表示操作失敗了。"
+    },
+    {
+      "tag": "p",
+      "text": "當上述任一狀態轉換發生時，那些透過then方法所繫結的callback就會被調用。簡單來說，Promise物件可以調用兩個函數。一個叫做.then()，一個叫做.catch()。"
+    },
+    {
+      "tag": "h3",
+      "text": ".then()"
+    },
+    {
+      "tag": "p",
+      "text": "以下範例中，fetch是一個可以向網址發送HTTP requests的異步函數，當promiseObject從pending狀態變為fullfilled之後，.then()內部的callback function就會被js自動執行。執行時帶入的參數就是從URL獲得的HTTP Response內容(通常會得到一些數據)。"
+    },
+    {
+      "tag": "precode",
+      "text": "let promiseObject = fetch(URL);\n\npromiseObject.then((response)=>{\n\n    console.log(response);    //獲得接收到的數據\n\n    let jsonPromise = response.json().then((data)=>{          //可將文字部分做成JSON物件\n         console.log(data);\n   });    \n    \n})"
+    },
+    {
+      "tag": "p",
+      "text": "其中.json()是一個可以將data轉換成JSON格式的函數，其本身也是一個異步函數，故也會回傳一個promise物件。所以要再加一個.then()才能取出裡面的json物件。也可以改寫成:"
+    },
+    {
+      "tag": "precode",
+      "text": "promiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    }"
+    },
+    {
+      "tag": "h3",
+      "text": ".catch()"
+    },
+    {
+      "tag": "p",
+      "text": ".catch()"
+    },
+    {
+      "tag": "img",
+      "text": "./img/3_Promise狀態流程.png"
     }
   ],
   [
