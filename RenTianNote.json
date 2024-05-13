@@ -281,8 +281,16 @@
       "text": "🔴rejected(已拒絕)：表示操作失敗了。"
     },
     {
+      "tag": "h3",
+      "text": "流程圖"
+    },
+    {
       "tag": "p",
-      "text": "當上述任一狀態轉換發生時，那些透過then方法所繫結的callback就會被調用。簡單來說，Promise物件可以調用兩個函數。一個叫做.then()，一個叫做.catch()。"
+      "text": "當上述任一狀態轉換發生時，Promise物件可以調用兩個函數。一個叫做.then()，一個叫做.catch()。"
+    },
+    {
+      "tag": "img",
+      "text": "./img/3_Promise狀態流程.png"
     },
     {
       "tag": "h3",
@@ -302,7 +310,7 @@
     },
     {
       "tag": "precode",
-      "text": "promiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    }"
+      "text": "promiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    });"
     },
     {
       "tag": "h3",
@@ -310,11 +318,27 @@
     },
     {
       "tag": "p",
-      "text": ".catch()"
+      "text": ".catch()函數是在調用當Promise物件狀態轉換為rejected時，會去調用的函數。如果將catch()添加調Promise Chain的末尾，那麼當任何異步函數調用失敗時都會調用它。如以下範例:"
     },
     {
-      "tag": "img",
-      "text": "./img/3_Promise狀態流程.png"
+      "tag": "precode",
+      "text": "let promiseObject = fetch(URL);   //錯誤或不存在的URL或者網路異常\n\npromiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    })\n    .catch(e)=>{\n        console.log(fetchPromise);   //顯示status:rejected\n        console.log(e);   //顯示錯誤訊息\n    });"
+    },
+    {
+      "tag": "h2",
+      "text": "Combining Multiple Promise"
+    },
+    {
+      "tag": "p",
+      "text": "當我們的操作由多個異步函數組成時，我們需要用到promise chaining，讓我們在開始下一個函數之前完成前一個函數。這種情況下，每個Promise都互相依賴。有時，我們需要所有Promise都被fulfilled，但它們並不相互依賴。在這種情況下，將它們全部一起啟動，然後在它們全部fulfilled時收到通知會更有效。JavaScript當中，提供了Promise.all()這個static method，它接受一個promisearray並返回一個promise。"
+    },
+    {
+      "tag": "p",
+      "text": "[279. 網頁全端開發課程..🚧]"
+    },
+    {
+      "tag": "p",
+      "text": "[...🚧]"
     }
   ],
   [
