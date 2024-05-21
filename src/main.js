@@ -42,7 +42,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  // LoadContents(5); //開發時暫時調用
+  LoadContents(6); //開發時暫時調用
 
   function LoadContents(code) {
     // 把連結顯示於頁面
@@ -57,7 +57,7 @@ getJson().then(function (data) {
       let tag = data[i][j].tag;
       let text = escapeHtml(data[i][j].text); //轉換字符避免json中有"<"or">"會產生異常顯示
       let style = data[i][j].style !== "" ? ` style=${data[i][j].style}` : "";
-      let class_ = data[i][j].class !== "" ? ` style=${data[i][j].class}` : "";
+      let class_ = data[i][j].class !== "" ? ` class=${data[i][j].class}` : "";
       // let children = data[i][j].children;
 
       if (tag == "precode") {

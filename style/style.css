@@ -54,7 +54,7 @@ b {
 
 main h1 {
   font-weight: 900;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #324939;
   position: relative;
   left: 15px;
@@ -67,15 +67,15 @@ main h1::before {
   display: inline-block;
   position: absolute;
   background-color: #ea7756;
-  width: 15px;
+  width: 16px;
   height: 2.2rem;
   left: -20px;
 }
 
 h2 {
-  margin-top: 30px;
+  margin: 50px 0 0 0;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   transition: 0.3s;
   padding: 3px 0 3px 0;
 }
@@ -85,11 +85,6 @@ h2::before {
   color: #83b5aa;
   /* margin-right: 2px; */
   /* position: absolute; */
-}
-
-h2:hover {
-  background-color: #32493934;
-  /* color: white; */
 }
 
 h3 {
@@ -198,6 +193,15 @@ img {
   border: 1px solid #e1e1e1;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 1px 1px 10px #e1e1e1;
+}
+
+.yellow {
+  background-color: #f7f2c7;
+  border-radius: 5px;
+  font-weight: 700;
+  font-family: 微軟正黑體;
+  padding: 10px 20px 10px 20px;
   box-shadow: 1px 1px 10px #e1e1e1;
 }
 

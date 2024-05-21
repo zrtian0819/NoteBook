@@ -570,7 +570,7 @@
     },
     {
       "tag": "mark",
-      "text": "😮若用ref( )定義了物件以後可以透過操作.value來更改數據，其物件仍然式響應式。"
+      "text": "😮若用ref( )定義了物件以後可以透過操作.value來更改數據，其物件仍然是響應式。"
     },
     {
       "tag": "precode",
@@ -698,6 +698,40 @@
       "tag": "h2",
       "text": "監視屬性(watch)"
     },
+
+    {
+      "tag": "p",
+      "text": "Vue中的監視屬性是一個強大的功能，用於監視數據的變化並執行相應的操作。以下為Vue的監視屬性能監視的四種數據。"
+    },
+    {
+      "tag": "precode",
+      "text": "watch(監視的數據,回調函數)"
+    },
+    {
+      "tag": "b",
+      "text": "1. ref()定義的數據。"
+    },
+    {
+      "tag": "b",
+      "text": "2. reactive()定義的數據。"
+    },
+    {
+      "tag": "b",
+      "text": "3. 函數回傳一個值。"
+    },
+    {
+      "tag": "b",
+      "text": "4. 一個包含上述內容的陣列。"
+    },
+
+    {
+      "tag": "h3",
+      "text": "🐻情況一"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
     {
       "tag": "mark",
       "text": "【极简Vue3】017 watch监视 情况一"
@@ -708,7 +742,106 @@
     },
     {
       "tag": "p",
-      "text": "...🚧"
+      "text": "監視ref()定義的【基本類型數據】:直接寫數據名即可，監視的是其Value值的改變。以下程式碼利用watch()能監視到sum當按下按鈕時發生的改變，並且回調函數可以接收到新數據(newValue)和舊數據(oldValue)；在此處監視的數據(此為sum)是不需要加上.value的，這一點須要注意不然功能會無法正常運作。"
+    },
+    {
+      "tag": "precode",
+      "text": "<templatete>\n  <div class='person'>\n    <h1>情況一</h1>\n    <h2>當前求和為:{{ sum }}</h2>\n    <button @click='changeSum'>點我sum+1</button>\n  </div>\n</templatete>\n\n<script lang='ts' setup name=''person'>\n  import {ref,watch} from 'vue'\n\n  //數據\n  let sum =ref(0)\n\n  //方法\n  function changeSum(){\n    sum.value +=1\n  }\n\n  //監視\n  watch(sum, (newValue,oldValue)=>{\n    console.log('sum變化了!',newValue,oldValue);\n  })\n</script>"
+    },
+    {
+      "tag": "h3",
+      "text": "條件停止數據監視的方法"
+    },
+    {
+      "tag": "p",
+      "text": "延續上方範例，以下此方法可以在newValue被加到10的時候停止數據監視。"
+    },
+    {
+      "tag": "precode",
+      "text": "//監視\nconst stopWatch = watch(sum, (newValue,oldValue)=>{\n  console.log('sum變化了!',newValue,oldValue);\n\n  if(newValue >= 10){\n    stopWatch()\n  }\n})"
+    },
+
+    {
+      "tag": "h3",
+      "text": "🐻情況二"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "mark",
+      "text": "【极简Vue3】018 watch监视 情况二"
+    },
+    {
+      "tag": "a",
+      "text": "https://youtu.be/slSOx0xI-CY?si=Nl_UU_lIsWhJhDOS"
+    },
+    {
+      "tag": "p",
+      "text": "監視ref()定義的【物件類型數據】:監視的是物件的地址值，簡單來說以下情況只會監視person這個物件是否整體都被改變，只有第三個按鈕才會起作用。"
+    },
+    {
+      "tag": "precode",
+      "text": "<templatete>\n  <div class='person'>\n    <h1>情況二</h1>\n    <h2>姓名:{{ person.name }}</h2>\n    <h2>年齡:{{ person.age }}</h2>\n\n    <button @click='changeName'>修改名字</button>\n    <button @click='changeAge'>修改年齡</button>\n    <button @click='changePerson'>修改整個人</button>\n  </div>\n</templatete>\n\n<script lang='ts' setup name=''person'>\n  import { ref, watch } from 'vue';\n\n  //數據\n  let person = ref({\n    name: '小天',\n    age: 18,\n  });\n\n  //方法\n  function chanegeName() {\n    person.value.name += '~';\n  }\n  function chanegeAge() {\n    person.value.age += 1;\n  }\n  function chanegePerson() {\n    person.value = { name: '大天', age: 90 };\n  }\n\n  //監視\n  watch(person, (newValue, oldValue) => {\n    console.log('person變化了!', newValue, oldValue);\n  });\n</script>"
+    },
+    {
+      "tag": "h3",
+      "text": "深度監視和立即監視的方法"
+    },
+    {
+      "tag": "p",
+      "text": "若想監視物件內部的變化時，須手動開啟深度監視。如下方的方式添加第三個參數就可以監測到物件內部的值發生變化，並調用回調函數。"
+    },
+    {
+      "tag": "precode",
+      "text": "watch(監視的數據,回調函數,{deep:true})"
+    },
+    {
+      "tag": "p",
+      "text": "如果想再加一功能，是讓頁面一載入就立即調用監視屬性內的回調函數的話，要再加上以下語法。deep和immediate可按需求選擇使用，不寫的話此兩功能默認都是false。"
+    },
+    {
+      "tag": "precode",
+      "text": "watch(監視的數據,回調函數,{deep:true,immediate:true})"
+    },
+    {
+      "tag": "p",
+      "class": "yellow",
+      "text": "若修改的是ref定義的物件中的屬性，newValue和oldValue所呈現的值會是同一個物件。若修改整個ref定義的物件，newValue是新值，oldValue是舊值，因為不是同一個物件了。"
+    },
+    {
+      "tag": "h3",
+      "text": "🐻情況三"
+    },
+
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
     }
   ],
   [{ "title": "React.js🚧" }],
