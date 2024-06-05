@@ -212,7 +212,142 @@
       "text": "const [a, ...b] = [1, 2, 3];\nconsole.log(a); // 1\nconsole.log(b); // [2, 3]"
     }
   ],
-  [{ "title": "DOM元素的操作🚧" }],
+  [
+    { "title": "DOM元素的操作🚧" },
+    {
+      "tag": "h2",
+      "text": "介紹"
+    },
+    {
+      "tag": "p",
+      "text": "DOM（文件物件模型） 是用來表示和與任何 HTML 或 XML 文件互動的 API。它在瀏覽器中以樹狀結構的形式表達，其中每個節點代表著文件的一部分，例如元素、文字或留言。DOM 提供了操作 HTML 元素的能力，讓開發人員能夠使用 JavaScript 來修改 HTML 元素的內容、屬性和樣式等。"
+    },
+    {
+      "tag": "p",
+      "text": "簡單來說，DOM 將 HTML 元素轉換成 JavaScript 物件，使得我們可以通過 JavaScript 來操作和修改網頁的內容。它是 Web 開發中最常用的 API 之一，讓我們能夠動態地操作網頁，例如新增、刪除、修改元素，或是綁定事件等..."
+    },
+    {
+      "tag": "img",
+      "text": "./img/4_DOM TREE"
+    },
+    {
+      "tag": "p",
+      "text": "透過DOM我們可以："
+    },
+    {
+      "tag": "b",
+      "text": "🪄獲取元素"
+    },
+    {
+      "tag": "b",
+      "text": "🪄移除元素"
+    },
+    {
+      "tag": "b",
+      "text": "🪄創建元素"
+    },
+    {
+      "tag": "b",
+      "text": "🪄添加元素到頁面"
+    },
+    {
+      "tag": "b",
+      "text": "🪄綁定事件"
+    },
+    {
+      "tag": "b",
+      "text": "🪄修改、增加、刪除物件屬性"
+    },
+    {
+      "tag": "b",
+      "text": "🪄添加CSS樣式"
+    },
+    {
+      "tag": "b",
+      "text": "🪄添加 CSS 的 class 或 id 等等"
+    },
+    {
+      "tag": "h2",
+      "text": "Window Object"
+    },
+    {
+      "tag": "p",
+      "text": "代表目前程式碼正在運作的電腦視窗(通常是指我們的瀏覽器視窗)，其常見的method如下："
+    },
+    {
+      "tag": "h3",
+      "text": "常見的方法"
+    },
+    {
+      "tag": "precode",
+      "text": "window.alert( )    //在視窗顯示對話框\n\nwindow.prompt( )    //return用戶在提示對話框輸入的文字\n\nwindow.setInterval(執行的函式,輸入毫秒)    //每次經過給定的毫秒數時安排一個函式執行\n\nwindow.clearInterval(要暫停的函示)    //將setInterval所重複執行的程式暫停\n\nwindow.addEventListener( )    //將事件監聽附加到Window Object"
+    },
+    {
+      "tag": "mark",
+      "text": "MDN Window.Object 的 methods"
+    },
+    {
+      "tag": "a",
+      "text": "https://developer.mozilla.org/en-US/docs/Web/API/Window#instance_methods"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h3",
+      "text": "物件導向程式設計概念"
+    },
+    {
+      "tag": "p",
+      "text": "一個物件可以是另一個物件的屬性。例如，人的配偶也是一個人。Window Object可使用的常見Properties包含："
+    },
+    {
+      "tag": "precode",
+      "text": "window.console    //對瀏覽器的控制台進行訪問\n\nconsole.log( )    //將括弧內的內容輸出到控制台。\nconsole.error( )    //將括弧內的錯誤訊息輸出到控制台。\n\nwindow.document    //回傳window包含的文檔，就是HTML。\n\nwindow.localStorage    //回傳一個local storage物件。\n\nwindow.sessionStorage    //回傳一個session storage物件。"
+    },
+    {
+      "tag": "h2",
+      "text": "Document Object Model(DOM)"
+    },
+    {
+      "tag": "p",
+      "text": "所謂的Document Object Model，顧名思義可知HTML也被視為是物件，這種架構也被稱為模型(Model)。在DOM這顆樹上的每個點被稱之為節點(Node)。節點分為三種："
+    },
+    {
+      "tag": "b",
+      "text": "🍗1.HTML元素節點(稱為element nodes or element objects)"
+    },
+    {
+      "tag": "b",
+      "text": "🍗2.文字節點(text node)"
+    },
+    {
+      "tag": "b",
+      "text": "🍗3.註解節點(comment node)"
+    },
+    {
+      "tag": "p",
+      "text": "⚠️DOM提供2種節點集合：「HTMLCollection」 以及「NodeList」。其中HTMLCollection僅包含上面第一個元素節點，NodeList則包含以上三種。",
+      "class": "yellow"
+    },
+    {
+      "tag": "h2",
+      "text": "document.getElementById(id)"
+    },
+    {
+      "tag": "p",
+      "text": "getElementById()此介面的方法傳回Document一個對象，表示其屬性與指定字串匹配的Element元素。id由於元素 ID 在指定時必須是唯一的，因此它們是快速存取特定元素的有用方法。"
+    },
+    {
+      "tag": "precode",
+      "text": "<h1 id='myHeading1'>我的標題</h1>\n\n<script>\n    let myHeading = document.getElementById('myHeading1');    //將id叫做myHeading1的物件取得並放入變數myHeading中\n    console.log(myHeading)    //顯示取得的h1物件\n    \n</script>"
+    },
+    {
+      "tag": "p",
+      "text": "[157. get element by id or class 7:50🚧]"
+    }
+  ],
   [{ "title": "Version Control🚧" }],
   [
     { "title": "Ajax🚧" },
