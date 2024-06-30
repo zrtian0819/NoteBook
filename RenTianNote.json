@@ -1,9 +1,13 @@
 [
   [
-    { "title": "HTML知識點筆記🚧" },
+    { "title": "HTML🦴" },
+    {
+      "tag": "p",
+      "text": "HTML（Hypertext Markup Language），中文全名為「超文字標示語言」，是一種用來組織架構並呈現網頁內容的程式語言。網頁內容的組成可能包含了段落、清單、圖片或表格等。HTML 是一種基礎技術，常與 CSS、JavaScript 一起被眾多網站用於設計網頁、網頁應用程式以及行動應用程式的使用者介面。網頁瀏覽器可以讀取 HTML 檔案，並將其彩現成視覺化網頁。"
+    },
     {
       "tag": "h2",
-      "text": "HTML程式碼結構"
+      "text": "HTML基礎架構"
     },
     {
       "tag": "p",
@@ -11,7 +15,7 @@
     },
     {
       "tag": "precode",
-      "text": "<html>\n<head>\n<meta charset='utf-8'/>   <!--以utf-8編碼-->\n<title>人天的網頁</title>\n\n<style>\n<!--這裡放CSS-->\n</style>\n\n</head>\n<body>\n<h1></h1>\n<div></div>\n\n<script>\n<!--這裡放Javascript-->\n</script>\n</body>\n</html>"
+      "text": "<!DOCTYPE html>   <!-- 宣告瀏覽器要用什麼版本翻譯 -->\n<html>\n    <head>\n      <meta charset='UTF-8'>     <!-- 以「UTF-8」萬國碼編碼 -->\n      <meta name='viewport' content='width=device-width, initial-scale=1.0'>   <!-- 要使用RWD響應式網頁的程式碼 -->\n      <meta name='description' content='搜尋引擎上會呈列的引文'>\n      <meta name='ketwords' content='搜尋引擎搜尋的字串(用空格隔開)'>\n      \n      <title>人天的網頁</title>\n   \n   <style>\n     /*這裡放CSS*/ \n   </style>\n   \n    </head>\n    \n    <body>\n   \n     <!--這裡放各種元素-->\n\n   \n   <script>\n     // 這裡放JavaScript\n   </script>\n    </body>\n</html>"
     },
     {
       "tag": "h2",
@@ -39,7 +43,15 @@
     },
     {
       "tag": "h2",
-      "text": "語意標籤"
+      "text": "常用的特殊字元"
+    },
+    {
+      "tag": "precode",
+      "text": "<!--程式碼寫在內文的換行是沒有作用的-->\n\n<br>  <!--內文中的換行-->\n&nbsp;  <!--內文中的半形空格-->"
+    },
+    {
+      "tag": "h2",
+      "text": "語意標籤（Semantic Elements）"
     },
     {
       "tag": "p",
@@ -99,7 +111,15 @@
     },
     {
       "tag": "h2",
-      "text": "表格的製作"
+      "text": "圖片組"
+    },
+    {
+      "tag": "precode",
+      "text": "<figure>\n\n    <img src='images/600x400/peach-flowers.jpg' width='600' alt='粉紅色的花'>\n    <figcaption>圖片說明</figcaption>\n\n</figure>"
+    },
+    {
+      "tag": "h2",
+      "text": "表格"
     },
     {
       "tag": "p",
@@ -123,7 +143,7 @@
     },
     {
       "tag": "h2",
-      "text": "表單的製作"
+      "text": "表單"
     },
     {
       "tag": "p",
@@ -139,10 +159,39 @@
     }
   ],
   [
-    { "title": "CSS的知識點筆記🚧" },
+    { "title": "CSS🎨" },
     {
       "tag": "p",
-      "text": "太過於基礎未來再更新!"
+      "text": "CSS（階層式樣式表） 是一種用來設定網頁的樣式及佈局的語言。它能讓你在 HTML 文件中的元素上套用不同的頁面樣式，例如改變字體、顏色、尺寸、擺放位置、拆分為多欄，或是添加動畫效果和其他裝飾的特性。CSS 既非標準程式語言，也不是標記語言，而是一種風格頁面語言。透過 CSS，你可以為網頁元素指定不同的外觀和排版，使網頁更具吸引力且易於閱讀。"
+    },
+    {
+      "tag": "h2",
+      "text": "選擇器"
+    },
+    {
+      "tag": "b",
+      "text": "1. 通配符選擇器：使用「*」表示，選取頁面中所有元素，通常用於基本設定，例如設定字體或內外邊距。"
+    },
+    {
+      "tag": "b",
+      "text": "2. 元素（標籤）選擇器：選取某種元素的所有實例，例如 <p>、<h1>、<div> 等。"
+    },
+    {
+      "tag": "b",
+      "text": "3. 類別（Class）選擇器：根據元素的 Class 值選中某些元素，用於差異化樣式設定。"
+    },
+    {
+      "tag": "b",
+      "text": "4. ID 選擇器：根據元素的唯一 ID 值選中某個元素，每個 ID 在頁面中應該是唯一的。"
+    },
+    {
+      "tag": "precode",
+      "text": "selector {\n    屬性:屬性值;\n    ...\n}"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "盡可能不要使用id選擇器去選取物件，因為其權重太高不容易被覆蓋，且因為id具有唯一性，CSS只能選取到一個物件，故並不方便使用。"
     }
   ],
   [
