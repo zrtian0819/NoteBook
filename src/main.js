@@ -42,7 +42,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  LoadContents(1); //開發時暫時調用
+  // LoadContents(1); //開發時暫時調用
 
   function LoadContents(code) {
     // 把連結顯示於頁面
@@ -96,6 +96,8 @@ Lbtn.addEventListener("click", clickNev);
 
 function clickNev() {
   //開關導覽頁用的
+  window.navigator.vibrate(100);
+
   if (Nlist.style.width === "0%") {
     if (window.innerWidth < 768) {
       Nlist.style.width = "80%";
