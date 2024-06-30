@@ -96,7 +96,7 @@ Lbtn.addEventListener("click", clickNev);
 
 function clickNev() {
   //開關導覽頁用的
-  window.navigator.vibrate(100);
+  // window.navigator.vibrate(100);
 
   if (Nlist.style.width === "0%") {
     if (window.innerWidth < 768) {
