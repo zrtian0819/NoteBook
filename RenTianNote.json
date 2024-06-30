@@ -3,7 +3,7 @@
     { "title": "HTML🦴" },
     {
       "tag": "p",
-      "text": "HTML（Hypertext Markup Language），中文全名為「超文字標示語言」，是一種用來組織架構並呈現網頁內容的程式語言。網頁內容的組成可能包含了段落、清單、圖片或表格等。HTML 是一種基礎技術，常與 CSS、JavaScript 一起被眾多網站用於設計網頁、網頁應用程式以及行動應用程式的使用者介面。網頁瀏覽器可以讀取 HTML 檔案，並將其彩現成視覺化網頁。"
+      "text": "HTML(Hypertext Markup Language)，中文全名為「超文字標示語言」，是一種用來組織架構並呈現網頁內容的程式語言。網頁內容的組成可能包含了段落、清單、圖片或表格等。HTML 是一種基礎技術，常與 CSS、JavaScript 一起被眾多網站用於設計網頁、網頁應用程式以及行動應用程式的使用者介面。網頁瀏覽器可以讀取 HTML 檔案，並將其彩現成視覺化網頁。"
     },
     {
       "tag": "h2",
@@ -192,7 +192,68 @@
       "tag": "p",
       "class":"yellow",
       "text": "盡可能不要使用id選擇器去選取物件，因為其權重太高不容易被覆蓋，且因為id具有唯一性，CSS只能選取到一個物件，故並不方便使用。"
+    },
+    {
+      "tag": "a",
+      "text": "https://flukeout.github.io/"
+    },
+    {
+      "tag": "mark",
+      "text": "CSS Diner | 選擇器小遊戲"
+    },
+    {
+      "tag": "h2",
+      "text": "超連結選擇器"
+    },
+    {
+      "tag": "precode",
+      "text": "/*以下順序不可調換*/\n\na:link{ text-decorate:none; }  /*定義預設的超連結樣式*/\na:visited{ color:red; }  /*定義瀏覽過的超連結樣式*/\na:hover{ text-decoration:underline; color:green }  /*定義滑鼠移至的超連結樣式*/\na:active{ color:yellow; }  /*定義選取的超連結樣式*/"
+    },
+    {
+      "tag": "h2",
+      "text": "常用的屬性"
+    },
+    {
+      "tag": "b",
+      "text": "▲背景-background"
+    },
+    {
+      "tag": "b",
+      "text": "▲邊界-margin, padding"
+    },
+    {
+      "tag": "b",
+      "text": "▲邊框-border"
+    },
+    {
+      "tag": "b",
+      "text": "▲文字-font,text, line-height, letter-spacing ..."
+    },
+    {
+      "tag": "b",
+      "text": "▲清單-list-style"
+    },
+    {
+      "tag": "b",
+      "text": "▲並排-float,display"
+    },
+    {
+      "tag": "b",
+      "text": "▲定位-position"
+    },
+    {
+      "tag": "b",
+      "text": "▲溢位-overflow"
+    },
+    {
+      "tag": "h3",
+      "text": "背景-background"
+    },
+    {
+      "tag": "precode",
+      "text": ".class_1{\n    background-color: [屬性值]; /*設定的背景顏色*/\n    background-image: none | url(背景圖片網址) ; /*控制背景來源*/\n    background-attachment : [屬性值]; /*用於設定背景圖像的位置是在視口內固定，還是會隨著包含它的區塊滾動。這個屬性影響背景圖像的行為*/\n    background-repeat:[屬性值] ;  /*控制背景是否重複*/\n    background-position: [x] [y];  /*可以設定非重複背景出現的位置*/\n    background-size: [x] [y];  /*用於設定背景圖像的大小*/\n    \n}\n\n/*\n🔔background-attachment 有三種屬性\n fixed：背景相對於視口固定，即使元素有滾動機制，背景也不會隨著元素的內容滾動。\n local：背景相對於元素的內容固定，如果元素有滾動機制，背景會隨著元素的內容滾動。\n scroll：背景相對於元素本身固定，不會隨著元素的內容滾動。\n\n🔔background-repeat\n repeat 重複\n no-repeat 不重複\n repeat-x X方向重複\n repeat-y y方向重複\n \n🔔background-size\n cover：這個值會拉伸或縮放背景圖片，以完全覆蓋背景區域。如果圖片的寬高比例不同於背景區域，則部分圖片可能看不見。\n contain：這個值會縮放背景圖片，以完全容納在背景區域內。如果圖片的寬高比例不同於背景區域，則可能會出現空白區域。\n\n 如果使用具體的寬高值例如 50%、3em 或 12px。如果只提供一個值，則高度預設為 auto，即按比例縮放。\n\n 使用 auto auto，這會保持圖片的原始大小。\n\n*/"
     }
+
   ],
   [
     { "title": "JavaScript🚧" },

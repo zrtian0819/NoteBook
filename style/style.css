@@ -1,6 +1,7 @@
 * {
   /* border: 1px solid #000; */
   box-sizing: border-box;
+  scroll-behavior: smooth;
   /* font-family: "微軟正黑體", serif; */
 }
 
@@ -31,6 +32,7 @@ p {
   letter-spacing: 1.5px;
   text-align: justify;
   color: rgb(19, 19, 19);
+  line-height: 1.8rem;
   /* display: inline; */
   /* font-size: 0.9rem; */
 }
@@ -163,13 +165,13 @@ main {
   align-items: center;
   font-size: 22px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .selector:active {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.191);
-}
-
-.selector:hover {
+  transform: scale(0.9);
+  transition: 0s;
   background-color: #d65d3c;
 }
 
