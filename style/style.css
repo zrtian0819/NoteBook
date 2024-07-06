@@ -27,14 +27,14 @@ h5 {
 }
 
 p {
-  font-family: "Noto Sans TC", serif;
-  font-weight: 400;
-  letter-spacing: 1.5px;
+  font-family: "LXGW WenKai Mono TC", "Noto Sans TC", serif;
+  font-weight: 500;
+  letter-spacing: 1.3px;
   text-align: justify;
+  text-wrap: wrap;
   color: rgb(19, 19, 19);
   line-height: 1.8rem;
-  /* display: inline; */
-  /* font-size: 0.9rem; */
+  font-size: 1.1rem;
 }
 
 mark {
@@ -92,8 +92,7 @@ h2::before {
   margin-right: 5px;
 
   border-radius: 50%;
-  background-color: #F63737;
-
+  background-color: #f63737;
 }
 
 h3 {
@@ -127,11 +126,15 @@ header {
   /* background-color: #f7f1e4; */
   color: white;
   background-color: #324939;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 20px;
 }
 
-.headerElement {
+header * {
+  /* border: 1px solid #000; */
+}
+
+header .headerElement {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -144,6 +147,12 @@ main {
   transition: 0.5s;
 }
 
+main i {
+  font-size: 100px;
+  margin-top: 20px;
+  color: #324939;
+}
+
 .title {
   position: relative;
   letter-spacing: 1px;
@@ -154,8 +163,8 @@ main {
 }
 
 .selector {
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
 
   border-radius: 4px;
   background-color: #ea7756;
