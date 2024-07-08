@@ -39,9 +39,11 @@ p {
 
 mark {
   display: inline-block;
+  padding: 5px 15px;
   background-color: #f7c633;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  border-radius: 5px;
 }
 
 a {
@@ -50,9 +52,10 @@ a {
 }
 
 b {
-  color: #005597;
   display: block;
-  margin-bottom: 3px;
+  color: #005597;
+  margin: 10px 0;
+  font-size: 1.1rem;
 }
 
 main h1 {
@@ -61,6 +64,7 @@ main h1 {
   color: #324939;
   position: relative;
   left: 15px;
+  font-weight: 900;
   /* display: inline-block; */
   /* text-align: center; */
 }
@@ -72,14 +76,15 @@ main h1::before {
   background-color: #ea7756;
   width: 16px;
   height: 2.2rem;
-  left: -20px;
+  left: -25px;
+  top: 2px;
   margin-right: 5px;
 }
 
 h2 {
   margin: 50px 0 0 0;
   font-weight: bolder;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   transition: 0.3s;
   padding: 3px 0 3px 0;
 }
@@ -216,15 +221,45 @@ img {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 1px 1px 10px #e1e1e1;
+  transition: 0.5s;
+  margin: 10px 0;
+}
+
+img:hover {
+  scale: 1.2;
 }
 
 .yellow {
+  font-family: "LXGW WenKai Mono TC", "Noto Sans TC", serif;
   background-color: #f7f2c7;
   border-radius: 5px;
+  font-size: 1.2rem;
   font-weight: 700;
-  font-family: 微軟正黑體;
-  padding: 10px 20px 10px 20px;
-  box-shadow: 1px 1px 10px #e1e1e1;
+  padding: 15px 20px 10px;
+  box-shadow: 2px 2px 5px #bbb;
+  margin: 30px 0;
+  outline: 5px solid rgba(255, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.yellow::before {
+  content: "★";
+  color: red;
+  font-size: 2.5rem;
+  font-weight: 900;
+  position: absolute;
+  /* rotate: -20deg; */
+  translate: -10px -30px;
+}
+
+.yellow:hover {
+  outline: 3px solid rgba(255, 0, 0, 0);
+  outline-offset: 10px;
+}
+
+.yellow:active {
+  scale: 0.99;
+  transition: 0s;
 }
 
 @media (max-width: 768px) {
@@ -245,5 +280,9 @@ img {
 
   main {
     width: 85%;
+  }
+
+  img:hover {
+    scale: 1;
   }
 }
