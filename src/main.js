@@ -42,7 +42,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  LoadContents(1); //開發時暫時調用
+  // LoadContents(1); //開發時暫時調用
 
   function LoadContents(code) {
     // 把連結顯示於頁面
@@ -62,6 +62,10 @@ getJson().then(function (data) {
 
       if (tag == "precode") {
         let element = `<pre><code>${text}</code></pre>`;
+        // console.log(element);
+        contents += element;
+      } else if (tag == "h2") {
+        let element = `<${tag} id="${i}-${j}">${text}</${tag}>`;
         // console.log(element);
         contents += element;
       } else if (tag == "img") {
