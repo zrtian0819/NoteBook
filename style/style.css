@@ -5,6 +5,12 @@
   /* font-family: "微軟正黑體", serif; */
 }
 
+:root {
+  --mainColor: #324939;
+  --lightMainColor: #6e8c77;
+  --superlightMainColor: #edefe4;
+}
+
 body,
 html {
   margin: 0;
@@ -103,7 +109,7 @@ h2::before {
 h3 {
   margin-top: 20px;
   color: white;
-  background-color: #6e8c77;
+  background-color: var(--lightMainColor);
   padding: 5px;
   display: inline-block;
 }
@@ -130,7 +136,7 @@ header {
   z-index: 20;
   /* background-color: #f7f1e4; */
   color: white;
-  background-color: #324939;
+  background-color: var(--mainColor);
   padding: 8px;
   margin-bottom: 20px;
 }
@@ -155,7 +161,7 @@ main {
 main i {
   font-size: 100px;
   margin-top: 20px;
-  color: #324939;
+  color: var(--mainColor);
 }
 
 .title {
@@ -183,7 +189,7 @@ main i {
 }
 
 .selector:active {
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.191);
+  box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.191);
   transform: scale(0.9);
   transition: 0s;
   background-color: #d65d3c;
@@ -195,20 +201,27 @@ code {
 }
 
 .nevbar {
-  background-color: #edefe4;
+  background-color: var(--superlightMainColor);
   position: fixed;
   top: 0px;
   right: 0;
   /* height: calc(100vh + 50px); */
   height: 100%;
   width: 0;
-  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: -5px 0 20px 2px rgba(0, 0, 0, 0.7);
   z-index: 10;
   overflow-y: auto;
   transition: 0.3s;
   padding: 80px 20px 0 20px;
   opacity: 0;
   white-space: nowrap;
+  border-left: 20px solid var(--lightMainColor);
+}
+
+.nevbar li {
+  margin-bottom: 15px;
+  font-family: 微軟正黑體;
+  font-weight: 700;
 }
 
 .fade {
@@ -233,8 +246,8 @@ img:hover {
   font-family: "LXGW WenKai Mono TC", "Noto Sans TC", serif;
   background-color: #f7f2c7;
   border-radius: 5px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   padding: 15px 20px 10px;
   box-shadow: 2px 2px 5px #bbb;
   margin: 30px 0;
