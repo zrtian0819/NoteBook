@@ -201,7 +201,7 @@ main i {
   }
 
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 
     &:hover {
       font-weight: 600;
