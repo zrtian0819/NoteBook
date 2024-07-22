@@ -70,7 +70,7 @@ getJson().then(function (data) {
         contents += element;
       } else if (tag == "h2") {
         let element = `<${tag} id="${i}-${j}">${text}</${tag}>`;
-        let link = `<li><a href="#${i}-${j}">${text}</a></li>`
+        let link = `<a href="#${i}-${j}"><li>${text}</li></a>`
         // console.log(element);
         subTocContent += link;
         contents += element;

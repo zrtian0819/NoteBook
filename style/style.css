@@ -178,9 +178,10 @@ main i {
   box-shadow: 0 0 5px #ccc;
   padding: 20px;
   border-radius: 1rem;
-  transition: .4s;
+  transition: 0.8s;
 
   &:hover {
+    transition: 0.3s;
     opacity: 1;
     left: 3px;
 
@@ -197,14 +198,18 @@ main i {
   a:link {
     text-decoration: none;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-family: 微軟正黑體, Arial, Helvetica, sans-serif;
   }
 
   li {
     margin-bottom: 1rem;
+    padding: 0.4rem 0 0.4rem 0.8rem;
+    border-left: 3px solid white;
 
     &:hover {
       font-weight: 600;
+      background-color: var(--mainColor);
     }
   }
 
