@@ -1,7 +1,8 @@
 const main = document.querySelector(".MC");
 const ContList = document.querySelector(".Toc");
 const bodyP = document.querySelector("body");
-const subToc = document.querySelector(".subToc-ul")
+const subTocUl = document.querySelector(".subToc-ul")
+const subToc = document.querySelector(".subToc")
 console.log(subToc);
 
 // let ContentCode = "";
@@ -89,7 +90,13 @@ getJson().then(function (data) {
       }
     }
 
-    subToc.innerHTML = subTocContent;
+    if(subTocContent == ""){
+      subToc.style.display = "none"
+    }else{
+      subToc.style.display = "block"
+    }
+
+    subTocUl.innerHTML = `<h4>子目錄</h4>${subTocContent}`;
     main.innerHTML = contents; //內容渲染
     hljs.highlightAll(); // 將程式碼style渲染在頁面
   }
