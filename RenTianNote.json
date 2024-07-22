@@ -412,6 +412,262 @@
     },
     {
       "tag": "h2",
+      "text": "var、let、const"
+    },
+    {
+      "tag": "h3",
+      "text": "var"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "mark",
+      "text": "全域變數"
+    },
+    {
+      "tag": "mark",
+      "text": "可重複宣告"
+    },
+    {
+      "tag": "mark",
+      "text": "Hoisting"
+    },
+    {
+      "tag": "p",
+      "text": "宣告的變數具有函數作用域(function scope)，也就是說，變數在函數內部是局部的，在函數外部是全局的。同一作用域內可以重複宣告同名變數。宣告的變數會被提升到作用域的頂部，但變數初始化不會提升。"
+    },
+    {
+      "tag": "precode",
+      "text": "function example() {\n    console.log(x); // undefined\n    var x = 5;\n    console.log(x); // 5\n}\nexample();"
+    },
+    {
+      "tag": "h3",
+      "text": "let"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "mark",
+      "text": "區塊變數"
+    },
+    {
+      "tag": "mark",
+      "text": "不可重複宣告"
+    },
+    {
+      "tag": "mark",
+      "text": "Hoisting"
+    },
+    {
+      "tag": "p",
+      "text": "宣告的變數具有塊作用域（block scope），也就是說，變數在其宣告的代碼塊內是局部的。同一作用域內不能重複宣告同名變數。宣告的變數也會提升，但在變數宣告前使用會導致引用錯誤（ReferenceError）。"
+    },
+    {
+      "tag": "precode",
+      "text": "function example() {\n    console.log(x); // ReferenceError: x is not defined\n    let x = 5;\n    console.log(x); // 5\n}\nexample();"
+    },
+    {
+      "tag": "h3",
+      "text": "const"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "mark",
+      "text": "區塊常數"
+    },
+    {
+      "tag": "mark",
+      "text": "不可重複宣告"
+    },
+    {
+      "tag": "mark",
+      "text": "不可重新賦值"
+    },
+    {
+      "tag": "mark",
+      "text": "Hoisting"
+    },
+    {
+      "tag": "p",
+      "text": " 宣告的變數也具有塊作用域（block scope），類似於 let，同一作用域內不能重複宣告同名變數。宣告的變數必須在宣告時賦值，且之後不能重新賦值。宣告的變數也會提升，但在變數宣告前使用會導致引用錯誤（ReferenceError）。"
+    },
+    {
+      "tag": "h2",
+      "text": "typeof"
+    },
+    {
+      "tag": "p",
+      "text": "typeof 是 JavaScript 中的運算符，用於檢查變數或表達式的數據類型。它返回一個字符串，表示操作數的數據類型。"
+    },
+    {
+      "tag": "precode",
+      "text": "let a =10;\nconsole.log(a,typeof(a));    //number\n\nlet b =false;\nconsole.log(b,typeof(b));    //boolean\n\nlet c ='Hello';\nconsole.log(c,typeof(c));    //string\n\nlet d =[];\nconsole.log(d,typeof(d));    //object\n\nlet e ={};\nconsole.log(e,typeof(e));    //object\n"
+    },
+    {
+      "tag": "h2",
+      "text": "toString()"
+    },
+    {
+      "tag": "p",
+      "text": "用於將數據轉換為字符串。"
+    },
+    {
+      "tag": "precode",
+      "text": "//轉換數字\nlet num = 123;\nlet str = num.toString();\nconsole.log(str); // '123'\n\n//轉換布林值\nlet bool = true;\nlet str = bool.toString();\nconsole.log(str); // 'true'\n\n//轉換物件\nlet obj = { key: 'value' };\nlet str = obj.toString();\nconsole.log(str); // '[object Object]'"
+    },
+    {
+      "tag": "h2",
+      "text": "Number()"
+    },
+    {
+      "tag": "p",
+      "text": "用於將一個值轉換為數字類型。它可以處理各種類型的輸入，如字符串、布爾值和其他數字類型。"
+    },
+    {
+      "tag": "precode",
+      "text": "//轉換字串\nlet str = '123';\nlet num = Number(str); // 123\n\n//可以處理小數點\nlet str = '123.45';\nlet num = Number(str); // 123.45\n\n//布林值會被轉成0或1\nlet boolTrue = true;\nlet boolFalse = false;\nlet numTrue = Number(boolTrue); // 1\nlet numFalse = Number(boolFalse); // 0\n\n//處理非數字的數\nlet str = 'abc';\nlet num = Number(str); // NaN (Not-a-Number)\n\n//其它\nlet nullValue = null;\nlet num = Number(nullValue); // 0\n\nlet undefinedValue;\nlet num = Number(undefinedValue); // NaN\n\n"
+    },
+    {
+      "tag": "h3",
+      "text": "與parseInt()和parseFloat的區別"
+    },
+    {
+      "tag": "b",
+      "text": "parseInt()"
+    },
+    {
+      "tag": "p",
+      "text": "會解析字符串並返回整數，而 Number() 則會嘗試轉換整個字符串。"
+    },
+    {
+      "tag": "b",
+      "text": "parseFloat()"
+    },
+    {
+      "tag": "p",
+      "text": "會解析字符串並返回浮點數，而 Number() 會嘗試轉換整個字符串。"
+    },
+    {
+      "tag": "precode",
+      "text": "let str = '123abc';\nlet numParseInt = parseInt(str); // 123\nlet numParseFloat = parseFloat(str); // 123\nlet numNumber = Number(str); // NaN\n"
+    },
+    {
+      "tag": "h2",
+      "text": "Operator 運算符"
+    },
+    {
+      "tag": "p",
+      "text": "運算符 (Operators) 用於執行數值運算、字符串運算、比較和邏輯運算。"
+    },
+    {
+      "tag": "h3",
+      "text": "算數運算符"
+    },
+    {
+      "tag": "precode",
+      "text": "//加法\nlet sum = 5 + 3; // 8\nlet concatenated = 'Hello' + ' ' + 'World'; // 'Hello World'\n\n//減法\nlet difference = 5 - 3; // 2\n\n//乘法\nlet product = 5 * 3; // 15\n\n//除法\nlet quotient = 6 / 3; // 2\n\n//取餘數\nlet remainder = 5 % 2; // 1\n\n//求指數\nlet power = 2 ** 3; // 8\nlet power2 = Math.pow(2,3) // 8，此方法同上\n"
+    },
+    {
+      "tag": "h3",
+      "text": "賦值運算符"
+    },
+    {
+      "tag": "p",
+      "text": "賦值 (=)：將右側的值賦給左側的變量。"
+    },
+    {
+      "tag": "precode",
+      "text": "//將10賦予給x\nlet x = 10;\n\n\nlet x = 10;\nx += 5;  // x = x + 5的意思,x = 15\n"
+    },
+    {
+      "tag": "p",
+      "text": "減法賦值 (-=)、乘法賦值 (*=)、除法賦值 (/=)、取餘賦值 (%=)、指數賦值 (**=) 類似。"
+    },
+    {
+      "tag": "h3",
+      "text": "比較運算符"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h2",
       "text": "解構賦值"
     },
     {
