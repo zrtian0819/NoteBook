@@ -158,12 +158,56 @@ main {
   max-width: 960px;
   margin: auto;
   transition: 0.5s;
+  position: relative;
 }
 
 main i {
   font-size: 100px;
   margin-top: 20px;
   color: var(--mainColor);
+}
+
+.subToc {
+  position: fixed;
+  opacity: 0.1;
+  width: 250px;
+  top: 80px;
+  left: -240px;
+  background-color: var(--lightMainColor);
+  /* border: 1px solid #000; */
+  box-shadow: 0 0 5px #ccc;
+  padding: 20px;
+  border-radius: 1rem;
+  transition: .4s;
+
+  &:hover {
+    opacity: 1;
+    left: 3px;
+
+  }
+}
+
+.subToc-ul {
+  list-style: none;
+  margin: 0;
+
+  padding: 0;
+
+  a,
+  a:link {
+    text-decoration: none;
+    color: white;
+    font-size: 0.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
 }
 
 .title {
@@ -202,7 +246,7 @@ code {
   letter-spacing: 2px;
 }
 
-.nevbar {
+.navbar {
   background-color: var(--superlightMainColor);
   position: fixed;
   top: 0px;
@@ -220,7 +264,7 @@ code {
   border-left: 20px solid var(--lightMainColor);
 }
 
-.nevbar li {
+.navbar li {
   margin-bottom: 15px;
   font-family: 微軟正黑體;
   font-weight: 700;
@@ -295,6 +339,10 @@ img:hover {
 
   main {
     width: 85%;
+  }
+
+  .subToc {
+    /* display: none; */
   }
 
   img:hover {

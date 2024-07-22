@@ -596,75 +596,63 @@
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "通常回傳布林值。"
+    },
+    {
+      "tag": "precode",
+      "text": "//(==)檢查是否相等\nlet isEqual = (5 == '5'); // true\n\n//(===)檢查是否相等以外還檢查型別是否相同\nlet isStrictEqual = (5 === '5'); // false\n\n//(!=)值不相等與\nlet isNotEqual = (5 != '5'); // false\n\n//(!==)值或型別完全不相等\nlet isStrictNotEqual = (5 !== '5'); // true\n"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "大於 (>)、小於 (<)、大於或等於 (>=)、小於或等於 (<=)：進行數值比較。"
+    },
+    {
+      "tag": "h3",
+      "text": "邏輯運算符"    
+    },
+    {
+      "tag": "precode",
+      "text": "//And 兩個都是\nlet andResult = (true && false); // false\n\n//OR 其中一個是\nlet orResult = (true || false); // true\n\n//NOT 反轉布林\nlet notResult = (!true); // false"
+    },
+    {
+      "tag": "h3",
+      "text": "三元運算符"
+    },
+    {
+      "tag": "precode",
+      "text": "//條件 ? 條件成立回傳 : 條件不成立回傳 \n\n//範例\nlet age = 18;\nlet canVote = (age >= 18) ? 'Yes, you can vote.' : 'No, you cannot vote.';\nconsole.log(canVote); // 输出: Yes, you can vote."
+    },
+    {
+      "tag": "h3",
+      "text": "擴展運算符"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "擴展運算符(...)具有多種用途，尤其在處理陣列和物件時，非常有用，以下是常見的場景。"
     },
     {
-      "tag": "p",
-      "text": ""
+      "tag": "precode",
+      "text": "//用於陣列合併\nlet arr1 = [1, 2, 3];\nlet arr2 = [4, 5, 6];\nlet combined = [...arr1, ...arr2];\nconsole.log(combined); // 輸出: [1, 2, 3, 4, 5, 6]\n\n//用於複製陣列\nlet arr = [1, 2, 3];\nlet copy = [...arr];  //淺拷貝\nconsole.log(copy); // 輸出: [1, 2, 3]\n\n//用於添加陣列元素\nlet arr = [2, 3];\nlet newArr = [1, ...arr, 4];\nconsole.log(newArr); // 輸出: [1, 2, 3, 4]\n\n//用於將陣列拆給函數的參數用\nfunction sum(x, y, z) {\n  return x + y + z;\n}\n\nlet numbers = [1, 2, 3];\nconsole.log(sum(...numbers)); // 輸出: 6\n\n//用於字串轉陣列\nlet str = 'hello';\nlet chars = [...str];\nconsole.log(chars); // 輸出: ['h', 'e', 'l', 'l', 'o']\n\n//用於擴展物件\nlet obj1 = { a: 1, b: 2 };\nlet obj2 = { c: 3, ...obj1 };\nconsole.log(obj2); //輸出: { c: 3, a: 1, b: 2 }\n\n//用於解構賦值\nlet [first, ...rest] = [1, 2, 3, 4];\nconsole.log(first); // 輸出: 1\nconsole.log(rest);  // 輸出: [2, 3, 4]\n\n//用於合併物件\nlet obj1 = { a: 1 };\nlet obj2 = { b: 2 };\nlet merged = { ...obj1, ...obj2 };\nconsole.log(merged); // 輸出: { a: 1, b: 2 }\n\n//用於陣列插入\nlet arr1 = [1, 2, 5, 6];\nlet arr2 = [3, 4];\narr1.splice(2, 0, ...arr2);\nconsole.log(arr1); // 輸出: [1, 2, 3, 4, 5, 6]\n\n//用於取得物件屬性\nlet obj = { a: 1, b: 2, c: 3 };\nlet { a, ...rest } = obj;\nconsole.log(a);    // 輸出: 1\nconsole.log(rest); // 輸出: { b: 2, c: 3 }"
     },
     {
-      "tag": "p",
-      "text": ""
+      "tag": "h2",
+      "text": "條件判斷"
     },
     {
-      "tag": "p",
-      "text": ""
+      "tag": "h3",
+      "text": "if"
     },
     {
-      "tag": "p",
-      "text": ""
+      "tag": "precode",
+      "text": "let x = 10;\n\nif (x > 10) {\n  console.log('x is greater than 10');\n} else if (x === 10) {\n  console.log('x is 10');\n} else {\n  console.log('x is less than 10');\n}\n"
     },
     {
-      "tag": "p",
-      "text": ""
+      "tag": "h3",
+      "text": "switch"
     },
     {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
+      "tag": "precode",
+      "text": "let fruit = 'apple';\n\nswitch (fruit) {\n\n  case 'apple':\n    console.log('It's an apple');\n    break;  //如果忘記break則banana會一起輸出\n\n  case 'banana':\n    console.log('It's a banana');\n    break;\n\n  default:\n    //類似if判斷式的else\n    console.log('Unknown fruit');\n\n}\n"
     },
     {
       "tag": "h2",

@@ -1,6 +1,8 @@
 const main = document.querySelector(".MC");
 const ContList = document.querySelector(".Toc");
 const bodyP = document.querySelector("body");
+const subToc = document.querySelector(".subToc-ul")
+console.log(subToc);
 
 // let ContentCode = "";
 
@@ -42,7 +44,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  LoadContents(2); //開發時暫時調用
+  //LoadContents(2); //開發時暫時調用
 
   function LoadContents(code) {
     // 把連結顯示於頁面
@@ -51,6 +53,8 @@ getJson().then(function (data) {
     //匯入標題
     let MajorTilte = data[i][0].title;
     contents = `<h1 style="margin-bottom:20px;">${MajorTilte}</h1>`;
+
+    let subTocContent = "";
 
     //匯入內容
     for (let j = 1; j < data[i].length; j++) {
@@ -66,7 +70,9 @@ getJson().then(function (data) {
         contents += element;
       } else if (tag == "h2") {
         let element = `<${tag} id="${i}-${j}">${text}</${tag}>`;
+        let link = `<li><a href="#${i}-${j}">${text}</a></li>`
         // console.log(element);
+        subTocContent += link;
         contents += element;
       } else if (tag == "img") {
         let element = `<${tag} src="${text}">`;
@@ -83,6 +89,7 @@ getJson().then(function (data) {
       }
     }
 
+    subToc.innerHTML = subTocContent;
     main.innerHTML = contents; //內容渲染
     hljs.highlightAll(); // 將程式碼style渲染在頁面
   }
@@ -90,7 +97,7 @@ getJson().then(function (data) {
 
 // 按鈕的製作
 const Lbtn = document.querySelector(".selector");
-const Nlist = document.querySelector(".nevbar");
+const Nlist = document.querySelector(".navbar");
 
 // console.log(Nlist);
 // console.log(window.innerWidth);
