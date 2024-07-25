@@ -38,6 +38,7 @@ getJson().then(function (data) {
 
     t.addEventListener("click", function () {
       LoadContents(k);
+      scrollToTop();
       clickNav2();
     });
   }
@@ -47,6 +48,7 @@ getJson().then(function (data) {
 
   //LoadContents(2); //開發時暫時調用
 
+  //載入頁面
   function LoadContents(code) {
     // 把連結顯示於頁面
     let i = code;
@@ -99,77 +101,58 @@ getJson().then(function (data) {
     subTocUl.innerHTML = `<h4>子目錄</h4>${subTocContent}`;
     main.innerHTML = contents; //內容渲染
     hljs.highlightAll(); // 將程式碼style渲染在頁面
-  }
-});
-
-// 按鈕的製作
-const Lbtn = document.querySelector(".selector");
-const Nlist = document.querySelector(".navbar");
-
-// console.log(Nlist);
-// console.log(window.innerWidth);
-
-Lbtn.addEventListener("click", clickNav2);
-$("nav").click(clickNav2);
-// bodyP.addEventListener("click",clickNav);
-
-/*
-function clickNav() {
-  //開關導覽頁用的
-  // window.navigator.vibrate(100);
-
-  if (Nlist.style.width === "0%") {
-    if (window.innerWidth < 768) {
-      Nlist.style.width = "80%";
-      bodyP.classList.add("fade");
-    } else {
-      Nlist.style.width = "40%";
     }
+  });
 
-    Nlist.style.opacity = "1";
-  } else {
-    Nlist.style.width = "0%";
-    Nlist.style.opacity = "0";
-    bodyP.classList.remove("fade");
+
+  //讓頁面捲至最上面
+  function scrollToTop(){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // 添加平滑滾動效果
+    });
   }
-}
-  */
+
+  // 按鈕的製作
+  const Lbtn = document.querySelector(".selector");
+  const Nlist = document.querySelector(".navbar");
+
+  Lbtn.addEventListener("click", clickNav2);
+  $("nav").click(clickNav2);
 
 
-function clickNav2(){
-    $("nav").toggleClass("nav-open")
-    $(".navbar").toggleClass("navbar-open")
-}
-
-
-
-function escapeHtml(str) {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-//滾動滑鼠打開與收合navbar的功能
-const navbar = document.getElementById("navbar");
-let prevScrollPos = window.pageYOffset;
-
-// 監聽滾動事件
-window.addEventListener("scroll", () => {
-  const currentScrollPos = window.pageYOffset;
-  // console.log(prevScrollPos + " | " + currentScrollPos);
-  // 判斷滾動方向
-  if (prevScrollPos > currentScrollPos) {
-    // 向上滾動，顯示導覽列
-    navbar.style.transition = "0.3s";
-    navbar.style.top = "0";
-  } else {
-    // 向下滾動，隱藏導覽列
-    navbar.style.transition = "2s";
-    navbar.style.top = "-100px";
+  function clickNav2(){
+      $("nav").toggleClass("nav-open")
+      $(".navbar").toggleClass("navbar-open")
   }
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  //滾動滑鼠打開與收合navbar的功能
+  const navbar = document.getElementById("navbar");
+  let prevScrollPos = window.pageYOffset;
+
+  // 監聽滾動事件
+  window.addEventListener("scroll", () => {
+    const currentScrollPos = window.pageYOffset;
+    // console.log(prevScrollPos + " | " + currentScrollPos);
+    // 判斷滾動方向
+    if (prevScrollPos > currentScrollPos) {
+      // 向上滾動，顯示導覽列
+      navbar.style.transition = "0.3s";
+      navbar.style.top = "0";
+    } else {
+      // 向下滾動，隱藏導覽列
+      navbar.style.transition = "2s";
+      navbar.style.top = "-100px";
+    }
 
   prevScrollPos = currentScrollPos;
 });
