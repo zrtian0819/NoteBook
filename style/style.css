@@ -127,7 +127,7 @@ h3 {
 }
 
 .point:active {
-  font-size: 1.05rem;
+  scale: 0.97;
 }
 
 header {
@@ -151,6 +151,7 @@ header .headerElement {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 main {
@@ -159,6 +160,7 @@ main {
   margin: auto;
   transition: 0.5s;
   position: relative;
+  z-index: 2;
 }
 
 main i {
@@ -209,7 +211,7 @@ main i {
   }
 
   li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     padding: 0.4rem 0 0.4rem 0.8rem;
     border-left: 3px solid white;
     user-select: none;
@@ -234,7 +236,7 @@ main i {
 .selector {
   height: 45px;
   width: 45px;
-
+  margin-right: 15px;
   border-radius: 4px;
   background-color: #ea7756;
   /* box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.954); */
@@ -258,28 +260,54 @@ code {
   letter-spacing: 2px;
 }
 
+nav {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: left;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: 0.5s;
+  opacity: 0;
+
+}
+
+.nav-open {
+  user-select: auto;
+  display: block;
+  opacity: 1;
+}
+
 .navbar {
   background-color: var(--superlightMainColor);
   position: fixed;
-  top: 0px;
+  top: 0;
   right: 0;
-  /* height: calc(100vh + 50px); */
   height: 100%;
-  width: 0;
-  box-shadow: -5px 0 20px 2px rgba(0, 0, 0, 0.7);
-  z-index: 10;
-  overflow-y: auto;
+  width: 0%;
   transition: 0.3s;
+  z-index: 5;
+  box-shadow: -5px 0 20px 2px rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
   padding: 80px 20px 0 20px;
   opacity: 0;
   white-space: nowrap;
   border-left: 20px solid var(--lightMainColor);
 }
 
+.navbar-open {
+  width: 40%;
+  opacity: 1;
+  transition: 0.5s;
+}
+
 .navbar li {
   margin-bottom: 15px;
   font-family: 微軟正黑體;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 
 .fade {
@@ -343,10 +371,15 @@ img:hover {
     left: 0;
   }
 
+  .navbar-open {
+    width: 90%;
+  }
+
   .selector {
     height: 30px;
     width: 30px;
     font-size: 16px;
+    margin-right: 5px;
   }
 
   main {

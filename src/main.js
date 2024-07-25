@@ -38,7 +38,7 @@ getJson().then(function (data) {
 
     t.addEventListener("click", function () {
       LoadContents(k);
-      clickNev();
+      clickNav2();
     });
   }
 
@@ -109,10 +109,12 @@ const Nlist = document.querySelector(".navbar");
 // console.log(Nlist);
 // console.log(window.innerWidth);
 
-Lbtn.addEventListener("click", clickNev);
-// bodyP.addEventListener("click",clickNev);
+Lbtn.addEventListener("click", clickNav2);
+$("nav").click(clickNav2);
+// bodyP.addEventListener("click",clickNav);
 
-function clickNev() {
+/*
+function clickNav() {
   //開關導覽頁用的
   // window.navigator.vibrate(100);
 
@@ -131,6 +133,15 @@ function clickNev() {
     bodyP.classList.remove("fade");
   }
 }
+  */
+
+
+function clickNav2(){
+    $("nav").toggleClass("nav-open")
+    $(".navbar").toggleClass("navbar-open")
+}
+
+
 
 function escapeHtml(str) {
   return str
