@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  transition: 1s;
+  /* transition: 1s; */
 }
 
 h1,
@@ -176,10 +176,11 @@ main i {
   top: 80px;
   left: -235px;
   background-color: var(--lightMainColor);
-  /* border: 1px solid #000; */
-  box-shadow: 0 0 5px #ccc;
+  z-index: 5;
+
+  box-shadow: 3px 0 10px #777;
   padding: 20px;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 1.3rem 1.3rem 0;
   transition: 0.8s;
 
   &:hover {
@@ -199,7 +200,6 @@ main i {
 .subToc-ul {
   list-style: none;
   margin: 0;
-
   padding: 0;
 
   a,
