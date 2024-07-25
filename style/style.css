@@ -6,11 +6,20 @@
 }
 
 :root {
+  /*2024.07.25以前色調
   --mainColor: #324939;
   --lightMainColor: #6e8c77;
   --superlightMainColor: #edefe4;
   --contrastColor: #ea7756;
+  */
+
+  --mainColor: #6db5ca;
+  --lightMainColor: #b8d8e0;
+  --superlightMainColor: #fcf5ef;
+  --contrastColor: #ff7235;
 }
+
+
 
 body,
 html {
@@ -132,7 +141,7 @@ h3 {
 }
 
 header {
-  box-shadow: 0 2px 3px #555;
+  /* box-shadow: 0 2px 3px #555; */
   position: sticky;
   top: 0;
   z-index: 20;
@@ -202,6 +211,7 @@ main i {
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow-y: auto;
 
   a,
   a:link {
