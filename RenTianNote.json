@@ -656,6 +656,186 @@
     },
     {
       "tag": "h2",
+      "text": "陣列遍歷的方法"
+    },
+    {
+      "tag": "h3",
+      "text": "forEach()"
+    },
+    {
+      "tag": "p",
+      "text": "forEach 方法是一種遍歷陣列的方法。它允許你為陣列中的每一個元素執行指定的回調函數。forEach 方法不會返回新的陣列，而是對每一個元素執行回調函數。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.forEach(function(currentValue, index, array) {\n    // 你的代碼\n});\n\n//currentValue: 當前處理的元素。\n//index（可選）：當前處理元素的索引。\n//array（可選）：正在遍歷的陣列。"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const fruits = ['apple', 'banana', 'mango'];\n\nfruits.forEach(function(fruit, index) {\n    console.log(`${index}: ${fruit}`);\n});\n"
+    },
+    {
+      "tag": "b",
+      "text": "注意事項"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "1. forEach無法使用break跳出迴圈，如果須要此種行為，請改用for迴圈或some、every。2.forEach方法不會影響或改變原始陣列。"
+    },
+    {
+      "tag": "h3",
+      "text": "filter()"
+    },
+    {
+      "tag": "p",
+      "text": "filter 方法用於創建一個新陣列，該陣列包含所有通過指定回調函數測試的元素。這個方法不會改變原始陣列。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "const newArray = array.filter(function(element, index, array) {\n    // 測試條件，返回 true 或 false\n});\n\n//element: 當前處理的元素。\n//index（可選）：當前處理元素的索引。\n//array（可選）：正在遍歷的陣列。"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "numbers = [1, 2, 3, 4, 5];\nlet nums = numbers.filter(function (myNum) {\n    return myNum > 3;\n});\n\nconsole.log(nums);  //[4,5]\n"
+    },
+    {
+      "tag": "b",
+      "text": "注意事項"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "1. filter方法返回的新陣列可能是空的，如果沒有任何元素通過回調函數的測試。2. 回調函數中的邏輯需要返回布林值 true 或 false，以決定當前元素是否應包含在新陣列中。"
+    },
+    {
+      "tag": "h3",
+      "text": "find()"
+    },
+    {
+      "tag": "p",
+      "text": "find 方法用於遍歷陣列並返回第一個符合提供的測試函數的元素。如果沒有符合條件的元素，則返回 undefined。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "const foundElement = array.find(function(element, index, array) {\n    // 測試條件，返回 true 或 false\n});\n\n//element: 當前處理的元素。\n//index（可選）：當前處理元素的索引。\n//array（可選）：正在遍歷的陣列。"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const numbers = [5, 12, 8, 130, 44];\n\nconst found = numbers.find(function(number) {\n    return number > 10;\n});\n\nconsole.log(found); // 12\n"
+    },
+    {
+      "tag": "b",
+      "text": "注意事項"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "1. find 方法不會改變原始陣列。2. 回調函數中的邏輯需要返回布林值 true 或 false，以決定當前元素是否符合條件。3. 如果陣列中有多個元素符合條件，find 僅返回第一個符合條件的元素。"
+    },
+    {
+      "tag": "h3",
+      "text": "map()"
+    },
+    {
+      "tag": "p",
+      "text": "map 方法用於建立一個新陣列，這個新陣列中的每個元素都是通過調用提供的函數對原陣列中的每個元素進行處理後得到的結果。map 不會改變原始陣列。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "const newArray = array.map(function(element, index, array) {\n    // 你的處理邏輯\n    return newElement;\n});\n\n//element: 當前處理的元素。\n//index（可選）：當前處理元素的索引。\n//array（可選）：正在遍歷的陣列。"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "let scores = [51, 21, 62, 63, 36, 78];\nlet newScores = scores.map(function (score) {\n    return score * 2;\n});\nconsole.log(newScores);  //[102,42,124,126,72,156]"
+    },
+    {
+      "tag": "b",
+      "text": "注意事項"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "1. map 方法返回的新陣列長度與原始陣列相同。2. map 方法不會改變原始陣列，但回調函數中的操作可以改變原始陣列的元素。3. 回調函數需要有一個返回值，這個返回值將構成新陣列的元素。"
+    },
+    {
+      "tag": "mark",
+      "text": "大陣列縮減成小陣列"
+    },
+    {
+      "tag": "p",
+      "text": "有時候我們從別處獲取的陣列通常資料量非常大，我們可以重新map一次，將需要的部分重新轉換成一個新的陣列加以利用，以方便閱讀及節省效能。"
+    },
+    {
+      "tag": "precode",
+      "text": "//資料縮減的方法\n\nlet people2 = people.map(function (user) {\n    let newPerson = {};\n    newPerson.name = user.name;\n    newPerson.gender = user.gender;\n    return newPerson;\n});"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h2",
       "text": "解構賦值"
     },
     {
