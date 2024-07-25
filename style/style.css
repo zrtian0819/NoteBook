@@ -61,7 +61,32 @@ mark {
   margin-bottom: 0.5rem;
   font-weight: 600;
   border-radius: 5px;
-  margin-right: 5px;
+  margin-right: 10px;
+
+}
+
+mark:hover {
+  animation: heartbeat 0.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    scale: 1;
+  }
+
+  25% {
+    scale: 1.03;
+    rotate: -1deg;
+  }
+
+  75% {
+    scale: 1.03;
+    rotate: 1deg;
+  }
+
+  100% {
+    scale: 1;
+  }
 }
 
 a {
@@ -138,10 +163,12 @@ h2:hover::after {
 
 h3 {
   margin-top: 20px;
+  margin-right: 20px;
   color: var(--lightMainTextColor);
   background-color: var(--lightMainColor);
-  padding: 5px;
+  padding: 7px;
   display: inline-block;
+
 }
 
 .point {

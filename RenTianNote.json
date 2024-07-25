@@ -656,7 +656,103 @@
     },
     {
       "tag": "h2",
-      "text": "陣列遍歷的方法"
+      "text": "基本陣列操作"
+    },
+    {
+      "tag": "p",
+      "text": "JavaScript 的陣列（Array）對象提供了許多方法來操作和處理數據。"
+    },
+    {
+      "tag": "h3",
+      "text": "push()、pop()"
+    },
+    {
+      "tag": "mark",
+      "text": "操作最後一個元素"
+    },
+    {
+      "tag": "b",
+      "text": "push：在陣列末尾添加一個或多個元素，並返回新的陣列長度。"
+    },
+    {
+      "tag": "b",
+      "text": "pop：移除陣列的最後一個元素，並返回該元素。"
+    },
+    {
+      "tag": "precode",
+      "text": "const array = [1, 2, 3];\narray.push(4); // [1, 2, 3, 4]\nconst lastElement = array.pop(); // [1, 2, 3], lastElement = 4\n"
+    },
+    {
+      "tag": "h3",
+      "text": "shift()、unshift()"
+    },
+    {
+      "tag": "mark",
+      "text": "操作第一個元素"
+    },
+    {
+      "tag": "b",
+      "text": "shift：移除陣列的第一個元素，並返回該元素。"
+    },
+    {
+      "tag": "b",
+      "text": "unshift：在陣列開頭添加一個或多個元素，並返回新的陣列長度。"
+    },
+    {
+      "tag": "precode",
+      "text": "const array = [1, 2, 3];\nconst firstElement = array.shift(); // [2, 3], firstElement = 1\narray.unshift(0); // [0, 2, 3]\n"
+    },
+    {
+      "tag": "h3",
+      "text": "concat()"
+    },
+    {
+      "tag": "mark",
+      "text": "合併陣列"
+    },
+    {
+      "tag": "b",
+      "text": "concat：合併兩個或多個陣列，不改變原始陣列，並返回新陣列。"
+    },
+    {
+      "tag": "precode",
+      "text": "const array1 = [1, 2];\nconst array2 = [3, 4];\nconst newArray = array1.concat(array2); // [1, 2, 3, 4]\n"
+    },
+    {
+      "tag": "h3",
+      "text": "slice()"
+    },
+    {
+      "tag": "mark",
+      "text": "切割陣列"
+    },
+    {
+      "tag": "b",
+      "text": "slice：返回陣列的一部分，從 start 到 end（不包括 end），不改變原始陣列。"
+    },
+    {
+      "tag": "precode",
+      "text": "const array = [1, 2, 3, 4, 5];\nconst slicedArray = array.slice(1, 3); // [2, 3]\n"
+    },
+    {
+      "tag": "h3",
+      "text": "splice()"
+    },
+    {
+      "tag": "mark",
+      "text": "從中插入或刪除元素"
+    },
+    {
+      "tag": "b",
+      "text": "splice：從陣列中添加或移除元素，並返回被移除的元素。"
+    },
+    {
+      "tag": "precode",
+      "text": "//splice(索引,要移除的元素個數[,要插入的第一筆資料,要插入的第二筆資料...])\n\nconst array = [1, 2, 3, 4, 5];\nconst removedElements = array.splice(2, 2); // [3, 4], array = [1, 2, 5]\narray.splice(1, 0, 'a', 'b'); // array = [1, 'a', 'b', 2, 5]\n\n"
+    },
+    {
+      "tag": "h2",
+      "text": "進階陣列操作"
     },
     {
       "tag": "h3",
@@ -803,8 +899,12 @@
       "text": "//資料縮減的方法\n\nlet people2 = people.map(function (user) {\n    let newPerson = {};\n    newPerson.name = user.name;\n    newPerson.gender = user.gender;\n    return newPerson;\n});"
     },
     {
+      "tag": "h2",
+      "text": "更新中🚧..."
+    },
+    {
       "tag": "p",
-      "text": ""
+      "text": "還有reduce、findIndex、some、every、includes、indexOf、lastIndexOf、join、sort、reverse還沒有寫到"
     },
     {
       "tag": "p",
