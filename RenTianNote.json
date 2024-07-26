@@ -688,6 +688,74 @@
     },
     {
       "tag": "h2",
+      "text": "迴圈 loop"
+    },
+    {
+      "tag": "p",
+      "text": "在 JavaScript 中，迴圈（loop）是用來重複執行一段程式碼的結構。不同的迴圈可以用來遍歷陣列、物件或執行重複的計算。"
+    },
+    {
+      "tag": "h3",
+      "text": "for"
+    },
+    {
+      "tag": "p",
+      "text": "for 迴圈是最常用的迴圈之一，用於在知道迴圈執行次數的情況下進行迭代。"
+    },
+    {
+      "tag": "precode",
+      "text": "// 基本語法\nfor (initialization; condition; increment) {\n    // 迴圈內的程式碼\n}\n\n//initialization：初始化變數。\n//condition：每次迭代前檢查的條件。\n//increment：每次迭代後的增量（或減量）。\n\n// 範例\nfor (let i = 0; i < 5; i++) {\n    console.log(i); // 輸出: 0 1 2 3 4\n}\n"
+    },
+    {
+      "tag": "h3",
+      "text": "for...in"
+    },
+    {
+      "tag": "p",
+      "text": "for...in 迴圈用於遍歷物件的可列舉屬性。"
+    },
+    {
+      "tag": "precode",
+      "text": "// 基本語法\nfor (let key in object) {\n    // 迴圈內的程式碼\n}\n\n//key：物件的每個屬性名稱。\n//object：要遍歷的物件。\n\n// 範例\nlet person = { name: 'Alice', age: 25 };\nfor (let key in person) {\n    console.log(key + ': ' + person[key]);\n}\n// 輸出:\n// name: Alice\n// age: 25\n"
+    },
+    {
+      "tag": "h3",
+      "text": "for...of"
+    },
+    {
+      "tag": "p",
+      "text": "for...of 迴圈用於遍歷可迭代物件（如陣列、字串、Map、Set 等）的值。"
+    },
+    {
+      "tag": "precode",
+      "text": "// 基本語法\nfor (let value of iterable) {\n    // 迴圈內的程式碼\n}\n\n//value：可迭代物件中的每個值。\n//iterable：要遍歷的可迭代物件。\n\n// 範例\nlet numbers = [1, 2, 3, 4, 5];\nfor (let number of numbers) {\n    console.log(number); // 輸出: 1 2 3 4 5\n}\n"
+    },
+    {
+      "tag": "h3",
+      "text": "while"
+    },
+    {
+      "tag": "p",
+      "text": "while 迴圈在條件為 true 時執行迴圈內的程式碼。當條件為 false 時，迴圈停止。"
+    },
+    {
+      "tag": "precode",
+      "text": "// 基本語法\nwhile (condition) {\n    // 迴圈內的程式碼\n}\n\n//condition：每次迭代前檢查的條件。如果條件為 true，則執行迴圈內容。\n\n// 範例\nlet i = 0;\nwhile (i < 5) {\n    console.log(i); // 輸出: 0 1 2 3 4\n    i++;\n}\n"
+    },
+    {
+      "tag": "h3",
+      "text": "do...while"
+    },
+    {
+      "tag": "p",
+      "text": "do...while 迴圈至少執行一次，然後再檢查條件。"
+    },
+    {
+      "tag": "precode",
+      "text": "// 基本語法\ndo {\n    // 迴圈內的程式碼\n} while (condition);\n\n//condition：每次迭代後檢查的條件。如果條件為 true，則繼續執行迴圈內容。\n\n// 範例\nlet i = 0;\ndo {\n    console.log(i); // 輸出: 0 1 2 3 4\n    i++;\n} while (i < 5);\n"
+    },
+    {
+      "tag": "h2",
       "text": "函式 function"
     },
     {
