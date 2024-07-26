@@ -500,7 +500,7 @@
     },
     {
       "tag": "h2",
-      "text": "typeof"
+      "text": "typeof()"
     },
     {
       "tag": "p",
@@ -653,6 +653,18 @@
     {
       "tag": "precode",
       "text": "let fruit = 'apple';\n\nswitch (fruit) {\n\n  case 'apple':\n    console.log('It's an apple');\n    break;  //如果忘記break則banana會一起輸出\n\n  case 'banana':\n    console.log('It's a banana');\n    break;\n\n  default:\n    //類似if判斷式的else\n    console.log('Unknown fruit');\n\n}\n"
+    },
+    {
+      "tag": "h2",
+      "text": "function"
+    },
+    {
+      "tag": "p",
+      "text": "在 JavaScript 中，函數 (function) 是一段可以被多次調用的程式碼。"
+    },
+    {
+      "tag": "precode",
+      "text": "function callName(name='Jack', name2='Sue'){      // name可以設定預設值 沒有設定則會出現undefined\n            console.log(`Hello, ${name}, I'm ${name2}`);\n}\n\ncallName()  //呼叫函數的方法\ncallName('Joe','Steven')\ncallName('May')"
     },
     {
       "tag": "h2",

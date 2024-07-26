@@ -20,6 +20,37 @@
   --lightMainTextColor: #333;
 }
 
+/* 整個滾輪 */
+::-webkit-scrollbar {
+  width: 12px;
+  /* 寬度 */
+  height: 12px;
+  /* 高度 */
+}
+
+/* 滾動槽 */
+::-webkit-scrollbar-track {
+  background: var(--lightMainColor);
+  /* 背景顏色 */
+  border-radius: 10px;
+  /* 圓角 */
+}
+
+/* 滾動條 */
+::-webkit-scrollbar-thumb {
+  background: #FFBF6B;
+  /* 背景顏色 */
+  border-radius: 10px;
+  /* 圓角 */
+}
+
+/* 滾動條懸停效果 */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--contrastColor);
+  /* 背景顏色 */
+}
+
+
 
 
 body,
@@ -229,7 +260,8 @@ main i {
   position: fixed;
   opacity: 0.1;
   width: 250px;
-  top: 80px;
+  top: 50%;
+  translate: 0 -50%;
   left: -235px;
   background-color: var(--lightMainColor);
   z-index: 5;
@@ -238,6 +270,9 @@ main i {
   padding: 20px;
   border-radius: 0 1.3rem 1.3rem 0;
   transition: 0.8s;
+
+  overflow-y: auto;
+  height: 80vh;
 
   &:hover {
     transition: 0.3s;
@@ -257,7 +292,7 @@ main i {
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
+
 
   a,
   a:link {
