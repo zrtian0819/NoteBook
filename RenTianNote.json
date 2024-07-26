@@ -385,7 +385,7 @@
     }
   ],
   [
-    { "title": "JavaScript🚧" },
+    { "title": "JavaScript🧩" },
     {
       "tag": "mark",
       "text": "以下收錄一些重要知識點。"
@@ -528,7 +528,7 @@
     },
     {
       "tag": "p",
-      "text": "用於將一個值轉換為數字類型。它可以處理各種類型的輸入，如字符串、布爾值和其他數字類型。"
+      "text": "用於將一個值轉換為數字類型。它可以處理各種類型的輸入，如字符串、布林值和其他數字類型。"
     },
     {
       "tag": "precode",
@@ -560,7 +560,7 @@
     },
     {
       "tag": "h2",
-      "text": "Operator 運算符"
+      "text": "運算符 Operator"
     },
     {
       "tag": "p",
@@ -636,11 +636,27 @@
     },
     {
       "tag": "h2",
-      "text": "條件判斷"
+      "text": "條件判斷 if & switch"
     },
     {
       "tag": "h3",
       "text": "if"
+    },
+    {
+      "tag": "p",
+      "text": "if 語句根據條件的布爾值來決定是否執行代碼塊。"
+    },
+    {
+      "tag": "b",
+      "text": "語法"
+    },
+    {
+      "tag": "precode",
+      "text": "if (條件) {\n    // 當條件為真時執行的代碼\n} else if (其他條件) {\n    // 當其他條件為真時執行的代碼\n} else {\n    // 當上述條件都不為真時執行的代碼\n}\n"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
     },
     {
       "tag": "precode",
@@ -651,12 +667,28 @@
       "text": "switch"
     },
     {
+      "tag": "p",
+      "text": "switch 語句根據表達式的值來執行對應的代碼塊。"
+    },
+    {
+      "tag": "b",
+      "text": "語法"
+    },
+    {
       "tag": "precode",
-      "text": "let fruit = 'apple';\n\nswitch (fruit) {\n\n  case 'apple':\n    console.log('It's an apple');\n    break;  //如果忘記break則banana會一起輸出\n\n  case 'banana':\n    console.log('It's a banana');\n    break;\n\n  default:\n    //類似if判斷式的else\n    console.log('Unknown fruit');\n\n}\n"
+      "text": "switch (表達式) {\n    case 值1:\n        // 當表達式的值等於 值1 時執行的代碼\n        break;\n    case 值2:\n        // 當表達式的值等於 值2 時執行的代碼\n        break;\n    // 其他 case\n    default:\n        // 當表達式的值不匹配任何 case 時執行的代碼\n}\n"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "let fruit = 'apple';\n\nswitch (fruit) {\n\n  case 'apple':\n    console.log('It's an apple');\n    break;  //如果此處忘記break則會導致此區塊不中斷，讓下面的banana會一起輸出\n\n  case 'banana':\n    console.log('It's a banana');\n    break;\n\n  default:\n    //類似if判斷式的else\n    console.log('Unknown fruit');\n\n}\n"
     },
     {
       "tag": "h2",
-      "text": "function"
+      "text": "函式 function"
     },
     {
       "tag": "p",
@@ -665,6 +697,118 @@
     {
       "tag": "precode",
       "text": "function callName(name='Jack', name2='Sue'){      // name可以設定預設值 沒有設定則會出現undefined\n            console.log(`Hello, ${name}, I'm ${name2}`);\n}\n\ncallName()  //呼叫函數的方法\ncallName('Joe','Steven')\ncallName('May')"
+    },
+    {
+      "tag": "p",
+      "text": "使用return能將函式內的資料往外丟。"
+    },
+    {
+      "tag": "mark",
+      "text": "return"
+    },
+    {
+      "tag": "precode",
+      "text": "function callName(name){\n    let welcome= `Hello, ${name}.`;\nreturn welcome;     //return可以將函式內的資料丟出函式\n}\n\nlet str1 = callName('Joe')\nconsole.log(str1);  //'Hello, Joe'"
+    },
+    {
+      "tag": "p",
+      "text": "另外一種的函式宣告方式:"
+    },
+    {
+      "tag": "mark",
+      "text": "default value"
+    },
+    {
+      "tag": "precode",
+      "text": "//另外一種的宣告方式\nlet callName = function( name1='Jack' , name2='May' ){\n    //可以利用上方括號內方法設定預設值，若沒有傳值進來則函數會用預設值替代。\n\n    console.log(`Hello, ${name1}, I'm ${name2}.`);\n}\n\ncallName();\ncallName('Tom','Sam');"
+    },
+    {
+      "tag": "h3",
+      "text": "IIFE"
+    },
+    {
+      "tag": "p",
+      "text": "IIFE（Immediately Invoked Function Expression，即時執行函數表達式）是一種 JavaScript 函數，這種函數在定義後立即執行。IIFE 通常用來創建一個新的作用域，避免變量污染全局空間。"
+    },
+    {
+      "tag": "b",
+      "text": "語法"
+    },
+    {
+      "tag": "precode",
+      "text": "(function() {\n    // 函數主體\n})();\n// 或者\n(function() {\n    // 函數主體\n}());\n"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "//立即執行function的方法\nlet hello = function(name){\n    console.log(`Hello, ${name}.`);\n}('Jack');\n\n//可直接不定義名稱\n(function(){\n    console.log('IIFE');\n})();\n"
+    },
+    {
+      "tag": "b",
+      "text": "創建獨立作用域，可避免變量汙染全局的命名空間"
+    },
+    {
+      "tag": "precode",
+      "text": "let result = (function() {\n    let privateVariable = 'I am private';\n    return privateVariable;\n})();\n\nconsole.log(result); // 輸出: I am private\n\n"
+    },
+    {
+      "tag": "h2",
+      "text": "陣列 array"
+    },
+    {
+      "tag": "p",
+      "text": "在 JavaScript 中，陣列（Array）是一種用於存儲多個值的資料結構。陣列可以包含任何類型的資料，包括數字、字串、物件、甚至其他陣列。"
+    },
+    {
+      "tag": "h3",
+      "text": "陣列的宣告"
+    },
+    {
+      "tag": "precode",
+      "text": "let arr = []; // 宣告一個空陣列\nlet numbers = [1, 2, 3, 4, 5]; // 宣告一個包含數字的陣列\nlet mixed = [1, 'two', true, null, undefined, {name: 'Alice'}, [6, 7]]; // 宣告一個混合類型的陣列\n"
+    },
+    {
+      "tag": "b",
+      "text": "使用構造函數"
+    },
+    {
+      "tag": "precode",
+      "text": "let arr = new Array(); // 宣告一個空陣列\nlet numbers = new Array(1, 2, 3, 4, 5); // 宣告一個包含數字的陣列\n"
+    },
+    {
+      "tag": "h3",
+      "text": "訪問與修改陣列中的元素"
+    },
+    {
+      "tag": "b",
+      "text": "訪問"
+    },
+    {
+      "tag": "precode",
+      "text": "let numbers = [1, 2, 3, 4, 5];\nconsole.log(numbers[0]); // 輸出: 1\nconsole.log(numbers[2]); // 輸出: 3\n"
+    },
+    {
+      "tag": "b",
+      "text": "修改"
+    },
+    {
+      "tag": "precode",
+      "text": "numbers[0] = 10;\nconsole.log(numbers); // 輸出: [10, 2, 3, 4, 5]\n"
+    },
+    {
+      "tag": "h3",
+      "text": "length"
+    },
+    {
+      "tag": "p",
+      "text": "length 屬性可以獲取陣列的長度(即陣列中元素的數量)。"
+    },
+    {
+      "tag": "precode",
+      "text": "let numbers = [1, 2, 3, 4, 5];\nconsole.log(numbers.length); // 輸出: 5\n"
     },
     {
       "tag": "h2",
@@ -911,40 +1055,99 @@
       "text": "//資料縮減的方法\n\nlet people2 = people.map(function (user) {\n    let newPerson = {};\n    newPerson.name = user.name;\n    newPerson.gender = user.gender;\n    return newPerson;\n});"
     },
     {
+      "tag": "h3",
+      "text": "reduce()"
+    },
+    {
+      "tag": "p",
+      "text": "reduce 是 JavaScript 陣列上的一個高階方法，用於對陣列中的每個元素執行一個 reducer 函數，最終將其彙總為單個值。reduce 可以用來實現從簡單的加總到複雜的資料結構轉換等多種操作。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.reduce(callback(accumulator, currentValue, currentIndex, array), initialValue)\n\n\n//callback：一個在陣列的每個元素上執行的函數，包含四個參數：\n\n//accumulator（累加器）：回調函數的返回值的累積。\n//currentValue（當前值）：正在處理的陣列元素。\n//currentIndex（當前索引）：正在處理的陣列元素的索引。\n//array（原始陣列）：調用 reduce 的陣列。\n\n//initialValue（初始值）：作為第一次調用回調函數時 accumulator 的值。如果未提供初始值，則將使用陣列中的第一個元素，並從第二個元素開始執行回調函數。"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "let numbers = [1, 2, 3, 4, 5];\n\n//陣列中值的加總\nlet sum = numbers.reduce(function(accumulator, currentValue) {\n    return accumulator + currentValue;\n}, 0);\n\nconsole.log(sum); // 輸出: 15\n\n//陣列中值的乘積\nlet product = numbers.reduce(function(accumulator, currentValue) {\n    return accumulator * currentValue;\n}, 1);\n\nconsole.log(product); // 輸出: 120\n"
+    },
+    {
+      "tag": "mark",
+      "text": "將陣列中的基數偶數分開"
+    },
+    {
+      "tag": "precode",
+      "text": "let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nlet grouped = numbers.reduce(function(accumulator, currentValue) {\n    if (currentValue % 2 === 0) {\n        accumulator.evens.push(currentValue);\n    } else {\n        accumulator.odds.push(currentValue);\n    }\n    return accumulator;\n}, { evens: [], odds: [] });\n\nconsole.log(grouped);\n// 輸出: { evens: [2, 4, 6, 8], odds: [1, 3, 5, 7, 9] }\n"
+    },
+    {
+      "tag": "mark",
+      "text": "陣列中重複值的計數器"
+    },
+    {
+      "tag": "p",
+      "text": "以下以水果陣列為範例"
+    },
+    {
+      "tag": "precode",
+      "text": "let fruits = ['apple', 'banana', 'orange', 'apple', 'orange', 'banana', 'banana'];\nlet fruitCount = fruits.reduce(function(accumulator, currentFruit) {\n    if (accumulator[currentFruit]) {    //判斷累加的物件中是否有此水果\n        accumulator[currentFruit]++;\n    } else {\n        accumulator[currentFruit] = 1;\n    }\n    return accumulator;\n}, {});\n\nconsole.log(fruitCount);\n// 輸出: { apple: 2, banana: 3, orange: 2 }"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "reduce 非常靈活，可以用來實現多種資料處理需求，但由於其功能強大，可能會增加代碼的複雜度。\n使用 reduce 時，確保你了解每次迭代中 accumulator 和 currentValue 的變化，以免邏輯錯誤。"
+    },
+    {
+      "tag": "h3",
+      "text": "some()"
+    },
+    {
+      "tag": "p",
+      "text": "在 JavaScript 中，some 是一個陣列方法，用於測試陣列中的至少一個元素是否通過提供的測試函數。只要有一個元素通過測試，some 方法就會返回 true，否則返回 false。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.some(callback(element, index, array), thisArg)\n\n\n//callback：一個用來測試每個元素的函數，接收三個參數：\n\n//element：當前處理的元素。\n//index（可選）：當前處理的元素的索引。\n//array（可選）：正在操作的陣列。\n//thisArg（可選）：執行 callback 時，用作 this 的值。"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "let numbers = [1, 2, 3, 4, 5];\n\nlet hasEven = numbers.some(function(element) {\n    return element % 2 === 0;\n});\n\nconsole.log(hasEven); // 輸出: true (因為有偶數)"
+    },
+    {
+      "tag": "mark",
+      "text": "使用thisArg"
+    },
+    {
+      "tag": "precode",
+      "text": "let validator = {\n    minAge: 18,\n    isValid: function(element) {\n        return element.age >= this.minAge;\n    }\n};\n\nlet people = [\n    { name: 'John', age: 16 },\n    { name: 'Jane', age: 22 }\n];\n\nlet allValid = people.some(validator.isValid, validator);\n\nconsole.log(allValid); // 輸出: true (因為至少有一個人的年齡大於或等於18歲)\n"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "some 方法不會改變原始陣列。\n一旦 callback 函數返回 true，some 方法會立即返回 true，不會繼續檢查後面的元素。\n如果陣列是空的，some 方法將直接返回 false。"
+    },
+    {
       "tag": "h2",
-      "text": "更新中🚧..."
+      "text": "未完成🚧..."
     },
     {
       "tag": "p",
-      "text": "還有reduce、findIndex、some、every、includes、indexOf、lastIndexOf、join、sort、reverse還沒有寫到"
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
+      "class":"yellow",
+      "text": "還有every、includes、findIndex、indexOf、lastIndexOf、join、sort、reverse還沒有寫到🚧..."
     },
     {
       "tag": "h2",
@@ -988,7 +1191,7 @@
     }
   ],
   [
-    { "title": "DOM元素的操作🚧" },
+    { "title": "DOM🚧" },
     {
       "tag": "h2",
       "text": "介紹"

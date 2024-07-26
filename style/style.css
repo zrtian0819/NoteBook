@@ -106,12 +106,12 @@ mark:hover {
   }
 
   25% {
-    scale: 1.03;
+    scale: 1.01;
     rotate: -1deg;
   }
 
   75% {
-    scale: 1.03;
+    scale: 1.01;
     rotate: 1deg;
   }
 
@@ -258,18 +258,18 @@ main i {
 
 .subToc {
   position: fixed;
-  opacity: 0.1;
-  width: 250px;
+  opacity: 0.05;
+  width: 300px;
   top: 50%;
   translate: 0 -50%;
-  left: -235px;
+  left: -285px;
   background-color: var(--lightMainColor);
   z-index: 5;
 
   box-shadow: 3px 0 10px #777;
   padding: 20px;
   border-radius: 0 1.3rem 1.3rem 0;
-  transition: 0.8s;
+  transition: 0.5s;
 
   overflow-y: auto;
   height: 80vh;
@@ -307,9 +307,10 @@ main i {
     padding: 0.4rem 0 0.4rem 0.8rem;
     border-left: 3px solid white;
     user-select: none;
+    font-weight: 600;
 
     &:hover {
-      font-weight: 600;
+      font-weight: 800;
       background-color: var(--mainColor);
     }
   }
@@ -487,10 +488,10 @@ img:hover {
   }
 
   .subToc {
-    /* display: none; */
-  }
+    width: 80vw;
+    left: -75vw;
 
-  img:hover {
-    scale: 1;
+    img:hover {
+      scale: 1;
+    }
   }
-}
