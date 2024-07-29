@@ -93,6 +93,7 @@ mark {
   font-weight: 600;
   border-radius: 5px;
   margin-right: 10px;
+  user-select: none;
 
 }
 
@@ -194,11 +195,13 @@ h2:hover::after {
 
 h3 {
   margin-top: 20px;
-  margin-right: 20px;
+  margin: 20px 10px 0 0;
   color: var(--lightMainTextColor);
   background-color: var(--lightMainColor);
-  padding: 7px;
+  padding: 7px 15px;
   display: inline-block;
+  font-weight: 900;
+
 
 }
 
@@ -349,8 +352,14 @@ main i {
 }
 
 code {
-  margin-left: 5px;
-  letter-spacing: 2px;
+  /* margin-left: 10px; */
+  padding: 25px 0 25px 25px !important;
+  letter-spacing: 3px;
+  line-height: 1.7rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  /* box-shadow: 0 0 5px #aaa; */
 }
 
 nav {
@@ -495,3 +504,4 @@ img:hover {
       scale: 1;
     }
   }
+}
