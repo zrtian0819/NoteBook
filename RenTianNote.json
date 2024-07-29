@@ -1209,13 +1209,211 @@
       "text": "some 方法不會改變原始陣列。\n一旦 callback 函數返回 true，some 方法會立即返回 true，不會繼續檢查後面的元素。\n如果陣列是空的，some 方法將直接返回 false。"
     },
     {
-      "tag": "h2",
-      "text": "未完成🚧..."
+      "tag": "h3",
+      "text": "every()"
+    },
+    {
+      "tag": "p",
+      "text": "every 方法是 JavaScript 中用於檢查陣列中所有元素是否都滿足指定條件的一個方法。當所有元素都滿足條件時，它返回 true，否則返回 false。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.every(callback(element[, index[, array]])[, thisArg])\n\n/*\nelement: 當前處理的元素。\nindex（可選）: 當前處理元素的索引。\narray（可選）: 調用 every 方法的陣列。\nthisArg（可選）: 執行回調函數時用作 this 的值。\n*/"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "//檢查陣列中的值是否皆大於0\nconst numbers = [1, 2, 3, 4, 5];\n\nconst allPositive = numbers.every(function(number) {\n  return number > 0;\n});\n\nconsole.log(allPositive); // 輸出: true\n\n\n//檢查陣列中的值是否皆為字串格式\nconst items = ['apple', 'banana', 'cherry'];\n\nconst allStrings = items.every(function(item) {\n  return typeof item === 'string';\n});\n\nconsole.log(allStrings); // 輸出: true\n\n"
     },
     {
       "tag": "p",
       "class":"yellow",
-      "text": "還有every、includes、findIndex、indexOf、lastIndexOf、join、sort、reverse還沒有寫到🚧..."
+      "text": "every方法並不會改變原始陣列。如果處理的是空陣列則方法會直接回傳 true 因為沒有違反任何條件。every方法遇到第一個不滿足條件的元素時停止迭代不會繼續檢查後面的元素。"
+    },
+    {
+      "tag": "h3",
+      "text": "includes()"
+    },
+    {
+      "tag": "p",
+      "text": "includes 方法是 JavaScript 中用於判斷陣列或字串是否包含指定元素的一個方法。當包含時，它返回 true，否則返回 false。這個方法對於檢查元素或子字串是否存在非常有用。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.includes(searchElement[, fromIndex])\n\n/*\nsearchElement: 需要查找的元素。\nfromIndex\n*/"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const fruits = ['apple', 'banana', 'mango', 'orange'];\n\nconst hasBanana = fruits.includes('banana');\nconsole.log(hasBanana); // 輸出: true\n\nconst hasGrapes = fruits.includes('grapes');\nconsole.log(hasGrapes); // 輸出: false\n\n\n//從特定索引開始搜尋\nconst fruits = ['apple', 'banana', 'mango', 'orange'];\n\nconst hasBananaFromIndex2 = fruits.includes('banana', 2);\nconsole.log(hasBananaFromIndex2); // 輸出: false\n\n"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "字串也可以使用includes方法。其大小寫是敏感的，若搜尋的對象有大小寫之分，還是會視為false。如果傳入的fromIndex索引值為-1則會從陣列或字串的末尾開始。"
+    },
+    {
+      "tag": "h3",
+      "text": "join()"
+    },
+    {
+      "tag": "p",
+      "text": "join 方法是 JavaScript 中用於將陣列的所有元素連接成一個字串的一個方法。它通過指定的分隔符來連接每個元素，並返回一個新的字串。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.join([separator])\n\n/*\nseparator（可選）: 用於分隔陣列元素的字串。如果省略，默認使用逗號（,）。\n*/"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const elements = ['Fire', 'Wind', 'Earth', 'Water'];\n\nconst result = elements.join();  //默認為逗號\nconsole.log(result); // 輸出: 'Fire,Wind,Earth,Water'\n\n\n\n//另外一種結果\nconst elements = ['Fire', 'Wind', 'Earth', 'Water'];\n\nconst result = elements.join(' - ');\nconsole.log(result); // 輸出: 'Fire - Wind - Earth - Water'\n"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "join 方法不會改變原陣列，它僅返回一個新的字串。分隔符號可以是空字串，則陣列元素將直接連接在一起，沒有任何分隔符。陣列元素為 undefined 或 null：這些元素在連接時會被轉換為空字串。"
+    },
+    {
+      "tag": "h3",
+      "text": "sort()"
+    },
+    {
+      "tag": "p",
+      "text": "sort 方法是 JavaScript 中用於對陣列中的元素進行排序的一個方法。默認情況下，sort 會按照字串的Unicode碼點順序對元素進行排序，但可以通過傳入比較函數來實現自定義排序。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.sort([compareFunction])\n\n/*\ncompareFunction（可選）：用來指定排序順序的函數。如果省略，元素將按照字串的Unicode碼點順序進行排序。\n*/\n"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const fruits = ['banana', 'apple', 'cherry'];\nfruits.sort();\nconsole.log(fruits); // 輸出: ['apple', 'banana', 'cherry']\n"
+    },
+    {
+      "tag": "b",
+      "text": "自定義排序"
+    },
+    {
+      "tag": "mark",
+      "text": "升序排序數字"
+    },
+    {
+      "tag": "precode",
+      "text": "const numbers = [4, 2, 5, 1, 3];\nnumbers.sort((a, b) => a - b);\nconsole.log(numbers); // 輸出: [1, 2, 3, 4, 5]\n"
+    },
+    {
+      "tag": "mark",
+      "text": "降序排序數字"
+    },
+    {
+      "tag": "precode",
+      "text": "const numbers = [4, 2, 5, 1, 3];\nnumbers.sort((a, b) => b - a);\nconsole.log(numbers); // 輸出: [5, 4, 3, 2, 1]\n"
+    },
+    {
+      "tag": "mark",
+      "text": "按字串長度排序"
+    },
+    {
+      "tag": "precode",
+      "text": "const words = ['banana', 'apple', 'cherry', 'date'];\nwords.sort((a, b) => a.length - b.length);\nconsole.log(words); // 輸出: ['date', 'apple', 'banana', 'cherry']\n"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "此方法會改變原陣列，排序過程中，undefined 元素通常會被移到陣列末尾。sort 方法的實現因瀏覽器而異，某些情況下可能會導致不穩定排序（即相同元素的相對順序可能會改變）。然而，現代瀏覽器中大多數實現都是穩定的。對於較大的陣列，使用高效的比較函數非常重要，以避免性能問題。"
+    },
+    {
+      "tag": "h3",
+      "text": "reverse()"
+    },
+    {
+      "tag": "p",
+      "text": "reverse 方法是 JavaScript 中用於反轉陣列中元素順序的方法。它會改變原陣列，將陣列中元素的順序顛倒過來。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.reverse()"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const numbers = [1, 2, 3, 4, 5];\nnumbers.reverse();\nconsole.log(numbers); // 輸出: [5, 4, 3, 2, 1]\n\n\nconst fruits = ['apple', 'banana', 'cherry'];\nfruits.reverse();\nconsole.log(fruits); // 輸出: ['cherry', 'banana', 'apple']\n"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "reverse 方法會直接改變原陣列，並返回被反轉的陣列。這意味著操作是不可逆的，原陣列的元素順序將被永久改變，除非再進行一次 reverse 操作如果陣列中包含 undefined 元素，這些元素在反轉過程中也會被正常處理。"
+    },
+    {
+      "tag": "h3",
+      "text": "indexOf()"
+    },
+    {
+      "tag": "p",
+      "text": "indexOf 方法是 JavaScript 中用於在數組或字串中查找指定元素或子字串第一次出現位置的一個方法。當找到匹配元素時，它返回該元素的第一個索引，否則返回 -1。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "array.indexOf(searchElement[, fromIndex])\n\n/*\nsearchElement: 需要查找的元素。\nfromIndex（可選）: 開始搜索的索引。默認值為 0。如果為負數，則從數組末尾開始計算索引。\n*/"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const fruits1 = ['apple', 'banana', 'cherry', 'banana'];\nconst index = fruits1.indexOf('banana');\nconsole.log(index); // 輸出: 1\n\n\n//找不到元素時\nconst fruits2 = ['apple', 'banana', 'cherry'];\nconst index = fruits2.indexOf('grape');\nconsole.log(index); // 輸出: -1\n\n//從特定索引開始搜尋\nconst fruits3 = ['apple', 'banana', 'cherry', 'banana'];\nconst index = fruits3.indexOf('banana', 2);\nconsole.log(index); // 輸出: 3\n\n"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "indexOf 在字串中也可以使用，其也是大小寫敏感的。indexOf 方法在查找數組中 NaN 時會返回 -1，因為 NaN 與自身不相等。如果 fromIndex 是負數，則計算開始位置將從數組或字串的末尾開始。在陣列中查找 undefined 時，indexOf 可以正常找到。"
+    },
+    {
+      "tag": "p",
+      "class":"yellow",
+      "text": "findIndex、lastIndexOf還沒有寫到🚧..."
     },
     {
       "tag": "h2",

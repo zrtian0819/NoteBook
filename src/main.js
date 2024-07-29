@@ -46,7 +46,7 @@ getJson().then(function (data) {
   let contents = "";
   let i = 0;
 
-  //LoadContents(2); //開發時暫時調用
+  LoadContents(2); //開發時暫時調用
 
   //載入頁面
   function LoadContents(code) {
@@ -120,12 +120,13 @@ getJson().then(function (data) {
   Lbtn.addEventListener("click", clickNav2);
   $("nav").click(clickNav2);
 
-
+  //<第二版>點擊選單
   function clickNav2(){
       $("nav").toggleClass("nav-open")
       $(".navbar").toggleClass("navbar-open")
   }
 
+  //轉換字元
   function escapeHtml(str) {
     return str
       .replace(/&/g, "&amp;")
