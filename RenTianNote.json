@@ -2,6 +2,10 @@
   [
     { "title": "HTML🦴" },
     {
+      "tag": "mark",
+      "text": "內容過於基礎 暫時停更"
+    },
+    {
       "tag": "p",
       "text": "HTML(Hypertext Markup Language)，中文全名為「超文字標示語言」，是一種用來組織架構並呈現網頁內容的程式語言。網頁內容的組成可能包含了段落、清單、圖片或表格等。HTML 是一種基礎技術，常與 CSS、JavaScript 一起被眾多網站用於設計網頁、網頁應用程式以及行動應用程式的使用者介面。網頁瀏覽器可以讀取 HTML 檔案，並將其彩現成視覺化網頁。"
     },
@@ -161,6 +165,14 @@
   [
     { "title": "CSS🎨" },
     {
+      "tag": "mark",
+      "text": "內容過於基礎 暫時停更"
+    },
+    {
+      "tag": "h2",
+      "text": "介紹"
+    },
+    {
       "tag": "p",
       "text": "CSS（階層式樣式表） 是一種用來設定網頁的樣式及佈局的語言。它能讓你在 HTML 文件中的元素上套用不同的頁面樣式，例如改變字體、顏色、尺寸、擺放位置、拆分為多欄，或是添加動畫效果和其他裝飾的特性。CSS 既非標準程式語言，也不是標記語言，而是一種風格頁面語言。透過 CSS，你可以為網頁元素指定不同的外觀和排版，使網頁更具吸引力且易於閱讀。"
     },
@@ -194,15 +206,31 @@
       "text": "盡可能不要使用id選擇器去選取物件，因為其權重太高不容易被覆蓋，且因為id具有唯一性，CSS只能選取到一個物件，故並不方便使用。"
     },
     {
+      "tag": "mark",
+      "text": "MDN CSS 各種選擇器查詢"
+    },
+    {
       "tag": "a",
-      "text": "https://flukeout.github.io/"
+      "text": "https://developer.mozilla.org/zh-TW/docs/Glossary/CSS_Selector"
+    },
+    {
+      "tag": "p",
+      "text": ""
     },
     {
       "tag": "mark",
       "text": "CSS Diner | 選擇器小遊戲"
     },
     {
-      "tag": "h2",
+      "tag": "a",
+      "text": "https://flukeout.github.io/"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h3",
       "text": "超連結選擇器"
     },
     {
@@ -387,10 +415,6 @@
   [
     { "title": "JavaScript🧩" },
     {
-      "tag": "mark",
-      "text": "以下收錄一些重要知識點。"
-    },
-    {
       "tag": "h2",
       "text": "介紹"
     },
@@ -412,7 +436,7 @@
     },
     {
       "tag": "h2",
-      "text": "宣告 var、let、const"
+      "text": "宣告變數與常數"
     },
     {
       "tag": "h3",
@@ -1496,6 +1520,14 @@
       "text": "// 取得目前時間的方法\nlet now = new Date();\n\n//利用js內建的時間函數可以取得該計時單位的值\nlet year = now.getFullYear();\nlet date = now.getDate();\nlet month = now.getMonth() + 1;\nlet weekday = now.getDay();\nlet hrs = now.getHours();\nlet min = now.getMinutes();\nlet sec = now.getSeconds();\n\n//做成格式為: 2024/07/22(Mon) 15:34:00\nmonth = month < 10 ? '0' + month : month;\nhrs = hrs < 10 ? '0' + hrs : hrs;\nmin = min < 10 ? '0' + min : min;\nsec = sec < 10 ? '0' + sec : sec;\n\nlet weekdaysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nweekday = weekdaysName[weekday];\nconsole.log(`${year}/${month}/${date}(${weekday}) ${hrs}:${min}:${sec}`);"
     },
     {
+      "tag": "mark",
+      "text": "時間格式套件 | Moment.js"
+    },
+    {
+      "tag": "a",
+      "text": "https://momentjs.com/"
+    },
+    {
       "tag": "h2",
       "text": "解構賦值👍"
     },
@@ -1732,6 +1764,78 @@
     {
       "tag": "p",
       "text": "[157. get element by id or class 7:50🚧]"
+    },
+    {
+      "tag": "h2",
+      "text": "函式庫"
+    },
+    {
+      "tag": "h3",
+      "text": "動畫函式庫"
+    },
+    {
+      "tag": "mark",
+      "text": "GSAP"
+    },
+    {
+      "tag": "a",
+      "text": "https://gsap.com/"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h3",
+      "text": "圖表函式庫"
+    },
+    {
+      "tag": "mark",
+      "text": "Chart.js"
+    },
+    {
+      "tag": "a",
+      "text": "https://www.chartjs.org/"
+    },
+    {
+      "tag": "mark",
+      "text": "D3.js"
+    },
+    {
+      "tag": "a",
+      "text": "https://d3js.org/"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h3",
+      "text": "3D函式庫"
+    },
+    {
+      "tag": "mark",
+      "text": "Three.js"
+    },
+    {
+      "tag": "a",
+      "text": "https://threejs.org/"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h3",
+      "text": "地圖函式庫"
+    },
+    {
+      "tag": "mark",
+      "text": "leaflet.js"
+    },
+    {
+      "tag": "a",
+      "text": "https://leafletjs.com/"
     }
   ],
   [

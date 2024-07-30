@@ -149,25 +149,25 @@ img {
 
 main h1 {
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #222;
   position: relative;
   left: 15px;
   font-weight: 900;
-  /* display: inline-block; */
-  /* text-align: center; */
+  text-align: center;
 }
 
 main h1::before {
   content: "";
   display: inline-block;
-  position: absolute;
+  position: relative;
   background-color: var(--contrastColor);
   width: 16px;
-  height: 2.2rem;
-  left: -25px;
-  top: 2px;
-  margin-right: 5px;
+  height: 2rem;
+  line-height: 2rem;
+  /* left: -25px; */
+  top: 3px;
+  margin-right: 10px;
 }
 
 h2 {
