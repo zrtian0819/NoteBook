@@ -133,6 +133,20 @@ b {
   font-size: 1.1rem;
 }
 
+img {
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px #e1e1e1;
+  transition: 0.5s;
+  margin: 10px 0;
+
+  &:hover {
+    /* scale: 1.2; */
+  }
+}
+
 main h1 {
   font-weight: 900;
   font-size: 2rem;
@@ -424,19 +438,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-img {
-  width: 100%;
-  border: 1px solid #e1e1e1;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 1px 1px 10px #e1e1e1;
-  transition: 0.5s;
-  margin: 10px 0;
-}
 
-img:hover {
-  scale: 1.2;
-}
 
 .yellow {
   font-family: "LXGW WenKai Mono TC", "Noto Sans TC", serif;
@@ -510,9 +512,6 @@ img:hover {
   .subToc {
     width: 80vw;
     left: -75vw;
-
-    img:hover {
-      scale: 1;
-    }
   }
+
 }

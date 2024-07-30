@@ -412,7 +412,7 @@
     },
     {
       "tag": "h2",
-      "text": "var、let、const"
+      "text": "宣告 var、let、const"
     },
     {
       "tag": "h3",
@@ -504,7 +504,7 @@
     },
     {
       "tag": "h2",
-      "text": "typeof()"
+      "text": "型別判斷 typeof()"
     },
     {
       "tag": "p",
@@ -516,7 +516,7 @@
     },
     {
       "tag": "h2",
-      "text": "toString()"
+      "text": "轉換字串 toString()"
     },
     {
       "tag": "p",
@@ -528,7 +528,7 @@
     },
     {
       "tag": "h2",
-      "text": "Number()"
+      "text": "轉換數值 Number()"
     },
     {
       "tag": "p",
@@ -825,6 +825,26 @@
     {
       "tag": "precode",
       "text": "let result = (function() {\n    let privateVariable = 'I am private';\n    return privateVariable;\n})();\n\nconsole.log(result); // 輸出: I am private\n\n"
+    },
+    {
+      "tag": "h3",
+      "text": "bind()"
+    },
+    {
+      "tag": "p",
+      "text": "bind 是 JavaScript 中 Function 對象的一個方法，用於創建一個新的函數，當這個新函數被調用時，其 this 關鍵字會被設置為指定的值，並且可以在創建時為新函數預先設定一部分參數。"
+    },
+    {
+      "tag": "precode",
+      "text": "fun.bind(thisArg[, arg1[, arg2[, ...]]])\n\n/*\nthisArg: 調用綁定函數時，this 關鍵字的值。\narg1, arg2, ...: 預設的參數，這些參數會在綁定函數被調用時，依次作為參數傳入。\n*/"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "let objA={\n    name: 'Joe',\n}\n\nlet objB={\n    name: 'Jack',\n    writeName(age){\n        console.log(`${this.name}'s age is ${age} years old.`);\n    }\n}\n\nobjB.writeName(20);\n\n//將 objB 的function給 objA 用,並可以帶入參數。\nlet func = objB.writeName.bind(objA,22);  \nconsole.log(func);\n\nfunc();\nconsole.log(objA);\n\n\n//可以定義好function再帶參數進去\nlet func1 = objB.writeName.bind(objA);\nfunc1(15);\nfunc1(10);\nconsole.log(func1);"
     },
     {
       "tag": "h2",
@@ -1415,13 +1435,69 @@
       "text": "indexOf 在字串中也可以使用，其也是大小寫敏感的。indexOf 方法在查找數組中 NaN 時會返回 -1，因為 NaN 與自身不相等。如果 fromIndex 是負數，則計算開始位置將從數組或字串的末尾開始。在陣列中查找 undefined 時，indexOf 可以正常找到。"
     },
     {
+      "tag": "h3",
+      "text": "findIndex()"
+    },
+    {
+      "tag": "p",
+      "text": "findIndex 是 JavaScript 中 Array 對象的一個方法，用於找到第一個滿足提供的測試函數的陣列元素的索引。若找不到符合條件的元素，則返回 -1。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "arr.findIndex(callback(element[, index[, array]])[, thisArg])\n\n/*\ncallback: 用於測試每個元素的函數，接受三個參數：\nelement: 當前正在處理的元素。\nindex（可選）：當前正在處理的元素的索引。\narray（可選）：調用 findIndex 的數組。\nthisArg（可選）：執行回調時用作 this 的對象。\n*/"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "//範例1\nconst array = [5, 12, 8, 130, 44];\n\n// 找到第一個大於 10 的元素的索引\nconst index = array.findIndex(element => element > 10);\n\nconsole.log(index); // 輸出: 1\nconsole.log(array[index]); // 輸出: 12\n\n\n//範例2\nconst inventory = [\n  { name: 'apple', quantity: 2 },\n  { name: 'banana', quantity: 0 },\n  { name: 'cherry', quantity: 5 }\n];\n\n// 找到第一個數量為 0 的水果的索引\nconst index = inventory.findIndex(item => item.quantity === 0);\n\nconsole.log(index); // 輸出: 1\nconsole.log(inventory[index]); // 輸出: { name: 'banana', quantity: 0 }"
+    },
+    {
+      "tag": "h3",
+      "text": "lastIndexOf()"
+    },
+    {
+      "tag": "p",
+      "text": "lastIndexOf 是 JavaScript 中 Array 對象和 String 對象的一個方法，用於查找元素在數組或字符串中的最後一次出現的位置。"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "arr.lastIndexOf(searchElement[, fromIndex])\n\n/*\nsearchElement: 要查找的元素。\nfromIndex（可選）：從該索引開始向前搜索，默認為數組的最後一個索引。\n*/"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "precode",
+      "text": "const array = [2, 5, 9, 2];\n\n// 查找元素 2 最後一次出現的位置\nconsole.log(array.lastIndexOf(2)); // 輸出: 3\n\n// 查找元素 7 最後一次出現的位置\nconsole.log(array.lastIndexOf(7)); // 輸出: -1\n\n// 從索引 2 開始向前查找元素 2\nconsole.log(array.lastIndexOf(2, 2)); // 輸出: 0\n\n// 從索引 -2（即倒數第二個元素）開始向前查找元素 2\nconsole.log(array.lastIndexOf(2, -2)); // 輸出: 0\n"
+    },
+    {
       "tag": "p",
       "class":"yellow",
-      "text": "findIndex、lastIndexOf還沒有寫到🚧..."
+      "text": "字串型別的資料也可以使用 lastIndexOf。這些方法是大小寫敏感的。fromIndex 參數是可選的，如果省略，默認從數組或字符串的末尾開始搜索。對於數組，searchElement 使用嚴格相等（===）進行比較；對於字符串，searchValue 是子字符串匹配。"
     },
     {
       "tag": "h2",
-      "text": "解構賦值"
+      "text": "時間 Time"
+    },
+    {
+      "tag": "precode",
+      "text": "// 取得目前時間的方法\nlet now = new Date();\n\n//利用js內建的時間函數可以取得該計時單位的值\nlet year = now.getFullYear();\nlet date = now.getDate();\nlet month = now.getMonth() + 1;\nlet weekday = now.getDay();\nlet hrs = now.getHours();\nlet min = now.getMinutes();\nlet sec = now.getSeconds();\n\n//做成格式為: 2024/07/22(Mon) 15:34:00\nmonth = month < 10 ? '0' + month : month;\nhrs = hrs < 10 ? '0' + hrs : hrs;\nmin = min < 10 ? '0' + min : min;\nsec = sec < 10 ? '0' + sec : sec;\n\nlet weekdaysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nweekday = weekdaysName[weekday];\nconsole.log(`${year}/${month}/${date}(${weekday}) ${hrs}:${min}:${sec}`);"
+    },
+    {
+      "tag": "h2",
+      "text": "解構賦值👍"
     },
     {
       "tag": "p",
@@ -1461,7 +1537,115 @@
     },
     {
       "tag": "h2",
-      "text": "DOM元素的操作⭐"
+      "text": "JSON"
+    },
+    {
+      "tag": "mark",
+      "text": "輕量級"
+    },
+    {
+      "tag": "mark",
+      "text": "易讀性"
+    },
+    {
+      "tag": "mark",
+      "text": "語言無關性"
+    },
+    {
+      "tag": "p",
+      "text": "JSON（JavaScript Object Notation）是一種輕量級的數據交換格式，易於人類閱讀和編寫，也易於機器解析和生成。JSON 是基於 JavaScript 語法，但獨立於語言，並且支持多種現代編程語言，JSON 已成為現代網絡應用和 API 的主要數據交換格式，因其簡單、靈活和高效的特性，受到了開發者的廣泛青睞。JSON主要由兩種結構組成:"
+    },
+    {
+      "tag": "precode",
+      "text": "//物件\n{\n    'name': 'Alice',\n    'age': 25,\n    'isStudent': false,\n    'courses': ['Math', 'Science'],\n    'address': {\n        'city': 'Wonderland',\n        'zip': '12345'\n    }\n}\n\n//陣列\n[\n    'Apple',\n    'Banana',\n    'Cherry',\n    42,\n    true,\n    null,\n    {\n        'name': 'Bob',\n        'age': 30\n    }\n]"
+    },
+    {
+      "tag": "b",
+      "text": "常用函式"
+    },
+    {
+      "tag": "precode",
+      "text": "//以此JSON為例\nlet user = {\n      name: 'Jack',\n      height: 100,\n      weight: 72,\n};"
+    },
+    {
+      "tag": "h3",
+      "text": "JSON.stringify()"
+    },
+    {
+      "tag": "precode",
+      "text": "//物件轉換為字串\nlet userString = JSON.stringify(user);\nconsole.log(userString);\nconsole.log(userString.name); //undefined"
+    },
+    {
+      "tag": "h3",
+      "text": "JSON.parse()"
+    },
+    {
+      "tag": "precode",
+      "text": "//字串再轉換為陣列\nlet parseUser = JSON.parse(userString);\nconsole.log(parseUser);\nconsole.log(parseUser.name);"
+    },
+    {
+      "tag": "h2",
+      "text": "瀏覽器物件模型 BOM"
+    },
+    {
+      "tag": "p",
+      "text": "BOM(Browser Object Model)又稱作「瀏覽器物件模型」，是瀏覽器所有功能的核心，與網頁的內容無關。早期沒有規範時，各家瀏覽器廠商自行開發瀏覽器的功能，非常混亂。 直到最近幾年， W3C 把各家瀏覽器統一集合起來納入了 HTML5 的標準中。因為在DOM Level 1標準定制前，BOM已經存在了，所以也可以稱作Level 0 DOM。"
+    },
+    {
+      "tag": "mark",
+      "text": "Meduim | BOM和DOM筆記 →"
+    },
+    {
+      "tag": "a",
+      "text": "https://medium.com/%E5%BF%AB%E6%A8%82%E5%AD%B8%E7%A8%8B%E5%BC%8F/javascript%E5%85%A5%E9%96%80%E7%B3%BB%E5%88%97-%E4%BD%95%E8%AC%82bom%E5%92%8Cdom-b6eeab2ee5fd"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h3",
+      "text": "Window Object"
+    },
+    {
+      "tag": "p",
+      "text": "代表目前程式碼正在運作的電腦視窗(通常是指我們的瀏覽器視窗)，其常見的method如下："
+    },
+    {
+      "tag": "b",
+      "text": "常見的方法"
+    },
+    {
+      "tag": "precode",
+      "text": "window.alert( )    //在視窗顯示對話框\n\nwindow.prompt( )    //return用戶在提示對話框輸入的文字\n\nwindow.setInterval(執行的函式,輸入毫秒)    //每次經過給定的毫秒數時安排一個函式執行\n\nwindow.clearInterval(要暫停的函示)    //將setInterval所重複執行的程式暫停\n\nwindow.addEventListener( )    //將事件監聽附加到Window Object"
+    },
+    {
+      "tag": "mark",
+      "text": "MDN Window.Object 的 methods"
+    },
+    {
+      "tag": "a",
+      "text": "https://developer.mozilla.org/en-US/docs/Web/API/Window#instance_methods"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h3",
+      "text": "物件導向程式設計概念"
+    },
+    {
+      "tag": "p",
+      "text": "一個物件可以是另一個物件的屬性。例如，人的配偶也是一個人。Window Object可使用的常見Properties包含："
+    },
+    {
+      "tag": "precode",
+      "text": "window.console    //對瀏覽器的控制台進行訪問\n\nconsole.log( )    //將括弧內的內容輸出到控制台。\nconsole.error( )    //將括弧內的錯誤訊息輸出到控制台。\n\nwindow.document    //回傳window包含的文檔，就是HTML。\n\nwindow.localStorage    //回傳一個local storage物件。\n\nwindow.sessionStorage    //回傳一個session storage物件。"
+    },
+    {
+      "tag": "h2",
+      "text": "文件物件模型 DOM⭐"
     },
     {
       "tag": "p",
@@ -1532,46 +1716,6 @@
       "tag": "p",
       "text": "⚠️DOM提供2種節點集合：「HTMLCollection」 以及「NodeList」。其中HTMLCollection僅包含上面第一個元素節點，NodeList則包含以上三種。",
       "class": "yellow"
-    },
-    {
-      "tag": "h2",
-      "text": "Window Object"
-    },
-    {
-      "tag": "p",
-      "text": "代表目前程式碼正在運作的電腦視窗(通常是指我們的瀏覽器視窗)，其常見的method如下："
-    },
-    {
-      "tag": "h3",
-      "text": "常見的方法"
-    },
-    {
-      "tag": "precode",
-      "text": "window.alert( )    //在視窗顯示對話框\n\nwindow.prompt( )    //return用戶在提示對話框輸入的文字\n\nwindow.setInterval(執行的函式,輸入毫秒)    //每次經過給定的毫秒數時安排一個函式執行\n\nwindow.clearInterval(要暫停的函示)    //將setInterval所重複執行的程式暫停\n\nwindow.addEventListener( )    //將事件監聽附加到Window Object"
-    },
-    {
-      "tag": "mark",
-      "text": "MDN Window.Object 的 methods"
-    },
-    {
-      "tag": "a",
-      "text": "https://developer.mozilla.org/en-US/docs/Web/API/Window#instance_methods"
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "h3",
-      "text": "物件導向程式設計概念"
-    },
-    {
-      "tag": "p",
-      "text": "一個物件可以是另一個物件的屬性。例如，人的配偶也是一個人。Window Object可使用的常見Properties包含："
-    },
-    {
-      "tag": "precode",
-      "text": "window.console    //對瀏覽器的控制台進行訪問\n\nconsole.log( )    //將括弧內的內容輸出到控制台。\nconsole.error( )    //將括弧內的錯誤訊息輸出到控制台。\n\nwindow.document    //回傳window包含的文檔，就是HTML。\n\nwindow.localStorage    //回傳一個local storage物件。\n\nwindow.sessionStorage    //回傳一個session storage物件。"
     },
     {
       "tag": "h2",
