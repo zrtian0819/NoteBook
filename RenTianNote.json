@@ -499,6 +499,10 @@
       "text": " 宣告的變數也具有塊作用域（block scope），類似於 let，同一作用域內不能重複宣告同名變數。宣告的變數必須在宣告時賦值，且之後不能重新賦值。宣告的變數也會提升，但在變數宣告前使用會導致引用錯誤（ReferenceError）。"
     },
     {
+      "tag": "precode",
+      "text": "const myConst; // 這行會報錯，因為沒有初始化\nconst myConst = 10; // 正確的宣告方式\n\n\nconst myConst2 = 10;\nmyConst2 = 20; // 這行會報錯，因為不能重新賦值\n\nif (true) {\n    const myConst3 = 10;\n    console.log(myConst3); // 10\n}\nconsole.log(myConst3); // 這行會報錯，因為 myConst3 在這裡是未定義的\n\n"
+    },
+    {
       "tag": "h2",
       "text": "typeof()"
     },
@@ -1454,13 +1458,10 @@
     {
       "tag": "precode",
       "text": "const [a, ...b] = [1, 2, 3];\nconsole.log(a); // 1\nconsole.log(b); // [2, 3]"
-    }
-  ],
-  [
-    { "title": "DOM🚧" },
+    },
     {
       "tag": "h2",
-      "text": "介紹"
+      "text": "DOM元素的操作⭐"
     },
     {
       "tag": "p",
@@ -1511,6 +1512,28 @@
       "text": "🪄添加 CSS 的 class 或 id 等等"
     },
     {
+      "tag": "p",
+      "text": "所謂的Document Object Model，顧名思義可知HTML也被視為是物件，這種架構也被稱為模型(Model)。在DOM這顆樹上的每個點被稱之為節點(Node)。節點分為三種："
+    },
+
+    {
+      "tag": "b",
+      "text": "🍗1.HTML元素節點(稱為element nodes or element objects)"
+    },
+    {
+      "tag": "b",
+      "text": "🍗2.文字節點(text node)"
+    },
+    {
+      "tag": "b",
+      "text": "🍗3.註解節點(comment node)"
+    },
+    {
+      "tag": "p",
+      "text": "⚠️DOM提供2種節點集合：「HTMLCollection」 以及「NodeList」。其中HTMLCollection僅包含上面第一個元素節點，NodeList則包含以上三種。",
+      "class": "yellow"
+    },
+    {
       "tag": "h2",
       "text": "Window Object"
     },
@@ -1552,31 +1575,6 @@
     },
     {
       "tag": "h2",
-      "text": "Document Object Model(DOM)"
-    },
-    {
-      "tag": "p",
-      "text": "所謂的Document Object Model，顧名思義可知HTML也被視為是物件，這種架構也被稱為模型(Model)。在DOM這顆樹上的每個點被稱之為節點(Node)。節點分為三種："
-    },
-    {
-      "tag": "b",
-      "text": "🍗1.HTML元素節點(稱為element nodes or element objects)"
-    },
-    {
-      "tag": "b",
-      "text": "🍗2.文字節點(text node)"
-    },
-    {
-      "tag": "b",
-      "text": "🍗3.註解節點(comment node)"
-    },
-    {
-      "tag": "p",
-      "text": "⚠️DOM提供2種節點集合：「HTMLCollection」 以及「NodeList」。其中HTMLCollection僅包含上面第一個元素節點，NodeList則包含以上三種。",
-      "class": "yellow"
-    },
-    {
-      "tag": "h2",
       "text": "document.getElementById(id)"
     },
     {
@@ -1591,6 +1589,70 @@
       "tag": "p",
       "text": "[157. get element by id or class 7:50🚧]"
     }
+  ],
+  [
+    { "title": "PHP🚧" },
+    {
+      "tag": "mark",
+      "text": "以下僅記錄重要知識點，其餘請查閱php文檔→"
+    },
+    {
+      "tag": "a",
+      "text": "https://php.golaravel.com/langref.html"
+    },
+    {
+      "tag": "h2",
+      "text": "介紹"
+    },
+    {
+      "tag": "p",
+      "text": "PHP（Hypertext Preprocessor）是一種廣泛使用的開源腳本語言，特別適合於網頁開發並可以嵌入到 HTML 中。PHP 於 1994 年由 Rasmus Lerdorf 創建，最初作為一套簡單的 CGI 腳本，用於跟蹤他個人首頁的訪問者。隨著時間的推移，PHP 逐漸發展成為一個強大的服務器端腳本語言，並成為動態網站開發的首選工具之一。"
+    },
+    {
+      "tag": "mark",
+      "text": "嵌入式設計"
+    },
+    {
+      "tag": "p",
+      "text": "PHP 可以直接嵌入到 HTML 中，使得開發人員能夠輕鬆地生成動態內容。"
+    },
+    {
+      "tag": "mark",
+      "text": "跨平台"
+    },
+    {
+      "tag": "p",
+      "text": "PHP 能夠運行在多種操作系統上，包括 Windows、Linux、macOS 等。"
+    },
+    {
+      "tag": "mark",
+      "text": "廣泛的資料庫支持"
+    },
+    {
+      "tag": "p",
+      "text": "PHP 支持多種資料庫系統，如 MySQL、PostgreSQL、SQLite、Oracle 等。"
+    },
+    {
+      "tag": "mark",
+      "text": "豐富的函數庫"
+    },
+    {
+      "tag": "p",
+      "text": "PHP 提供了大量內建函數和擴展，能夠方便地處理文件、數據庫、圖像、會話等各種任務。"
+    },
+    {
+      "tag": "h3",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "<?php\necho 'Hello, World!<br>';\necho '現在的日期和時間是：' . date('Y-m-d H:i:s') . '<br>';\n?>\n"
+    },
+    {
+      "tag": "p",
+      "text": "代碼塊以 <?php 開頭，以 ?> 結尾。變量以 $ 符號開頭，並且不需要明確的聲明類型，類型是動態決定的。使用分號 ; 來結束每一條語句。"
+    }
+    
   ],
   [{ "title": "Version Control🚧" }],
   [

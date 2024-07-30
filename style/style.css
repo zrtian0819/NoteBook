@@ -165,7 +165,7 @@ h2 {
 }
 
 main h2 {
-  border-top: 3px solid #eee;
+  border-top: 2px solid #eee;
 
 }
 
@@ -245,7 +245,7 @@ header .headerElement {
 }
 
 main {
-  width: 70%;
+  width: 80%;
   max-width: 960px;
   margin: auto;
   /* transition: 0.5s; */
@@ -499,11 +499,11 @@ img:hover {
   }
 
   main {
-    width: 85%;
+    width: 93%;
   }
 
   code {
-    font-size: 0.9rem;
+    font-size: 13px;
     border-radius: 8px;
   }
 
