@@ -1899,7 +1899,289 @@
     {
       "tag": "p",
       "text": "代碼塊以 <?php 開頭，以 ?> 結尾。變量以 $ 符號開頭，並且不需要明確的聲明類型，類型是動態決定的。使用分號 ; 來結束每一條語句。"
+    },
+    {
+      "tag": "h2",
+      "text": "XAMPP"
+    },
+    {
+      "tag": "a",
+      "text": "https://www.apachefriends.org/zh_tw/download.html"
+    },
+    {
+      "tag": "p",
+      "text": "XAMPP 是一個開源的跨平台網頁伺服器解決方案，主要用於在本地環境中測試和開發網站。XAMPP 的主要目的是提供一個易於安裝和配置的本地伺服器環境，使得開發人員能夠在不需要連接到遠端伺服器的情況下，進行網站和應用程式的測試和開發。它包含了多個組件，主要功能包括："
+    },
+    {
+      "tag": "b",
+      "text": "1. Apache: 一個開放源碼的網頁伺服器，用來提供和管理網頁內容。"
+    },
+    {
+      "tag": "b",
+      "text": "2. MySQL/MariaDB: 資料庫管理系統，用於儲存和管理資料。MariaDB 是 MySQL 的一個分支，通常是 XAMPP 的預設資料庫系統。"
+    },
+    {
+      "tag": "b",
+      "text": "3. PHP: 一種伺服器端腳本語言，用於生成動態網頁內容。"
+    },
+    {
+      "tag": "b",
+      "text": "4. Perl: 另一種腳本語言，通常用於網頁開發和系統管理。"
+    },
+    {
+      "tag": "b",
+      "text": "5. phpMyAdmin: 一個用於管理 MySQL/MariaDB 資料庫的網頁介面工具，可以方便地進行資料庫的建立、管理和查詢。"
+    },
+    {
+      "tag": "h2",
+      "text": "代碼引入"
+    },
+    {
+      "tag": "h3",
+      "text": "include"
+    },
+    {
+      "tag": "p",
+      "text": "include 語句用來引入和執行指定的檔案。如果檔案不存在或發生錯誤，include 會發出警告（警告並不會終止程式的執行）。"
+    },
+    {
+      "tag": "h3",
+      "text": "require"
+    },
+    {
+      "tag": "p",
+      "text": "require 語句與 include 類似，但在檔案無法找到或發生錯誤時，require 會發出致命錯誤並終止程式的執行。"
+    },
+    {
+      "tag": "h3",
+      "text": "include_once"
+    },
+    {
+      "tag": "p",
+      "text": "include_once 會檢查指定的檔案是否已經被引入過，如果已經引入過則不會再次引入。這有助於避免重複包含同一個檔案。"
+    },
+    {
+      "tag": "h3",
+      "text": "require_once"
+    },
+    {
+      "tag": "p",
+      "text": "require_once 與 include_once 類似，會檢查檔案是否已經被引入過，但當檔案不存在或發生錯誤時，require_once 會發出致命錯誤並終止程式的執行。"
+    },
+    {
+      "tag": "p",
+      "text": "以下有一些引入的範例:"
+    },
+    {
+      "tag": "h3",
+      "text": "建立資料連線"
+    },
+    {
+      "tag": "precode",
+      "text": "<?php\n// 連動資料庫\n\n$servername = 'localhost'; // 資料庫伺服器地址，這裡使用的是本地伺服器\n$username = 'admin';       // 資料庫用戶名\n$password = '12345';       // 資料庫密碼\n$dbname = 'my_test_db';    // 要連接的資料庫名稱\n\n// 建立資料庫連線 Create connection\n$conn = new mysqli($servername, $username, $password, $dbname);\n\n// 檢查連線\nif ($conn->connect_error) {\n    die('連線失敗: ' . $conn->connect_error); // 如果連線失敗，輸出錯誤訊息並終止程式\n} else {\n    // echo '連線成功'; // 這行被註解掉了，如果取消註解，將會顯示「連線成功」\n}\n?>"
+    },
+    {
+      "tag": "p",
+      "text": "以上程式碼主要目的是驗證和建立與 MySQL 資料庫的連線，如果連線失敗則會顯示錯誤信息。為了讓各項開發的頁面皆能夠連線並操作資料庫，此程式碼會獨立為一個php檔讓其它頁面透過 require_once('[此檔案路徑.php]'); 去引入，即可在其它頁面操作資料庫，不須要每次連線資料庫都重打一次這串程式碼。以下的範例皆會把此段檔案名稱視為「db_connect.php」。"
+    },
+    {
+      "tag": "h3",
+      "text": "引入外來的程式碼"
+    },
+    {
+      "tag": "precode",
+      "text": "<head>\n    <title>Product-list</title>\n    <!-- Required meta tags -->\n    <meta charset='utf-8' />\n    <meta\n        name='viewport'\n        content='width=device-width, initial-scale=1, shrink-to-fit=no'\n    />\n\n    <!--引入外來檔案的語法避免重複撰寫-->\n    <?php include('../css.php');?>\n</head>"
+    },
+    {
+      "tag": "h2",
+      "text": "資料表的操作"
+    },
+    {
+      "tag": "h3",
+      "text": "CREATE TABLE | 建立資料表"
+    },
+    {
+      "tag": "precode",
+      "text": "<?php\n\n//連動重複的程式碼為了登入資料庫\nrequire_once('../db_connect.php');\n\n//建立資料表的字串\n$sql ='CREATE TABLE users (\nid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,\nname VARCHAR(30) NOT NULL,\nphone VARCHAR(30),\nemail VARCHAR(30)\n)';\n\n\n//建立資料表並判定成功與否\nif ($conn->query($sql) === TRUE) {\n    echo '資料表 users 建立完成';\n} else {\n    echo '建立資料表錯誤: ' . $conn->error;\n}\n\n//關閉資料庫連結\n$conn->close();"
+    },
+    {
+      "tag": "p",
+      "text": "以上程式碼將SQL語法嵌入在$sql變數中(以下範例皆不贅述)，並利用$conn->$sql去執行SQL語法，若執行成功則會回傳TRUE好讓程式能依照建立成功或者失敗回饋訊息給開發者"
+    },
+    {
+      "tag": "h3",
+      "text": "DROP TABLE | 刪除資料表"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql= 'DROP TABLE users;';"
+    },
+    {
+      "tag": "p",
+      "text": "以上程式碼會刪除叫做users的資料表。此程式碼會移除所有欄位的資料務必小心使用。"
+    },
+    {
+      "tag": "h3",
+      "text": "ALTER TABLE ... ADD | 新增欄位"
+    },
+    {
+      "tag": "p",
+      "text": "ALTER TABLE ... ADD 用於新增欄位並設定格式。"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'ALTER TABLE users ADD COLUMN age INT(3)';"
+    },
+    {
+      "tag": "p",
+      "text": "以上方程式碼為例，ALTER TABLE ... ADD 會新增一個名為age的欄位，其為整數(INT)型別，且只能容納3個字元。"
+    },
+    {
+      "tag": "h3",
+      "text": "ALTER TABLE ... CHANGE | 改變欄位"
+    },
+    {
+      "tag": "p",
+      "text": "ALTER TABLE ... CHANGE 用於修改現有資料表的結構之用。"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'ALTER TABLE users CHANGE COLUMN userName name VARCHAR(30);';"
+    },
+    {
+      "tag": "p",
+      "text": "以上方程式碼為例，CHANGE COLUMN 是用來修改資料表中的欄位名稱及其資料型別的子句。它告訴 SQL 引擎要變更的欄位名稱和資料型別。並將原為「userName」的欄位名稱改為「name」，並設定資料為一種最多可以儲存30個字元的VARCHAR(長字串)。"
+    },
+    {
+      "tag": "h3",
+      "text": "ALTER TABLE ... DROP | 刪除欄位"
+    },
+    {
+      "tag": "p",
+      "text": "ALTER TABLE ... DROP 用於刪除欄位之用。"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'ALTER TABLE users DROP COLUMN age;';"
+    },
+    {
+      "tag": "p",
+      "text": "以上方程式碼為例，會刪除叫做age的欄位。"
+    },
+    {
+      "tag": "h3",
+      "text": "INSERT INTO | 插入資料"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'INSERT INTO users (name, phone, email)\nVALUES ('John', '0900000222', 'John@example.com');';"
+    },
+    {
+      "tag": "p",
+      "text": "以上方程式碼為例，INSERT INTO 用來告訴 SQL 引擎，需要插入的資料欄位及對應的資料內容，切記欄位名稱及內容之順序位置必須對應不可錯位。"
+    },
+    {
+      "tag": "mark",
+      "text": "插入很多筆資料"
+    },
+    {
+      "tag": "precode",
+      "text": "$now = date('Y-m-d H:i:s');\n\n$sql = 'INSERT INTO users (name, phone, email, created_at)\nVALUES ('May', '0900000000', 'may@example.com', '$now');';\n\n$sql .= 'INSERT INTO users (name, phone, email, created_at)\nVALUES ('Sue', '0900000000', 'sue@example.com', '$now');';\n\n$sql .= 'INSERT INTO users (name, phone, email, created_at)\nVALUES ('Lucy', '0900000000', 'lucy@example.com', '$now')';"
+    },
+    {
+      "tag": "p",
+      "text": "如果要插入很多筆資料，則可以利用以上組合字串的方法，先將SQL語法組合完成後再一次執行。"
+    },
+    {
+      "tag": "h3",
+      "text": "UPDATE ... WHERE | 更新資料"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'UPDATE users SET phone='09272816813', email='cjaw@gmail.com' WHERE id=3';"
+    },
+    {
+      "tag": "p",
+      "text": "以上程式碼會將id為3的資料的欄位資訊改掉。"
+    },
+    {
+      "tag": "h2",
+      "text": "資料表的選取"
+    },
+    {
+      "tag": "h3",
+      "text": "SELECT * FROM [table name] | 選取所有資料"
+    },
+    {
+      "tag": "precode",
+      "text": "//選取users資料表中的所有欄位\n$sql = 'SELECT * FROM users';\n\n//執行SQL語法並將結果用$result變數將物件接住\n$result = $conn->query($sql);\n\n//利用num_rows屬性將資料筆數傳給$userCount\n$userCount = $result->num_rows;\n\n//將變數字樣呈現在頁面\necho '<div> 共 $userCount 個使用者 </div>';"
+    },
+
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
     }
+    
     
   ],
   [{ "title": "Version Control🚧" }],
