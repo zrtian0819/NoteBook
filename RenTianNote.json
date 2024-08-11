@@ -2022,11 +2022,11 @@
     },
     {
       "tag": "h3",
-      "text": "ALTER TABLE ... ADD | 新增欄位"
+      "text": "ALTER TABLE ... ADD COLUMN | 新增欄位"
     },
     {
       "tag": "p",
-      "text": "ALTER TABLE ... ADD 用於新增欄位並設定格式。"
+      "text": "ALTER TABLE ... ADD COLUMN 用於新增欄位並設定格式。"
     },
     {
       "tag": "precode",
@@ -2038,11 +2038,11 @@
     },
     {
       "tag": "h3",
-      "text": "ALTER TABLE ... CHANGE | 改變欄位"
+      "text": "ALTER TABLE ... CHANGE COLUMN | 改變欄位"
     },
     {
       "tag": "p",
-      "text": "ALTER TABLE ... CHANGE 用於修改現有資料表的結構之用。"
+      "text": "ALTER TABLE ... CHANGE COLUMN 用於修改現有資料表的結構之用。"
     },
     {
       "tag": "precode",
@@ -2081,7 +2081,7 @@
       "text": "以上方程式碼為例，INSERT INTO 用來告訴 SQL 引擎，需要插入的資料欄位及對應的資料內容，切記欄位名稱及內容之順序位置必須對應不可錯位。"
     },
     {
-      "tag": "mark",
+      "tag": "b",
       "text": "插入很多筆資料"
     },
     {
@@ -2094,72 +2094,104 @@
     },
     {
       "tag": "h3",
-      "text": "UPDATE ... WHERE | 更新資料"
+      "text": "UPDATE ... WHERE | 條件更新資料"
     },
     {
       "tag": "precode",
-      "text": "$sql = 'UPDATE users SET phone='09272816813', email='cjaw@gmail.com' WHERE id=3';"
+      "text": "$sql = 'UPDATE users SET phone='0987654321', email='zrt3311@gmail.com' WHERE id=3';"
     },
     {
       "tag": "p",
-      "text": "以上程式碼會將id為3的資料的欄位資訊改掉。"
-    },
-    {
-      "tag": "h2",
-      "text": "資料表的選取"
+      "text": "以上程式碼會將users資料表內id為3的資料的欄位資訊改掉。如果不用WHERE指令，則整個資料表都會被phone和email都會被改掉，非常危險。"
     },
     {
       "tag": "h3",
-      "text": "SELECT * FROM [table name] | 選取所有資料"
+      "text": "DELETE FROM ... WHERE | 條件刪除資料"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'DELETE FROM users WHERE id = '13'';"
+    },
+    {
+      "tag": "p",
+      "text": "以上程式碼會將users資料表內id為13的資料整列刪除。如果不下WHERE指令則整個資料表內的資料皆會被刪除，但資料表還會留著。但還是要謹慎使用。"
+    },
+    {
+      "tag": "h2",
+      "text": "資料的選取"
+    },
+    {
+      "tag": "h3",
+      "text": "SELECT * FROM ... | 選取所有資料"
     },
     {
       "tag": "precode",
       "text": "//選取users資料表中的所有欄位\n$sql = 'SELECT * FROM users';\n\n//執行SQL語法並將結果用$result變數將物件接住\n$result = $conn->query($sql);\n\n//利用num_rows屬性將資料筆數傳給$userCount\n$userCount = $result->num_rows;\n\n//將變數字樣呈現在頁面\necho '<div> 共 $userCount 個使用者 </div>';"
     },
-
     {
-      "tag": "p",
-      "text": ""
+      "tag": "h3",
+      "text": "LIKE | 模糊搜尋"
+    },
+    {
+      "tag": "mark",
+      "text": "搜尋方法"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'SELECT * FROM users WHERE account LIKE '%ja%'';"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "以上語法能從users資料表中選取欄位account中含有「ja」字串的所有資料列。其中必須要用「%」來代表零個或多個任意字符，以達到模糊搜尋的效果。底線「_」則代表任意字符例如「_b%」則代表搜尋第二個字符為b的資料。"
+    },
+    {
+      "tag": "precode",
+      "text": "SELECT * FROM 表格名 WHERE 欄位名 LIKE '%100\\%%' ESCAPE '\\';"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "順帶一提，如果我們要搜尋的字符中有「%」，則我們須要使用ESCAPE方法，如以上範例，會匹配所有包含「100%」的字串。"
+    },
+    {
+      "tag": "h3",
+      "text": "LIMIT | 取出指定的資料量"
+    },
+    {
+      "tag": "mark",
+      "text": "分頁方法"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "LIMIT 子句用於限制查詢結果返回的行數。這對於控制查詢結果的數量、實現分頁功能非常有用。"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'SELECT * FROM users WHERE valid=1 LIMIT 20';"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "以上語法能篩選出users資料表內valid=1的資料中的其中20筆資料。這是給予LIMIT一個參數的情況。"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'SELECT * FROM users WHERE valid=1 LIMIT 15 , 20';"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "如果給予兩個參數，第一個參數代表跳過幾筆資料開始查詢，第二個參數則代表從符合條件的資料中抓出的資料筆數，以上述語法為例，此條件會從第16筆開始查詢，並篩選出users資料表內 valid=1 的資料中的其中20筆資料。"
+    },
+    {
+      "tag": "precode",
+      "text": "<?php \n\n$per_page = 4;  //代表每頁筆數\n$page = 1;    //代表當前頁碼\n$start_item = ($page-1)*$per_page;  //算出每個分頁第一筆資料的索引\n\nrequire_once('../db_connect.php');   //資料連線\n\n\n$sql = 'SELECT * FROM users WHERE valid=1 LIMIT $start_item, $per_page';\n\n$result = $conn->query($sql);\n$rows= $result->fetch_all(MYSQLI_ASSOC);\n\nvar_dump($rows);\n\n$conn->close();\n"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "以上方範例為例，我們可以利用表單方式讓使用者傳入$perpage及$page變數來分別代表每頁顯示的筆數及當前頁碼，如此一來就可以實現分頁。"
     },
     {
       "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
-    },
-    {
-      "tag": "p",
-      "text": ""
+      "class":"yellow",
+      "text": "頁碼效果還未寫入..."
     },
     {
       "tag": "p",
