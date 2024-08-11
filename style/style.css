@@ -180,6 +180,7 @@ h2 {
 
 main h2 {
   border-top: 2px solid #eee;
+  word-break: break-word;
 
 }
 

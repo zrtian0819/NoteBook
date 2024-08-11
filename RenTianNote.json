@@ -1994,6 +1994,18 @@
     },
     {
       "tag": "h2",
+      "text": "變數函式"
+    },
+    {
+      "tag": "p",
+      "text": "可以利用組合字串的方式將函式名組合出來，並利用組合出來的字串執行函式，如以下範例。"
+    },
+    {
+      "tag": "precode",
+      "text": "<h2>變數函式</h2>\n<?php \n\nfunction myFunc_1(){\n    echo 'in function 1<br>';\n}\n\nfunction myFunc_2(){\n    echo 'in function 2<br>';\n}\n\n$template = 'myFunc_';\n$func_array = [1,2];\n\n//function 可以透過將函式名稱字串組合來執行。\nforeach($func_array as $func){\n    $calling = $template.$func;\n    $calling();\n}"
+    },
+    {
+      "tag": "h2",
       "text": "資料表的操作"
     },
     {
@@ -2130,6 +2142,18 @@
     },
     {
       "tag": "h3",
+      "text": "WHERE | 篩選"
+    },
+    {
+      "tag": "p",
+      "text": "WHERE子句用於過濾記錄。它允許您指定條件來選擇符合特定標準的記錄。通常放在FROM子句之後，格式為：WHERE 條件。合適的WHERE子句可以提高查詢效率，特別是與索引結合使用時。WHERE子句中還可以包含子查詢，進行更複雜的條件篩選。"
+    },
+    {
+      "tag": "precode",
+      "text": "SELECT * FROM customers WHERE age > 18;\nSELECT * FROM products WHERE price BETWEEN 10 AND 20;\nSELECT * FROM employees WHERE name LIKE 'J%';\nSELECT * FROM customers WHERE phone IS NULL;    //查詢沒有電話的顧客資料"
+    },
+    {
+      "tag": "h3",
       "text": "LIKE | 模糊搜尋"
     },
     {
@@ -2193,6 +2217,23 @@
       "class":"yellow",
       "text": "頁碼效果還未寫入..."
     },
+   
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
     {
       "tag": "h3",
       "text": "ORDER BY | 排序方式"
@@ -2226,8 +2267,8 @@
       "text": "SELECT * FROM 表格名 ORDER BY 欄位1 ASC, 欄位2 DESC;"
     },
     {
-      "tag": "h3",
-      "text": "soft delete | 軟刪除"
+      "tag": "h2",
+      "text": "軟刪除(soft delete)"
     },
     {
       "tag": "p",
@@ -2242,32 +2283,120 @@
       "text": "以上述方法為例，假設我們已經先給予users資料表一個valid欄位，來代表此資料的有效性，並預設每一欄位都是valid=1，以上語法為例可以把id為9的資料valid改為0，代表標記刪除，如果我們在介面上僅限撈取valid=1的資料，就能實現好像已經刪除的效果。優點是能讓管理員恢復數據、審視紀錄、防止意外刪除，缺點是數據會膨脹、增加查詢複雜性、需要額外維護。"
     },
     {
+      "tag": "h2",
+      "text": "網頁資料儲存"
+    },
+    {
       "tag": "p",
-      "text": ""
+      "text": "常見的網頁儲存機制有三種，分別是cookie和session storage和local storage，他們有一些重要的區別，然而php無法直接操作local storage故在此筆記。"
+    },
+    {
+      "tag": "h3",
+      "text": "cookie"
+    },
+    {
+      "tag": "p",
+      "text": "cookie 是一種在 Web 瀏覽器中存儲用戶數據的技術。它們由伺服器發送到用戶的瀏覽器並存儲在客戶端，之後每次發送請求時，這些 cookie 都會隨著請求一起發送回伺服器。cookie 用於許多用途，如用戶身份驗證、跟蹤會話、保存用戶設置等。"
+    },
+    {
+      "tag": "mark",
+      "text": "存到伺服器"
+    },
+    {
+      "tag": "mark",
+      "text": "安全性低"
+    },
+    {
+      "tag": "mark",
+      "text": "可設定期效"
+    },
+    {
+      "tag": "mark",
+      "text": "容量小"
     },
     {
       "tag": "p",
       "text": ""
     },
     {
-      "tag": "p",
-      "text": ""
+      "tag": "precode",
+      "text": "setcookie('cookie名', 'cookie值', 過期時間(秒), cookie路徑);\n\n\n//設定一個名為 'user' 的 cookie，值為 'John Doe'，有效期為 1 小時，並且整個網站路徑都能訪問。\nsetcookie('user', 'John Doe', time() + 3600, '/');\n\n//取得cookie\necho $_COOKIE['user'];"
+    },
+    {
+      "tag": "h3",
+      "text": "session storage"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "sessionStorage 是 Web 存儲 API 的一部分，專門用於在單次瀏覽器會話中存儲數據。它與 localStorage 類似，但具有一些獨特的特點和用途。"
+    },
+    {
+      "tag": "mark",
+      "text": "存於客戶端"
+    },
+    {
+      "tag": "mark",
+      "text": "安全性高"
+    },
+    {
+      "tag": "mark",
+      "text": "期效短"
+    },
+    {
+      "tag": "mark",
+      "text": "容量大"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "Session Storage有一些特點，其只能由客戶端JavaScript設置、數據不會發送到服務器、容量限制通常更大,約5MB、數據只在當前瀏覽器會話期間有效,關閉標籤頁後自動清除、常用於存儲暫時性的數據,如表單內容。"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "在 PHP 中，session 是一種用來在不同的頁面請求之間儲存用戶數據的方式。這裡是如何操作 PHP 的 session："
+    },
+    {
+      "tag": "precode",
+      "text": "//使用前必須先啟動\nsession_start();\n\n/*\n利用全局變量$_SESSION儲存資料\n其中key和value是自訂義的\n*/\n$_SESSION['key'] = 'value';\n\n//讀取值的方法\n$value = $_SESSION['key'];\n\n//刪除特定session的方法\nunset($_SESSION['key']);\n\n//清空所有session的方法\nsession_unset();\n\n//完全銷毀session的方法\nsession_destroy();\n\n"
+    },
+    {
+      "tag": "h2",
+      "text": "暫停/終止程式"
+    },
+    {
+      "tag": "h3",
+      "text": "終止程式"
     },
     {
       "tag": "p",
-      "text": ""
+      "text": "PHP 中的 exit() 和 die() 實際上是同一個函數的兩個別名，它們的功能完全相同。這兩個函數用於立即終止當前腳本的執行。選擇使用哪一個主要是個人偏好問題。一些開發者認為在錯誤處理時使用 die() 更形象，而在正常的腳本終止時使用 exit() 更合適。"
+    },
+    {
+      "tag": "precode",
+      "text": "if (!file_exists('important_file.php')) {\n    die('重要文件不存在，腳本無法繼續執行');\n}\n\n// 或者\n\nif ($error_condition) {\n    exit('發生錯誤：{$error_message}');\n}"
+    },
+    {
+      "tag": "h3",
+      "text": "暫停程式"
+    },
+    {
+      "tag": "p",
+      "text": "php中使用sleep()並傳入秒數，可以暫停程式的執行，以下方範例，此迴圈每跑一次會暫停一秒鐘直到跑完，頁面才會被更新。"
+    },
+    {
+      "tag": "precode",
+      "text": "for($i=0 ; $i<5 ; $i++){\n    echo date('H:i:s').'<br>';\n    sleep(1);   //暫停一秒鐘(同步函式:所以會等跑完才更新結果)\n}"
+    },
+    {
+      "tag": "h2",
+      "text": "時間"
+    },
+    {
+      "tag": "p",
+      "text": "利用date()函式並傳入格式我們可以取得當前時間，若在輸出date之前先利用ini_set()更改時區，則可以印出當前該時區的時間如以下範例。"
+    },
+    {
+      "tag": "precode",
+      "text": "<h2>Current location Time</h2>\n<?php\n//在頁面上印出指定格式的現在時間\necho date('H:i:s');\n?>\n\n<h2>Tokyo</h2>\n<?php\n//將時區改為東京(僅限此程式)\nini_set('date.timezone','Asia/Tokyo');\necho date('H:i:s');\n?>\n\n<h2>London</h2>\n<?php\n//將時區改為倫敦(僅限此程式)\nini_set('date.timezone','Europe/London');\necho date('H:i:s');\n?>"
     },
     {
       "tag": "p",
