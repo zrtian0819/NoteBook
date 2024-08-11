@@ -2194,6 +2194,74 @@
       "text": "頁碼效果還未寫入..."
     },
     {
+      "tag": "h3",
+      "text": "ORDER BY | 排序方式"
+    },
+    {
+      "tag": "p",
+      "text": "ORDER BY 子句用來對查詢結果進行排序。可以按一個或多個欄位排序，並且可以選擇升序（ASC）或降序（DESC）。一般預設情況下皆為升序排序。"
+    },
+    {
+      "tag": "b",
+      "text": "升序排序"
+    },
+    {
+      "tag": "precode",
+      "text": "SELECT * FROM 表格名 ORDER BY 欄位名;"
+    },
+    {
+      "tag": "b",
+      "text": "降序排序"
+    },
+    {
+      "tag": "precode",
+      "text": "SELECT * FROM 表格名 ORDER BY 欄位名 DESC;"
+    },
+    {
+      "tag": "b",
+      "text": "按多個欄位排序"
+    },
+    {
+      "tag": "precode",
+      "text": "SELECT * FROM 表格名 ORDER BY 欄位1 ASC, 欄位2 DESC;"
+    },
+    {
+      "tag": "h3",
+      "text": "soft delete | 軟刪除"
+    },
+    {
+      "tag": "p",
+      "text": "是一種在資料庫管理中處理刪除操作的技術，與傳統的硬刪除（Hard Delete） 相對。軟刪除的主要目的是避免物理刪除資料，而是將資料標記為已刪除，這樣可以在需要時恢復或查詢這些資料。這種方法對於需要保留歷史數據、審計或恢復功能的系統特別有用。"
+    },
+    {
+      "tag": "precode",
+      "text": "$sql = 'UPDATE users SET valid = 0 WHERE id = '9'';"
+    },
+    {
+      "tag": "p",
+      "text": "以上述方法為例，假設我們已經先給予users資料表一個valid欄位，來代表此資料的有效性，並預設每一欄位都是valid=1，以上語法為例可以把id為9的資料valid改為0，代表標記刪除，如果我們在介面上僅限撈取valid=1的資料，就能實現好像已經刪除的效果。優點是能讓管理員恢復數據、審視紀錄、防止意外刪除，缺點是數據會膨脹、增加查詢複雜性、需要額外維護。"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
       "tag": "p",
       "text": ""
     },
