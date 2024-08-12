@@ -2388,7 +2388,11 @@
     },
     {
       "tag": "h2",
-      "text": "時間"
+      "text": "時間函式"
+    },
+    {
+      "tag": "h3",
+      "text": "date()"
     },
     {
       "tag": "p",
@@ -2397,6 +2401,34 @@
     {
       "tag": "precode",
       "text": "<h2>Current location Time</h2>\n<?php\n//在頁面上印出指定格式的現在時間\necho date('H:i:s');\n?>\n\n<h2>Tokyo</h2>\n<?php\n//將時區改為東京(僅限此程式)\nini_set('date.timezone','Asia/Tokyo');\necho date('H:i:s');\n?>\n\n<h2>London</h2>\n<?php\n//將時區改為倫敦(僅限此程式)\nini_set('date.timezone','Europe/London');\necho date('H:i:s');\n?>"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
     },
     {
       "tag": "p",
@@ -2470,15 +2502,15 @@
     },
     {
       "tag": "b",
-      "text": "🔴pending(處理中)：初始狀態擱置中。"
+      "text": "pending(處理中)：初始狀態擱置中。"
     },
     {
       "tag": "b",
-      "text": "🔴fullfilled(已完成)：表示操作成功地完成。"
+      "text": "fullfilled(已完成)：表示操作成功地完成。"
     },
     {
       "tag": "b",
-      "text": "🔴rejected(已拒絕)：表示操作失敗了。"
+      "text": "rejected(已拒絕)：表示操作失敗了。"
     },
     {
       "tag": "h3",
@@ -2535,6 +2567,50 @@
     {
       "tag": "p",
       "text": "[279. 網頁全端開發課程..🚧]"
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "p",
+      "text": ""
+    },
+    {
+      "tag": "h2",
+      "text": "JQuery Ajax"
+    },
+    {
+      "tag": "p",
+      "text": "使用jquery提供的Ajax可以利用簡短的程式碼輕鬆的對API進行ajax請求。所以在請求前須先引入jquery API才能夠使用，例如以下程式碼，如想使用其它版本，請去官網或者cdn.js查詢。"
+    },
+    {
+      "tag": "b",
+      "text": "引入jquery"
+    },
+    {
+      "tag": "precode",
+      "text": "<script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=' crossorigin='anonymous'></script>"
+    },
+    {
+      "tag": "b",
+      "text": "基本語法"
+    },
+    {
+      "tag": "precode",
+      "text": "$.ajax({\n    method: '/*方法*/',\n    url: '/*發送請求的網址*/',\n    dataType: '/*資料型式*/',\n    data: { \n        //傳入的資料 \n    }\n})\n.done(function( response ) {\n     //成功接收資料執行的函式\n     console.log(response);     //查看接收到的資料\n\n}).fail(function( jqXHR, textStatus ) {\n    //請求失敗產生錯誤訊息\n    console.log( 'Request failed: ' + textStatus );     \n})"
+    },
+    {
+      "tag": "b",
+      "text": "範例"
+    },
+    {
+      "tag": "p",
+      "text": "如以下範例，ajax使用POST方法將JSON格式的資料發送到網址「/api/user.php」做請求，並傳入id數據，若請求成功則執行done區塊內的結果，並辨識接收到的狀態碼，如果為0則將訊息從網頁alert出來。並將需要的值放入變數內方便取用。若請求失敗則於主控台輸出失敗訊息。"
+    },
+    {
+      "tag": "precode",
+      "text": "//...部分程式碼省略\n\n$.ajax({\n    method: 'POST',\n    url: '/api/user.php',\n    dataType: 'json',\n    data: { \n        id: id \n    }\n})\n.done(function( response ) {\n    // console.log(response);\n    let status = response.status;\n\n    if(status==0){\n        alert(response.message);\n        return\n    }\n\n    account.textContent = response.user.account\n    name.textContent = response.user.name\n    email.textContent = response.user.email\n    phone.textContent = response.user.phone\n\n}).fail(function( jqXHR, textStatus ) {\n    console.log( 'Request failed: ' + textStatus );\n})"
     },
     {
       "tag": "p",
