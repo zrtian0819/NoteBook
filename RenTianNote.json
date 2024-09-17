@@ -1948,7 +1948,36 @@
 		},
 		{
 			"tag": "precode",
-			"text": "$(':hidden')  //選取所有隱藏的元件\n$(':visible')  //選取所有沒有佔據顯示空間的元件"
+			"text": "$(':hidden')  //選取所有隱藏的元件(JQ)\n$(':visible')  //選取所有沒有佔據顯示空間的元件(JQ)"
+		},
+		{
+			"tag": "h3",
+			"text": "子元件選擇器"
+		},
+		{
+			"tag": "precode",
+			"text": "$('li:nth-child(3)')  //選取第 n 個子元素（參數從 1 開始不可為0）。\n$('div:first-child')  //選取父元素的第一個子元素。\n$('div:last-child')   //選取父元素的最後一個子元素。\n$('div:only-child')  //選取只有一個子元件的元件"
+		},
+		{
+			"tag": "h3",
+			"text": "屬性選擇器"
+		},
+		{
+			"tag": "precode",
+			"text": "$('[attribute]')  //具備attribute屬性的元件\n$('[attribute=value]')  //具備attribute屬性的和value屬性值的元件\n\n$('[attribute!=value]')  //具備attribute屬性且屬性值非value的元件(JQ)\n$('[attribute^=value]')  //具備attribute屬性且屬性值以value開頭的元件\n$('[attribute$=value]')  //具備attribute屬性且屬性值以value結尾的元件\n$('[attribute*=value]')  //具備attribute屬性且屬性值含有value的元件\n$('[attribute|=value]')  //具備attribute屬性且屬性值等於或以value開頭並接續' -'的元件\n$('[attribute~=value]')  //具備attribute屬性且屬性值其中之一是value的元件"
+		},
+		{
+			"tag": "h3",
+			"text": "表單"
+		},
+		{
+			"tag": "precode",
+			"text": "$(':input')  //選擇所有輸入框元件(JQ)\n$(':text')  //選擇所有文字元件(JQ)\n$(':password')  //選擇密碼輸入框元件(JQ)\n$(':radio')  //選擇單選按鈕元件(JQ)\n$(':checkbox')  //選擇核取方塊元件(JQ)\n$(':submit')  //選擇送出按鈕元件(JQ)\n$(':image')  //選擇<img>元件(JQ)\n$(':reset')  //選擇重置按鈕元件(JQ)\n$(':button')  //選擇<button>元件(JQ)\n$(':file')  //選擇檔案上傳元件(JQ)\n$(':selected')  //選擇下拉選單被選取的元件(JQ)\n$(':enabled')  //選擇被啟用的元件(預設是所有表單元件)\n$(':disabled')  //選擇被停用的元件\n$(':checked')  //選擇單選按鈕或多選按鈕被選取的元件"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "jQuery官方承認寫在$()內含有冒號的選擇器其效能並不是那麼好，請斟酌使用或者選擇其他方式。"
 		},
 		{
 			"tag": "p",
