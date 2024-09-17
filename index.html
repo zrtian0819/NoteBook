@@ -1,74 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/gruvbox-dark-pale.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap"
-      rel="stylesheet"
-    />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/gruvbox-dark-pale.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+		<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./style/style.css" />
+		<link rel="stylesheet" href="./style/style.css" />
 
-    <title>Ren-Tian Note</title>
-  </head>
+		<title>Ren-Tian Note</title>
+	</head>
 
-  <body>
-    <header id="navbar">
-      <!-- 筆記 -->
-      <div class="headerElement">
-        <h1 class="title">📙Zhang Ren-Tian Note</h1>
+	<body>
+		<header id="navbar">
+			<!-- 筆記 -->
+			<div class="headerElement">
+				<h1 class="title">📙Zhang Ren-Tian Note</h1>
 
-        <div class="selector"><i class="fa-solid fa-bars"></i></div>
-      </div>
-    </header>
+				<div class="selector"><i class="fa-solid fa-bars"></i></div>
+			</div>
+		</header>
 
-    <main class="MC">
-        <h1>人天的筆記本</h1>
+		<main class="MC">
+			<h1>人天的筆記本</h1>
 
-        <p style="color: red; font-size: 20px;">請點擊右上角的導覽列前往筆記索引</p>
-        <p style="font-weight: 600;">
-          筆記本作者:RenTian <br>
-          用來記錄網頁程式語言的記憶點，藉此加深印象，
-          方便未來能查閱或複製使用。非本人請勿作其他使用。
-        </p>
-        <p class="yellow">小提示:📌是外部連結可以點選並查看更多內容。</p>
-        <i class="fa-solid fa-book-bookmark fa-beat-fade fa-fw"></i>
-    </main>
+			<p style="color: red; font-size: 20px">請點擊右上角的導覽列前往筆記索引</p>
+			<p style="font-weight: 600">
+				筆記本作者:RenTian <br />
+				用來記錄網頁程式語言的記憶點，藉此加深印象， 方便未來能查閱或複製使用。非本人請勿作其他使用。
+			</p>
+			<p class="yellow">小提示:📌是外部連結可以點選並查看更多內容。</p>
+			<i class="fa-solid fa-book-bookmark fa-beat-fade fa-fw"></i>
+		</main>
 
-    <div class="subToc" style="display: none;">
-      <ul class="subToc-ul"></ul>
-    </div>
+		<div class="subToc" style="display: none">
+			<ul class="subToc-ul"></ul>
+		</div>
 
-    <nav></nav>
-    <div class="navbar">
-      <h2>目錄</h2>
-      <ul class="Toc"></ul>
-    </div>
+		<nav></nav>
+		<div class="navbar">
+			<h2>目錄</h2>
+			<ul class="Toc"></ul>
+		</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="./src/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- <script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+		<script src="./src/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+		<!-- <script>
       hljs.highlightAll();
     </script> -->
-  </body>
+	</body>
 </html>
