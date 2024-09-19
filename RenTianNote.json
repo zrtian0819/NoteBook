@@ -1980,6 +1980,158 @@
 			"text": "jQuery官方承認寫在$()內含有冒號的選擇器其效能並不是那麼好，請斟酌使用或者選擇其他方式。"
 		},
 		{
+			"tag": "h2",
+			"text": "取得元件內容"
+		},
+		{
+			"tag": "h3",
+			"text": ".html()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可以擷取選取元件的HTML內容和它子孫元件的內容，但是如果選取的項目是一個集合，則只會回傳集合中的第一個HTML內容。如果想取得所有內容請使用.each()。"
+		},
+		{
+			"tag": "precode",
+			"text": "<body>\n    <ul>\n        <li id='one'><em>fresh</em> milk</li>\n        <li id='two'>peanuts</li>\n        <li id='three'>honey</li>\n        <li id='four'>vinegar</li>\n    </ul>\n</body>\n<script>\n    $('ul').html()  //會取得整個ul內部的元件\n    $('li').html()  //<em>fresh</em> milk\n</script>"
+		},
+		{
+			"tag": "h3",
+			"text": ".text()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可以擷取選取元件的文字內容和它子孫元件的內容，但是如果選取的項目是一個集合，他會回傳每一個元件的文字內容和它子孫元件的文字內容。"
+		},
+		{
+			"tag": "precode",
+			"text": "<script>\n    console.log($('ul').text());\n    /*\n    fresh milk\n    peanuts\n    honey\n    vinegar\n    */\n\n\n    console.log($('li').text());\n    /*\n    fresh milkpeanutshoneyvinegar\n    */\n</script>"
+		},
+		{
+			"tag": "h2",
+			"text": "變更元件內容"
+		},
+		{
+			"tag": "h3",
+			"text": ".html()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可以選取元件集合中每個元件，並設定相同的新內容，並且可以包含HTML格式。"
+		},
+		{
+			"tag": "h3",
+			"text": ".text()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可以選取元件集合中每個元件，並設定相同的新文字。文字中如果包含HTML標籤則也會被解析為純文字。"
+		},
+		{
+			"tag": "h3",
+			"text": ".replaceWith()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可將選取集合中的每個元件取代為新內容，他會回傳被取代的元件。"
+		},
+		{
+			"tag": "h3",
+			"text": ".remove()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法會將選取集合中的所有元件移除。"
+		},
+		{
+			"tag": "h2",
+			"text": "插入元件"
+		},
+		{
+			"tag": "img",
+			"text": "./img/jq/before-prepend-append-after.svg"
+		},
+		{
+			"tag": "h3",
+			"text": ".before()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可以將內容插入至選取的元素之前"
+		},
+		{
+			"tag": "h3",
+			"text": ".after()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可以將內容插入至選取的元素之後"
+		},
+		{
+			"tag": "h3",
+			"text": ".prepend()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可將內容插入至元件內的起始標籤之後。"
+		},
+		{
+			"tag": "h3",
+			"text": ".append()"
+		},
+		{
+			"tag": "p",
+			"text": "此方法可將內容插入至元件內的結束標籤之前。"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
 			"tag": "p",
 			"text": ""
 		},
