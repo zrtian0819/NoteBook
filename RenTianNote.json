@@ -2194,39 +2194,187 @@
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "each() 方法用來遍歷（迭代）一組元素或物件，並對每個元素或物件執行指定的函數。這個方法非常實用，當你需要對多個元素進行相同操作時，可以使用 each() 來簡化程式碼。此功能就類似於JavaScript的迴圈。"
+		},
+		{
+			"tag": "precode",
+			"text": "//基本架構\n$(selector).each(function(index, element) {\n  // index 是當前元素的索引值\n  // element 是當前的 DOM 元素\n});\n"
+		},
+		{
+			"tag": "p",
+			"text": "以下範例會遍歷每一個選取到的img元素，並將其alt屬性值設定為甜點+流水碼。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('img').each(function(index) {\n  $(this).attr('alt', '甜點 ' + (index + 1));  // 為每張圖片的 alt 屬性加上編號\n});\n"
+		},
+		{
+			"tag": "h3",
+			"text": "搭配 this 或 $(this)"
+		},
+		{
+			"tag": "p",
+			"text": "當使用each()方法巡訪選取集合中的元件時，可以透過this關鍵字來選取目前元件；我們也可以使用$(this)將this元件轉換成jquery處理過的j物件，如此一來就可以使用jquery方法執行各樣功能。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('li').each(function () {\n    var ids = this.id;\n    $(this).append(`<span class='oreder'> ${ids}</span>`);\n});"
+		},
+		{
+			"tag": "h2",
+			"text": "事件方法"
+		},
+		{
+			"tag": "h3",
+			"text": ".on()"
+		},
+		{
+			"tag": "p",
+			"text": "用於監控用戶在網頁上與元素的互動。這些方法可以幫助你對不同的事件（例如點擊、滑鼠移動、鍵盤輸入等）做出反應。.on()是jquery中添加事件監聽的方法，相當於JavaScript的addEventListener語法。"
+		},
+		{
+			"tag": "precode",
+			"text": "//基本架構\n$(selector).on(event, childSelector, data, function)\n\n/*\nevent：要監聽的事件名稱（如 click、mouseover 等）。\nchildSelector：可選，事件委託的子選擇器。\ndata：可選，傳遞給事件處理程序的額外數據。\nfunction：事件觸發時要執行的函數。\n*/n"
+		},
+		{
+			"tag": "p",
+			"text": "以下程式碼為將button元素設定點擊事件的範例，它會將文件中所有button添加一個事件監聽，點擊以後會跳出提醒視窗。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('button').on('click', function() {\n  alert('按鈕被點擊了！');\n});\n"
+		},
+		{
+			"tag": "h3",
+			"text": "event | 事件"
+		},
+		{
+			"tag": "b",
+			"text": "使用者介面"
+		},
+		{
+			"tag": "mark",
+			"text": "focus | 聚焦"
+		},
+		{
+			"tag": "mark",
+			"text": "blur | 失焦"
+		},
+		{
+			"tag": "mark",
+			"text": "change | 變更"
+		},
+		{
+			"tag": "b",
+			"text": "鍵盤"
+		},
+		{
+			"tag": "mark",
+			"text": "input | 鍵盤輸入"
+		},
+		{
+			"tag": "mark",
+			"text": "keydown | 鍵盤按下"
+		},
+		{
+			"tag": "mark",
+			"text": "keyup | 鍵盤抬起"
+		},
+		{
+			"tag": "mark",
+			"text": "keypress | 鍵盤按下"
+		},
+		{
+			"tag": "b",
+			"text": "滑鼠"
+		},
+		{
+			"tag": "mark",
+			"text": "click | 滑鼠點擊"
+		},
+		{
+			"tag": "mark",
+			"text": "dblclick | 滑鼠雙擊"
+		},
+		{
+			"tag": "mark",
+			"text": "mouseenter | 滑鼠進入元素邊界"
+		},
+		{
+			"tag": "mark",
+			"text": "mouseleave | 滑鼠離開元素邊界"
+		},
+		{
+			"tag": "mark",
+			"text": "mousemove | 滑鼠在元素上移動"
+		},
+		{
+			"tag": "mark",
+			"text": "mousedown | 按下滑鼠按鈕時"
+		},
+		{
+			"tag": "mark",
+			"text": "mouseup | 釋放滑鼠按鈕時"
+		},
+		{
+			"tag": "mark",
+			"text": "hover | 滑鼠懸浮於物件時"
+		},
+		{
+			"tag": "b",
+			"text": "表單"
+		},
+		{
+			"tag": "mark",
+			"text": "submit | 表單提交"
+		},
+		{
+			"tag": "mark",
+			"text": "select | 選取時"
+		},
+		{
+			"tag": "mark",
+			"text": "change | 變更時"
+		},
+		{
+			"tag": "b",
+			"text": "文件頁面"
+		},
+		{
+			"tag": "mark",
+			"text": "ready | 文件載入以後"
+		},
+		{
+			"tag": "mark",
+			"text": "load"
+		},
+		{
+			"tag": "mark",
+			"text": "unload"
+		},
+		{
+			"tag": "b",
+			"text": "瀏覽器"
+		},
+		{
+			"tag": "mark",
+			"text": "error | 發生錯誤時"
+		},
+		{
+			"tag": "mark",
+			"text": "resize | 瀏覽器視窗大小調整時"
+		},
+		{
+			"tag": "mark",
+			"text": "scroll | 滾動頁面時"
 		},
 		{
 			"tag": "p",
 			"text": ""
 		},
 		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
+			"tag": "precode",
+			"text": "var ids = '';\nvar $listItems = $('li');\n\n$listItems.on('mouseover click', function () {\n    ids = this.id;\n    $listItems.children('span').remove();\n    $(this).append(' <span class='priority'>' + ids + '</span>');\n});\n\n$listItems.on('mouseout', function () {\n    $(this).children('span').remove();\n});"
 		},
 		{
 			"tag": "p",
