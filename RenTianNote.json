@@ -2084,16 +2084,113 @@
 			"text": "此方法可將內容插入至元件內的結束標籤之前。"
 		},
 		{
-			"tag": "p",
-			"text": ""
+			"tag": "h2",
+			"text": "擷取與設定元件屬性值"
+		},
+		{
+			"tag": "h3",
+			"text": ".attr()"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "用來獲取或設置 HTML 元素的屬性（attribute）"
+		},
+		{
+			"tag": "precode",
+			"text": "// 獲取屬性\nvar href = $('a').attr('href');  // 獲取第一個 <a> 標籤的 href 屬性\n\n// 設置屬性\n$('img').attr('src', 'new_image.jpg');  // 將所有 <img> 的 src 設為 'new_image.jpg'\n"
+		},
+		{
+			"tag": "h3",
+			"text": ".removeAttr()"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "用來移除 HTML 元素的指定屬性。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('input').removeAttr('disabled');  // 移除 <input> 元素的 disabled 屬性，使其可用\n"
+		},
+		{
+			"tag": "h3",
+			"text": ".addClass()"
+		},
+		{
+			"tag": "p",
+			"text": "用來為 HTML 元素添加一個或多個類別（class）。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('p').addClass('highlight bold');  // 添加多個類別"
+		},
+		{
+			"tag": "h3",
+			"text": ".removeClass()"
+		},
+		{
+			"tag": "p",
+			"text": "用來從 HTML 元素中移除一個或多個類別。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('p').removeClass('highlight bold');  // 移除多個類別"
+		},
+		{
+			"tag": "h2",
+			"text": "擷取與設定CSS"
+		},
+		{
+			"tag": "h3",
+			"text": ".css()"
+		},
+		{
+			"tag": "b",
+			"text": "擷取CSS"
+		},
+		{
+			"tag": "p",
+			"text": "如果想要擷取CSS特性值時，必須在小括號中指定想要擷取的特性名稱；若符合條件的的有多個元件，則它將會回傳第一個元件的特性值。"
+		},
+		{
+			"tag": "precode",
+			"text": "var background = $('li').css('background-color');"
+		},
+		{
+			"tag": "b",
+			"text": "設定CSS"
+		},
+		{
+			"tag": "p",
+			"text": "如果想要設定元件的CSS特性值時，必須在小括號中的第一個引數中指定特性名稱，第二個引數則給予欲設定的值，它會變更符合條件的集合元件的css。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('li').css('background-color','#272727');"
+		},
+		{
+			"tag": "b",
+			"text": "設定多個css特性"
+		},
+		{
+			"tag": "p",
+			"text": "可以通過傳遞一個 JavaScript 「物件」來實現，其中包含 CSS 屬性名稱和對應的值，如以下範例。"
+		},
+		{
+			"tag": "precode",
+			"text": "$('.box').css({\n  'background-color': 'lightblue',\n  'font-size': '20px',\n  'margin': '15px'\n});\n"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "在JavaScript檔案中，以變更class屬性值去取代變更css的特性值，為較佳的程式設計方法。"
+		},
+		{
+			"tag": "h2",
+			"text": "操作選取集合中的每一個元件"
+		},
+		{
+			"tag": "h3",
+			"text": ".each()"
 		},
 		{
 			"tag": "p",
