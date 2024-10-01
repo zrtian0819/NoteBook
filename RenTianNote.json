@@ -123,7 +123,7 @@
 		},
 		{
 			"tag": "precode",
-			"text": "<figure>\n\n    <img src='images/600x400/peach-flowers.jpg' width='600' alt='粉紅色的花'>\n    <figcaption>圖片說明</figcaption>\n\n</figure>"
+			"text": "<figure>\n    <img src='images/600x400/peach-flowers.jpg' width='600' alt='粉紅色的花'>\n    <figcaption>圖片說明</figcaption>\n</figure>"
 		},
 		{
 			"tag": "h2",
@@ -151,7 +151,7 @@
 		},
 		{
 			"tag": "h2",
-			"text": "form 表單"
+			"text": "form 表單🚧"
 		},
 		{
 			"tag": "p",
@@ -178,12 +178,16 @@
 			"text": "<div class='editable' contenteditable='true'>\n  這是一個可編輯的區域，點擊後你可以直接修改這裡的文字。\n</div>"
 		},
 		{
-			"tag": "p",
-			"text": ""
+			"tag": "h2",
+			"text": "video 影片"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "以下程式碼可以讓網頁播放影片,其中可以設定較多的<source>，當source來源取得不到時會往下取用可使用的來源播放。"
+		},
+		{
+			"tag": "precode",
+			"text": "<video autoplay muted poster='./images/09_laydown_scone.jpg' width='100%' loop controls controlslist='nodownload nofullscreen' disablepictureinpicture>\n  <source src='./videos/video1.mp4' />\n  <source src='./videos/video2.mp4' />\n  <p>不支援影片播放</p>\n</video>\n\n<!-- \n以下為屬性的說明\n  autoplay 自動播放\n  muted 靜音\n  poster 當影片不存在時可指定顯示的圖片\n  loop 重複播放\n  controls 影片控制項\n  controlslist='nodownload nofullscreen' 不能下載以及不能全螢幕的設定\n  disablepictureinpicture 不能子母畫面\n-->"
 		},
 		{
 			"tag": "p",
@@ -1686,6 +1690,30 @@
 		{
 			"tag": "precode",
 			"text": "//字串再轉換為陣列\nlet parseUser = JSON.parse(userString);\nconsole.log(parseUser);\nconsole.log(parseUser.name);"
+		},
+		{
+			"tag": "h2",
+			"text": "內建的JavaScript物件"
+		},
+		{
+			"tag": "h3",
+			"text": "Audio 聲音物件"
+		},
+		{
+			"tag": "p",
+			"text": "利用new Audio建立一個聲音物件，並利用事件監聽將播放完的sound記憶體清空，避免佔用記憶體，利用play()方法可以進行播放。如以下程式碼。"
+		},
+		{
+			"tag": "precode",
+			"text": "let sound = new Audio('./sounds/shoot.mp3');\n\nsound.addEventListener('ended', (e) => {\n  e.currentTarget = null;\n});\n\nsound.play();"
+		},
+		{
+			"tag": "p",
+			"text": "以下範例利用物件格式整理了聲音物件的名稱與來源,並利用鍵盤事件去觸發聲音的播放。"
+		},
+		{
+			"tag": "precode",
+			"text": "let soundObj = {\n  shoot: './sounds/shoot.mp3',\n  expolosion: './sounds/explo.mp3'\n};\n\nwindow.addEventListener('keyup', (e) => {\n  if (e.key == ' ') {\n    playSound('shoot');\n  } else if (e.key == 'Enter') {\n    playSound('expolosion');\n  }\n});\n\nfunction playSound(key) {\n  let shoot = new Audio(soundObj[key]);\n  shoot.addEventListener('ended', (e) => {\n    // 清空記憶體\n    e.currentTarget = null;\n  });\n  shoot.play();\n}"
 		},
 		{
 			"tag": "h2",
