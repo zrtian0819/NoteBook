@@ -102,6 +102,10 @@
 			"text": "<footer>頁尾，網頁最底部的區塊</footer>"
 		},
 		{
+			"tag": "p",
+			"text": "使用語意標籤不僅讓網頁結構更具邏輯性，還能提升 SEO、可存取性、可讀性，並且使程式碼更容易維護，符合現代 Web 開發的最佳實踐。"
+		},
+		{
 			"tag": "h2",
 			"text": "錨點"
 		},
@@ -115,7 +119,7 @@
 		},
 		{
 			"tag": "h2",
-			"text": "圖片組"
+			"text": "figure 圖片組"
 		},
 		{
 			"tag": "precode",
@@ -123,7 +127,7 @@
 		},
 		{
 			"tag": "h2",
-			"text": "表格"
+			"text": "table 表格"
 		},
 		{
 			"tag": "p",
@@ -147,7 +151,7 @@
 		},
 		{
 			"tag": "h2",
-			"text": "表單"
+			"text": "form 表單"
 		},
 		{
 			"tag": "p",
@@ -160,6 +164,70 @@
 		{
 			"tag": "img",
 			"text": "./img/2_表單範例.png"
+		},
+		{
+			"tag": "h2",
+			"text": "contenteditable 可編輯文字的屬性"
+		},
+		{
+			"tag": "p",
+			"text": "contenteditable 屬性可以讓 HTML 元素變成可編輯的區域，使用者可以直接在頁面上修改內容，有點類似<textarea>。以下是一個簡單的 contenteditable 範例。"
+		},
+		{
+			"tag": "precode",
+			"text": "<div class='editable' contenteditable='true'>\n  這是一個可編輯的區域，點擊後你可以直接修改這裡的文字。\n</div>"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
 		}
 	],
 	[
@@ -644,7 +712,11 @@
 		},
 		{
 			"tag": "h3",
-			"text": "三元運算符"
+			"text": "Ternary Operator 三元運算符"
+		},
+		{
+			"tag": "p",
+			"text": "又稱作條件運算符"
 		},
 		{
 			"tag": "precode",
@@ -652,11 +724,11 @@
 		},
 		{
 			"tag": "h3",
-			"text": "擴展運算符"
+			"text": "spread operator 擴展運算符"
 		},
 		{
 			"tag": "p",
-			"text": "擴展運算符(...)具有多種用途，尤其在處理陣列和物件時，非常有用，以下是常見的場景。"
+			"text": "擴展運算符（spread operator）是三個點 (...) 的語法形式，用來展開可迭代物件（如陣列或字串）或對象。擴展運算符的用途非常多樣化，以下是常見的場景。"
 		},
 		{
 			"tag": "precode",
@@ -1674,6 +1746,22 @@
 		{
 			"tag": "precode",
 			"text": "window.console    //對瀏覽器的控制台進行訪問\n\nconsole.log( )    //將括弧內的內容輸出到控制台。\nconsole.error( )    //將括弧內的錯誤訊息輸出到控制台。\n\nwindow.document    //回傳window包含的文檔，就是HTML。\n\nwindow.localStorage    //回傳一個local storage物件。\n\nwindow.sessionStorage    //回傳一個session storage物件。"
+		},
+		{
+			"tag": "h3",
+			"text": "取得目前所選取的文字"
+		},
+		{
+			"tag": "precode",
+			"text": " window.getSelection();"
+		},
+		{
+			"tag": "p",
+			"text": "此方法搭配mouseup事件監聽可以有效地取得到所選取的內容，請參照以下範例:"
+		},
+		{
+			"tag": "precode",
+			"text": "<!DOCTYPE html>\n<html lang='zh-Hant'>\n<head>\n  <meta charset='UTF-8'>\n  <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n  <title>Contenteditable 範例</title>\n  <style>\n    .editor {\n      border: 2px solid #ccc;\n      padding: 10px;\n      min-height: 100px;\n      width: 300px;\n      font-size: 16px;\n    }\n  </style>\n</head>\n<body>\n\n<h1>在可編輯區域中選取內容並加上標記</h1>\n\n<div class='editor' contenteditable='true'>\n  這裡的文字是可編輯的。你可以選取一些文字，並且它們將被高亮顯示。\n</div>\n\n<script>\n  document.querySelector('.editor').addEventListener('mouseup', () => {\n    const selection = window.getSelection();\n    const text = selection.toString().trim();\n\n    if (text.length <= 0) {\n      return;\n    }\n    \n    // 確認選取範圍\n    const range = selection.getRangeAt(0);\n\n    // 創建一個 <mark> 元素\n    const mark = document.createElement('mark');\n    mark.appendChild(range.extractContents());\n\n    // 插入 <mark> 標籤包裹選取的內容\n    range.insertNode(mark);\n\n    // 清除選取狀態\n    selection.removeAllRanges();\n  });\n</script>\n\n</body>\n</html>\n"
 		},
 		{
 			"tag": "h2",
@@ -3809,7 +3897,19 @@
 		},
 		{
 			"tag": "p",
-			"text": "此為兩種不同的模組系統，它們各有特點並且在 Node.js 中共存。"
+			"text": "此為兩種不同的模組系統，它們各有特點並且在 Node.js 中共存。以目前趨勢建議使用ES模組。"
+		},
+		{
+			"tag": "mark",
+			"text": "兩種模組的差別 參考文件"
+		},
+		{
+			"tag": "a",
+			"text": "https://hackmd.io/@SkT7-27LSWWQi5G2DJBLkw/ryQ1w-rBi"
+		},
+		{
+			"tag": "h2",
+			"text": "檔案處理🚧"
 		},
 		{
 			"tag": "h2",
