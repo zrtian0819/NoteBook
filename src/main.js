@@ -143,6 +143,7 @@ function escapeHtml(str) {
 // 監聽滾動事件
 window.addEventListener("scroll", () => {
 	const currentScrollPos = window.pageYOffset;
+	let navButtonTimer;
 	// console.log(prevScrollPos + " | " + currentScrollPos);
 	// 判斷滾動方向
 	if (prevScrollPos > currentScrollPos) {
@@ -150,11 +151,16 @@ window.addEventListener("scroll", () => {
 		header.style.transition = "0.3s";
 		header.style.top = "0";
 		navButton.classList.remove("invisible");
+
+		navButtonTimer = setTimeout(() => {
+			navButton.classList.add("invisible");
+		}, 5000);
 	} else {
 		// 向下滾動，隱藏導覽列
 		header.style.transition = "2s";
 		header.style.top = "-100px";
 		navButton.classList.add("invisible");
+		clearTimeout(navButtonTimer);
 	}
 	prevScrollPos = currentScrollPos;
 });
