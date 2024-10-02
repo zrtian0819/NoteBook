@@ -3,12 +3,11 @@ const ContList = document.querySelector(".Toc");
 const bodyP = document.querySelector("body");
 const subTocUl = document.querySelector(".subToc-ul");
 const subToc = document.querySelector(".subToc");
-console.log(subToc);
-
-// let ContentCode = "";
+const header = document.querySelector("header");
+const navButton = document.querySelector(".navButton");
+let prevScrollPos = window.pageYOffset;
 
 // 異步函數的使用
-
 async function getJson() {
 	try {
 		const Obj = await fetch("./RenTianNote.json");
@@ -82,7 +81,7 @@ getJson().then(function (data) {
 				// console.log(element);
 				contents += element;
 			} else if (tag == "a") {
-				let element = `<${tag} href="${text}">📌</${tag}>`;
+				let element = `<${tag} href="${text}">🔗</${tag}>`;
 				// console.log(element);
 				contents += element;
 			} else {
@@ -99,6 +98,16 @@ getJson().then(function (data) {
 		}
 
 		subTocUl.innerHTML = `<h4>子目錄</h4>${subTocContent}`;
+
+		let lists = subToc.querySelectorAll("a");
+		lists.forEach((list) => {
+			list.addEventListener("click", () => {
+				subToc.classList.remove("open");
+			});
+		});
+
+		navButton.classList.remove("invisible");
+
 		main.innerHTML = contents; //內容渲染
 		hljs.highlightAll(); // 將程式碼style渲染在頁面
 	}
@@ -131,9 +140,6 @@ function escapeHtml(str) {
 }
 
 //滾動滑鼠打開與收合navbar的功能
-const navbar = document.getElementById("navbar");
-let prevScrollPos = window.pageYOffset;
-
 // 監聽滾動事件
 window.addEventListener("scroll", () => {
 	const currentScrollPos = window.pageYOffset;
@@ -141,13 +147,26 @@ window.addEventListener("scroll", () => {
 	// 判斷滾動方向
 	if (prevScrollPos > currentScrollPos) {
 		// 向上滾動，顯示導覽列
-		navbar.style.transition = "0.3s";
-		navbar.style.top = "0";
+		header.style.transition = "0.3s";
+		header.style.top = "0";
+		navButton.classList.remove("invisible");
 	} else {
 		// 向下滾動，隱藏導覽列
-		navbar.style.transition = "2s";
-		navbar.style.top = "-100px";
+		header.style.transition = "2s";
+		header.style.top = "-100px";
+		navButton.classList.add("invisible");
 	}
-
 	prevScrollPos = currentScrollPos;
+});
+
+// 開關子目錄的事件監聽
+navButton.addEventListener("click", () => {
+	subToc.classList.toggle("open");
+	main.addEventListener(
+		"click",
+		() => {
+			subToc.classList.remove("open");
+		},
+		{ once: true }
+	);
 });

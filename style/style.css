@@ -274,6 +274,36 @@ main i {
   color: var(--mainColor);
 }
 
+.navButton {
+  background-color: var(--mainColor);
+  color: var(--superlightMainColor);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 10px;
+  top: 70px;
+  z-index: 10;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:active {
+    scale: 0.9;
+    transition: 0s;
+  }
+
+  &.invisible {
+    opacity: 0;
+  }
+
+  &.disappear {
+    display: none;
+  }
+}
+
 .subToc {
   position: fixed;
   opacity: 0.05;
@@ -292,11 +322,16 @@ main i {
   overflow-y: auto;
   height: 80vh;
 
-  &:hover {
+  /* &:hover {
     transition: 0.3s;
     opacity: 1;
     left: -3px;
+  } */
 
+  &.open {
+    transition: 0.3s;
+    opacity: 1;
+    left: -3px;
   }
 
   h4 {
