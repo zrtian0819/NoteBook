@@ -141,9 +141,9 @@ function escapeHtml(str) {
 
 //滾動滑鼠打開與收合navbar的功能
 // 監聽滾動事件
+let navButtonTimer;
 window.addEventListener("scroll", () => {
 	const currentScrollPos = window.pageYOffset;
-	let navButtonTimer;
 	// console.log(prevScrollPos + " | " + currentScrollPos);
 	// 判斷滾動方向
 	if (prevScrollPos > currentScrollPos) {
@@ -152,8 +152,11 @@ window.addEventListener("scroll", () => {
 		header.style.top = "0";
 		navButton.classList.remove("invisible");
 
+		clearTimeout(navButtonTimer);
 		navButtonTimer = setTimeout(() => {
 			navButton.classList.add("invisible");
+			console.log("計時器被執行");
+			clearTimeout(navButtonTimer);
 		}, 5000);
 	} else {
 		// 向下滾動，隱藏導覽列
