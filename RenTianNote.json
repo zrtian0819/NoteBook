@@ -1589,22 +1589,6 @@
 		},
 		{
 			"tag": "h2",
-			"text": "時間 Time"
-		},
-		{
-			"tag": "precode",
-			"text": "// 取得目前時間的方法\nlet now = new Date();\n\n//利用js內建的時間函數可以取得該計時單位的值\nlet year = now.getFullYear();\nlet date = now.getDate();\nlet month = now.getMonth() + 1;\nlet weekday = now.getDay();\nlet hrs = now.getHours();\nlet min = now.getMinutes();\nlet sec = now.getSeconds();\n\n//做成格式為: 2024/07/22(Mon) 15:34:00\nmonth = month < 10 ? '0' + month : month;\nhrs = hrs < 10 ? '0' + hrs : hrs;\nmin = min < 10 ? '0' + min : min;\nsec = sec < 10 ? '0' + sec : sec;\n\nlet weekdaysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nweekday = weekdaysName[weekday];\nconsole.log(`${year}/${month}/${date}(${weekday}) ${hrs}:${min}:${sec}`);"
-		},
-		{
-			"tag": "mark",
-			"text": "時間格式套件 | Moment.js"
-		},
-		{
-			"tag": "a",
-			"text": "https://momentjs.com/"
-		},
-		{
-			"tag": "h2",
 			"text": "解構賦值👍"
 		},
 		{
@@ -1697,7 +1681,7 @@
 		},
 		{
 			"tag": "h3",
-			"text": "Audio 聲音物件"
+			"text": "聲音物件 Audio"
 		},
 		{
 			"tag": "p",
@@ -1708,12 +1692,253 @@
 			"text": "let sound = new Audio('./sounds/shoot.mp3');\n\nsound.addEventListener('ended', (e) => {\n  e.currentTarget = null;\n});\n\nsound.play();"
 		},
 		{
+			"tag": "b",
+			"text": "鍵盤事件播放音訊的範例"
+		},
+		{
 			"tag": "p",
 			"text": "以下範例利用物件格式整理了聲音物件的名稱與來源,並利用鍵盤事件去觸發聲音的播放。"
 		},
 		{
 			"tag": "precode",
 			"text": "let soundObj = {\n  shoot: './sounds/shoot.mp3',\n  expolosion: './sounds/explo.mp3'\n};\n\nwindow.addEventListener('keyup', (e) => {\n  if (e.key == ' ') {\n    playSound('shoot');\n  } else if (e.key == 'Enter') {\n    playSound('expolosion');\n  }\n});\n\nfunction playSound(key) {\n  let shoot = new Audio(soundObj[key]);\n  shoot.addEventListener('ended', (e) => {\n    // 清空記憶體\n    e.currentTarget = null;\n  });\n  shoot.play();\n}"
+		},
+		{
+			"tag": "h3",
+			"text": "時間物件 Time"
+		},
+		{
+			"tag": "precode",
+			"text": "// 取得目前時間的方法\nlet now = new Date();\n\n//利用js內建的時間函數可以取得該計時單位的值\nlet year = now.getFullYear();\nlet date = now.getDate();\nlet month = now.getMonth() + 1;\nlet weekday = now.getDay();\nlet hrs = now.getHours();\nlet min = now.getMinutes();\nlet sec = now.getSeconds();\n\n//做成格式為: 2024/07/22(Mon) 15:34:00\nmonth = month < 10 ? '0' + month : month;\nhrs = hrs < 10 ? '0' + hrs : hrs;\nmin = min < 10 ? '0' + min : min;\nsec = sec < 10 ? '0' + sec : sec;\n\nlet weekdaysName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];\nweekday = weekdaysName[weekday];\nconsole.log(`${year}/${month}/${date}(${weekday}) ${hrs}:${min}:${sec}`);"
+		},
+		{
+			"tag": "h3",
+			"text": "正規表達式 Regular Expression"
+		},
+		{
+			"tag": "p",
+			"text": "JavaScript 的正規表達式（Regular Expressions, 簡稱 Regex）是一種強大且靈活的模式匹配工具，常用於字串的檢查、查找、替換等操作。正規表達式由模式和修飾符組成，透過這些模式可以用來對字串進行匹配。"
+		},
+		{
+			"tag": "mark",
+			"text": "正規表達式參考文件 | MDN"
+		},
+		{
+			"tag": "a",
+			"text": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions"
+		},
+		{
+			"tag": "b",
+			"text": "正規表達式的創建："
+		},
+		{
+			"tag": "precode",
+			"text": "const regex = /pattern/flags;  //用斜線表示正規表達式的模式。\n\nconst regex = new RegExp('pattern', 'flags');  //使用構造函數(動態生成時使用)"
+		},
+		{
+			"tag": "b",
+			"text": "常用的正規表達式："
+		},
+		{
+			"tag": "mark",
+			"text": "手機號碼"
+		},
+		{
+			"tag": "precode",
+			"text": "function isValidPhoneNumber(phone) {\n    const phoneRegex = /^09\\d{8}$/;\n    return phoneRegex.test(phone);\n}\nconsole.log(isValidPhoneNumber('0912345678')); // true"
+		},
+		{
+			"tag": "mark",
+			"text": "電子信箱"
+		},
+		{
+			"tag": "precode",
+			"text": "function isValidEmail(email) {\n    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$/;\n    return  emailRegex.test(email);\n}\n\nconsole.log(isValidEmail('test@example.com')); // true"
+		},
+		{
+			"tag": "h3",
+			"text": "錯誤物件 Error"
+		},
+		{
+			"tag": "p",
+			"text": "在 JavaScript 中，錯誤物件 (Error object) 用於處理和捕捉程式中的錯誤。當程序遇到異常情況時，會拋出錯誤物件來通知開發者，這些錯誤可以由 try...catch 語句來捕捉和處理。JavaScript 提供了多種類型的錯誤物件，並且開發者還可以自定義錯誤物件來處理特定情況。以下為一些常見的物件類型："
+		},
+		{
+			"tag": "b",
+			"text": "Error：基礎的錯誤物件，所有其他錯誤類型都繼承自此。"
+		},
+		{
+			"tag": "b",
+			"text": "ReferenceError：當引用的變數不存在時拋出。"
+		},
+		{
+			"tag": "b",
+			"text": "TypeError：當操作數或變量與預期的類型不符時拋出。"
+		},
+		{
+			"tag": "b",
+			"text": "RangeError：當數字超出合法範圍時拋出。"
+		},
+		{
+			"tag": "b",
+			"text": "SyntaxError：當 JavaScript 語法無效時拋出。"
+		},
+		{
+			"tag": "b",
+			"text": "EvalError：與 eval() 函數相關的錯誤。"
+		},
+		{
+			"tag": "b",
+			"text": "URIError：當 URI 操作失敗時（例如 decodeURIComponent）拋出。"
+		},
+		{
+			"tag": "mark",
+			"text": "常見方法"
+		},
+		{
+			"tag": "precode",
+			"text": "//可以使用 throw 關鍵字手動拋出錯誤，通常是 Error 類型的物件或它的子類。\n\nfunction divide(a, b) {\n  if (b === 0) {\n    throw new Error('除數不能為零');\n  }\n  return a / b;\n}\n\ntry {\n  console.log(divide(10, 0));\n} catch (error) {\n  console.error(error.message); // 輸出: 除數不能為零\n}\n"
+		},
+		{
+			"tag": "mark",
+			"text": "try...catch...finally 語句"
+		},
+		{
+			"tag": "p",
+			"text": "try 塊用來包裹可能會拋出錯誤的代碼，catch 塊用來處理錯誤。無論錯誤是否發生，finally 塊中的代碼都會執行。"
+		},
+		{
+			"tag": "precode",
+			"text": "function riskyFunction() {\n  throw new Error('發生錯誤');\n}\n\ntry {\n  riskyFunction();\n} catch (error) {\n  console.error('錯誤訊息:', error.message);\n} finally {\n  console.log('無論如何都會執行這段代碼');\n}\n"
+		},
+		{
+			"tag": "mark",
+			"text": "錯誤物件的屬性"
+		},
+		{
+			"tag": "precode",
+			"text": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log(error.message); // 輸出: Something went wrong\n  console.log(error.name);    // 輸出: Error\n  console.log(error.stack);   // 輸出: 堆疊資訊\n}\n"
+		},
+		{
+			"tag": "h2",
+			"text": "建構函式 Constructor Function"
+		},
+		{
+			"tag": "p",
+			"text": "在 JavaScript 中，建構函式（Constructor Function）是用來創建並初始化物件的特殊函式。使用建構函式可以創建具有相同結構和方法的多個物件。"
+		},
+		{
+			"tag": "h3",
+			"text": "建構函式的特點與慣例"
+		},
+		{
+			"tag": "b",
+			"text": "1. 名稱慣例"
+		},
+		{
+			"tag": "p",
+			"text": "建構函式的名稱通常以大寫字母開頭（例如 Person），這是 JavaScript 的命名慣例，表示這是一個可以用來創建物件的函式。"
+		},
+		{
+			"tag": "b",
+			"text": "2. this 關鍵字"
+		},
+		{
+			"tag": "p",
+			"text": "在建構函式內，this 代表的是新創建的物件實例。建構函式中的屬性和方法都會被賦值給這個新實例。"
+		},
+		{
+			"tag": "b",
+			"text": "3. new 關鍵字"
+		},
+		{
+			"tag": "p",
+			"text": "當使用 new 關鍵字調用建構函式時，會創建一個新物件，並將這個物件設為建構函式中的 this。最後，建構函式會自動返回這個物件。"
+		},
+		{
+			"tag": "h3",
+			"text": "建構函式範例"
+		},
+		{
+			"tag": "precode",
+			"text": "function Person(name, age) {\n  this.name = name;\n  this.age = age;\n\n  this.sayHello = function() {\n    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);\n  };\n}\n\n// 使用建構函式創建兩個新物件\nlet person1 = new Person('Alice', 25);\nlet person2 = new Person('Bob', 30);\n\nperson1.sayHello(); // 輸出: Hello, my name is Alice and I am 25 years old.\nperson2.sayHello(); // 輸出: Hello, my name is Bob and I am 30 years old.\n"
+		},
+		{
+			"tag": "p",
+			"text": "在這裡，Person 是一個建構函式，當使用 new Person('Alice', 25) 時，JavaScript 會創建一個新物件，並將 name 和 age 設置到新物件的屬性上。"
+		},
+		{
+			"tag": "h3",
+			"text": "使用原型方法"
+		},
+		{
+			"tag": "p",
+			"text": "將方法放在建構函式的 prototype 上，而不是直接在建構函式內定義，可以節省記憶體，因為所有實例將共享這些方法，而不會每個實例都創建一個新方法。"
+		},
+		{
+			"tag": "precode",
+			"text": "function Person(name, age) {\n  this.name = name;\n  this.age = age;\n}\n\n// 將方法放在原型上，所有實例都可以共用這個方法\nPerson.prototype.sayHello = function() {\n  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);\n};\n\nlet person1 = new Person('Alice', 25);\nlet person2 = new Person('Bob', 30);\n\nperson1.sayHello(); // 輸出: Hello, my name is Alice and I am 25 years old.\nperson2.sayHello(); // 輸出: Hello, my name is Bob and I am 30 years old.\n"
+		},
+		{
+			"tag": "h3",
+			"text": "使用class定義建構函式"
+		},
+		{
+			"tag": "p",
+			"text": "在 ECMAScript 6 (ES6) 中，引入了 class 語法，這是一種更清晰的方式來定義建構函式，但背後的機制與傳統建構函式相同。"
+		},
+		{
+			"tag": "precode",
+			"text": "class Person {\n  constructor(name, age) {\n    this.name = name;\n    this.age = age;\n  }\n\n  sayHello() {\n    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);\n  }\n}\n\nlet person1 = new Person('Alice', 25);\nlet person2 = new Person('Bob', 30);\n\nperson1.sayHello(); // 輸出: Hello, my name is Alice and I am 25 years old.\nperson2.sayHello(); // 輸出: Hello, my name is Bob and I am 30 years old.\n"
+		},
+		{
+			"tag": "h3",
+			"text": "避免漏掉new關鍵字"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "如果你忘記使用 new 調用建構函式，this 會指向全域對象（在瀏覽器中是 window），而不是一個新物件。這會導致意外行為。可以通過在建構函式中檢查 this 是否正確指向新實例來避免這種情況："
+		},
+		{
+			"tag": "precode",
+			"text": "//漏掉的解決辦法\nfunction Person(name, age) {\n  if (!(this instanceof Person)) {\n    return new Person(name, age); // 如果忘記使用 `new`，自動補上\n  }\n  this.name = name;\n  this.age = age;\n}\n"
+		},
+		{
+			"tag": "h2",
+			"text": "時間套件 | Moment.js"
+		},
+		{
+			"tag": "p",
+			"text": "Moment.js 是一個非常受歡迎的 JavaScript 庫，用來解析、驗證、操作和顯示日期和時間。儘管 Moment.js 現在已被官方建議改用其他現代化替代方案（如 Day.js 或原生的 JavaScript API），但它仍然在許多專案中廣泛使用。"
+		},
+		{
+			"tag": "h3",
+			"text": "匯入方式"
+		},
+		{
+			"tag": "precode",
+			"text": "//cdn引入moment.js 2.29.1版本\n<script src='https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js'></script>  \n\nnpm install moment  //使用npm安裝的方式\nconst moment = require('moment');    //在需要的文件引入"
+		},
+		{
+			"tag": "h3",
+			"text": "使用方式"
+		},
+		{
+			"tag": "p",
+			"text": "以下是一些常用的方法。"
+		},
+		{
+			"tag": "precode",
+			"text": "const now = moment();\nconsole.log(now.format()); // 輸出當前時間\n\n/*格式化日期*/\nconsole.log(now.format('YYYY-MM-DD')); // 2024-10-03\nconsole.log(now.format('MMMM Do YYYY, h:mm:ss a')); // October 3rd 2024, 2:30:00 pm\n\n/*自訂格式解析*/\nconst customDate = moment('03-10-2024', 'DD-MM-YYYY');\nconsole.log(customDate.format('YYYY-MM-DD')); // 2024-10-03\n\n/*時間的加減*/\nconst future = now.add(7, 'days');\nconsole.log(future.format('YYYY-MM-DD')); // 當前日期加 7 天\n\nconst past = moment().subtract(1, 'month');\nconsole.log(past.format('YYYY-MM-DD')); // 當前日期減 1 個月\n\n/*時間的比較*/\nconst tomorrow = moment().add(1, 'day');\nconsole.log(now.isBefore(tomorrow)); // true\n\nconst yesterday = moment().subtract(1, 'day');\nconsole.log(now.isAfter(yesterday)); // true\n\nconst date1 = moment('2024-10-03');\nconst date2 = moment('2024-10-03');\nconsole.log(date1.isSame(date2)); // true\n\nconst start = moment('2024-10-01');\nconst end = moment('2024-10-03');\nconsole.log(end.diff(start, 'days')); // 2\n\n/*時間的設定與取得*/\ndate.set('year', 2025);  // 設置年份\ndate.set('month', 0);    // 設置為一月（0 是一月）\nconsole.log(date.format('YYYY-MM-DD')); // 2025-01-03\n\nconsole.log(now.get('year'));  // 獲取年份\nconsole.log(now.get('month')); // 獲取月份 (0 是一月)"
+		},
+		{
+			"tag": "mark",
+			"text": "Moment.js 官方文檔"
+		},
+		{
+			"tag": "a",
+			"text": "https://momentjs.com/"
 		},
 		{
 			"tag": "h2",

@@ -1,8 +1,5 @@
 * {
-  /* border: 1px solid #000; */
   box-sizing: border-box;
-  scroll-behavior: smooth;
-  /* font-family: "微軟正黑體", serif; */
 }
 
 :root {
@@ -51,16 +48,11 @@
 }
 
 
-
-
 body,
 html {
   margin: 0;
+  scroll-behavior: smooth;
   /* overflow: hidden; */
-}
-
-body {
-  /* transition: 1s; */
 }
 
 h1,
@@ -71,14 +63,14 @@ h5 {
   margin: 0;
   padding: 0;
   font-family: "微軟正黑體";
-  transition: 1s;
+  /* transition: 1s; */
 }
 
 p {
   font-family: "LXGW WenKai Mono TC", "Noto Sans TC", serif;
   font-weight: 500;
-  letter-spacing: 1.3px;
-  text-align: justify;
+  letter-spacing: 1.2px;
+  /* text-align: justify; */
   text-wrap: wrap;
   color: rgb(19, 19, 19);
   line-height: 1.8rem;
@@ -306,21 +298,20 @@ main i {
 
 .subToc {
   position: fixed;
-  opacity: 0.05;
+  opacity: 0.2;
   width: 300px;
+  height: 80vh;
   top: 50%;
   translate: 0 -50%;
-  left: -285px;
+  left: -300px;
   background-color: var(--lightMainColor);
   z-index: 5;
-
   box-shadow: 3px 0 10px #777;
   padding: 20px;
   border-radius: 0 1.3rem 1.3rem 0;
-  transition: 0.5s;
+  transition: 0.6s;
 
   overflow-y: auto;
-  height: 80vh;
 
   /* &:hover {
     transition: 0.3s;
@@ -329,9 +320,9 @@ main i {
   } */
 
   &.open {
-    transition: 0.3s;
+    transition: 0.2s;
     opacity: 1;
-    left: -3px;
+    left: 0px;
   }
 
   h4 {
@@ -545,9 +536,16 @@ nav {
     border-radius: 8px;
   }
 
-  .subToc {
-    width: 80vw;
-    left: -75vw;
-  }
+  /* .subToc {
+    width: 80%;
+    left: -80%;
+  } */
 
+}
+
+@media (max-width: 375px) {
+  .subToc {
+    width: 100%;
+    left: -100%;
+  }
 }

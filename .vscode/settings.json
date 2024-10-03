@@ -1,3 +1,4 @@
 {
-  "vue.autoInsert.dotValue": true
+  "vue.autoInsert.dotValue": true,
+  "liveServer.settings.port": 5501
 }

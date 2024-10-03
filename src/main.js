@@ -45,7 +45,7 @@ getJson().then(function (data) {
 	let contents = "";
 	let i = 0;
 
-	//LoadContents(0); //開發時暫時調用
+	LoadContents(2); //開發時暫時調用
 
 	//載入頁面
 	function LoadContents(code) {
@@ -169,6 +169,7 @@ window.addEventListener("scroll", () => {
 });
 
 // 開關子目錄的事件監聽
+
 navButton.addEventListener("click", () => {
 	subToc.classList.toggle("open");
 	main.addEventListener(
