@@ -2092,6 +2092,10 @@
 		},
 		{
 			"tag": "h2",
+			"text": "DOM物件的選取"
+		},
+		{
+			"tag": "h3",
 			"text": "document.getElementById(id)"
 		},
 		{
@@ -2103,12 +2107,113 @@
 			"text": "<h1 id='myHeading1'>我的標題</h1>\n\n<script>\n    let myHeading = document.getElementById('myHeading1');    //將id叫做myHeading1的物件取得並放入變數myHeading中\n    console.log(myHeading)    //顯示取得的h1物件\n    \n</script>"
 		},
 		{
+			"tag": "h3",
+			"text": "document.querySelector()"
+		},
+		{
+			"tag": "p",
+			"text": "通過 CSS 選擇器語法來選擇第一個符合條件的元素。"
+		},
+		{
+			"tag": "precode",
+			"text": "let element = document.querySelector('.myClass'); // 選擇第一個匹配的元素"
+		},
+		{
+			"tag": "h3",
+			"text": "document.querySelectorAll()"
+		},
+		{
+			"tag": "p",
+			"text": "通過 CSS 選擇器語法來選擇所有符合條件的元素，返回一個 NodeList。"
+		},
+		{
+			"tag": "precode",
+			"text": "let elements = document.querySelectorAll('.myClass');"
+		},
+		{
+			"tag": "h2",
+			"text": "DOM物件的修改"
+		},
+		{
+			"tag": "h3",
+			"text": "innerHTML"
+		},
+		{
+			"tag": "p",
+			"text": "設定或獲取元素的 HTML 內容。"
+		},
+		{
+			"tag": "precode",
+			"text": "element.innerHTML = '<p>這是新內容</p>';"
+		},
+		{
+			"tag": "h3",
+			"text": "textContent & innerText"
+		},
+		{
+			"tag": "p",
+			"text": "只操作純文字內容，不會解析 HTML。"
+		},
+		{
+			"tag": "precode",
+			"text": "element.textContent = '這是新的純文字內容';"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "「textContent」的功能與「innerText」大致相同，但他們有一些關鍵的差異，textContent 會返回元素中所有的文字內容，不管它們是否被顯示或隱藏，完全不受 CSS 樣式的影響有別於innerText； textContent 不會觸發重繪和重排，所以性能比 innerText 更好，尤其在大量 DOM 操作時。"
+		},
+		{
+			"tag": "h3",
+			"text": "getAttribute() & setAttribute()"
+		},
+		{
+			"tag": "p",
+			"text": "獲取或設定元素的屬性值。"
+		},
+		{
+			"tag": "precode",
+			"text": "// 獲取屬性\nlet src = element.getAttribute('src');\n\n// 設定屬性\nelement.setAttribute('src', 'newImage.png');"
+		},
+		{
+			"tag": "p",
+			"text": "刪除元素的指定屬性。"
+		},
+		{
+			"tag": "precode",
+			"text": "element.removeAttribute('src');"
+		},
+		{
+			"tag": "h3",
+			"text": "style"
+		},
+		{
+			"tag": "p",
+			"text": "直接修改元素的CSS樣式。"
+		},
+		{
+			"tag": "precode",
+			"text": "element.style.color = 'red';\nelement.style.fontSize = '20px';"
+		},
+		{
+			"tag": "h3",
+			"text": "classList"
+		},
+		{
+			"tag": "p",
+			"text": "操作元素的類別(class)，以下皆為常用的classList方法。"
+		},
+		{
+			"tag": "precode",
+			"text": "element.classList.add('active');    //元素class新增active。\nelement.classList.remove('hidden');   //元素class移除hidden。\nelement.classList.toggle('highlight');    //元素class開關highlight (無則新增,有則移除)。\nclassList.contains('cover');    //檢查元素class是否含有cover。\n"
+		},
+		{
 			"tag": "p",
 			"text": "[157. get element by id or class 7:50🚧]"
 		},
 		{
 			"tag": "h2",
-			"text": "函式庫"
+			"text": "推薦的函式庫"
 		},
 		{
 			"tag": "h3",
