@@ -7,7 +7,7 @@
 		},
 		{
 			"tag": "h2",
-			"text": "HTML基礎架構"
+			"text": "基礎架構"
 		},
 		{
 			"tag": "p",
@@ -19,7 +19,11 @@
 		},
 		{
 			"tag": "h2",
-			"text": "引入CSS的方法"
+			"text": "引入外部檔案"
+		},
+		{
+			"tag": "h3",
+			"text": "引入CSS"
 		},
 		{
 			"tag": "p",
@@ -30,8 +34,8 @@
 			"text": "<link rel='stylesheet' href='style.css'>"
 		},
 		{
-			"tag": "h2",
-			"text": "引入JavaScript的方法"
+			"tag": "h3",
+			"text": "引入JavaScript"
 		},
 		{
 			"tag": "p",
@@ -55,7 +59,7 @@
 		},
 		{
 			"tag": "p",
-			"text": "語意標籤與<div></div>標籤的功能相同，\n但能讓使用者或與人協作時能更加容易辨識區塊中所放的內容為何。"
+			"text": "語意標籤與<div></div>標籤的功能相同，\n但能讓使用者或與人協作時能更加容易辨識區塊中所放的內容為何。使用語意標籤不僅讓網頁結構更具邏輯性，還能提升 SEO(搜尋引擎最佳化)、可存取性、可讀性，並且使程式碼更容易維護，符合現代 Web 開發的最佳實踐。"
 		},
 		{
 			"tag": "precode",
@@ -96,10 +100,6 @@
 		{
 			"tag": "precode",
 			"text": "<footer>頁尾，網頁最底部的區塊</footer>"
-		},
-		{
-			"tag": "p",
-			"text": "使用語意標籤不僅讓網頁結構更具邏輯性，還能提升 SEO、可存取性、可讀性，並且使程式碼更容易維護，符合現代 Web 開發的最佳實踐。"
 		},
 		{
 			"tag": "h2",
@@ -147,6 +147,186 @@
 		},
 		{
 			"tag": "h2",
+			"text": "input 使用者輸入"
+		},
+		{
+			"tag": "p",
+			"text": "<input> 標籤是 HTML 中用來建立可互動的輸入欄位，用於讓用戶在表單中輸入資料。它是表單最常用的元素之一，並且可以透過不同的 type 屬性來定義多種類型的輸入欄位。"
+		},
+		{
+			"tag": "h3",
+			"text": "常見的屬性"
+		},
+		{
+			"tag": "b",
+			"text": "type"
+		},
+		{
+			"tag": "p",
+			"text": "定義輸入欄位的類型，如 text, password, email, number, checkbox, radio 等。"
+		},
+		{
+			"tag": "b",
+			"text": "name"
+		},
+		{
+			"tag": "p",
+			"text": "表單中用來標識該輸入欄位的名稱，表單提交時這個名稱將與輸入值一起發送。"
+		},
+		{
+			"tag": "b",
+			"text": "value"
+		},
+		{
+			"tag": "p",
+			"text": "定義輸入欄位的預設值。"
+		},
+		{
+			"tag": "b",
+			"text": "placeholder"
+		},
+		{
+			"tag": "p",
+			"text": "顯示在輸入欄位中的提示文字，當欄位為空時可見。"
+		},
+		{
+			"tag": "b",
+			"text": "required"
+		},
+		{
+			"tag": "p",
+			"text": "指定此輸入欄位在提交表單前必須填寫。"
+		},
+		{
+			"tag": "b",
+			"text": "disabled"
+		},
+		{
+			"tag": "p",
+			"text": "使輸入欄位無法被修改或選取。"
+		},
+		{
+			"tag": "b",
+			"text": "readonly"
+		},
+		{
+			"tag": "p",
+			"text": "讓欄位僅供讀取，但可被選中。"
+		},
+		{
+			"tag": "b",
+			"text": "autofocus"
+		},
+		{
+			"tag": "p",
+			"text": "當頁面載入時會直接選取在此input上。"
+		},
+		{
+			"tag": "b",
+			"text": "pattern🚧"
+		},
+		{
+			"tag": "p",
+			"text": "可以撰寫正規表達式以客製化表單應該正確輸入的內容。"
+		},
+		{
+			"tag": "p",
+			"text": "[範例與客製的反饋內容🚧...]"
+		},
+		{
+			"tag": "h3",
+			"text": "type的屬性值"
+		},
+		{
+			"tag": "b",
+			"text": "text"
+		},
+		{
+			"tag": "p",
+			"text": "單行文字輸入。"
+		},
+		{
+			"tag": "b",
+			"text": "password"
+		},
+		{
+			"tag": "p",
+			"text": "密碼輸入，輸入內容會以隱藏符號顯示。"
+		},
+		{
+			"tag": "b",
+			"text": "email"
+		},
+		{
+			"tag": "p",
+			"text": "電子郵件輸入，會自動驗證格式。"
+		},
+		{
+			"tag": "b",
+			"text": "number"
+		},
+		{
+			"tag": "p",
+			"text": "數字輸入，可以設置最小值和最大值。"
+		},
+		{
+			"tag": "precode",
+			"text": "<label for='quantity'>數量:</label>\n<input type='number' id='quantity' name='quantity' min='1' max='10' step='1' value='1'>\n\n<!--\nmin:最小值\nmax:最大值\nstep:控制數量每次增加或減少的量\nvalue:初始值\n-->"
+		},
+		{
+			"tag": "b",
+			"text": "range"
+		},
+		{
+			"tag": "p",
+			"text": "範圍控制項的UI，也可以設定以上number所提及的屬性。"
+		},
+		{
+			"tag": "b",
+			"text": "checkbox"
+		},
+		{
+			"tag": "p",
+			"text": "多選框，允許多個選項。"
+		},
+		{
+			"tag": "b",
+			"text": "radio"
+		},
+		{
+			"tag": "p",
+			"text": "單選按鈕，從多個選項中選擇一個。"
+		},
+		{
+			"tag": "b",
+			"text": "submit"
+		},
+		{
+			"tag": "p",
+			"text": "送出表單的按鈕。通常在<form></form>內部的button的預設行為。"
+		},
+		{
+			"tag": "h3",
+			"text": "datalist🚧"
+		},
+		{
+			"tag": "p",
+			"text": "HTML 中的 <datalist> 元素用來定義一組選項，供 <input> 元素使用。當用戶在輸入欄位中輸入時，會根據 <datalist> 提供的選項顯示建議列表，類似於自動完成功能。"
+		},
+		{
+			"tag": "h3",
+			"text": "details🚧"
+		},
+		{
+			"tag": "p",
+			"text": "<details> 是 HTML5 中的一個互動元素，用來顯示可展開/收合的內容區域，通常搭配 <summary> 元素一起使用。當用戶點擊 <summary> 標籤時，會顯示或隱藏內部的細節內容，這在顯示額外資訊、FAQ（常見問題）或提供更多詳細內容時非常實用。"
+		},
+		{
+			"tag": "precode",
+			"text": "<details>\n  <summary>更多資訊</summary>\n  <p>這裡是展開後的詳細內容。</p>\n</details>"
+		},
+		{
+			"tag": "h2",
 			"text": "form 表單🚧"
 		},
 		{
@@ -162,8 +342,116 @@
 			"text": "./img/2_表單範例.png"
 		},
 		{
+			"tag": "h3",
+			"text": "autocomplete"
+		},
+		{
+			"tag": "p",
+			"text": "HTML 中的 <form> 元素和 <input> 元素可以使用 autocomplete 屬性來控制是否讓瀏覽器自動填充表單。這個屬性會根據用戶以前輸入的資料提供建議，或者自動填入先前的數據。其可以應用於 <form> 標籤，控制整個表單的自動填充行為。也可以應用於 <input> 元素，控制單個輸入欄位的自動填充行為。"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "mark",
+			"text": "填在<form></form>上的情況"
+		},
+		{
+			"tag": "b",
+			"text": "autocomplete='on'"
+		},
+		{
+			"tag": "p",
+			"text": "允許瀏覽器自動填充表單（預設值）。"
+		},
+		{
+			"tag": "b",
+			"text": "autocomplete='off'"
+		},
+		{
+			"tag": "p",
+			"text": "禁止瀏覽器自動填充表單。"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "mark",
+			"text": "填在<input></input>上的情況"
+		},
+		{
+			"tag": "b",
+			"text": "name"
+		},
+		{
+			"tag": "p",
+			"text": "用戶的全名。"
+		},
+		{
+			"tag": "b",
+			"text": "email"
+		},
+		{
+			"tag": "p",
+			"text": "電子郵件地址。"
+		},
+		{
+			"tag": "b",
+			"text": "username"
+		},
+		{
+			"tag": "p",
+			"text": "用戶名。"
+		},
+		{
+			"tag": "b",
+			"text": "current-password"
+		},
+		{
+			"tag": "p",
+			"text": "目前的密碼。"
+		},
+		{
+			"tag": "b",
+			"text": "new-password"
+		},
+		{
+			"tag": "p",
+			"text": "新密碼。"
+		},
+		{
+			"tag": "b",
+			"text": "tel"
+		},
+		{
+			"tag": "p",
+			"text": "電話號碼。"
+		},
+		{
+			"tag": "b",
+			"text": "address-line1"
+		},
+		{
+			"tag": "b",
+			"text": "address-line2"
+		},
+		{
+			"tag": "p",
+			"text": "地址欄。"
+		},
+		{
+			"tag": "b",
+			"text": "postal-code"
+		},
+		{
+			"tag": "p",
+			"text": "郵政編碼。"
+		},
+		{
 			"tag": "h2",
-			"text": "contenteditable 可編輯文字的屬性"
+			"text": "contenteditable 允許編輯"
 		},
 		{
 			"tag": "p",
@@ -186,8 +474,8 @@
 			"text": "<video autoplay muted poster='./images/09_laydown_scone.jpg' width='100%' loop controls controlslist='nodownload nofullscreen' disablepictureinpicture>\n  <source src='./videos/video1.mp4' />\n  <source src='./videos/video2.mp4' />\n  <p>不支援影片播放</p>\n</video>\n\n<!-- \n以下為屬性的說明\n  autoplay 自動播放\n  muted 靜音\n  poster 當影片不存在時可指定顯示的圖片\n  loop 重複播放\n  controls 影片控制項\n  controlslist='nodownload nofullscreen' 不能下載以及不能全螢幕的設定\n  disablepictureinpicture 不能子母畫面\n-->"
 		},
 		{
-			"tag": "p",
-			"text": ""
+			"tag": "h2",
+			"text": "檔案預覽🚧"
 		},
 		{
 			"tag": "p",

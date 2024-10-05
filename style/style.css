@@ -122,8 +122,10 @@ a {
 }
 
 b {
+  font-family: Arial, Helvetica, sans-serif, 微軟正黑體;
+  font-weight: 700;
   display: block;
-  color: #005597;
+  color: #0267b4;
   margin: 10px 0;
   font-size: 1.1rem;
 }
