@@ -2,10 +2,6 @@
 	[
 		{ "title": "HTML🦴" },
 		{
-			"tag": "mark",
-			"text": "內容過於基礎 暫時停更"
-		},
-		{
 			"tag": "p",
 			"text": "HTML(Hypertext Markup Language)，中文全名為「超文字標示語言」，是一種用來組織架構並呈現網頁內容的程式語言。網頁內容的組成可能包含了段落、清單、圖片或表格等。HTML 是一種基礎技術，常與 CSS、JavaScript 一起被眾多網站用於設計網頁、網頁應用程式以及行動應用程式的使用者介面。網頁瀏覽器可以讀取 HTML 檔案，並將其彩現成視覺化網頁。"
 		},
@@ -2285,7 +2281,178 @@
 		}
 	],
 	[
-		{ "title": "jQuery🚧" },
+		{ "title": "Ajax🚧" },
+		{
+			"tag": "h2",
+			"text": "介紹"
+		},
+		{
+			"tag": "p",
+			"text": "AJAX即「Asynchronous JavaScript and XML」(非同步的JavaScript與XML技術)，指的是一套綜合了多項技術的瀏覽器端網頁開發技術。"
+		},
+		{
+			"tag": "p",
+			"text": "AJAX在客戶端使用各種Web技術來創建異步(asynchronous)Web應用程序。應用程序可以在背景從服務器發送和獲得數據,而不干擾現有頁面的顯示和行為。通過將數據交換層與表示層分離,Ajax允許網頁以及擴展的Web應用程序動態地更改內容,而無需重新加載整個頁面。在實踐中,數據的傳送通常使用JSON而不是XML。"
+		},
+		{
+			"tag": "p",
+			"text": "常見的Ajax應用的例子是,我們在YouTube或是Google搜尋時,網站會根據我們前面打的幾個字,猜想我們想要搜尋的關鍵字是什麼。這就是不干擾現有頁面的顯示和行為的情況下,從服務器發送和獲得數據,並且更新網頁的方法。"
+		},
+		{
+			"tag": "h2",
+			"text": "同步與異步"
+		},
+		{
+			"tag": "p",
+			"text": "在計算機程式中，異步(asynchronous)代表著一個程式process獨立於其他process運行，而同步(synchronous)代表著一個process僅在某個其他process完成或移交後而運行。"
+		},
+		{
+			"tag": "p",
+			"text": "JavaScript有內建的asynchronous function，例如:"
+		},
+		{
+			"tag": "precode",
+			"text": "setTimeout( code, delay )"
+		},
+		{
+			"tag": "p",
+			"text": "此函數會設置一個計時器，一旦計時器時間到，計時器就會執行一個函數或指定的一段代碼；其中code是delay結束時要執行的程式碼，delay是在執行指定的函數或代碼之前計時器等待的時間(以毫秒為單位)，如果省略此參數則預設值為0，表示立即執行。"
+		},
+		{
+			"tag": "h3",
+			"text": "異步函數範例:"
+		},
+		{
+			"tag": "precode",
+			"text": "console.log('start');\n\nsetTimeout(( )=>{\nconsole.log('Here is the code');\n},2000)\n\nconsole.log('end');\n\n\n//程式碼結果如下\n//start\n//end\n//Here is the code"
+		},
+		{
+			"tag": "h2",
+			"text": "Promise(重要✨)"
+		},
+		{
+			"tag": "p",
+			"text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值，且它有三種狀態:。"
+		},
+		{
+			"tag": "b",
+			"text": "pending(處理中)：初始狀態擱置中。"
+		},
+		{
+			"tag": "b",
+			"text": "fullfilled(已完成)：表示操作成功地完成。"
+		},
+		{
+			"tag": "b",
+			"text": "rejected(已拒絕)：表示操作失敗了。"
+		},
+		{
+			"tag": "h3",
+			"text": "流程圖"
+		},
+		{
+			"tag": "p",
+			"text": "當上述任一狀態轉換發生時，Promise物件可以調用兩個函數。一個叫做.then()，一個叫做.catch()。"
+		},
+		{
+			"tag": "img",
+			"text": "./img/3_Promise狀態流程.png"
+		},
+		{
+			"tag": "h3",
+			"text": ".then()"
+		},
+		{
+			"tag": "p",
+			"text": "以下範例中，fetch是一個可以向網址發送HTTP requests的異步函數，當promiseObject從pending狀態變為fullfilled之後，.then()內部的callback function就會被js自動執行。執行時帶入的參數就是從URL獲得的HTTP Response內容(通常會得到一些數據)。"
+		},
+		{
+			"tag": "precode",
+			"text": "let promiseObject = fetch(URL);\n\npromiseObject.then((response)=>{\n\n    console.log(response);    //獲得接收到的數據\n\n    let jsonPromise = response.json().then((data)=>{          //可將文字部分做成JSON物件\n         console.log(data);\n   });    \n    \n})"
+		},
+		{
+			"tag": "p",
+			"text": "其中.json()是一個可以將data轉換成JSON格式的函數，其本身也是一個異步函數，故也會回傳一個promise物件。所以要再加一個.then()才能取出裡面的json物件。也可以改寫成:"
+		},
+		{
+			"tag": "precode",
+			"text": "promiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    });"
+		},
+		{
+			"tag": "h3",
+			"text": ".catch()"
+		},
+		{
+			"tag": "p",
+			"text": ".catch()函數是在調用當Promise物件狀態轉換為rejected時，會去調用的函數。如果將catch()添加調Promise Chain的末尾，那麼當任何異步函數調用失敗時都會調用它。如以下範例:"
+		},
+		{
+			"tag": "precode",
+			"text": "let promiseObject = fetch(URL);   //錯誤或不存在的URL或者網路異常\n\npromiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    })\n    .catch(e)=>{\n        console.log(fetchPromise);   //顯示status:rejected\n        console.log(e);   //顯示錯誤訊息\n    });"
+		},
+		{
+			"tag": "h2",
+			"text": "Combining Multiple Promise"
+		},
+		{
+			"tag": "p",
+			"text": "當我們的操作由多個異步函數組成時，我們需要用到promise chaining，讓我們在開始下一個函數之前完成前一個函數。這種情況下，每個Promise都互相依賴。有時，我們需要所有Promise都被fulfilled，但它們並不相互依賴。在這種情況下，將它們全部一起啟動，然後在它們全部fulfilled時收到通知會更有效。JavaScript當中，提供了Promise.all()這個static method，它接受一個promisearray並返回一個promise。"
+		},
+		{
+			"tag": "p",
+			"text": "[279. 網頁全端開發課程..🚧]"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h2",
+			"text": "JQuery Ajax"
+		},
+		{
+			"tag": "p",
+			"text": "使用jquery提供的Ajax可以利用簡短的程式碼輕鬆的對API進行ajax請求。所以在請求前須先引入jquery API才能夠使用，例如以下程式碼，如想使用其它版本，請去官網或者cdn.js查詢。"
+		},
+		{
+			"tag": "b",
+			"text": "引入jquery"
+		},
+		{
+			"tag": "precode",
+			"text": "<script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=' crossorigin='anonymous'></script>"
+		},
+		{
+			"tag": "b",
+			"text": "基本語法"
+		},
+		{
+			"tag": "precode",
+			"text": "$.ajax({\n    method: '/*方法*/',\n    url: '/*發送請求的網址*/',\n    dataType: '/*資料型式*/',\n    data: { \n        //傳入的資料 \n    }\n})\n.done(function( response ) {\n     //成功接收資料執行的函式\n     console.log(response);     //查看接收到的資料\n\n}).fail(function( jqXHR, textStatus ) {\n    //請求失敗產生錯誤訊息\n    console.log( 'Request failed: ' + textStatus );     \n})"
+		},
+		{
+			"tag": "b",
+			"text": "範例"
+		},
+		{
+			"tag": "p",
+			"text": "如以下範例，ajax使用POST方法將JSON格式的資料發送到網址「/api/user.php」做請求，並傳入id數據，若請求成功則執行done區塊內的結果，並辨識接收到的狀態碼，如果為0則將訊息從網頁alert出來。並將需要的值放入變數內方便取用。若請求失敗則於主控台輸出失敗訊息。"
+		},
+		{
+			"tag": "precode",
+			"text": "//...部分程式碼省略\n\n$.ajax({\n    method: 'POST',\n    url: '/api/user.php',\n    dataType: 'json',\n    data: { \n        id: id \n    }\n})\n.done(function( response ) {\n    // console.log(response);\n    let status = response.status;\n\n    if(status==0){\n        alert(response.message);\n        return\n    }\n\n    account.textContent = response.user.account\n    name.textContent = response.user.name\n    email.textContent = response.user.email\n    phone.textContent = response.user.phone\n\n}).fail(function( jqXHR, textStatus ) {\n    console.log( 'Request failed: ' + textStatus );\n})"
+		},
+		{
+			"tag": "p",
+			"text": "[...🚧]"
+		}
+	],
+	[
+		{ "title": "Jquery🚧" },
 		{
 			"tag": "mark",
 			"text": "官方文檔"
@@ -2831,6 +2998,512 @@
 			"text": ""
 		}
 	],
+	[{ "title": "Version Control🚧" }],
+
+	[
+		{ "title": "Vue.js🚧" },
+		{
+			"tag": "mark",
+			"text": "vue官方文檔"
+		},
+		{
+			"tag": "a",
+			"text": "https://vuejs.org/"
+		},
+		{
+			"tag": "mark",
+			"text": "尚硅谷禹神新版Vue3"
+		},
+		{
+			"tag": "a",
+			"text": "https://www.youtube.com/watch?v=d5mrJfl6UWM&list=PLmOn9nNkQxJEnGM4Jf0liBcyedAtuQq-O"
+		},
+		{
+			"tag": "h2",
+			"text": "介紹"
+		},
+		{
+			"tag": "p",
+			"text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面。無論是簡單還是複雜的界面，Vue 都可以勝任。"
+		},
+		{
+			"tag": "h2",
+			"text": "Vue3 創建方法"
+		},
+		{
+			"tag": "p",
+			"text": "Vue3官方推薦使用Vite新一代構建工具。其輕量快速能實現快速服務，支援TypeScript、JSX、CSS，按需求編譯不用像webpack等待整個應用編譯完成。以下為使用vite構建工具的創建命令。"
+		},
+		{
+			"tag": "precode",
+			"text": "npm create vue@latest"
+		},
+		{
+			"tag": "h2",
+			"text": "Vue3 運行方法"
+		},
+		{
+			"tag": "precode",
+			"text": "npm run dev"
+		},
+		{
+			"tag": "p",
+			"text": "終端機中使用此語法能夠像是go live一樣，開啟瀏覽器檢視所撰寫的網頁。"
+		},
+		{
+			"tag": "h2",
+			"text": "main.js或main.ts程式碼架構"
+		},
+		{
+			"tag": "precode",
+			"text": "import { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')"
+		},
+		{
+			"tag": "p",
+			"text": "1. import { createApp } from 'vue'：這行程式碼從 Vue.js 框架中導入了 createApp 函數。createApp 是 Vue 3 中用於創建應用程式實例的入口函數。"
+		},
+		{
+			"tag": "p",
+			"text": "2. import App from './App.vue'：這行程式碼從當前目錄下的 App.vue 文件中導入了 App 組件。App.vue 通常是一個單文件組件，它包含了應用程式的根組件。"
+		},
+		{
+			"tag": "p",
+			"text": "3. createApp(App).mount('#app')：這行程式碼首先使用 createApp 函數創建了一個新的 Vue 應用程式實例，並將 App 組件作為根組件。然後，它調用了 mount 方法將應用程式掛載到 DOM 中的 #app 元素。"
+		},
+		{
+			"tag": "h2",
+			"text": "Vue元件的基礎架構"
+		},
+		{
+			"tag": "precode",
+			"text": "<template>\n  <!--HTML-->\n</template>\n\n <script lang='ts'>   //lang='ts'代表使用ts語言\n  //JS或TS\n    export default {      //使用暴露才能在其他地方被import\n        name:'App'\n    }\n</script> \n\n<style>\n  /*CSS*/\n</style>"
+		},
+		{
+			"tag": "h2",
+			"text": "將Vue子元件(components)引入App.vue"
+		},
+		{
+			"tag": "mark",
+			"text": "【极简Vue3】005 一个简单的效果"
+		},
+		{
+			"tag": "a",
+			"text": "https://youtu.be/UgT78vtiKUo?si=N0jfj-GTOTUHZ2aL"
+		},
+		{
+			"tag": "p",
+			"text": "必須讓根元件認識子元件(以Person.vue為例)，必須在根元件(App.vue)的<script></script>內撰寫以下語法:"
+		},
+		{
+			"tag": "precode",
+			"text": "<script>\nimport Person from '/components/Person.vue'  //引入元件\n\nexport default {\n    name:'App',   //根元件名\n    components:{ Person }    //註冊元件\n}\n</script>"
+		},
+		{
+			"tag": "p",
+			"text": "其中 '/components/Person.vue' 是告訴 App.vue(根元件) 子元件從哪裡取用。 components:{ Person }則是用來註冊子元件，多個子元件需要用逗號隔開。這麼一來就可以在根元件的<template></template>中使用<Person/>來放入Person元件了!"
+		},
+		{
+			"tag": "precode",
+			"text": "<template>\n    <Person/>  <!--使用子元件-->\n</template>"
+		},
+		{
+			"tag": "h2",
+			"text": "setup"
+		},
+		{
+			"tag": "p",
+			"text": "setup 是 Vue3中的一個新的配置項，值是一個函數，它是Components API 組合式API的表演舞台，組件中所用到的 數據、方法、計算屬性、監視等等都配置在setup中，其有以下特點:"
+		},
+		{
+			"tag": "b",
+			"text": "1. setup 函數返回的對象中的內容可直接在模板中使用。"
+		},
+		{
+			"tag": "b",
+			"text": "2. setup 中訪問的this是undefined。"
+		},
+		{
+			"tag": "b",
+			"text": "3. setup 會在beforeCreate之前調用，他是領先所有鉤子執行的。"
+		},
+		{
+			"tag": "precode",
+			"text": "<script>\nexport default {\n    name:'App',\n    components:{ Person }\n    setup( ){\n      //將數據、方法配置於此處\n\n       return{  } //將配置好的數據方法等放於return內交出去   \n    } \n}\n</script>"
+		},
+		{
+			"tag": "p",
+			"text": "Vue3的語法中，其實還是可以撰寫Vue2的語法data()來配置數據或方法等數據，其中setup()中寫的數據是可以利用Vue2中寫的data()讀取到的，由此可知，setup()比data()配置的還更早，所以Vue3的setup()語法中是讀取不到data()的；故建議Vue3語法不要跟Vue2語法混用。"
+		},
+		{
+			"tag": "precode",
+			"text": "data( ){\n    return{\n        c: this.name  //會讀取到張三\n    },\n\nsetup( ){\n    let name = '張三'\n}"
+		},
+		{
+			"tag": "h3",
+			"text": "🍬setup的語法糖"
+		},
+		{
+			"tag": "p",
+			"text": "setup( )語法使用到的數據等資料在配置時都一定要使用 return 才能讓模板讀取，所以Vue官方提供了一個語法糖，能夠讓寫法變得更單純簡單。撰寫方法如下，我們須要另外寫一處setup的標籤，且內部不用再寫setup()和return，直接寫數據和方法即可達到自動回傳數據到模板的功能。"
+		},
+		{
+			"tag": "precode",
+			"text": "<script>\nexport default {\n    name:'App',\n    components:{ Person }\n}\n</script>\n\n<script lang='ts' setup>\n    let a = 123\n\n    function SayHello( ){\n        console.log( 'Hello' )\n    } \n</script>"
+		},
+
+		{
+			"tag": "h3",
+			"text": "🪄setup定義元件名的插件"
+		},
+		{
+			"tag": "p",
+			"text": "在尚硅谷中提供一辦法，就是安裝插件。我們可以在終端機視窗中打以下安裝指令:"
+		},
+		{
+			"tag": "precode",
+			"text": "npm i vite-plugin-vue-setup-extend -D"
+		},
+		{
+			"tag": "p",
+			"text": "並且必須在vite.config.js或vite.config.ts的檔案中新增兩行程式碼於以下位置:"
+		},
+		{
+			"tag": "precode",
+			"text": "import VueSetupExtend from 'vite-plugin-vue-setup-extend'   //引入插件\n\n VueSetupExtend()   //調用插件"
+		},
+		{
+			"tag": "precode",
+			"text": "import { fileURLToPath, URL } from 'node:url'\n\nimport { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\nimport VueSetupExtend from 'vite-plugin-vue-setup-extend'      //新增，其中VueSetupExtend是自由取名的\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n    plugins: [\n      vue(),\n      VueSetupExtend()   //新增，追加調用\n    ],\n    resolve: {\n      alias: {\n          @': fileURLToPath(new URL('./src', import.meta.url))\n      }\n    }\n})"
+		},
+		{
+			"tag": "p",
+			"text": "完成以上步驟以後，我們就將以下程式碼:"
+		},
+		{
+			"tag": "precode",
+			"text": "<script>\nexport default {\n    name:'Person',\n}\n</script>\n\n<script lang='ts' setup>\n\n</script>"
+		},
+		{
+			"tag": "p",
+			"text": "取代成以下程式碼:"
+		},
+		{
+			"tag": "precode",
+			"text": "<script lang='ts' setup name='Person'>\n\n<script>"
+		},
+		{
+			"tag": "h2",
+			"text": "配置響應式數據"
+		},
+		{
+			"tag": "h3",
+			"text": "ref( )"
+		},
+		{
+			"tag": "a",
+			"text": "https://youtu.be/t5XjTkbiSYE?si=AxDZJQLSpQoIgGxG"
+		},
+		{
+			"tag": "p",
+			"text": "ref()是一個Vue3中可以定義基本類型的響應式數據的函數，其語法範例如下:"
+		},
+		{
+			"tag": "precode",
+			"text": "<script>\n    import { ref } from 'vue'    //引入Vue中的ref函數\n\n\n    //let 響應式變數 = ref(初始值)  例如:\n    let name = ref('張小天')\n    let age = ref(18)\n</script>"
+		},
+		{
+			"tag": "p",
+			"text": "使用此語法時須要注意，若要在JS中操作數據，需要在數據後加.value，但在<template>模板(以下稱模板)中卻不需要加.value；對於let name = ref('張小天')來說，name不是響應式的，name.value才是響應式的。"
+		},
+		{
+			"tag": "precode",
+			"text": "<template>\n    <h2>姓名:{{ name }}</h2>    <!-- 不需要加.value -->\n</template>\n\n\n<script>\n    name.value = '張大天'    //此處要加.value才能操作數據\n</script>"
+		},
+		{
+			"tag": "p",
+			"text": "ref()其實也是可以在Vue3中定義物件類型的響應式數據的函數，但其最根本的程式碼仍舊會調用到reactive()讓物件成為響應式數據。"
+		},
+		{
+			"tag": "precode",
+			"text": "let car = ref({brand:'賓士',price:100})"
+		},
+		{
+			"tag": "mark",
+			"text": "😮若用ref( )定義了物件以後可以透過操作.value來更改數據，其物件仍然是響應式。"
+		},
+		{
+			"tag": "precode",
+			"text": "let car = ref({brand:'賓士',price:100})\n\n//例如調用了以下函式數據仍然式響應式\nfunction changeCar( ){\n    car.value = {brand:'BMW' , price:90}\n}\n"
+		},
+		{
+			"tag": "h3",
+			"text": "reactive( )"
+		},
+		{
+			"tag": "a",
+			"text": "https://youtu.be/VdeQ0g0AV_g?si=EKb6xNIECkgVn5Pe"
+		},
+		{
+			"tag": "p",
+			"text": "reactive()是一個Vue3中「只能」定義物件類型響應式數據的函數，其語法範例如下:"
+		},
+		{
+			"tag": "precode",
+			"text": "<script>\n    import {reactive} from 'vue'    //引入Vue中的reactive函數\n\n    let car =reactive({brand:'奔馳',price:100})\n    let games = reactive([\n        {id:'aysdytfsatr01',name:'王者榮耀'},\n        {id:'aysdytfsatr02',name:'原神'},\n        {id:'aysdytfsatr03',name:'三國志'}\n    ])\n\n    // 方法\n    function changePrice(){\n      car.price += 10\n      console.log(car.price)\n    }\n\n    function changeFirstGame(){\n      games[0].name = '流星蝴蝶劍'\n      console.log(games[0].name)\n    }\n</script>"
+		},
+		{
+			"tag": "p",
+			"text": "此語法可以讓物件中每一層的數據都成為響應式的，並且在JS與模板中並不須要加上.value就可以操控數據。"
+		},
+		{
+			"tag": "mark",
+			"text": "😮若用reactive( )定義了物件以後，若把整個物件改掉，則會失去響應式功能。"
+		},
+		{
+			"tag": "precode",
+			"text": "let car = reactive({brand:'賓士',price:100})\n\n//例如調用了以下函式去替換了整個物件，就會失去響應式功能，頁面也不會有任何反應\nfunction changeCar( ){\n    car = {brand:'BMW' , price:90}\n}\n"
+		},
+		{
+			"tag": "p",
+			"text": "我們可以透過Object.assign(原物件,新物件)函數來重新指派物件。"
+		},
+		{
+			"tag": "precode",
+			"text": "function changeCar( ){\n    //其中Object.assign(原物件,指派的新物件)\n    Object.assign(car,{brand:'賓士',price:100})\n}"
+		},
+
+		{
+			"tag": "h3",
+			"text": "🔔ref( ) 與 reactive( ) 使用原則"
+		},
+		{
+			"tag": "b",
+			"text": "1.若是需要一個基本類型的響應式數據，必須使用ref()。"
+		},
+		{
+			"tag": "b",
+			"text": "2.若是需要一個響應式物件，但其內部層級不深，ref(),reactive()都可以使用。"
+		},
+		{
+			"tag": "b",
+			"text": "3.若是需要一個響應式物件，層級較深，則推薦使用reactive()。"
+		},
+		{
+			"tag": "h2",
+			"text": "toRef 與 toRefs"
+		},
+		{
+			"tag": "mark",
+			"text": "【极简Vue3】015 toRefs与toRef"
+		},
+		{
+			"tag": "a",
+			"text": "https://youtu.be/a9QAmiVjlPI?si=553tkw7lrW341Yfx"
+		},
+		{
+			"tag": "p",
+			"text": "toRef( )和toRefs( )是Vue3中的兩個特殊函數，都是把一個被定義的響應式物件解構放置於另外的變數，並且使其變數仍然維持響應式狀態。例如以下範例利用toRefs( )將person.name和person.age中的數據解構出來，並且用name和age變數放置解構出來的值，其中toRefs會將每個解構出來的值加上一層ref( )使其維持在響應是狀態，person.name與解構出來的name.value是連動的，person.age與解構出來的age.value也是連動的。"
+		},
+		{
+			"tag": "precode",
+			"text": "//toRef(物件變數,物件中的屬性)，處理單一數據(不常用)。\n\nimport { reactive, toRef } from 'vue';\n\nconst info = reactive({\n  name: 'Tony',\n  greet: 'Hello',\n});\n\n// 複製 info 中的 greet 屬性並轉換為 ref\nconst rGreet = toRef(info, 'greet');\n\n// 修改 rGreet 的值\nconst onChangeGreet = () => {\n  rGreet.value = 'world!';\n};"
+		},
+
+		{
+			"tag": "precode",
+			"text": "//toRefs(物件變數)，處理多個數據(較常用)\n\nimport {reactive, toRefs} from 'vue'\n\n//數據\nlet person = reactive(\n    name:'張小天 ' ,\n    age: 18\n}\n\nlet {name, age} = toRefs(person)\n\n// 方法\nfunction changeName(){\n    name.value += '~'\n    console.log(name. value, person.name)  //兩數據得出的結果會一樣。\n}"
+		},
+		{
+			"tag": "h2",
+			"text": "計算屬性(computed)"
+		},
+		{
+			"tag": "mark",
+			"text": "【极简Vue3】016 computed计算属性"
+		},
+		{
+			"tag": "a",
+			"text": "https://youtu.be/9PhQoYMQjWw?si=-BUmF9vM1kC2Sf0I"
+		},
+		{
+			"tag": "p",
+			"text": "計算屬性(computed properties)是一個強大的功能，它允許你聲明一個依賴於其他響應式數據屬性的屬性，並且這個屬性的值會根據其依賴的數據變化而自動更新。以下為計算屬性的特點及尚硅谷示例："
+		},
+		{
+			"tag": "b",
+			"text": "1. 計算屬性是基於其依賴關係進行緩存的，只有在其相關依賴發生改變時才會重新求值。"
+		},
+		{
+			"tag": "b",
+			"text": "2. 它通常用於處理一些複雜的邏輯，例如根據其他數據的變化來計算一個值。"
+		},
+		{
+			"tag": "precode",
+			"text": "<template>\n    <div class='person'>\n    姓：<input type='text' v-model='firstName'> <br>\n    名：<input type='text' v-model='lastName'> <br>\n    全名：<span>{{ fullName }}</span><br>\n    </div>\n</template>\n\n<script lang='ts' setup name='Person'>\n    import {ref, computed} from 'vue'     //引入computed\n\n    let firstName = ref('zhang')\n    let lastName = ref('san')\n\n    let fullName = computed(()=>{\n        return firstName. value. slice(0,1). toUpperCase() + firstName.value.slice(1)   //定義為較複雜的計算並回傳\n    }\n\n</script>"
+		},
+		{
+			"tag": "h3",
+			"text": "如何直接更動計算屬性?"
+		},
+		{
+			"tag": "p",
+			"text": "計算屬性通常只能讀寫不能改動，但利用以下特殊方式可以將計算屬性的值做更動。"
+		},
+		{
+			"tag": "precode",
+			"text": "\n    let fullName = computed({\n        get( ){\n             return firstName. value. slice(0,1). toUpperCase() + firstName.value.slice(1)\n        },\n        set( val ){    //用set接收計算屬性被更改的觸發函數，並接收val\n\n              //此處再利用客製方法將val去更動此計算屬性所依賴的響應式數據，計算屬性就會被更動\n\n        }\n    })\n"
+		},
+		{
+			"tag": "h2",
+			"text": "監視屬性(watch)"
+		},
+
+		{
+			"tag": "p",
+			"text": "Vue中的監視屬性是一個強大的功能，用於監視數據的變化並執行相應的操作。以下為Vue的監視屬性能監視的四種數據。"
+		},
+		{
+			"tag": "precode",
+			"text": "watch(監視的數據,回調函數)"
+		},
+		{
+			"tag": "b",
+			"text": "1. ref()定義的數據。"
+		},
+		{
+			"tag": "b",
+			"text": "2. reactive()定義的數據。"
+		},
+		{
+			"tag": "b",
+			"text": "3. 函數回傳一個值。"
+		},
+		{
+			"tag": "b",
+			"text": "4. 一個包含上述內容的陣列。"
+		},
+
+		{
+			"tag": "h3",
+			"text": "🐻情況一"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "mark",
+			"text": "【极简Vue3】017 watch监视 情况一"
+		},
+		{
+			"tag": "a",
+			"text": "https://youtu.be/c2ZaqEyLVZI?si=O599YaKmK-EZZ_cr"
+		},
+		{
+			"tag": "p",
+			"text": "監視ref()定義的【基本類型數據】:直接寫數據名即可，監視的是其Value值的改變。以下程式碼利用watch()能監視到sum當按下按鈕時發生的改變，並且回調函數可以接收到新數據(newValue)和舊數據(oldValue)；在此處監視的數據(此為sum)是不需要加上.value的，這一點須要注意不然功能會無法正常運作。"
+		},
+		{
+			"tag": "precode",
+			"text": "<templatete>\n  <div class='person'>\n    <h1>情況一</h1>\n    <h2>當前求和為:{{ sum }}</h2>\n    <button @click='changeSum'>點我sum+1</button>\n  </div>\n</templatete>\n\n<script lang='ts' setup name=''person'>\n  import {ref,watch} from 'vue'\n\n  //數據\n  let sum =ref(0)\n\n  //方法\n  function changeSum(){\n    sum.value +=1\n  }\n\n  //監視\n  watch(sum, (newValue,oldValue)=>{\n    console.log('sum變化了!',newValue,oldValue);\n  })\n</script>"
+		},
+		{
+			"tag": "h3",
+			"text": "條件停止數據監視的方法"
+		},
+		{
+			"tag": "p",
+			"text": "延續上方範例，以下此方法可以在newValue被加到10的時候停止數據監視。"
+		},
+		{
+			"tag": "precode",
+			"text": "//監視\nconst stopWatch = watch(sum, (newValue,oldValue)=>{\n  console.log('sum變化了!',newValue,oldValue);\n\n  if(newValue >= 10){\n    stopWatch()\n  }\n})"
+		},
+
+		{
+			"tag": "h3",
+			"text": "🐻情況二"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "mark",
+			"text": "【极简Vue3】018 watch监视 情况二"
+		},
+		{
+			"tag": "a",
+			"text": "https://youtu.be/slSOx0xI-CY?si=Nl_UU_lIsWhJhDOS"
+		},
+		{
+			"tag": "p",
+			"text": "監視ref()定義的【物件類型數據】:監視的是物件的地址值，簡單來說以下情況只會監視person這個物件是否整體都被改變，只有第三個按鈕才會起作用。"
+		},
+		{
+			"tag": "precode",
+			"text": "<templatete>\n  <div class='person'>\n    <h1>情況二</h1>\n    <h2>姓名:{{ person.name }}</h2>\n    <h2>年齡:{{ person.age }}</h2>\n\n    <button @click='changeName'>修改名字</button>\n    <button @click='changeAge'>修改年齡</button>\n    <button @click='changePerson'>修改整個人</button>\n  </div>\n</templatete>\n\n<script lang='ts' setup name=''person'>\n  import { ref, watch } from 'vue';\n\n  //數據\n  let person = ref({\n    name: '小天',\n    age: 18,\n  });\n\n  //方法\n  function chanegeName() {\n    person.value.name += '~';\n  }\n  function chanegeAge() {\n    person.value.age += 1;\n  }\n  function chanegePerson() {\n    person.value = { name: '大天', age: 90 };\n  }\n\n  //監視\n  watch(person, (newValue, oldValue) => {\n    console.log('person變化了!', newValue, oldValue);\n  });\n</script>"
+		},
+		{
+			"tag": "h3",
+			"text": "深度監視和立即監視的方法"
+		},
+		{
+			"tag": "p",
+			"text": "若想監視物件內部的變化時，須手動開啟深度監視。如下方的方式添加第三個參數就可以監測到物件內部的值發生變化，並調用回調函數。"
+		},
+		{
+			"tag": "precode",
+			"text": "watch(監視的數據,回調函數,{deep:true})"
+		},
+		{
+			"tag": "p",
+			"text": "如果想再加一功能，是讓頁面一載入就立即調用監視屬性內的回調函數的話，要再加上以下語法。deep和immediate可按需求選擇使用，不寫的話此兩功能默認都是false。"
+		},
+		{
+			"tag": "precode",
+			"text": "watch(監視的數據,回調函數,{deep:true,immediate:true})"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "若修改的是ref定義的物件中的屬性，newValue和oldValue所呈現的值會是同一個物件。若修改整個ref定義的物件，newValue是新值，oldValue是舊值，因為不是同一個物件了。"
+		},
+		{
+			"tag": "h3",
+			"text": "🐻情況三"
+		},
+
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		}
+	],
+	[{ "title": "React.js🚧" }],
 	[
 		{ "title": "PHP🚧" },
 		{
@@ -3436,681 +4109,6 @@
 			"text": ""
 		}
 	],
-	[{ "title": "Version Control🚧" }],
-	[
-		{ "title": "Ajax🚧" },
-		{
-			"tag": "h2",
-			"text": "介紹"
-		},
-		{
-			"tag": "p",
-			"text": "AJAX即「Asynchronous JavaScript and XML」(非同步的JavaScript與XML技術)，指的是一套綜合了多項技術的瀏覽器端網頁開發技術。"
-		},
-		{
-			"tag": "p",
-			"text": "AJAX在客戶端使用各種Web技術來創建異步(asynchronous)Web應用程序。應用程序可以在背景從服務器發送和獲得數據,而不干擾現有頁面的顯示和行為。通過將數據交換層與表示層分離,Ajax允許網頁以及擴展的Web應用程序動態地更改內容,而無需重新加載整個頁面。在實踐中,數據的傳送通常使用JSON而不是XML。"
-		},
-		{
-			"tag": "p",
-			"text": "常見的Ajax應用的例子是,我們在YouTube或是Google搜尋時,網站會根據我們前面打的幾個字,猜想我們想要搜尋的關鍵字是什麼。這就是不干擾現有頁面的顯示和行為的情況下,從服務器發送和獲得數據,並且更新網頁的方法。"
-		},
-		{
-			"tag": "h2",
-			"text": "同步與異步"
-		},
-		{
-			"tag": "p",
-			"text": "在計算機程式中，異步(asynchronous)代表著一個程式process獨立於其他process運行，而同步(synchronous)代表著一個process僅在某個其他process完成或移交後而運行。"
-		},
-		{
-			"tag": "p",
-			"text": "JavaScript有內建的asynchronous function，例如:"
-		},
-		{
-			"tag": "precode",
-			"text": "setTimeout( code, delay )"
-		},
-		{
-			"tag": "p",
-			"text": "此函數會設置一個計時器，一旦計時器時間到，計時器就會執行一個函數或指定的一段代碼；其中code是delay結束時要執行的程式碼，delay是在執行指定的函數或代碼之前計時器等待的時間(以毫秒為單位)，如果省略此參數則預設值為0，表示立即執行。"
-		},
-		{
-			"tag": "h3",
-			"text": "異步函數範例:"
-		},
-		{
-			"tag": "precode",
-			"text": "console.log('start');\n\nsetTimeout(( )=>{\nconsole.log('Here is the code');\n},2000)\n\nconsole.log('end');\n\n\n//程式碼結果如下\n//start\n//end\n//Here is the code"
-		},
-		{
-			"tag": "h2",
-			"text": "Promise(重要✨)"
-		},
-		{
-			"tag": "p",
-			"text": "Promise是一個由asynchronous function所return的特殊物件，主要功能是，Promise會代理一個建立時不用預先得知結果的值，且它有三種狀態:。"
-		},
-		{
-			"tag": "b",
-			"text": "pending(處理中)：初始狀態擱置中。"
-		},
-		{
-			"tag": "b",
-			"text": "fullfilled(已完成)：表示操作成功地完成。"
-		},
-		{
-			"tag": "b",
-			"text": "rejected(已拒絕)：表示操作失敗了。"
-		},
-		{
-			"tag": "h3",
-			"text": "流程圖"
-		},
-		{
-			"tag": "p",
-			"text": "當上述任一狀態轉換發生時，Promise物件可以調用兩個函數。一個叫做.then()，一個叫做.catch()。"
-		},
-		{
-			"tag": "img",
-			"text": "./img/3_Promise狀態流程.png"
-		},
-		{
-			"tag": "h3",
-			"text": ".then()"
-		},
-		{
-			"tag": "p",
-			"text": "以下範例中，fetch是一個可以向網址發送HTTP requests的異步函數，當promiseObject從pending狀態變為fullfilled之後，.then()內部的callback function就會被js自動執行。執行時帶入的參數就是從URL獲得的HTTP Response內容(通常會得到一些數據)。"
-		},
-		{
-			"tag": "precode",
-			"text": "let promiseObject = fetch(URL);\n\npromiseObject.then((response)=>{\n\n    console.log(response);    //獲得接收到的數據\n\n    let jsonPromise = response.json().then((data)=>{          //可將文字部分做成JSON物件\n         console.log(data);\n   });    \n    \n})"
-		},
-		{
-			"tag": "p",
-			"text": "其中.json()是一個可以將data轉換成JSON格式的函數，其本身也是一個異步函數，故也會回傳一個promise物件。所以要再加一個.then()才能取出裡面的json物件。也可以改寫成:"
-		},
-		{
-			"tag": "precode",
-			"text": "promiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    });"
-		},
-		{
-			"tag": "h3",
-			"text": ".catch()"
-		},
-		{
-			"tag": "p",
-			"text": ".catch()函數是在調用當Promise物件狀態轉換為rejected時，會去調用的函數。如果將catch()添加調Promise Chain的末尾，那麼當任何異步函數調用失敗時都會調用它。如以下範例:"
-		},
-		{
-			"tag": "precode",
-			"text": "let promiseObject = fetch(URL);   //錯誤或不存在的URL或者網路異常\n\npromiseObject\n    .then( (response) => response.json( ) )\n    .then( (data) => {\n        console.log(data);\n    })\n    .catch(e)=>{\n        console.log(fetchPromise);   //顯示status:rejected\n        console.log(e);   //顯示錯誤訊息\n    });"
-		},
-		{
-			"tag": "h2",
-			"text": "Combining Multiple Promise"
-		},
-		{
-			"tag": "p",
-			"text": "當我們的操作由多個異步函數組成時，我們需要用到promise chaining，讓我們在開始下一個函數之前完成前一個函數。這種情況下，每個Promise都互相依賴。有時，我們需要所有Promise都被fulfilled，但它們並不相互依賴。在這種情況下，將它們全部一起啟動，然後在它們全部fulfilled時收到通知會更有效。JavaScript當中，提供了Promise.all()這個static method，它接受一個promisearray並返回一個promise。"
-		},
-		{
-			"tag": "p",
-			"text": "[279. 網頁全端開發課程..🚧]"
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "h2",
-			"text": "JQuery Ajax"
-		},
-		{
-			"tag": "p",
-			"text": "使用jquery提供的Ajax可以利用簡短的程式碼輕鬆的對API進行ajax請求。所以在請求前須先引入jquery API才能夠使用，例如以下程式碼，如想使用其它版本，請去官網或者cdn.js查詢。"
-		},
-		{
-			"tag": "b",
-			"text": "引入jquery"
-		},
-		{
-			"tag": "precode",
-			"text": "<script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=' crossorigin='anonymous'></script>"
-		},
-		{
-			"tag": "b",
-			"text": "基本語法"
-		},
-		{
-			"tag": "precode",
-			"text": "$.ajax({\n    method: '/*方法*/',\n    url: '/*發送請求的網址*/',\n    dataType: '/*資料型式*/',\n    data: { \n        //傳入的資料 \n    }\n})\n.done(function( response ) {\n     //成功接收資料執行的函式\n     console.log(response);     //查看接收到的資料\n\n}).fail(function( jqXHR, textStatus ) {\n    //請求失敗產生錯誤訊息\n    console.log( 'Request failed: ' + textStatus );     \n})"
-		},
-		{
-			"tag": "b",
-			"text": "範例"
-		},
-		{
-			"tag": "p",
-			"text": "如以下範例，ajax使用POST方法將JSON格式的資料發送到網址「/api/user.php」做請求，並傳入id數據，若請求成功則執行done區塊內的結果，並辨識接收到的狀態碼，如果為0則將訊息從網頁alert出來。並將需要的值放入變數內方便取用。若請求失敗則於主控台輸出失敗訊息。"
-		},
-		{
-			"tag": "precode",
-			"text": "//...部分程式碼省略\n\n$.ajax({\n    method: 'POST',\n    url: '/api/user.php',\n    dataType: 'json',\n    data: { \n        id: id \n    }\n})\n.done(function( response ) {\n    // console.log(response);\n    let status = response.status;\n\n    if(status==0){\n        alert(response.message);\n        return\n    }\n\n    account.textContent = response.user.account\n    name.textContent = response.user.name\n    email.textContent = response.user.email\n    phone.textContent = response.user.phone\n\n}).fail(function( jqXHR, textStatus ) {\n    console.log( 'Request failed: ' + textStatus );\n})"
-		},
-		{
-			"tag": "p",
-			"text": "[...🚧]"
-		}
-	],
-	[
-		{ "title": "Vue.js🚧" },
-		{
-			"tag": "mark",
-			"text": "vue官方文檔"
-		},
-		{
-			"tag": "a",
-			"text": "https://vuejs.org/"
-		},
-		{
-			"tag": "mark",
-			"text": "尚硅谷禹神新版Vue3"
-		},
-		{
-			"tag": "a",
-			"text": "https://www.youtube.com/watch?v=d5mrJfl6UWM&list=PLmOn9nNkQxJEnGM4Jf0liBcyedAtuQq-O"
-		},
-		{
-			"tag": "h2",
-			"text": "介紹"
-		},
-		{
-			"tag": "p",
-			"text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面。無論是簡單還是複雜的界面，Vue 都可以勝任。"
-		},
-		{
-			"tag": "h2",
-			"text": "Vue3 創建方法"
-		},
-		{
-			"tag": "p",
-			"text": "Vue3官方推薦使用Vite新一代構建工具。其輕量快速能實現快速服務，支援TypeScript、JSX、CSS，按需求編譯不用像webpack等待整個應用編譯完成。以下為使用vite構建工具的創建命令。"
-		},
-		{
-			"tag": "precode",
-			"text": "npm create vue@latest"
-		},
-		{
-			"tag": "h2",
-			"text": "Vue3 運行方法"
-		},
-		{
-			"tag": "precode",
-			"text": "npm run dev"
-		},
-		{
-			"tag": "p",
-			"text": "終端機中使用此語法能夠像是go live一樣，開啟瀏覽器檢視所撰寫的網頁。"
-		},
-		{
-			"tag": "h2",
-			"text": "main.js或main.ts程式碼架構"
-		},
-		{
-			"tag": "precode",
-			"text": "import { createApp } from 'vue'\nimport App from './App.vue'\n\ncreateApp(App).mount('#app')"
-		},
-		{
-			"tag": "p",
-			"text": "1. import { createApp } from 'vue'：這行程式碼從 Vue.js 框架中導入了 createApp 函數。createApp 是 Vue 3 中用於創建應用程式實例的入口函數。"
-		},
-		{
-			"tag": "p",
-			"text": "2. import App from './App.vue'：這行程式碼從當前目錄下的 App.vue 文件中導入了 App 組件。App.vue 通常是一個單文件組件，它包含了應用程式的根組件。"
-		},
-		{
-			"tag": "p",
-			"text": "3. createApp(App).mount('#app')：這行程式碼首先使用 createApp 函數創建了一個新的 Vue 應用程式實例，並將 App 組件作為根組件。然後，它調用了 mount 方法將應用程式掛載到 DOM 中的 #app 元素。"
-		},
-		{
-			"tag": "h2",
-			"text": "Vue元件的基礎架構"
-		},
-		{
-			"tag": "precode",
-			"text": "<template>\n  <!--HTML-->\n</template>\n\n <script lang='ts'>   //lang='ts'代表使用ts語言\n  //JS或TS\n    export default {      //使用暴露才能在其他地方被import\n        name:'App'\n    }\n</script> \n\n<style>\n  /*CSS*/\n</style>"
-		},
-		{
-			"tag": "h2",
-			"text": "將Vue子元件(components)引入App.vue"
-		},
-		{
-			"tag": "mark",
-			"text": "【极简Vue3】005 一个简单的效果"
-		},
-		{
-			"tag": "a",
-			"text": "https://youtu.be/UgT78vtiKUo?si=N0jfj-GTOTUHZ2aL"
-		},
-		{
-			"tag": "p",
-			"text": "必須讓根元件認識子元件(以Person.vue為例)，必須在根元件(App.vue)的<script></script>內撰寫以下語法:"
-		},
-		{
-			"tag": "precode",
-			"text": "<script>\nimport Person from '/components/Person.vue'  //引入元件\n\nexport default {\n    name:'App',   //根元件名\n    components:{ Person }    //註冊元件\n}\n</script>"
-		},
-		{
-			"tag": "p",
-			"text": "其中 '/components/Person.vue' 是告訴 App.vue(根元件) 子元件從哪裡取用。 components:{ Person }則是用來註冊子元件，多個子元件需要用逗號隔開。這麼一來就可以在根元件的<template></template>中使用<Person/>來放入Person元件了!"
-		},
-		{
-			"tag": "precode",
-			"text": "<template>\n    <Person/>  <!--使用子元件-->\n</template>"
-		},
-		{
-			"tag": "h2",
-			"text": "setup"
-		},
-		{
-			"tag": "p",
-			"text": "setup 是 Vue3中的一個新的配置項，值是一個函數，它是Components API 組合式API的表演舞台，組件中所用到的 數據、方法、計算屬性、監視等等都配置在setup中，其有以下特點:"
-		},
-		{
-			"tag": "b",
-			"text": "1. setup 函數返回的對象中的內容可直接在模板中使用。"
-		},
-		{
-			"tag": "b",
-			"text": "2. setup 中訪問的this是undefined。"
-		},
-		{
-			"tag": "b",
-			"text": "3. setup 會在beforeCreate之前調用，他是領先所有鉤子執行的。"
-		},
-		{
-			"tag": "precode",
-			"text": "<script>\nexport default {\n    name:'App',\n    components:{ Person }\n    setup( ){\n      //將數據、方法配置於此處\n\n       return{  } //將配置好的數據方法等放於return內交出去   \n    } \n}\n</script>"
-		},
-		{
-			"tag": "p",
-			"text": "Vue3的語法中，其實還是可以撰寫Vue2的語法data()來配置數據或方法等數據，其中setup()中寫的數據是可以利用Vue2中寫的data()讀取到的，由此可知，setup()比data()配置的還更早，所以Vue3的setup()語法中是讀取不到data()的；故建議Vue3語法不要跟Vue2語法混用。"
-		},
-		{
-			"tag": "precode",
-			"text": "data( ){\n    return{\n        c: this.name  //會讀取到張三\n    },\n\nsetup( ){\n    let name = '張三'\n}"
-		},
-		{
-			"tag": "h3",
-			"text": "🍬setup的語法糖"
-		},
-		{
-			"tag": "p",
-			"text": "setup( )語法使用到的數據等資料在配置時都一定要使用 return 才能讓模板讀取，所以Vue官方提供了一個語法糖，能夠讓寫法變得更單純簡單。撰寫方法如下，我們須要另外寫一處setup的標籤，且內部不用再寫setup()和return，直接寫數據和方法即可達到自動回傳數據到模板的功能。"
-		},
-		{
-			"tag": "precode",
-			"text": "<script>\nexport default {\n    name:'App',\n    components:{ Person }\n}\n</script>\n\n<script lang='ts' setup>\n    let a = 123\n\n    function SayHello( ){\n        console.log( 'Hello' )\n    } \n</script>"
-		},
-
-		{
-			"tag": "h3",
-			"text": "🪄setup定義元件名的插件"
-		},
-		{
-			"tag": "p",
-			"text": "在尚硅谷中提供一辦法，就是安裝插件。我們可以在終端機視窗中打以下安裝指令:"
-		},
-		{
-			"tag": "precode",
-			"text": "npm i vite-plugin-vue-setup-extend -D"
-		},
-		{
-			"tag": "p",
-			"text": "並且必須在vite.config.js或vite.config.ts的檔案中新增兩行程式碼於以下位置:"
-		},
-		{
-			"tag": "precode",
-			"text": "import VueSetupExtend from 'vite-plugin-vue-setup-extend'   //引入插件\n\n VueSetupExtend()   //調用插件"
-		},
-		{
-			"tag": "precode",
-			"text": "import { fileURLToPath, URL } from 'node:url'\n\nimport { defineConfig } from 'vite'\nimport vue from '@vitejs/plugin-vue'\nimport VueSetupExtend from 'vite-plugin-vue-setup-extend'      //新增，其中VueSetupExtend是自由取名的\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n    plugins: [\n      vue(),\n      VueSetupExtend()   //新增，追加調用\n    ],\n    resolve: {\n      alias: {\n          @': fileURLToPath(new URL('./src', import.meta.url))\n      }\n    }\n})"
-		},
-		{
-			"tag": "p",
-			"text": "完成以上步驟以後，我們就將以下程式碼:"
-		},
-		{
-			"tag": "precode",
-			"text": "<script>\nexport default {\n    name:'Person',\n}\n</script>\n\n<script lang='ts' setup>\n\n</script>"
-		},
-		{
-			"tag": "p",
-			"text": "取代成以下程式碼:"
-		},
-		{
-			"tag": "precode",
-			"text": "<script lang='ts' setup name='Person'>\n\n<script>"
-		},
-		{
-			"tag": "h2",
-			"text": "配置響應式數據"
-		},
-		{
-			"tag": "h3",
-			"text": "ref( )"
-		},
-		{
-			"tag": "a",
-			"text": "https://youtu.be/t5XjTkbiSYE?si=AxDZJQLSpQoIgGxG"
-		},
-		{
-			"tag": "p",
-			"text": "ref()是一個Vue3中可以定義基本類型的響應式數據的函數，其語法範例如下:"
-		},
-		{
-			"tag": "precode",
-			"text": "<script>\n    import { ref } from 'vue'    //引入Vue中的ref函數\n\n\n    //let 響應式變數 = ref(初始值)  例如:\n    let name = ref('張小天')\n    let age = ref(18)\n</script>"
-		},
-		{
-			"tag": "p",
-			"text": "使用此語法時須要注意，若要在JS中操作數據，需要在數據後加.value，但在<template>模板(以下稱模板)中卻不需要加.value；對於let name = ref('張小天')來說，name不是響應式的，name.value才是響應式的。"
-		},
-		{
-			"tag": "precode",
-			"text": "<template>\n    <h2>姓名:{{ name }}</h2>    <!-- 不需要加.value -->\n</template>\n\n\n<script>\n    name.value = '張大天'    //此處要加.value才能操作數據\n</script>"
-		},
-		{
-			"tag": "p",
-			"text": "ref()其實也是可以在Vue3中定義物件類型的響應式數據的函數，但其最根本的程式碼仍舊會調用到reactive()讓物件成為響應式數據。"
-		},
-		{
-			"tag": "precode",
-			"text": "let car = ref({brand:'賓士',price:100})"
-		},
-		{
-			"tag": "mark",
-			"text": "😮若用ref( )定義了物件以後可以透過操作.value來更改數據，其物件仍然是響應式。"
-		},
-		{
-			"tag": "precode",
-			"text": "let car = ref({brand:'賓士',price:100})\n\n//例如調用了以下函式數據仍然式響應式\nfunction changeCar( ){\n    car.value = {brand:'BMW' , price:90}\n}\n"
-		},
-		{
-			"tag": "h3",
-			"text": "reactive( )"
-		},
-		{
-			"tag": "a",
-			"text": "https://youtu.be/VdeQ0g0AV_g?si=EKb6xNIECkgVn5Pe"
-		},
-		{
-			"tag": "p",
-			"text": "reactive()是一個Vue3中「只能」定義物件類型響應式數據的函數，其語法範例如下:"
-		},
-		{
-			"tag": "precode",
-			"text": "<script>\n    import {reactive} from 'vue'    //引入Vue中的reactive函數\n\n    let car =reactive({brand:'奔馳',price:100})\n    let games = reactive([\n        {id:'aysdytfsatr01',name:'王者榮耀'},\n        {id:'aysdytfsatr02',name:'原神'},\n        {id:'aysdytfsatr03',name:'三國志'}\n    ])\n\n    // 方法\n    function changePrice(){\n      car.price += 10\n      console.log(car.price)\n    }\n\n    function changeFirstGame(){\n      games[0].name = '流星蝴蝶劍'\n      console.log(games[0].name)\n    }\n</script>"
-		},
-		{
-			"tag": "p",
-			"text": "此語法可以讓物件中每一層的數據都成為響應式的，並且在JS與模板中並不須要加上.value就可以操控數據。"
-		},
-		{
-			"tag": "mark",
-			"text": "😮若用reactive( )定義了物件以後，若把整個物件改掉，則會失去響應式功能。"
-		},
-		{
-			"tag": "precode",
-			"text": "let car = reactive({brand:'賓士',price:100})\n\n//例如調用了以下函式去替換了整個物件，就會失去響應式功能，頁面也不會有任何反應\nfunction changeCar( ){\n    car = {brand:'BMW' , price:90}\n}\n"
-		},
-		{
-			"tag": "p",
-			"text": "我們可以透過Object.assign(原物件,新物件)函數來重新指派物件。"
-		},
-		{
-			"tag": "precode",
-			"text": "function changeCar( ){\n    //其中Object.assign(原物件,指派的新物件)\n    Object.assign(car,{brand:'賓士',price:100})\n}"
-		},
-
-		{
-			"tag": "h3",
-			"text": "🔔ref( ) 與 reactive( ) 使用原則"
-		},
-		{
-			"tag": "b",
-			"text": "1.若是需要一個基本類型的響應式數據，必須使用ref()。"
-		},
-		{
-			"tag": "b",
-			"text": "2.若是需要一個響應式物件，但其內部層級不深，ref(),reactive()都可以使用。"
-		},
-		{
-			"tag": "b",
-			"text": "3.若是需要一個響應式物件，層級較深，則推薦使用reactive()。"
-		},
-		{
-			"tag": "h2",
-			"text": "toRef 與 toRefs"
-		},
-		{
-			"tag": "mark",
-			"text": "【极简Vue3】015 toRefs与toRef"
-		},
-		{
-			"tag": "a",
-			"text": "https://youtu.be/a9QAmiVjlPI?si=553tkw7lrW341Yfx"
-		},
-		{
-			"tag": "p",
-			"text": "toRef( )和toRefs( )是Vue3中的兩個特殊函數，都是把一個被定義的響應式物件解構放置於另外的變數，並且使其變數仍然維持響應式狀態。例如以下範例利用toRefs( )將person.name和person.age中的數據解構出來，並且用name和age變數放置解構出來的值，其中toRefs會將每個解構出來的值加上一層ref( )使其維持在響應是狀態，person.name與解構出來的name.value是連動的，person.age與解構出來的age.value也是連動的。"
-		},
-		{
-			"tag": "precode",
-			"text": "//toRef(物件變數,物件中的屬性)，處理單一數據(不常用)。\n\nimport { reactive, toRef } from 'vue';\n\nconst info = reactive({\n  name: 'Tony',\n  greet: 'Hello',\n});\n\n// 複製 info 中的 greet 屬性並轉換為 ref\nconst rGreet = toRef(info, 'greet');\n\n// 修改 rGreet 的值\nconst onChangeGreet = () => {\n  rGreet.value = 'world!';\n};"
-		},
-
-		{
-			"tag": "precode",
-			"text": "//toRefs(物件變數)，處理多個數據(較常用)\n\nimport {reactive, toRefs} from 'vue'\n\n//數據\nlet person = reactive(\n    name:'張小天 ' ,\n    age: 18\n}\n\nlet {name, age} = toRefs(person)\n\n// 方法\nfunction changeName(){\n    name.value += '~'\n    console.log(name. value, person.name)  //兩數據得出的結果會一樣。\n}"
-		},
-		{
-			"tag": "h2",
-			"text": "計算屬性(computed)"
-		},
-		{
-			"tag": "mark",
-			"text": "【极简Vue3】016 computed计算属性"
-		},
-		{
-			"tag": "a",
-			"text": "https://youtu.be/9PhQoYMQjWw?si=-BUmF9vM1kC2Sf0I"
-		},
-		{
-			"tag": "p",
-			"text": "計算屬性(computed properties)是一個強大的功能，它允許你聲明一個依賴於其他響應式數據屬性的屬性，並且這個屬性的值會根據其依賴的數據變化而自動更新。以下為計算屬性的特點及尚硅谷示例："
-		},
-		{
-			"tag": "b",
-			"text": "1. 計算屬性是基於其依賴關係進行緩存的，只有在其相關依賴發生改變時才會重新求值。"
-		},
-		{
-			"tag": "b",
-			"text": "2. 它通常用於處理一些複雜的邏輯，例如根據其他數據的變化來計算一個值。"
-		},
-		{
-			"tag": "precode",
-			"text": "<template>\n    <div class='person'>\n    姓：<input type='text' v-model='firstName'> <br>\n    名：<input type='text' v-model='lastName'> <br>\n    全名：<span>{{ fullName }}</span><br>\n    </div>\n</template>\n\n<script lang='ts' setup name='Person'>\n    import {ref, computed} from 'vue'     //引入computed\n\n    let firstName = ref('zhang')\n    let lastName = ref('san')\n\n    let fullName = computed(()=>{\n        return firstName. value. slice(0,1). toUpperCase() + firstName.value.slice(1)   //定義為較複雜的計算並回傳\n    }\n\n</script>"
-		},
-		{
-			"tag": "h3",
-			"text": "如何直接更動計算屬性?"
-		},
-		{
-			"tag": "p",
-			"text": "計算屬性通常只能讀寫不能改動，但利用以下特殊方式可以將計算屬性的值做更動。"
-		},
-		{
-			"tag": "precode",
-			"text": "\n    let fullName = computed({\n        get( ){\n             return firstName. value. slice(0,1). toUpperCase() + firstName.value.slice(1)\n        },\n        set( val ){    //用set接收計算屬性被更改的觸發函數，並接收val\n\n              //此處再利用客製方法將val去更動此計算屬性所依賴的響應式數據，計算屬性就會被更動\n\n        }\n    })\n"
-		},
-		{
-			"tag": "h2",
-			"text": "監視屬性(watch)"
-		},
-
-		{
-			"tag": "p",
-			"text": "Vue中的監視屬性是一個強大的功能，用於監視數據的變化並執行相應的操作。以下為Vue的監視屬性能監視的四種數據。"
-		},
-		{
-			"tag": "precode",
-			"text": "watch(監視的數據,回調函數)"
-		},
-		{
-			"tag": "b",
-			"text": "1. ref()定義的數據。"
-		},
-		{
-			"tag": "b",
-			"text": "2. reactive()定義的數據。"
-		},
-		{
-			"tag": "b",
-			"text": "3. 函數回傳一個值。"
-		},
-		{
-			"tag": "b",
-			"text": "4. 一個包含上述內容的陣列。"
-		},
-
-		{
-			"tag": "h3",
-			"text": "🐻情況一"
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "mark",
-			"text": "【极简Vue3】017 watch监视 情况一"
-		},
-		{
-			"tag": "a",
-			"text": "https://youtu.be/c2ZaqEyLVZI?si=O599YaKmK-EZZ_cr"
-		},
-		{
-			"tag": "p",
-			"text": "監視ref()定義的【基本類型數據】:直接寫數據名即可，監視的是其Value值的改變。以下程式碼利用watch()能監視到sum當按下按鈕時發生的改變，並且回調函數可以接收到新數據(newValue)和舊數據(oldValue)；在此處監視的數據(此為sum)是不需要加上.value的，這一點須要注意不然功能會無法正常運作。"
-		},
-		{
-			"tag": "precode",
-			"text": "<templatete>\n  <div class='person'>\n    <h1>情況一</h1>\n    <h2>當前求和為:{{ sum }}</h2>\n    <button @click='changeSum'>點我sum+1</button>\n  </div>\n</templatete>\n\n<script lang='ts' setup name=''person'>\n  import {ref,watch} from 'vue'\n\n  //數據\n  let sum =ref(0)\n\n  //方法\n  function changeSum(){\n    sum.value +=1\n  }\n\n  //監視\n  watch(sum, (newValue,oldValue)=>{\n    console.log('sum變化了!',newValue,oldValue);\n  })\n</script>"
-		},
-		{
-			"tag": "h3",
-			"text": "條件停止數據監視的方法"
-		},
-		{
-			"tag": "p",
-			"text": "延續上方範例，以下此方法可以在newValue被加到10的時候停止數據監視。"
-		},
-		{
-			"tag": "precode",
-			"text": "//監視\nconst stopWatch = watch(sum, (newValue,oldValue)=>{\n  console.log('sum變化了!',newValue,oldValue);\n\n  if(newValue >= 10){\n    stopWatch()\n  }\n})"
-		},
-
-		{
-			"tag": "h3",
-			"text": "🐻情況二"
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "mark",
-			"text": "【极简Vue3】018 watch监视 情况二"
-		},
-		{
-			"tag": "a",
-			"text": "https://youtu.be/slSOx0xI-CY?si=Nl_UU_lIsWhJhDOS"
-		},
-		{
-			"tag": "p",
-			"text": "監視ref()定義的【物件類型數據】:監視的是物件的地址值，簡單來說以下情況只會監視person這個物件是否整體都被改變，只有第三個按鈕才會起作用。"
-		},
-		{
-			"tag": "precode",
-			"text": "<templatete>\n  <div class='person'>\n    <h1>情況二</h1>\n    <h2>姓名:{{ person.name }}</h2>\n    <h2>年齡:{{ person.age }}</h2>\n\n    <button @click='changeName'>修改名字</button>\n    <button @click='changeAge'>修改年齡</button>\n    <button @click='changePerson'>修改整個人</button>\n  </div>\n</templatete>\n\n<script lang='ts' setup name=''person'>\n  import { ref, watch } from 'vue';\n\n  //數據\n  let person = ref({\n    name: '小天',\n    age: 18,\n  });\n\n  //方法\n  function chanegeName() {\n    person.value.name += '~';\n  }\n  function chanegeAge() {\n    person.value.age += 1;\n  }\n  function chanegePerson() {\n    person.value = { name: '大天', age: 90 };\n  }\n\n  //監視\n  watch(person, (newValue, oldValue) => {\n    console.log('person變化了!', newValue, oldValue);\n  });\n</script>"
-		},
-		{
-			"tag": "h3",
-			"text": "深度監視和立即監視的方法"
-		},
-		{
-			"tag": "p",
-			"text": "若想監視物件內部的變化時，須手動開啟深度監視。如下方的方式添加第三個參數就可以監測到物件內部的值發生變化，並調用回調函數。"
-		},
-		{
-			"tag": "precode",
-			"text": "watch(監視的數據,回調函數,{deep:true})"
-		},
-		{
-			"tag": "p",
-			"text": "如果想再加一功能，是讓頁面一載入就立即調用監視屬性內的回調函數的話，要再加上以下語法。deep和immediate可按需求選擇使用，不寫的話此兩功能默認都是false。"
-		},
-		{
-			"tag": "precode",
-			"text": "watch(監視的數據,回調函數,{deep:true,immediate:true})"
-		},
-		{
-			"tag": "p",
-			"class": "yellow",
-			"text": "若修改的是ref定義的物件中的屬性，newValue和oldValue所呈現的值會是同一個物件。若修改整個ref定義的物件，newValue是新值，oldValue是舊值，因為不是同一個物件了。"
-		},
-		{
-			"tag": "h3",
-			"text": "🐻情況三"
-		},
-
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		}
-	],
 	[
 		{ "title": "Node.js🚧" },
 		{
@@ -4274,6 +4272,10 @@
 			"text": "Express.js🚧"
 		},
 		{
+			"tag": "p",
+			"text": "Express.js 是一個基於 Node.js 的輕量級、靈活且功能豐富的 Web 應用框架。它提供了一組強大的工具和功能，幫助開發者快速構建網頁應用、API 或 Web 服務，並處理各種 HTTP 請求。"
+		},
+		{
 			"tag": "h3",
 			"text": "安裝方式"
 		},
@@ -4288,10 +4290,17 @@
 
 		{
 			"tag": "precode",
-			"text": "const express = require('express');\nconst app = express( );\n\n\n\n//port, callback\napp.listen(3000, ()=>{\n    console.log('伺服器正在聆聽port 3000...')\n});"
+			"text": "const express = require('express');\nconst app = express();\nconst port = 3000;\n\n// 基本路由\napp.get('/', (req, res) => {\n  res.send('Hello World!');\n});\n\n// 啟動伺服器\napp.listen(port, () => {\n  console.log(`Server running at http://localhost:${port}`);\n});\n"
+		},
+		{
+			"tag": "h2",
+			"text": "中介函式 middleware🚧"
+		},
+		{
+			"tag": "h2",
+			"text": "跨資源共享 CORS🚧"
 		}
 	],
-	[{ "title": "React.js🚧" }],
 	[{ "title": "Restful API🚧" }],
 	[{ "title": "TypeScript🚧" }]
 ]

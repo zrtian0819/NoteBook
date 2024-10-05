@@ -72,7 +72,13 @@ getJson().then(function (data) {
 				contents += element;
 			} else if (tag == "h2") {
 				let element = `<${tag} id="${i}-${j}">${text}</${tag}>`;
-				let link = `<a href="#${i}-${j}"><li>${text}</li></a>`;
+				let link = `<a class="h2Link" href="#${i}-${j}"><li>${text}</li></a>`;
+				// console.log(element);
+				subTocContent += link;
+				contents += element;
+			} else if (tag == "h3") {
+				let element = `<${tag} id="${i}-${j}">${text}</${tag}>`;
+				let link = `<a class="h3Link" href="#${i}-${j}"><li>${text}</li></a>`;
 				// console.log(element);
 				subTocContent += link;
 				contents += element;
@@ -172,6 +178,7 @@ window.addEventListener("scroll", () => {
 
 navButton.addEventListener("click", () => {
 	subToc.classList.toggle("open");
+	clearTimeout(navButtonTimer);
 	main.addEventListener(
 		"click",
 		() => {

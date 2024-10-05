@@ -338,29 +338,50 @@ main i {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-family: 微軟正黑體, Arial, Helvetica, sans-serif;
 
 
-  a,
-  a:link {
+  .h2Link,
+  .h2Link:link {
     text-decoration: none;
     color: var(--lightMainTextColor);
     font-size: 1rem;
-    font-family: 微軟正黑體, Arial, Helvetica, sans-serif;
-  }
 
-  li {
-    margin-bottom: 1.2rem;
-    padding: 0.4rem 0 0.4rem 0.8rem;
-    border-left: 3px solid white;
-    user-select: none;
-    font-weight: 600;
+    li {
+      margin-bottom: 0.6rem;
+      padding: 0.4rem 0 0.4rem 0.8rem;
+      border-left: 5px solid var(--contrastColor);
+      user-select: none;
+      font-weight: 600;
 
-    &:hover {
-      font-weight: 800;
-      background-color: var(--mainColor);
+      &:hover {
+        font-weight: 800;
+        background-color: var(--mainColor);
+      }
     }
+
   }
 
+  .h3Link,
+  .h3Link:link {
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+    font-size: 0.7rem;
+
+    li {
+      margin-bottom: 0.3rem;
+      padding: 0.2rem 0 0.2rem 1.6rem;
+      /* border-left: 3px solid white; */
+      user-select: none;
+      font-weight: 600;
+
+      &:hover {
+        font-weight: 800;
+        background-color: var(--mainColor);
+      }
+    }
+
+  }
 }
 
 .title {
