@@ -3866,8 +3866,117 @@
 			"text": "JSX語法"
 		},
 		{
+			"tag": "mark",
+			"text": "直觀性"
+		},
+		{
+			"tag": "mark",
+			"text": "可組合性"
+		},
+		{
+			"tag": "mark",
+			"text": "提升開發效率"
+		},
+		{
+			"tag": "p",
+			"text": "JSX（JavaScript XML）是一種用來在 React 中編寫 HTML 樣式語法的擴展語法。它允許你在 JavaScript 代碼中寫類似 HTML 的標記，讓編寫 React 元件時更加直觀。"
+		},
+		{
+			"tag": "h3",
+			"text": "轉換器"
+		},
+		{
+			"tag": "mark",
+			"text": "HTML TO JSX"
+		},
+		{
+			"tag": "a",
+			"text": "https://transform.tools/html-to-jsx"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h3",
+			"text": "範例"
+		},
+		{
 			"tag": "precode",
-			"text": "import React from 'react';\nimport ReactDOM from 'react-dom';\n\nfunction App() {\n  return (\n    <div>\n      <h1>Hello, React!</h1>\n      <p>This is a simple React app.</p>\n    </div>\n  );\n}\n\nReactDOM.render(<App />, document.getElementById('root'));\n\n\n/*這段代碼定義了一個簡單的 App 組件，\n返回了一個包含標題和段落的 JSX 模板，\n並將這個組件渲染到 DOM 中的 #root 元素上。*/"
+			"text": "function Welcome() {\n  return <h1>歡迎來到 React 世界！</h1>;\n}"
+		},
+		{
+			"tag": "precode",
+			"text": "import React from 'react';\nimport ReactDOM from 'react-dom';\n\nfunction App() {\n  return (\n    <div>\n      <h1>Hello, React!</h1>\n      <p>This is a simple React app.</p>\n    </div>\n  );\n}\n\nReactDOM.render(<App />, document.getElementById('root'));"
+		},
+		{
+			"tag": "p",
+			"text": "以上這段代碼定義了一個簡單的 App 組件，返回了一個包含標題和段落的 JSX 模板，並將這個組件渲染到 DOM 中的 #root 元素上。"
+		},
+		{
+			"tag": "h3",
+			"text": "Fragment"
+		},
+		{
+			"tag": "p",
+			"text": "React 要求每個元件的返回值只能有一個根元素，因此開發者通常會使用 <div> 等元素來包裹多個子元素。然而，這樣會在 DOM 結構中增加不必要的節點，可能會影響性能或造成無意的樣式問題。使用 Fragment 可以避免這種情況。"
+		},
+		{
+			"tag": "precode",
+			"text": "return (\n  <>\n    <h1>標題</h1>\n    <p>這是一段描述文字</p>\n  </>\n);"
+		},
+
+		{
+			"tag": "h2",
+			"text": "套用CSS"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h2",
+			"text": "條件式渲染"
+		},
+		{
+			"tag": "p",
+			"text": "有時候你的 component 會需要根據不同的條件來顯示不同的內容。在 React 中，你可以使用 JavaScript 中 if 陳述式、&& 以及 ? : 運算子等語法來根據條件 render 不同的 JSX。"
+		},
+		{
+			"tag": "h3",
+			"text": "Truthy & Falsy"
+		},
+		{
+			"tag": "p",
+			"text": "首先我們要先了解，在 JavaScript 中，Truthy 和 Falsy 是用來描述在布林值上下文中被視為 true 或 false 的值。"
+		},
+		{
+			"tag": "img",
+			"text": "./img/react/01_Truthy and Falsy.png"
+		},
+		{
+			"tag": "h3",
+			"text": "if/else 陳述式🚧"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h3",
+			"text": "三元運算符🚧"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h3",
+			"text": "邏輯運算符🚧"
 		}
 	],
 	[
