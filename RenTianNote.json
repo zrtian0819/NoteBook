@@ -3977,6 +3977,196 @@
 		{
 			"tag": "h3",
 			"text": "邏輯運算符🚧"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h2",
+			"text": "useState🚧"
+		},
+		{
+			"tag": "p",
+			"text": "useState 是 React 中的一個 Hook，用來在函式型元件中管理狀態。它讓你能夠在函式元件內定義和使用狀態，而不需要轉換為 class 元件。"
+		},
+		{
+			"tag": "precode",
+			"text": "const [state, setState] = useState(initialValue);\n\n/*\nuseState 接受一個初始值作為參數，返回一個狀態值和一個更新狀態的函數。\n\nstate 是當前狀態的值。\nsetState 是用來更新狀態的函數。\ninitialValue 是狀態的初始值。\n*/"
+		},
+		{
+			"tag": "h3",
+			"text": "範例"
+		},
+		{
+			"tag": "b",
+			"text": "計數器"
+		},
+		{
+			"tag": "precode",
+			"text": "import { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);  // 初始值為 0\n\n  return (\n    <div>\n      <p>計數: {count}</p>\n      <button onClick={() => setCount(count + 1)}>增加計數</button>\n    </div>\n  );\n}"
+		},
+		{
+			"tag": "b",
+			"text": "切換狀態（布林值）"
+		},
+		{
+			"tag": "precode",
+			"text": "import { useState } from 'react';\n\nfunction Toggle() {\n  const [isOn, setIsOn] = useState(false);  // 初始值為 false\n\n  return (\n    <div>\n      <p>狀態: {isOn ? '開啟' : '關閉'}</p>\n      <button onClick={() => setIsOn(!isOn)}>切換</button>\n    </div>\n  );\n}"
+		},
+		{
+			"tag": "b",
+			"text": "管理字串狀態"
+		},
+		{
+			"tag": "precode",
+			"text": "import { useState } from 'react';\n\nfunction InputComponent() {\n  const [text, setText] = useState('');  // 初始值為空字串\n\n  return (\n    <div>\n      <input\n        type='text'\n        value={text}\n        onChange={(e) => setText(e.target.value)}  // 每次輸入更新狀態\n      />\n      <p>輸入的文字: {text}</p>\n    </div>\n  );\n}"
+		},
+		{
+			"tag": "b",
+			"text": "管理物件狀態"
+		},
+		{
+			"tag": "precode",
+			"text": "import { useState } from 'react';\n\nfunction Profile() {\n  const [profile, setProfile] = useState({ name: 'Alice', age: 25 });\n\n  const updateAge = () => {\n    setProfile({ ...profile, age: profile.age + 1 });  // 使用展開運算符更新部分狀態\n  };\n\n  return (\n    <div>\n      <p>姓名: {profile.name}</p>\n      <p>年齡: {profile.age}</p>\n      <button onClick={updateAge}>增加年齡</button>\n    </div>\n  );\n}\n\n//這裡使用了展開運算符 ... 來更新物件中的某個屬性，並保持其他屬性的值不變。"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "useState 是用來在函式元件內部定義狀態的工具。\n每當你使用 setState 函數更新狀態時，React 會重新渲染元件並顯示最新的狀態值。\n狀態可以是任何類型，如數字、字串、布林值、物件、陣列等。"
+		},
+		{
+			"tag": "h2",
+			"text": "useEffect"
+		},
+		{
+			"tag": "p",
+			"text": "useEffect 是 React 中的一個 Hook，允許你在函式型元件中執行副作用（如資料請求、訂閱、DOM 操作等）。它相當於 class 元件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 的組合。"
+		},
+		{
+			"tag": "precode",
+			"text": "useEffect( function , array )\n\n/*\n第一個參數：一個函數，會在元件渲染後執行。\n\n第二個參數（可選）：一個依賴項陣列，指定何時重新執行這個副作用函數。\n如果沒有提供依賴項，useEffect 在每次渲染後都會執行。\n如果依賴項為空陣列，則只在元件首次渲染時執行一次。\n*/"
+		},
+		{
+			"tag": "h3",
+			"text": "範例"
+		},
+		{
+			"tag": "b",
+			"text": "只在元件渲染時執行（相當於 componentDidMount）"
+		},
+		{
+			"tag": "precode",
+			"text": "import { useEffect } from 'react';\n\nfunction MyComponent() {\n  useEffect(() => {\n    console.log('元件已掛載');\n  }, []);  // 空依賴陣列，表示只在元件掛載時執行\n\n  return <div>我的元件</div>;\n}"
+		},
+		{
+			"tag": "b",
+			"text": "依賴某個狀態更新（相當於 componentDidUpdate）"
+		},
+		{
+			"tag": "precode",
+			"text": "import { useState, useEffect } from 'react';\n\nfunction MyComponent() {\n  const [count, setCount] = useState(0);\n\n  useEffect(() => {\n    console.log(`當前計數是 ${count}`);\n  }, [count]);  // 依賴 count，當 count 改變時執行\n\n  return (\n    <div>\n      <p>計數: {count}</p>\n      <button onClick={() => setCount(count + 1)}>增加計數</button>\n    </div>\n  );\n}"
+		},
+		{
+			"tag": "b",
+			"text": "清理副作用（相當於 componentWillUnmount）"
+		},
+		{
+			"tag": "precode",
+			"text": "//有時需要在元件卸載或某些狀態更新時清理副作用，例如取消訂閱或清理定時器。\nimport { useEffect } from 'react';\n\nfunction TimerComponent() {\n  useEffect(() => {\n    const timer = setInterval(() => {\n      console.log('每秒運行一次');\n    }, 1000);\n\n    // 返回一個函數作為清理副作用的邏輯\n    return () => {\n      clearInterval(timer);\n      console.log('計時器已清除');\n    };\n  }, []);  // 空依賴陣列，表示只在元件掛載和卸載時執行\n\n  return <div>計時器元件</div>;\n}"
+		},
+		{
+			"tag": "b",
+			"text": "進行資料請求"
+		},
+		{
+			"tag": "precode",
+			"text": "import { useState, useEffect } from 'react';\n\nfunction DataFetchingComponent() {\n  const [data, setData] = useState(null);\n\n  useEffect(() => {\n    fetch('https://jsonplaceholder.typicode.com/posts/1')\n      .then((response) => response.json())\n      .then((data) => setData(data));\n\n  }, []);  // 空依賴陣列，表示只在元件掛載時進行一次資料請求\n\n  return (\n    <div>\n      {data ? <h3>{data.title}</h3> : <p>載入中...</p>}\n    </div>\n  );\n}"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "useEffect 可以讓你在函式型元件中方便地處理副作用。\n可選的依賴項陣列決定了副作用的執行時機。\n返回清理函數可以處理副作用的清理工作（例如定時器、訂閱）。"
+		},
+		{
+			"tag": "h2",
+			"text": "Props"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h2",
+			"text": "useContext🚧"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
 		}
 	],
 	[
