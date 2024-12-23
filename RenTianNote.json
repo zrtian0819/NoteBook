@@ -3866,7 +3866,7 @@
 			"tag": "p",
 			"text": "存放 Vue 組件的地方。這些組件可以在頁面和其他組件中復用。Nuxt 會自動載入這個目錄中的元件，來提供給其他頁面或元件做使用。你可以在頁面或其他組件中直接使用，而不需要每次都進行 import。"
 		},
-		
+
 		{
 			"tag": "b",
 			"text": "composables/"
@@ -3956,52 +3956,68 @@
 			"text": ""
 		},
 		{
-			"tag": "p",
-			"text": ""
+			"tag": "h3",
+			"text": "自動載入"
+		},
+		{
+			"tag": "b",
+			"text": "Nuxt 3 的常用元件與函數"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "Nuxt 3 的自動導入功能使得常用元件和函數的使用更加方便。例如，所有放置在 components 目錄中的 Vue 組件都會自動註冊，因此你可以在頁面或其他組件中直接使用它們，而不需要每次都進行 import。此外，Nuxt 3 還提供了一些常用的內建函數如 useFetch 和 useAsyncData，這些函數可以自動導入並使用，簡化了數據抓取和異步操作的過程。"
+		},
+		{
+			"tag": "b",
+			"text": "Vue 3 的API"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "在 Nuxt 3 中，Vue 3 的 Composition API 和其他新特性被無縫集成。這意味著當你在 composables 目錄中定義可重用的邏輯時，這些函數會自動被導入並在需要的地方使用。這個目錄自動載入機制確保了你的代碼保持清潔和模組化，提升了開發效率和代碼可維護性。"
+		},
+		{
+			"tag": "b",
+			"text": "基於目錄的自動載入"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "Nuxt 3 最強大的特性之一是基於目錄的自動載入。這包括組件、頁面、插件等都可以通過特定的目錄結構自動進行導入和設定。例如，任何放置在 plugins 目錄中的插件都會自動在應用啟動時被加載，無需額外配置。這大大簡化了開發流程，使專案結構更加直觀和易於管理。"
+		},
+		{
+			"tag": "mark",
+			"text": "關閉自動載入的方法"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "只要在專案目錄下的nuxt.config.ts檔案內把autoImport的屬性值改為false就可以關閉自動載入。"
+		},
+		{
+			"tag": "precode",
+			"text": "export default defineNuxtConfig({\n    imports:{\n        autoImport:false\n    }\n})"
+		},
+		{
+			"tag": "h3",
+			"text": "約定式路由"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "在Nuxt 3中如果要建立路由頁面，我們必須建立一個pages/ 目錄，內層建立一個index.vue就為此專案的首頁。"
+		},
+		{
+			"tag": "img",
+			"text": "img/vue/2_首頁.png"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "Nuxt 3 中我們需要在 app.vue 檔案當中使用<NuxtPage />來顯示我們建立的路由頁面如下。"
+		},
+		{
+			"tag": "precode",
+			"text": "<template>\n    <div>\n        <NuxtPage />   <!-- 載入pages內的路由 -->\n    </div>\n</template>"
 		},
 		{
 			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
+			"text": "...🚧"
 		},
 		{
 			"tag": "p",
