@@ -607,7 +607,7 @@
 		},
 		{
 			"tag": "precode",
-			"text": "        .border-radius-1{\n            /* 全部設定 */\n            border-radius: 20px;\n        }\n        .border-radius-2{\n            /* 只設定某一個角 */\n            border-bottom-left-radius: 30px;\n        }\n        .border-radius-3{\n            /*可以設定4個值分別代表 左上 右上 右下 左下*/\n            border-radius: 10px 20px 30px 40px;\n        }\n        .border-radius-4{\n            /*可以設定3個值分別代表 左上 右上和左下 右下 */\n            border-radius: 0 10px 40px;\n        }\n        .border-radius-5{\n            /*可以設定成百分比*/\n            border-radius: 0 100%;\n        }\n        .border-radius-6{\n            /*50%就變成圓形*/\n            border-radius: 50%;\n        }\n        .border-radius-7{\n            /*分數型式會將圓角變為橢圓形*/\n            border-radius: 10px/40px;\n        }"
+			"text": ".border-radius-1{\n  /* 全部設定 */\n  border-radius: 20px;\n}\n.border-radius-2{\n  /* 只設定某一個角 */\n  border-bottom-left-radius: 30px;\n}\n.border-radius-3{\n  /*可以設定4個值分別代表 左上 右上 右下 左下*/\n  border-radius: 10px 20px 30px 40px;\n}\n.border-radius-4{\n  /*可以設定3個值分別代表 左上 右上和左下 右下 */\n  border-radius: 0 10px 40px;\n}\n.border-radius-5{\n  /*可以設定成百分比*/\n  border-radius: 0 100%;\n}\n.border-radius-6{\n  /*50%就變成圓形*/\n  border-radius: 50%;\n}\n.border-radius-7{\n  /*分數型式會將圓角變為橢圓形*/\n  border-radius: 10px/40px;\n}"
 		},
 		{
 			"tag": "h2",
