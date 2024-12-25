@@ -3315,6 +3315,10 @@
 			"text": "介紹"
 		},
 		{
+			"tag": "img",
+			"text": "img/vue/3_Vue.png"
+		},
+		{
 			"tag": "p",
 			"text": "Vue是一套用於構建用戶界面的 JavaScript 框架。它基於標準 HTML、CSS 和 JavaScript 構建，並提供了一套宣告式的、組件化的編程模型，幫助你高效地開發用戶界面。無論是簡單還是複雜的界面，Vue 都可以勝任。"
 		},
@@ -3581,6 +3585,10 @@
 			"text": "3.若是需要一個響應式物件，層級較深，則推薦使用reactive()。"
 		},
 		{
+			"tag": "img",
+			"text": "img/vue/7_ref和reactive差異整理.png"
+		},
+		{
 			"tag": "h2",
 			"text": "toRef 與 toRefs"
 		},
@@ -3779,6 +3787,14 @@
 			"text": "Nuxt.js"
 		},
 		{
+			"tag": "img",
+			"text": "img/vue/4_Nuxt3.jpg"
+		},
+		{
+			"tag": "p",
+			"text": "部分內容取自於Udemy:從零開始學 Nuxt．只要 5 小時就能快速入門．無痛從 Vue 轉換成 Nuxt。"
+		},
+		{
 			"tag": "b",
 			"text": "伺服器端渲染&SEO"
 		},
@@ -3913,7 +3929,7 @@
 		},
 		{
 			"tag": "p",
-			"text": "放置靜態文件的目錄，這些文件可以直接通過根 URL 訪問，例如 /favicon.ico。assets/ 目錄則會放一些經常變動的檔案。"
+			"text": "放置靜態文件的目錄，這些文件可以直接通過根 URL 訪問，例如 /favicon.ico。有別於 assets/，其則會放一些經常變動的檔案。"
 		},
 		{
 			"tag": "b",
@@ -4016,8 +4032,120 @@
 			"text": "<template>\n    <div>\n        <NuxtPage />   <!-- 載入pages內的路由 -->\n    </div>\n</template>"
 		},
 		{
+			"tag": "b",
+			"text": "基本路由"
+		},
+		{
+			"tag": "precode",
+			"text": "pages/\n  index.vue         -> /\n  about.vue         -> /about\n  contact.vue       -> /contact"
+		},
+		{
+			"tag": "b",
+			"text": "巢狀路由"
+		},
+		{
+			"tag": "precode",
+			"text": "pages/\n  posts/\n    index.vue       -> /posts\n    create.vue      -> /posts/create\n    [id].vue        -> /posts/123 (動態路由)"
+		},
+		{
+			"tag": "b",
+			"text": "動態路由"
+		},
+		{
+			"tag": "precode",
+			"text": "pages/\n  users/\n    [id].vue        -> /users/1, /users/2 等\n    [username].vue  -> /users/john, /users/mary 等"
+		},
+		{
+			"tag": "b",
+			"text": "多層動態路由"
+		},
+		{
+			"tag": "precode",
+			"text": "pages/\n  categories/\n    [category]/\n      [id].vue      -> /categories/electronics/123"
+		},
+		{
+			"tag": "b",
+			"text": "捕捉所有路由"
+		},
+		{
+			"tag": "precode",
+			"text": "pages/\n  [...slug].vue     -> 匹配所有未定義的路由"
+		},
+		{
 			"tag": "p",
-			"text": "...🚧"
+			"text": "假設我們有一個頁面是配置在pages/catch-all/[...slug].vue，其內容如下，我們可以利用js解構出參數，如此一來當我們訪問的路徑為loacalhost:xxxx/catch-all/Joe/Steven/Jill，則畫面會渲染出一個陣列['Joe','Steven','Jill']以此類推。"
+		},
+		{
+			"tag": "precode",
+			"text": "<template>\n    <div>{{ slug }}</div>\n</template>\n\n<script setup>\n    const route = useRoute()\n    const { slug } = route.params    //將slug解構出來\n</script>"
+		},
+		{
+			"tag": "mark",
+			"text": "404 NOT FOUND"
+		},
+		{
+			"tag": "p",
+			"text": "我們可以將頁面配置在pages/[...slug].vue，網址列輸入一個不存在的路由，則都會導向這個slug頁面。另外我們可以透過以下方式將狀態碼也一併設為404。"
+		},
+		{
+			"tag": "precode",
+			"text": "<script setup>\n    setResponseStatus(404)\n</script>"
+		},
+		{
+			"tag": "mark",
+			"text": "更複雜的動態路由"
+		},
+		{
+			"tag": "img",
+			"text": "img/vue/5_更複雜的動態路由.png"
+		},
+		{
+			"tag": "p",
+			"text": "假設我們如上圖新增了更複雜的導頁網址。我們可以如此新增以下框選的部分，來接收NuxtLink要前往的特定路由。請再仔細觀察對應的關係。相信聰明的你一下就看懂!"
+		},
+		{
+			"tag": "img",
+			"text": "img/vue/6_列出指定類別的頁面.png"
+		},
+		{
+			"tag": "h3",
+			"text": "導頁元件"
+		},
+		{
+			"tag": "p",
+			"text": "<NuxtLink> 是 Nuxt 提供的路由元件，用來處理客戶端導航。to的屬性值可以指定導航目標。"
+		},
+		{
+			"tag": "precode",
+			"text": "<NuxtLink to='/about'>關於</NuxtLink>\n<NuxtLink :to='{ path: '/users', query: { id: 123 }}'>用戶</NuxtLink>"
+		},
+		{
+			"tag": "b",
+			"text": "高級用法"
+		},
+		{
+			"tag": "precode",
+			"text": "<!-- 外部連結 -->\n<NuxtLink to='https://nuxt.com' external>Nuxt</NuxtLink>\n\n<!-- 動態路由 -->\n<NuxtLink :to='`/posts/${post.id}`'>{{ post.title }}</NuxtLink>\n\n<!-- 客製化激活樣式 -->\n<NuxtLink to='/about' active-class='active' exact-active-class='exact'>關於</NuxtLink>"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
 		},
 		{
 			"tag": "p",
