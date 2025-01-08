@@ -3866,7 +3866,7 @@
 		},
 		{
 			"tag": "h2",
-			"text": "props"
+			"text": "Props"
 		},
 		{
 			"tag": "mark",
@@ -3878,11 +3878,55 @@
 		},
 		{
 			"tag": "precode",
-			"text": "<!-- 父組件 -->\n<template>\n  <ChildComponent :message='parentMessage' />\n</template>\n\n<script>\nimport ChildComponent from './ChildComponent.vue';\n\nexport default {\n  components: {\n    ChildComponent,\n  },\n  data() {\n    return {\n      parentMessage: 'Hello from parent!',\n    };\n  },\n};\n</script"
+			"text": "<!--父元件-->\n<template>\n  <ChildComponent :message='greeting' />\n</template>\n\n<script setup>\nconst greeting = 'Hello, world!'\n</script>"
 		},
 		{
 			"tag": "precode",
-			"text": "><!-- 子組件 -->\n<template>\n  <div>{{ message }}</div>\n</template>\n\n<script>\nexport default {\n  props: {\n    message: {\n      type: String,\n      required: true,\n    },\n  },\n};\n</script>\n"
+			"text": "<!--子元件-->\n<template>\n  <p>{{ message }}</p>\n</template>\n\n<script setup>\ndefineProps({\n  message: String,\n})\n</script>"
+		},
+		{
+			"tag": "h3",
+			"text": "Props 的重要特性"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "單向數據流： 子組件不能直接修改從父組件接收到的 Props 值。如果子組件需要修改數據，應該觸發一個事件，讓父組件來更新數據。"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "類型檢查： Vue 可以對 Props 的類型進行檢查，確保傳遞的數據類型正確。"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "必填 Props： 可以通過 required: true 讓 Props 成為必填。"
+		},
+		{
+			"tag": "precode",
+			"text": "defineProps({\n    message: {\n        type: String,\n        required: true\n    }\n})"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "預設值： 可以為 Props 提供一個預設值。"
+		},
+		{
+			"tag": "precode",
+			"text": "defineProps({\n    count: {\n        type: Number,\n        default: 0\n    }\n})\n\n//陣列或物件的預設值\ndefineProps({\n    options: {\n        type: Object,\n        default: () => ({\n            color: 'blue',\n            size: 'medium'\n        })\n    }\n})"
+		},
+		{
+			"tag": "h2",
+			"text": "Vuex | 全站狀態管理"
+		},
+		{
+			"tag": "mark",
+			"text": "Vuex 介紹"
+		},
+		{
+			"tag": "a",
+			"text": "https://vuex.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F%E2%80%9D%EF%BC%9F"
 		},
 		{
 			"tag": "h2",
