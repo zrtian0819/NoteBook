@@ -1239,6 +1239,49 @@
 		},
 		{
 			"tag": "h2",
+			"text": "字串 string"
+		},
+		{
+			"tag": "p",
+			"text": "JavaScript 的字串就像是一串文字，你可以用單引號 ' 或雙引號 ' 將它們包起來。這些字串可以包含任何文字、數字、甚至是特殊符號。你可以想像它們就像是一個盒子，裡面裝著一段文字。"
+		},
+		{
+			"tag": "h2",
+			"text": "進階字串操作"
+		},
+		{
+			"tag": "h3",
+			"text": "padStart()"
+		},
+		{
+			"tag": "p",
+			"text": "padStart() 是 JavaScript ES2017 新增的一個字串方法，主要用於在字串的開頭（左側）填充特定字元，直到達到指定的長度。"
+		},
+		{
+			"tag": "precode",
+			"text": "str.padStart(targetLength, padString)"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "str: 要進行填充的原始字串。"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "targetLength: 目標字串的長度。如果這個長度小於或等於原始字串的長度，則返回原始字串。"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "padString: 用於填充的字串。如果未提供，則默認填充空格。"
+		},
+		{
+			"tag": "precode",
+			"text": "// 將 'hello' 填充到長度為 10，用 'x' 填充\nlet str = 'hello';\nlet paddedStr = str.padStart(10, 'x');\nconsole.log(paddedStr); // 输出：xxxxxhello"
+		},
+		{
+			"tag": "h2",
 			"text": "陣列 array"
 		},
 		{
