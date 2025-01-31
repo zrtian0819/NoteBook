@@ -3918,221 +3918,6 @@
 		},
 		{
 			"tag": "h2",
-			"text": "集中式狀態管理"
-		},
-		{
-			"tag": "mark",
-			"text": "Vuex 介紹"
-		},
-		{
-			"tag": "a",
-			"text": "https://vuex.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F%E2%80%9D%EF%BC%9F"
-		},
-		{
-			"tag": "mark",
-			"text": "Pinia"
-		},
-		{
-			"tag": "a",
-			"text": "https://pinia.vuejs.org/zh/"
-		},
-		{
-			"tag": "p",
-			"text": "Vue3中建議使用Pinia狀態管理。"
-		},
-		{
-			"tag": "h3",
-			"text": "Pinia"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "輕量化：Pinia 更加輕量且簡潔，API 設計更直觀，易於上手。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "Vue 3 原生支持：Pinia 是專為 Vue 3 設計的狀態管理解決方案，與 Composition API 完美搭配。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "模組化設計：使用 Pinia 可以更靈活地組織和管理狀態模組。"
-		},
-		{
-			"tag": "b",
-			"text": "安裝pinia"
-		},
-		{
-			"tag": "precode",
-			"text": "npm i pinia"
-		},
-		{
-			"tag": "b",
-			"text": "環境建置"
-		},
-		{
-			"tag": "p",
-			"text": "需要再根文件main.ts或main.js完成以下步驟:"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "1.引入pinia"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "2.創建pinia"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "3.安裝pinia"
-		},
-		{
-			"tag": "precode",
-			"text": "// main.js\nimport { createApp } from 'vue';\nimport { createPinia } from 'pinia';    //引入pinia\nimport App from './App.vue';\n\nconst app = createApp(App);\nconst pinia = createPinia();    //創建Pinia\n\napp.use(pinia);    //安裝pinia\napp.mount('#app');"
-		},
-		{
-			"tag": "b",
-			"text": "資料夾配置"
-		},
-		{
-			"tag": "precode",
-			"text": "src/\n|-- stores/\n|   |-- index.js (或 index.ts)\n|   |-- moduleA.js (或 moduleA.ts)\n|   |-- moduleB.js (或 moduleB.ts)\n|-- components/\n|-- views/\n|-- App.vue\n|-- main.js (或 main.ts)\n"
-		},
-		{
-			"tag": "b",
-			"text": "儲存庫文件內部配置"
-		},
-		{
-			"tag": "p",
-			"text": "defineStore 是 Pinia 中用來創建 Store 的核心函數。這個函數接受一組參數來定義 Store 的結構和行為。變數命名的方式建議使用「use」 +「模組名」+「Store」小駝峰式命名。並且記得將其export導出，讓外部能夠使用。會使用到兩個參數:"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "id：Store 的唯一標識符，用於引用和註冊這個 Store。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "options：包含狀態、行為等的配置對象。"
-		},
-		{
-			"tag": "p",
-			"text": "其中我們會定義state、actions、getters函式分別定義store的初始狀態、狀態行為、計算屬性。以下式一些範例："
-		},
-		{
-			"tag": "precode",
-			"text": "// stores/moduleA.js\nimport { defineStore } from 'pinia';\nexport const useModuleAStore = defineStore('moduleA', {\n  state: () => ({\n    count: 0\n  }),\n  actions: {\n    increment() {\n      this.count++;\n    }\n  }\n});"
-		},
-		{
-			"tag": "precode",
-			"text": "const useMainStore = defineStore('main', {\n  state: () => ({\n    counter: 0,\n    userName: ''\n  }),\n  actions: {\n    increment() {\n      this.counter++;\n    },\n    setUserName(name) {\n      this.userName = name;\n    },\n    async fetchUserData() {\n      const data = await fetch('https://api.example.com/user');\n      const json = await data.json();\n      this.userName = json.name;\n    }\n  },\n  getters: {\n    doubleCounter: (state) => state.counter * 2\n  }\n});"
-		},
-		{
-			"tag": "b",
-			"text": "傾向交給狀態管理工具的原則"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "全局狀態： 如果數據是全局的，且需要在多個組件之間共享和同步，那麼存入 Pinia 是合適的選擇。例如，用戶認證狀態、主題設置等。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "持久性需求： 如果數據需要在頁面重新載入後保持，Pinia 可以與本地存儲（如 localStorage）結合使用，來保存這些狀態。例如，使用者偏好設置。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "頻繁使用： 如果數據在多個組件中被頻繁讀取和修改，使用 Pinia 可以減少重複代碼，並集中管理狀態變化。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "非組件狀態： 如果數據與特定組件無關，而是應用級別的狀態，Pinia 可以幫助更好地組織和管理這些數據。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "性能需求： 將大量或頻繁變動的數據存入 Pinia，可以提高應用性能，因為這樣可以減少不必要的組件重繪。"
-		},
-		{
-			"tag": "b",
-			"text": "不建議交給狀態管理工具的情況"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "短生命週期狀態： 如果數據僅在某一個組件內部使用，且生命週期短暫，則應直接在該組件內管理狀態。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "臨時數據： 如果數據是臨時的，不需要在多個組件間共享，可以直接在組件內部使用。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "無需全局共享： 如果數據僅與某些特定組件相關，而其他組件不需要訪問，則無需將其存入 Pinia。"
-		},
-		{
-			"tag": "b",
-			"text": "從pinia中取出數據"
-		},
-		{
-			"tag": "p",
-			"text": "例如我們想讀到useCountStore中的數據："
-		},
-		{
-			"tag": "precode",
-			"text": "//元件中\n\n//先引入欲讀寫的儲存庫\nimport { useCountStore } from '@/store/count'\n\n//先將獲取的函式執行\nconst countStore = useCountStore()\n\n//獲取儲存庫中定義的sum\nconsole.log(countStore.sum)"
-		},
-		{
-			"tag": "b",
-			"text": "修改數據的方式"
-		},
-		{
-			"tag": "p",
-			"text": "假設我們定義一個儲存庫"
-		},
-		{
-			"tag": "precode",
-			"text": "//store/count.ts\nimport { defineStore } from 'pinia';\n\nexport const useCountStore = defineStore('count', {\n    state() {\n        return {\n            sum: 6,\n            school: '中原大學',\n            address: '桃園',\n    };\n},\n    actions: {\n    //裡面可以放置多個方法，讓元件調用並執行動作\n            increment(value) {\n            console.log('increment被使用了', value);\n            //this是當前的store\n            this.sum += value\n            },\n    },\n});"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "1.直接修改數據"
-		},
-		{
-			"tag": "precode",
-			"text": "//元件中\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    countStore.sum += 1\n}"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "2.使用$patch批量修改"
-		},
-		{
-			"tag": "precode",
-			"text": "//元件中\n\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    //如果用此修改方式會導致數據重複設定\n    /*\n    countStore.sum += 1\n    countStore.school = '淡江大學'\n    countStore.school = '新北'\n    */\n\n    //使用patch可以讓效能提升\n    countStore.$patch({\n        sum: 819\n        school: '淡江大學'\n        address: '新北'\n    })\n}"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "3.使用儲存庫中的actions"
-		},
-		{
-			"tag": "precode",
-			"text": "//元件中\n\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    //傳入想增加的數字\n    countStore.increment(n.value)\n}"
-		},
-		{
-			"tag": "h2",
 			"text": "生命週期"
 		},
 		{
@@ -4326,6 +4111,359 @@
 		{
 			"tag": "p",
 			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h2",
+			"text": "Pinia"
+		},
+		{
+			"tag": "mark",
+			"text": "Vuex"
+		},
+		{
+			"tag": "a",
+			"text": "https://vuex.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F%E2%80%9D%EF%BC%9F"
+		},
+		{
+			"tag": "mark",
+			"text": "Pinia"
+		},
+		{
+			"tag": "a",
+			"text": "https://pinia.vuejs.org/zh/"
+		},
+		{
+			"tag": "p",
+			"text": "Vue3中建議使用Pinia狀態管理。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "輕量化：Pinia 更加輕量且簡潔，API 設計更直觀，易於上手。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "Vue 3 原生支持：Pinia 是專為 Vue 3 設計的狀態管理解決方案，與 Composition API 完美搭配。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "模組化設計：使用 Pinia 可以更靈活地組織和管理狀態模組。"
+		},
+		{
+			"tag": "h3",
+			"text": "安裝pinia"
+		},
+		{
+			"tag": "precode",
+			"text": "npm i pinia"
+		},
+		{
+			"tag": "h3",
+			"text": "環境建置"
+		},
+		{
+			"tag": "p",
+			"text": "需要再根文件main.ts或main.js完成以下步驟:"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "1.引入pinia"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "2.創建pinia"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "3.安裝pinia"
+		},
+		{
+			"tag": "precode",
+			"text": "// main.js\nimport { createApp } from 'vue';\nimport { createPinia } from 'pinia';    //引入pinia\nimport App from './App.vue';\n\nconst app = createApp(App);\nconst pinia = createPinia();    //創建Pinia\n\napp.use(pinia);    //安裝pinia\napp.mount('#app');"
+		},
+		{
+			"tag": "h3",
+			"text": "資料夾配置"
+		},
+		{
+			"tag": "precode",
+			"text": "src/\n|-- stores/\n|   |-- index.js (或 index.ts)\n|   |-- moduleA.js (或 moduleA.ts)\n|   |-- moduleB.js (或 moduleB.ts)\n|-- components/\n|-- views/\n|-- App.vue\n|-- main.js (或 main.ts)\n"
+		},
+		{
+			"tag": "h3",
+			"text": "儲存庫文件內部配置"
+		},
+		{
+			"tag": "p",
+			"text": "defineStore 是 Pinia 中用來創建 Store 的核心函數。這個函數接受一組參數來定義 Store 的結構和行為。變數命名的方式建議使用「use」 +「模組名」+「Store」小駝峰式命名。並且記得將其export導出，讓外部能夠使用。會使用到兩個參數:"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "id：Store 的唯一標識符，用於引用和註冊這個 Store。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "options：包含狀態、行為等的配置對象。"
+		},
+		{
+			"tag": "p",
+			"text": "其中我們會定義state、actions、getters函式分別定義store的初始狀態、狀態行為、計算屬性。以下式一些範例："
+		},
+		{
+			"tag": "precode",
+			"text": "// stores/moduleA.js\nimport { defineStore } from 'pinia';\nexport const useModuleAStore = defineStore('moduleA', {\n  state: () => ({\n    count: 0\n  }),\n  actions: {\n    increment() {\n      this.count++;\n    }\n  }\n});"
+		},
+		{
+			"tag": "precode",
+			"text": "const useMainStore = defineStore('main', {\n  state: () => ({\n    counter: 0,\n    userName: ''\n  }),\n  actions: {\n    increment() {\n      this.counter++;\n    },\n    setUserName(name) {\n      this.userName = name;\n    },\n    async fetchUserData() {\n      const data = await fetch('https://api.example.com/user');\n      const json = await data.json();\n      this.userName = json.name;\n    }\n  },\n  getters: {\n    doubleCounter: (state) => state.counter * 2\n  }\n});"
+		},
+		{
+			"tag": "h3",
+			"text": "狀態管理的原則"
+		},
+		{
+			"tag": "b",
+			"text": "傾向交給狀態管理工具的原則"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "全局狀態： 如果數據是全局的，且需要在多個組件之間共享和同步，那麼存入 Pinia 是合適的選擇。例如，用戶認證狀態、主題設置等。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "持久性需求： 如果數據需要在頁面重新載入後保持，Pinia 可以與本地存儲（如 localStorage）結合使用，來保存這些狀態。例如，使用者偏好設置。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "頻繁使用： 如果數據在多個組件中被頻繁讀取和修改，使用 Pinia 可以減少重複代碼，並集中管理狀態變化。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "非組件狀態： 如果數據與特定組件無關，而是應用級別的狀態，Pinia 可以幫助更好地組織和管理這些數據。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "性能需求： 將大量或頻繁變動的數據存入 Pinia，可以提高應用性能，因為這樣可以減少不必要的組件重繪。"
+		},
+		{
+			"tag": "b",
+			"text": "不建議交給狀態管理工具的情況"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "短生命週期狀態： 如果數據僅在某一個組件內部使用，且生命週期短暫，則應直接在該組件內管理狀態。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "臨時數據： 如果數據是臨時的，不需要在多個組件間共享，可以直接在組件內部使用。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "無需全局共享： 如果數據僅與某些特定組件相關，而其他組件不需要訪問，則無需將其存入 Pinia。"
+		},
+		{
+			"tag": "h3",
+			"text": "從儲存庫中取出數據"
+		},
+		{
+			"tag": "p",
+			"text": "例如我們想讀到useCountStore中的數據："
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\n\n//先引入欲讀寫的儲存庫\nimport { useCountStore } from '@/store/count'\n\n//先將獲取的函式執行\nconst countStore = useCountStore()\n\n//獲取儲存庫中定義的sum\nconsole.log(countStore.sum)"
+		},
+		{
+			"tag": "h3",
+			"text": "修改數據的方式"
+		},
+		{
+			"tag": "p",
+			"text": "假設我們定義一個儲存庫"
+		},
+		{
+			"tag": "precode",
+			"text": "//store/count.ts\nimport { defineStore } from 'pinia';\n\nexport const useCountStore = defineStore('count', {\n    state() {\n        return {\n            sum: 6,\n            school: '中原大學',\n            address: '桃園',\n    };\n},\n    actions: {\n    //裡面可以放置多個方法，讓元件調用並執行動作\n            increment(value) {\n            console.log('increment被使用了', value);\n            //this是當前的store\n            this.sum += value\n            },\n    },\n});"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "1.直接修改數據"
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    countStore.sum += 1\n}"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "2.使用$patch批量修改"
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\n\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    //如果用此修改方式會導致數據重複設定\n    /*\n    countStore.sum += 1\n    countStore.school = '淡江大學'\n    countStore.school = '新北'\n    */\n\n    //使用patch可以讓效能提升\n    countStore.$patch({\n        sum: 819\n        school: '淡江大學'\n        address: '新北'\n    })\n}"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "3.使用儲存庫中的actions"
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\n\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    //傳入想增加的數字\n    countStore.increment(n.value)\n}"
+		},
+		{
+			"tag": "h3",
+			"text": "將儲存庫的數據解構「storeToRefs」"
+		},
+		{
+			"tag": "p",
+			"text": "storeToRefs 是 Pinia 中的一個實用工具函數，用來將 Store 的狀態和 getter 轉換為 Vue 組件中的 refs，這樣可以方便地在組件中使用和響應狀態變化。不會對方法進行包裹"
+		},
+		{
+			"tag": "precode",
+			"text": "import { storeToRefs } from 'pinia'\n\nconst countStore = useCountStore()\nconst { sum,school,address } = storeToRefs(countStore)"
+		},
+		{
+			"tag": "h3",
+			"text": "儲存庫中的「getters」"
+		},
+		{
+			"tag": "p",
+			"text": "類似vue中的計算屬性，並且我們也可以直接在元件中使用這個衍伸的值。"
+		},
+		{
+			"tag": "precode",
+			"text": "//store/count.ts\nimport { defineStore } from 'pinia';\n\nexport const useCountStore = defineStore('count', {\n    state() {\n        sum:3,\n        school: 'chungyuan',\n        //...\n    },\n    actions: {\n//...\n    },\n    getters:{\n        bigSum(state){\n            return state.sum*10\n    },\n        upperSchool(state){\n            return state.school.toUpperCase()\n    }\n}\n});"
+		},
+		{
+			"tag": "h3",
+			"text": "使用訂閱 $subscribe"
+		},
+		{
+			"tag": "p",
+			"text": "在 Pinia 中，$subscribe 是一個強大的方法，用於監聽 Store 的變化。你可以使用 $subscribe 來執行一些自定義邏輯，比如將狀態變化保存到本地存儲，或者進行日誌記錄等。類似Vue中的監視屬性。假設我們有個main儲存庫:"
+		},
+		{
+			"tag": "precode",
+			"text": "// store.js\nimport { defineStore } from 'pinia';\n\nexport const useSimpleStore = defineStore('simple', {\n  state: () => ({\n    message: 'Hello, World!'\n  }),\n  actions: {\n    updateMessage(newMessage) {\n      this.message = newMessage;\n    }\n  }\n});\n"
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\n//訂閱狀態變化\nconst store = useSimpleStore();\n\nstore.$subscribe((mutation, state) => {\n  console.log(`變更類型: ${mutation.type}`);\n  console.log(`變更負載: ${JSON.stringify(mutation.payload)}`);\n  console.log(`當前狀態: ${JSON.stringify(state)}`);\n});"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "mutation:描述此次狀態變更的細節，包括變更的類型和負載（payload）。"
+		},
+		{
+			"tag": "p",
+			"text": "type：表示此次狀態變更的類型。例如，對應於某個 action 的名稱。payload：表示此次狀態變更所攜帶的數據。例如，action 中傳遞的參數。當你在 Store 中調用 increment 方法並傳遞參數時，mutation 會記錄這次變更的相關信息。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "state:表示當前 Store 的狀態。這是變更後的最新狀態。"
+		},
+		{
+			"tag": "p",
+			"text": "state 包含了 Store 中的所有狀態變量，可以用來檢查或操作當前的應用狀態。你可以使用 state 來查看每次變更後的 Store 狀態，確保應用的狀態是預期的。"
+		},
+		{
+			"tag": "h3",
+			"text": "pinia儲存庫的組合式寫法"
+		},
+		{
+			"tag": "p",
+			"text": "此寫法將上方的getters內容提及的選項式寫法改為使用組合式寫法:"
+		},
+		{
+			"tag": "precode",
+			"text": "// store/count.ts\nimport { defineStore } from 'pinia';\nimport { ref, computed } from 'vue';\n\nexport const useCountStore = defineStore('count', () => {\n  // 定義狀態\n  const sum = ref(3);\n  const school = ref('chungyuan');\n  \n  // 定義行為\n  function increment(value: number) {\n    sum.value += value;\n  }\n\n  // 定義計算屬性\n  const bigSum = computed(() => sum.value * 10);\n  const upperSchool = computed(() => school.value.toUpperCase());\n\n  return {\n    sum,\n    school,\n    increment,\n    bigSum,\n    upperSchool,\n  };\n});\n"
+		},
+		{
+			"tag": "h2",
+			"text": "組件通信"
+		},
+		{
+			"tag": "h3",
+			"text": "props"
+		},
+		{
+			"tag": "b",
+			"text": "子元件接收父元件傳遞的數據方法"
+		},
+		{
+			"tag": "precode",
+			"text": "//父元件\n<template>\n    <h1>父元件</h1>\n    <h4>{{car}}</h4>\n    <Child :car='car' />\n</template>\n\n<script lang='ts' name='Father'>\n    import Child from './Child.vue';\n    import { ref } from 'vue';\n\n    let car = ref('Benz');\n</script>"
+		},
+		{
+			"tag": "precode",
+			"text": "//子元件\n<template>\n    <h1>子元件</h1>\n    <h4>父親的車:{{car}}</h4>\n</template>\n\n<script lang='ts' name='Child'>\n    defineProps(['car']);\n</script>"
+		},
+		{
+			"tag": "b",
+			"text": "父元件接收子元件傳遞的數據方法"
+		},
+		{
+			"tag": "p",
+			"text": "此方法其實是定義一函式在父元件，並將此函式傳遞給子元件讓其調用，調用時子元件會將將欲傳遞的值傳入函式，進而讓父元件接收其值。"
+		},
+		{
+			"tag": "precode",
+			"text": "//父元件\n<template>\n    <h1>父元件</h1>\n    <h4>車子:{{car}}</h4>\n    <h4 v-show='toy'>兒子給的玩具:{{toy}}</h4>\n    <Child :car='car' :sendToy='getToy' />\n</template>\n\n<script lang='ts' name='Father'>\n    import Child from './Child.vue';\n    import { ref } from 'vue';\n    \n    //數據\n    let car = ref('Benz');\n    let toy = ref('')\n    //方法\n    function getToy(value:string){\n        //console.log('父接收的值:',value)\n        toy.value = value\n    }\n</script>"
+		},
+		{
+			"tag": "precode",
+			"text": "//子元件\n<template>\n    <h1>子元件</h1>\n    <h4>父親給的車:{{car}}</h4>\n    <h4>玩具:{{toy}}</h4>\n    <button @click='sendToy(toy)'>把玩具給父親按鈕</button>\n</template>\n\n<script lang='ts' name='Child'>\n    import { ref } from 'vue';\n\n    //數據\n    let toy = ref('變形金鋼')\n    \n    defineProps(['car', 'sendToy']);\n</script>"
 		},
 		{
 			"tag": "p",
