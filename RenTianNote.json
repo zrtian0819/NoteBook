@@ -780,17 +780,17 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "輕量級：JavaScript 是一種輕量級的編程語言。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "可插入 HTML 頁面：我們可以將 JavaScript 插入到 HTML 頁面中，並由所有現代瀏覽器執行。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "動態、弱型別、基於原型的物件導向程式語言：JavaScript 具有這些特性，使其適合用於 Web 開發。"
 		},
 		{
@@ -2635,17 +2635,17 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "pending(處理中)：初始狀態擱置中。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "fullfilled(已完成)：表示操作成功地完成。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "rejected(已拒絕)：表示操作失敗了。"
 		},
 		{
@@ -3426,17 +3426,17 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "setup 函數返回的對象中的內容可直接在模板中使用。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "setup 中訪問的this是undefined。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "setup 會在beforeCreate之前調用，他是領先所有鉤子執行的。"
 		},
 		{
@@ -3591,17 +3591,17 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "若是需要一個基本類型的響應式數據，必須使用ref()。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "若是需要一個響應式物件，但其內部層級不深，ref(),reactive()都可以使用。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "若是需要一個響應式物件，層級較深，則推薦使用reactive()。"
 		},
 		{
@@ -3890,17 +3890,17 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "單向數據流： 子組件不能直接修改從父組件接收到的 Props 值。如果子組件需要修改數據，應該觸發一個事件，讓父組件來更新數據。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "類型檢查： Vue 可以對 Props 的類型進行檢查，確保傳遞的數據類型正確。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "必填 Props： 可以通過 required: true 讓 Props 成為必填。"
 		},
 		{
@@ -3909,7 +3909,7 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "預設值： 可以為 Props 提供一個預設值。"
 		},
 		{
@@ -3918,7 +3918,7 @@
 		},
 		{
 			"tag": "h2",
-			"text": "Vuex | 全站狀態管理"
+			"text": "集中式狀態管理"
 		},
 		{
 			"tag": "mark",
@@ -3927,6 +3927,209 @@
 		{
 			"tag": "a",
 			"text": "https://vuex.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A8%A1%E5%BC%8F%E2%80%9D%EF%BC%9F"
+		},
+		{
+			"tag": "mark",
+			"text": "Pinia"
+		},
+		{
+			"tag": "a",
+			"text": "https://pinia.vuejs.org/zh/"
+		},
+		{
+			"tag": "p",
+			"text": "Vue3中建議使用Pinia狀態管理。"
+		},
+		{
+			"tag": "h3",
+			"text": "Pinia"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "輕量化：Pinia 更加輕量且簡潔，API 設計更直觀，易於上手。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "Vue 3 原生支持：Pinia 是專為 Vue 3 設計的狀態管理解決方案，與 Composition API 完美搭配。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "模組化設計：使用 Pinia 可以更靈活地組織和管理狀態模組。"
+		},
+		{
+			"tag": "b",
+			"text": "安裝pinia"
+		},
+		{
+			"tag": "precode",
+			"text": "npm i pinia"
+		},
+		{
+			"tag": "b",
+			"text": "環境建置"
+		},
+		{
+			"tag": "p",
+			"text": "需要再根文件main.ts或main.js完成以下步驟:"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "1.引入pinia"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "2.創建pinia"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "3.安裝pinia"
+		},
+		{
+			"tag": "precode",
+			"text": "// main.js\nimport { createApp } from 'vue';\nimport { createPinia } from 'pinia';    //引入pinia\nimport App from './App.vue';\n\nconst app = createApp(App);\nconst pinia = createPinia();    //創建Pinia\n\napp.use(pinia);    //安裝pinia\napp.mount('#app');"
+		},
+		{
+			"tag": "b",
+			"text": "資料夾配置"
+		},
+		{
+			"tag": "precode",
+			"text": "src/\n|-- stores/\n|   |-- index.js (或 index.ts)\n|   |-- moduleA.js (或 moduleA.ts)\n|   |-- moduleB.js (或 moduleB.ts)\n|-- components/\n|-- views/\n|-- App.vue\n|-- main.js (或 main.ts)\n"
+		},
+		{
+			"tag": "b",
+			"text": "儲存庫文件內部配置"
+		},
+		{
+			"tag": "p",
+			"text": "defineStore 是 Pinia 中用來創建 Store 的核心函數。這個函數接受一組參數來定義 Store 的結構和行為。變數命名的方式建議使用「use」 +「模組名」+「Store」小駝峰式命名。並且記得將其export導出，讓外部能夠使用。會使用到兩個參數:"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "id：Store 的唯一標識符，用於引用和註冊這個 Store。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "options：包含狀態、行為等的配置對象。"
+		},
+		{
+			"tag": "p",
+			"text": "其中我們會定義state、actions、getters函式分別定義store的初始狀態、狀態行為、計算屬性。以下式一些範例："
+		},
+		{
+			"tag": "precode",
+			"text": "// stores/moduleA.js\nimport { defineStore } from 'pinia';\nexport const useModuleAStore = defineStore('moduleA', {\n  state: () => ({\n    count: 0\n  }),\n  actions: {\n    increment() {\n      this.count++;\n    }\n  }\n});"
+		},
+		{
+			"tag": "precode",
+			"text": "const useMainStore = defineStore('main', {\n  state: () => ({\n    counter: 0,\n    userName: ''\n  }),\n  actions: {\n    increment() {\n      this.counter++;\n    },\n    setUserName(name) {\n      this.userName = name;\n    },\n    async fetchUserData() {\n      const data = await fetch('https://api.example.com/user');\n      const json = await data.json();\n      this.userName = json.name;\n    }\n  },\n  getters: {\n    doubleCounter: (state) => state.counter * 2\n  }\n});"
+		},
+		{
+			"tag": "b",
+			"text": "傾向交給狀態管理工具的原則"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "全局狀態： 如果數據是全局的，且需要在多個組件之間共享和同步，那麼存入 Pinia 是合適的選擇。例如，用戶認證狀態、主題設置等。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "持久性需求： 如果數據需要在頁面重新載入後保持，Pinia 可以與本地存儲（如 localStorage）結合使用，來保存這些狀態。例如，使用者偏好設置。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "頻繁使用： 如果數據在多個組件中被頻繁讀取和修改，使用 Pinia 可以減少重複代碼，並集中管理狀態變化。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "非組件狀態： 如果數據與特定組件無關，而是應用級別的狀態，Pinia 可以幫助更好地組織和管理這些數據。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "性能需求： 將大量或頻繁變動的數據存入 Pinia，可以提高應用性能，因為這樣可以減少不必要的組件重繪。"
+		},
+		{
+			"tag": "b",
+			"text": "不建議交給狀態管理工具的情況"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "短生命週期狀態： 如果數據僅在某一個組件內部使用，且生命週期短暫，則應直接在該組件內管理狀態。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "臨時數據： 如果數據是臨時的，不需要在多個組件間共享，可以直接在組件內部使用。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "無需全局共享： 如果數據僅與某些特定組件相關，而其他組件不需要訪問，則無需將其存入 Pinia。"
+		},
+		{
+			"tag": "b",
+			"text": "從pinia中取出數據"
+		},
+		{
+			"tag": "p",
+			"text": "例如我們想讀到useCountStore中的數據："
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\n\n//先引入欲讀寫的儲存庫\nimport { useCountStore } from '@/store/count'\n\n//先將獲取的函式執行\nconst countStore = useCountStore()\n\n//獲取儲存庫中定義的sum\nconsole.log(countStore.sum)"
+		},
+		{
+			"tag": "b",
+			"text": "修改數據的方式"
+		},
+		{
+			"tag": "p",
+			"text": "假設我們定義一個儲存庫"
+		},
+		{
+			"tag": "precode",
+			"text": "//store/count.ts\nimport { defineStore } from 'pinia';\n\nexport const useCountStore = defineStore('count', {\n    state() {\n        return {\n            sum: 6,\n            school: '中原大學',\n            address: '桃園',\n    };\n},\n    actions: {\n    //裡面可以放置多個方法，讓元件調用並執行動作\n            increment(value) {\n            console.log('increment被使用了', value);\n            //this是當前的store\n            this.sum += value\n            },\n    },\n});"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "1.直接修改數據"
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    countStore.sum += 1\n}"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "2.使用$patch批量修改"
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\n\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    //如果用此修改方式會導致數據重複設定\n    /*\n    countStore.sum += 1\n    countStore.school = '淡江大學'\n    countStore.school = '新北'\n    */\n\n    //使用patch可以讓效能提升\n    countStore.$patch({\n        sum: 819\n        school: '淡江大學'\n        address: '新北'\n    })\n}"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "3.使用儲存庫中的actions"
+		},
+		{
+			"tag": "precode",
+			"text": "//元件中\n\nimport { useCountStore } from '@/store/count'\nconst countStore = useCountStore()\n\nfunction add(){\n    //傳入想增加的數字\n    countStore.increment(n.value)\n}"
 		},
 		{
 			"tag": "h2",
@@ -5569,32 +5772,32 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "內容固定擴展性低,每次訪問顯示相同的內容"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "通常由HTML、CSS等編寫"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "無需後端處理,直接從伺服器傳送到瀏覽器"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "加載,創建部署速度快,適合簡單的資訊展示"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "管理效率低,不適合需要頻繁更新或個人化的網站"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "安全性高"
 		},
 		{
@@ -5611,32 +5814,32 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "內容可變擴展性高,根據用戶操作或其他因素動態生成"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "使用PHP、Python等後端語言,以及JavaScript等前端技術"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "需要伺服器端處理,可能涉及資料庫操作,設計上更加複雜"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "能提供互動性和個人化體驗"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "適合電子商務、社交媒體等複雜應用"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "性能較靜態網頁差"
 		},
 		{
@@ -5681,22 +5884,22 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "讓使用這個module的文件中，所使用的全域變數不會被module內部的變數所影響。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "讓module內部所定義的全域變數變成function scope"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "讓module內部的JS文件可以使用某些實用的變數,例如module、exports可以用來輸出本身module,而require可以用來獲得其他module。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "__filename,__dirname等等變數在開發上變得方便,因為兩者包含module的絕對路徑名稱與資料夾路徑。"
 		},
 		{
