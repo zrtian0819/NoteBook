@@ -6153,6 +6153,10 @@
 			"text": "介紹"
 		},
 		{
+			"tag": "img",
+			"text": "img/tsc/01_tsc封面.png"
+		},
+		{
 			"tag": "p",
 			"text": "TypeScript 是一種由 Microsoft 開發的開源程式語言，它是 JavaScript 的一個超集。這意味著，任何合法的 JavaScript 程式碼都是合法的 TypeScript 程式碼。TypeScript 在 JavaScript 的基礎上添加了靜態型別系統，這使得開發者可以在編寫程式碼時就捕獲潛在的錯誤，提高程式碼的可讀性、可維護性和可靠性。"
 		},
