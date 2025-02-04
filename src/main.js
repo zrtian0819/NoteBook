@@ -45,7 +45,7 @@ getJson().then(function (data) {
 	let contents = "";
 	let i = 0;
 
-	LoadContents(6); //開發時暫時調用
+	LoadContents(11); //開發時暫時調用
 
 	//載入頁面
 	function LoadContents(code) {
