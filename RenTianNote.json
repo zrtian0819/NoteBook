@@ -2547,6 +2547,195 @@
 		},
 		{
 			"tag": "h2",
+			"text": "進階概念👍"
+		},
+		{
+			"tag": "h3",
+			"text": "閉包 (closure)"
+		},
+		{
+			"tag": "p",
+			"text": "想像一下，你家裡就像一個 JavaScript 的「作用域」，裡面有不同的房間 (函式)。有些東西 (變數) 你可以放在客廳 (全域變數)，大家都可以用。但有些東西你可能只想放在自己的房間 (函式內的變數)，只有自己能用。"
+		},
+		{
+			"tag": "p",
+			"class":"yellow",
+			"text": "閉包就像是一個「小幫手」，它可以讓你即使離開了自己的房間，還是可以偷偷回去拿東西。"
+		},
+		{
+			"tag": "precode",
+			"text": "function 我家() {\n  const 客廳的東西 = '電視'; // 全域變數，大家都可以用\n\n  function 我的房間() {\n    const 我的東西 = '玩具'; // 函式內的變數，只有自己能用\n    console.log('我在房間裡玩' + 我的東西); // 我在房間裡玩玩具\n    console.log('我也在客廳看' + 客廳的東西); // 我也在客廳看電視\n  }\n\n  return 我的房間; // 把「我的房間」這個小幫手交出去\n}\n\nconst 小明 = 我家(); // 小明拿到了「我的房間」這個小幫手\n小明(); // 小明即使不在「我家」了，還是可以回去拿「我的東西」和「客廳的東西」"
+		},
+		{
+			"tag": "b",
+			"text": "簡單來說"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "閉包就是一個函式，它可以記住自己被創造時周圍的環境 (變數)。"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "即使函式已經離開了它原本的作用域，它還是可以存取那些被記住的變數。"
+		},
+		{
+			"tag": "b",
+			"text": "閉包有什麼用處?"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "保持變數的私有性： 可以把一些變數藏在函式裡面，不讓外面的人隨便改動。"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "延長變數的生命週期： 有些變數在函式結束後就應該消失，但閉包可以讓它們繼續存在。"
+		},
+		{
+			"tag": "p",
+			"class":"nli",
+			"text": "實現一些特殊的功能： 像是一些計數器、延遲執行等等。"
+		},
+		{
+			"tag": "b",
+			"text": "範例"
+		},
+		{
+			"tag": "p",
+			"text": "在這個範例中，outerFunction 是一個外部函式，它定義了一個變數 outerVar 和一個內部函式 innerFunction。 innerFunction 可以訪問 outerVar。  當 outerFunction 返回 innerFunction，並將返回的函式賦值給 closureExample 時，即使 outerFunction 已經執行完畢，closureExample (也就是 innerFunction) 仍然可以記住並存取 outerVar。"
+		},
+		{
+			"tag": "precode",
+			"text": "function outerFunction() {\n  let outerVar = '我來自外部函式';\n\n  function innerFunction() {\n    console.log(outerVar);\n  }\n\n  return innerFunction;\n}\n\nlet closureExample = outerFunction();\nclosureExample(); // 輸出: 我來自外部函式"
+		},
+		{
+			"tag": "p",
+			"text": "閉包常用於創建私有變數和資料封裝。  在下面的例子中，createCounter 函式返回一個物件，這個物件包含兩個方法：increment 和 getValue。  變數 count 被定義在 createCounter 函式的作用域內，外部無法直接訪問 count。  但是，透過 increment 和 getValue 這兩個閉包函式，我們可以間接地操作和訪問 count，實現了類似私有變數的效果。"
+		},
+		{
+			"tag": "precode",
+			"text": "function createCounter() {\n  let count = 0; // 私有變數\n\n  return {\n    increment: function() {\n      count++;\n    },\n    getValue: function() {\n      return count;\n    }\n  };\n}\n\nlet counter = createCounter();\ncounter.increment();\ncounter.increment();\nconsole.log(counter.getValue()); // 輸出: 2\nconsole.log(counter.count); // 輸出: undefined (無法直接訪問 count)"
+		},
+		{
+			"tag": "p",
+			"text": "這個範例示範了在使用迴圈和閉包時，var 和 let 的不同行為。  var 宣告的變數具有函式作用域，而 let 宣告的變數具有塊級作用域。  在使用 var 的情況下，所有的閉包都會共享同一個 i 變數，導致輸出都是最後的 i 值。 而使用 let 時，每次迴圈迭代都會創建一個新的 i 變數，每個閉包都記住的是當次迭代的 i 值。"
+		},
+		{
+			"tag": "precode",
+			"text": "// 使用 var\nfunction varExample() {\n  for (var i = 1; i <= 3; i++) {\n    setTimeout(function() {\n      console.log('var 迴圈 i:', i);\n    }, 1000);\n  }\n}\n\nvarExample(); // 輸出三次 'var 迴圈 i: 4' (因為 var i 是函式作用域，迴圈結束後 i 的值變成了 4)\n\n\n// 使用 let\nfunction letExample() {\n  for (let i = 1; i <= 3; i++) {\n    setTimeout(function() {\n      console.log('let 迴圈 i:', i);\n    }, 1000);\n  }\n}\n\nletExample(); // 輸出 'let 迴圈 i: 1', 'let 迴圈 i: 2', 'let 迴圈 i: 3' (因為 let i 是塊級作用域，每次迴圈都產生新的 i)"
+		},
+		{
+			"tag": "h3",
+			"text": "Proxy 與 Reflect"
+		},
+		{
+			"tag": "p",
+			"text": "Proxy 和 Reflect 是 ES6 引入的用於元編程 (meta-programming) 的 API。"
+		},
+		{
+			"tag": "b",
+			"text": "Proxy"
+		},
+		{
+			"tag": "p",
+			"text": "Proxy 物件可以攔截並自訂物件的基本操作 (例如屬性訪問、賦值、函式呼叫等)。你可以使用 Proxy 創建物件的代理，並在這些操作發生時執行自訂的行為。"
+		},
+		{
+			"tag": "b",
+			"text": "Reflect"
+		},
+		{
+			"tag": "p",
+			"text": "Reflect 是一個內建物件，提供了一組與 Proxy 處理器方法相對應的靜態方法。Reflect 的方法與物件的預設行為相同，但它們可以被 Proxy 攔截和自訂。"
+		},
+		{
+			"tag": "p",
+			"class":"yellow",
+			"text": "Proxy 和 Reflect 提供了強大的元編程能力，可以用於實現各種高級模式，例如資料驗證、追蹤物件訪問、實現虛擬物件、建立高效的框架和庫等。"
+		},
+		{
+			"tag": "precode",
+			"text": "const target = {\n  name: '原始物件'\n};\n\nconst handler = {\n  get: function(target, property, receiver) {\n    console.log(`正在訪問屬性: ${property}`);\n    return Reflect.get(target, property, receiver); // 使用 Reflect.get 獲取原始行為\n  },\n  set: function(target, property, value, receiver) {\n    console.log(`正在設定屬性: ${property} 為 ${value}`);\n    return Reflect.set(target, property, value, receiver); // 使用 Reflect.set 設定原始行為\n  }\n};\n\nconst proxy = new Proxy(target, handler);\n\nconsole.log(proxy.name);   // 輸出: 正在訪問屬性: name, 然後輸出: 原始物件\nproxy.name = '代理物件'; // 輸出: 正在設定屬性: name 為 代理物件\nconsole.log(proxy.name);   // 輸出: 正在訪問屬性: name, 然後輸出: 代理物件"
+		},
+		{
+			"tag": "h3",
+			"text": "Generators 與 Iterators"
+		},
+		{
+			"tag": "b",
+			"text": "生成器(Generators)"
+		},
+		{
+			"tag": "p",
+			"text": "生成器是一種特殊的函式，可以使用 function* 語法定義。生成器函式可以暫停執行 (使用 yield 關鍵字) 並在之後恢復執行。生成器函式返回一個迭代器。"
+		},
+		{
+			"tag": "b",
+			"text": "迭代器(Iterators)"
+		},
+		{
+			"tag": "p",
+			"text": "迭代器是一種讓你可以遍歷 (iterate) 集合 (例如陣列、字串、Map, Set 等) 的機制。迭代器物件有一個 next() 方法，每次調用 next() 方法會返回一個包含 value 和 done 屬性的物件，value 是當前迭代的值，done 是一個布林值，指示迭代是否完成。"
+		},
+		{
+			"tag": "p",
+			"class":"yellow",
+			"text": "迭代器和生成器提供了更強大的控制流程，特別是在處理大量數據或需要延遲計算 (lazy evaluation) 的場景。生成器可以簡化異步程式碼的編寫，例如處理異步迭代。"
+		},
+		{
+			"tag": "precode",
+			"text": "function* numberGenerator() {\n  yield 1;\n  yield 2;\n  yield 3;\n}\n\nconst generator = numberGenerator();\n\nconsole.log(generator.next()); // 輸出: { value: 1, done: false }\nconsole.log(generator.next()); // 輸出: { value: 2, done: false }\nconsole.log(generator.next()); // 輸出: { value: 3, done: false }\nconsole.log(generator.next()); // 輸出: { value: undefined, done: true }\n\n// 可以用 for...of 循環迭代生成器\nfor (const number of numberGenerator()) {\n  console.log(number); // 輸出: 1, 2, 3\n}"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h3",
+			"text": "ES 模組"
+		},
+		{
+			"tag": "p",
+			"text": "ES 模組是 JavaScript 官方的模組化系統，它允許你將程式碼分割成獨立的模組 (檔案)，然後在需要時匯入和匯出模組。 ES 模組使用 import 和 export 語法。"
+		},
+		{
+			"tag": "p",
+			"class":"yellow",
+			"text": "模組化是大型專案的基礎。ES 模組讓程式碼更有組織、更容易維護、並且可以更好地重用程式碼。"
+		},
+		{
+			"tag": "b",
+			"text": "範例"
+		},
+		{
+			"tag": "precode",
+			"text": "//moduleA.js\n\n// 匯出變數和函式\nexport const message = '來自模組 A 的訊息';\n\nexport function greet(name) {\n  console.log(`你好, ${name}!`);\n}"
+		},
+		{
+			"tag": "precode",
+			"text": "//main.js\n\n// 從 moduleA.js 匯入\nimport { message, greet } from './moduleA.js';\n\nconsole.log(message); // 輸出: 來自模組 A 的訊息\ngreet('使用者');    // 輸出: 你好, 使用者!"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h2",
 			"text": "推薦的函式庫"
 		},
 		{
