@@ -98,6 +98,7 @@ mark {
   padding-left: 15px;
   margin: 2px 0 5px 0;
   display: block;
+
   &::before {
     content: '▪️';
     margin-right: 3px;
@@ -136,16 +137,18 @@ a {
 b {
   /* font-family: Arial, Helvetica, sans-serif, 微軟正黑體; */
   font-family: "Noto Sans TC", serif;
-  font-weight: 600;
+  font-weight: 500;
   display: block;
-  color: #0267b4;
+  /* color: #0267b4; */
+  color: white;
   margin: 20px 0 0 0;
-  padding: 5px 10px;
-  font-size: 16px;
+  padding: 8px 10px;
+  font-size: 14px;
   letter-spacing: 2px;
-  border: 1px solid rgba(2, 103, 180, 0.4);
-  border-radius: 5px;
-  background: linear-gradient(to right, #fff 80%, rgba(2, 103, 180, 0.2));
+  /* border: 2px solid rgba(2, 103, 180, 0.4); */
+  border-radius: 0px;
+  /* background: linear-gradient(to right, #fff 80%, rgba(2, 103, 180, 0.2)); */
+  background: rgba(2, 103, 180, 0.8);
 }
 
 img {
@@ -227,9 +230,10 @@ h3 {
   margin: 20px 10px 0 0;
   color: var(--lightMainTextColor);
   background-color: var(--lightMainColor);
-  padding: 7px 15px;
+  padding: 7px 17px;
   display: inline-block;
-  font-weight: 900;
+  font-weight: 800;
+  border-radius: 2px;
 
 
 }
