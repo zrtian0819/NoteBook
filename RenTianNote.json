@@ -3253,6 +3253,89 @@
 		},
 		{
 			"tag": "h3",
+			"text": "任意型別 (unknown)"
+		},
+		{
+			"tag": "p",
+			"text": "在 TypeScript 中，unknown 是 比 any 更安全 的動態類型，表示變數的類型在編譯時是未知的，但需要進一步的類型判斷才能使用。"
+		},
+		{
+			"tag": "b",
+			"text": "unknown vs any"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "any：可以直接賦值給任何變數，TypeScript 不會進行型別檢查，容易造成錯誤。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "unknown：只能被賦值給 unknown 或 any，不能直接使用，需要額外的類型檢查才能操作。"
+		},
+		{
+			"tag": "b",
+			"text": "unknown 的使用範例"
+		},
+		{
+			"tag": "precode",
+			"text": "let value: unknown;\n\nvalue = 'Hello';\nvalue = 42;\nvalue = true;\n\n// ❌ 不能直接執行這些操作\nconsole.log(value.toUpperCase()); // Error: Object is of type 'unknown'\nlet num: number = value; // Error: Type 'unknown' is not assignable to type 'number'."
+		},
+		{
+			"tag": "p",
+			"text": "變數 value 被標記為 unknown，所以不能直接操作或賦值給其他確定類型的變數。要使用 unknown 的變數，必須先確認類型 (Type Narrowing)，例如 typeof 或 instanceof:"
+		},
+		{
+			"tag": "precode",
+			"text": "let value: unknown = 'Hello';\n\n// ✅ 先進行類型檢查\nif (typeof value === 'string') {\n    console.log(value.toUpperCase()); // 成功：HELLO\n}"
+		},
+		{
+			"tag": "p",
+			"text": "透過 typeof value === 'string'，TypeScript 確認 value 是字串，然後才能安全地使用 toUpperCase()。"
+		},
+		{
+			"tag": "b",
+			"text": "使用 assertion 斷言類型"
+		},
+		{
+			"tag": "p",
+			"text": "如果開發者 確定 unknown 變數的類型，可以使用 類型斷言 (as)："
+		},
+		{
+			"tag": "precode",
+			"text": "let value: unknown = 'TypeScript';\nlet strLength: number = (value as string).length;\nconsole.log(strLength); // 10"
+		},
+		{
+			"tag": "p",
+			"text": "(value as string).length 告訴 TypeScript '我確定 value 是 string，請允許我使用 length'"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "注意：使用 as 斷言時，必須確保類型正確，否則可能導致執行時錯誤。"
+		},
+		{
+			"tag": "precode",
+			"text": "let value: unknown = 42;\nconsole.log((value as string).toUpperCase()); // ❌ 會在執行時出錯！"
+		},
+		{
+			"tag": "b",
+			"text": "搭配 never 處理不可能的情況"
+		},
+		{
+			"tag": "p",
+			"text": "當 unknown 的值確定不應該被使用時，可以利用 never 來處理："
+		},
+		{
+			"tag": "precode",
+			"text": "function assertNever(x: never): never {\n    throw new Error('Unexpected value: ' + x);\n}\n\nfunction process(value: unknown) {\n    if (typeof value === 'string') {\n        console.log('It's a string:', value);\n    } else if (typeof value === 'number') {\n        console.log('It's a number:', value);\n    } else {\n        assertNever(value as never); // 強制 TypeScript 檢查所有可能情況\n    }\n}"
+		},
+		{
+			"tag": "p",
+			"text": "assertNever() 確保 如果 value 的類型不符合已知的類型 (string 或 number)，就會拋出錯誤，讓 TypeScript 檢測可能的類型錯誤。"
+		},
+		{
+			"tag": "h3",
 			"text": "空值 (null 和 undefined)"
 		},
 		{
