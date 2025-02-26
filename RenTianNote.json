@@ -3066,28 +3066,78 @@
 		},
 		{
 			"tag": "h3",
-			"text": "任意型別"
+			"text": "類別的定義"
+		},
+		{
+			"tag": "b",
+			"text": "基本類別"
 		},
 		{
 			"tag": "p",
-			"class": "yellow",
-			"text": "如果我們不確定變數的型別，可以使用 any 型別，但這會關閉型別檢查，因此建議盡量避免使用。"
+			"text": "Animal 類別定義了一個基礎的動物類別，它具有一個 name 屬性，並在建構函式 (constructor) 中初始化該屬性。此外，它還包含 move 方法，該方法可選擇性地接收一個 distance 數值參數，並在控制台中輸出動物移動的距離。這個類別可以作為其他類別的基礎，讓其子類別繼承並擴展功能。"
 		},
 		{
 			"tag": "precode",
-			"text": "let value: any = 'Hello';\nvalue = 10;"
+			"text": "class Animal {\n  name: string;\n  constructor(name: string) {\n    this.name = name;\n  }\n  move(distance: number = 0) {\n    console.log(`${this.name} moved ${distance} meters.`);\n  }\n}"
 		},
 		{
-			"tag": "h3",
-			"text": "介面 (interface)"
+			"tag": "b",
+			"text": "繼承與覆寫"
 		},
 		{
 			"tag": "p",
-			"text": "介面定義了物件的結構，可以確保物件具有特定的屬性和方法。"
+			"text": "Dog 類別繼承 (extends) Animal 類別，表示 Dog 是 Animal 的一種。在 Dog 類別中，新增了一個 bark 方法，該方法在執行時會輸出 'Woof! Woof!'，模擬狗叫聲。當我們使用 new Dog('Buddy') 創建一個 Dog 物件時，可以呼叫 bark() 來讓狗叫，或使用 move(10) 來讓狗移動 10 公尺。這展示了繼承的概念，讓 Dog 類別能夠使用 Animal 的方法並擴展自己的功能。"
 		},
 		{
 			"tag": "precode",
-			"text": "interface Person {\n    name: string;\n    age: number;\n}\n\nlet person: Person = {\n    name: 'Bob',\n    age: 25\n};"
+			"text": "class Dog extends Animal {\n  bark() {\n    console.log('Woof! Woof!');\n  }\n}\n\nconst dog = new Dog('Buddy');\ndog.bark();\ndog.move(10);"
+		},
+		{
+			"tag": "b",
+			"text": "存取修飾符（public, private, protected）"
+		},
+		{
+			"tag": "p",
+			"text": "Person 類別展示了 public、private 和 protected 三種存取修飾符的應用："
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "public name: 這個屬性是公開的，任何地方都可以訪問與修改它。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "private age: 這個屬性只能在 Person 類別內部訪問，無法在類別外部或其子類別中存取。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "protected gender: 這個屬性只能在 Person 本身和其子類別中訪問，外部無法直接存取。"
+		},
+		{
+			"tag": "p",
+			"text": "Employee 類別繼承了 Person，並且增加了一個 public jobTitle 屬性。它可以存取 protected 的 gender，並透過 getGender() 方法回傳該值，說明 protected 屬性可供子類別存取但不能從外部直接訪問。"
+		},
+		{
+			"tag": "precode",
+			"text": "class Person {\n  public name: string; // 任何地方都可訪問\n  private age: number; // 只有在類內部可訪問\n  protected gender: string; // 只能在類及其子類內訪問\n\n  constructor(name: string, age: number, gender: string) {\n    this.name = name;\n    this.age = age;\n    this.gender = gender;\n  }\n}\n\nclass Employee extends Person {\n  constructor(name: string, age: number, gender: string, public jobTitle: string) {\n    super(name, age, gender);\n  }\n\n  getGender() {\n    return this.gender; // 可以訪問 protected 屬性\n  }\n}"
+		},
+		{
+			"tag": "b",
+			"text": "存取器（getter / setter）"
+		},
+		{
+			"tag": "p",
+			"text": "Employee 類別示範了 getter 和 setter 的使用方式。它有一個私有屬性 _salary，只能在類別內部訪問。get salary() 方法允許從外部讀取 _salary，而 set salary(value: number) 方法允許修改 _salary，但只有當新值大於 0 時才會更新，否則會拋出錯誤。這種方式可以保護數據，防止非法值被設定。"
+		},
+		{
+			"tag": "p",
+			"text": "在範例中，我們創建了一個 Employee 物件 emp，初始薪資為 5000，並透過 console.log(emp.salary) 來讀取薪資，結果輸出 5000。接著，我們修改 emp.salary = 6000，成功更新薪資，展示了 getter 和 setter 的作用，即在確保數據安全的前提下，控制屬性的讀取和修改。"
+		},
+		{
+			"tag": "precode",
+			"text": "class Employee {\n  private _salary: number;\n\n  constructor(salary: number) {\n    this._salary = salary;\n  }\n\n  get salary(): number {\n    return this._salary;\n  }\n\n  set salary(value: number) {\n    if (value > 0) {\n      this._salary = value;\n    } else {\n      throw new Error('Salary must be positive.');\n    }\n  }\n}\n\nconst emp = new Employee(5000);\nconsole.log(emp.salary); // 5000\nemp.salary = 6000; // 設定新的薪水"
 		},
 		{
 			"tag": "h3",
@@ -3251,15 +3301,40 @@
 		},
 		{
 			"tag": "h3",
-			"text": "介面 (interface)"
+			"text": "介面(interface) ⭐"
 		},
 		{
+			"tag": "b",
+			"text": "定義物件結構"
+		},
+
+		{
 			"tag": "p",
-			"text": "定義物件的結構。如前節所提到的。"
+			"text": "介面定義了物件的結構，可以確保物件具有特定的屬性和方法。"
 		},
 		{
 			"tag": "precode",
 			"text": "interface Person {\n    firstName: string;\n    lastName: string;\n}\n\nlet user: Person = {\n    firstName: 'Jane',\n    lastName: 'User'\n};"
+		},
+		{
+			"tag": "b",
+			"text": "可選屬性（Optional Properties）"
+		},
+		{
+			"tag": "precode",
+			"text": "interface User {\n  name: string;\n  age?: number; // 可選\n}\n\nlet user: User = { name: 'Bob' }; // 不必提供 age"
+		},
+		{
+			"tag": "b",
+			"text": "readonly（唯讀屬性）"
+		},
+		{
+			"tag": "precode",
+			"text": "interface Point {\n  readonly x: number;\n  readonly y: number;\n}\n\nlet p: Point = { x: 10, y: 20 };\n// p.x = 5; // 錯誤，x 為唯讀"
+		},
+		{
+			"tag": "p",
+			"text": "定義物件的結構。如前節所提到的。"
 		},
 		{
 			"tag": "h3",
@@ -3359,15 +3434,96 @@
 		},
 		{
 			"tag": "h3",
-			"text": "泛型 (Generics)"
+			"text": "泛型 (Generics)⭐"
 		},
 		{
 			"tag": "p",
 			"text": "泛型允許我們為函數、介面或類別提供靈活的型別，使其適應不同的資料類型。"
 		},
 		{
+			"tag": "b",
+			"text": "基本泛型函數"
+		},
+		{
 			"tag": "precode",
 			"text": "function identity<T>(arg: T): T {\n    return arg;\n}\nlet output = identity<string>('Hello');"
+		},
+		{
+			"tag": "mark",
+			"text": "泛型 (<T>)"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "T 是一個類型變數 (Type Variable)，代表一個未指定的類型。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "當函式被呼叫時，T 會被具體的類型取代（例如 string、number、boolean 等）。"
+		},
+		{
+			"tag": "mark",
+			"text": "函式定義(identity<T>(arg: T): T)"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "arg: T：參數 arg 的類型是 T。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": ": T：表示該函式的回傳值型別也是 T。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "return arg;：回傳與輸入相同類型的值。"
+		},
+		{
+			"tag": "b",
+			"text": "泛型介面"
+		},
+		{
+			"tag": "precode",
+			"text": "interface Box<T> {\n  value: T;\n}\n\nlet box: Box<number> = { value: 10 };"
+		},
+		{
+			"tag": "b",
+			"text": "泛型約束（Constraints）"
+		},
+		{
+			"tag": "precode",
+			"text": "interface Lengthwise {\n  length: number;\n}\n\nfunction logLength<T extends Lengthwise>(arg: T): void {\n  console.log(arg.length);\n}\n\nlogLength(42); // ❌ 錯誤：數字沒有 length 屬性\nlogLength('Hello'); // ❌ 錯誤：字串沒有 length 屬性（字串不是物件\nlogLength({ length: 100, name: 'Alice' }); // ✅ 合法，因為有 length 屬性，這樣T就會被推導為:{ length: number; value: string; }\nlogLength({ length: 5 }); // ✅ 只要有 length 就可以"
+		},
+		{
+			"tag": "mark",
+			"text": "泛型 (<T>)"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "T 是一個 未確定的型別，但它必須符合 Lengthwise 介面。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "T extends Lengthwise：這表示 T 必須是一個 擁有 length: number 屬性的物件。"
+		},
+		{
+			"tag": "mark",
+			"text": "函式定義(identity<T>(arg: T): T)"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "arg: T：表示 arg 是 T 類型的值。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "console.log(arg.length);：因為 T 具有 length 屬性，所以可以安全地存取 arg.length 並輸出它的值。"
 		},
 		{
 			"tag": "h3",
@@ -6812,5 +6968,4 @@
 		}
 	],
 	[{ "title": "Restful API🚧" }]
-	
 ]
