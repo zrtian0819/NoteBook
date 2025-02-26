@@ -2099,37 +2099,37 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "Error：基礎的錯誤物件，所有其他錯誤類型都繼承自此。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "ReferenceError：當引用的變數不存在時拋出。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "TypeError：當操作數或變量與預期的類型不符時拋出。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "RangeError：當數字超出合法範圍時拋出。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "SyntaxError：當 JavaScript 語法無效時拋出。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "EvalError：與 eval() 函數相關的錯誤。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "URIError：當 URI 操作失敗時（例如 decodeURIComponent）拋出。"
 		},
 		{
@@ -2379,42 +2379,42 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "獲取元素"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "移除元素"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "創建元素"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "添加元素到頁面"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "綁定事件"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "修改、增加、刪除物件屬性"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "添加CSS樣式"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "添加 CSS 的 class 或 id 等等"
 		},
 		{
@@ -2424,17 +2424,17 @@
 
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "HTML元素節點(稱為element nodes or element objects)"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "文字節點(text node)"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "註解節點(comment node)"
 		},
 		{
@@ -2577,7 +2577,7 @@
 		},
 		{
 			"tag": "p",
-			"class":"yellow",
+			"class": "yellow",
 			"text": "閉包就像是一個「小幫手」，它可以讓你即使離開了自己的房間，還是可以偷偷回去拿東西。"
 		},
 		{
@@ -2590,12 +2590,12 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "閉包就是一個函式，它可以記住自己被創造時周圍的環境 (變數)。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "即使函式已經離開了它原本的作用域，它還是可以存取那些被記住的變數。"
 		},
 		{
@@ -2604,17 +2604,17 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "保持變數的私有性： 可以把一些變數藏在函式裡面，不讓外面的人隨便改動。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "延長變數的生命週期： 有些變數在函式結束後就應該消失，但閉包可以讓它們繼續存在。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "實現一些特殊的功能： 像是一些計數器、延遲執行等等。"
 		},
 		{
@@ -2671,7 +2671,7 @@
 		},
 		{
 			"tag": "p",
-			"class":"yellow",
+			"class": "yellow",
 			"text": "Proxy 和 Reflect 提供了強大的元編程能力，可以用於實現各種高級模式，例如資料驗證、追蹤物件訪問、實現虛擬物件、建立高效的框架和庫等。"
 		},
 		{
@@ -2700,7 +2700,7 @@
 		},
 		{
 			"tag": "p",
-			"class":"yellow",
+			"class": "yellow",
 			"text": "迭代器和生成器提供了更強大的控制流程，特別是在處理大量數據或需要延遲計算 (lazy evaluation) 的場景。生成器可以簡化異步程式碼的編寫，例如處理異步迭代。"
 		},
 		{
@@ -2725,7 +2725,7 @@
 		},
 		{
 			"tag": "p",
-			"class":"yellow",
+			"class": "yellow",
 			"text": "模組化是大型專案的基礎。ES 模組讓程式碼更有組織、更容易維護、並且可以更好地重用程式碼。"
 		},
 		{
@@ -3937,22 +3937,22 @@
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "ref()定義的數據。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "reactive()定義的數據。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "函數回傳一個值。"
 		},
 		{
 			"tag": "p",
-			"class":"nli",
+			"class": "nli",
 			"text": "一個包含上述內容的陣列。"
 		},
 
@@ -6594,6 +6594,11 @@
 			"text": "let notSure: any = 4;"
 		},
 		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "如果我們不確定變數的型別，可以使用 any 型別，但這會關閉型別檢查，因此建議盡量避免使用。"
+		},
+		{
 			"tag": "h3",
 			"text": "空值 (null 和 undefined)"
 		},
@@ -6655,15 +6660,15 @@
 		},
 		{
 			"tag": "h3",
-			"text": "函數型別"
+			"text": "函數型別(Function Types)"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "在 TypeScript 中，我們可以使用函數型別來描述函數的結構，包括參數的型別以及返回值的型別。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "let add: (x: number, y: number) => number;\nadd = function (a: number, b: number): number {\n    return a + b;\n};"
 		},
 		{
 			"tag": "h3",
@@ -6671,11 +6676,11 @@
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "void 表示函數沒有返回值，通常用於只執行某些動作但不回傳結果的函數。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "function logMessage(message: string): void {\n    console.log(message);\n}"
 		},
 		{
 			"tag": "h3",
@@ -6683,11 +6688,11 @@
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "never 代表函數不會有返回值，常見於拋出錯誤或進入無窮迴圈的函數。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "function throwError(message: string): never {\n    throw new Error(message);\n}"
 		},
 		{
 			"tag": "h3",
@@ -6695,23 +6700,23 @@
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "null 和 undefined 是 TypeScript 的基本型別，表示變數可能沒有值。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "let u: undefined = undefined;\nlet n: null = null;"
 		},
 		{
 			"tag": "h3",
-			"text": "聯合型別 (union)"
+			"text": " 聯合型別 (Union Types)"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "聯合型別允許變數擁有多種可能的型別，使用 | 來表示。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "let value: string | number;\nvalue = 'Hello';\nvalue = 42;"
 		},
 		{
 			"tag": "h3",
@@ -6719,63 +6724,59 @@
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "交集型別 (&) 允許變數同時擁有多個型別的屬性。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "interface Person {\n    name: string;\n}\ninterface Employee {\n    employeeId: number;\n}\ntype EmployeePerson = Person & Employee;\nlet emp: EmployeePerson = { name: 'John', employeeId: 1234 };"
 		},
 		{
 			"tag": "h3",
-			"text": "字面量型別"
+			"text": "字面量型別 (Literal Types)"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "字面量型別允許變數只能擁有特定的值，通常用於限定可選擇的範圍。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "let direction: 'up' | 'down' | 'left' | 'right' = 'up';"
 		},
 		{
 			"tag": "h3",
-			"text": "型別別名"
+			"text": "型別別名 (Type Alias)"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "型別別名允許為複雜的型別定義一個簡短的名稱，提升可讀性與重用性。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "type Point = {\n    x: number;\n    y: number;\n};\nlet p: Point = { x: 10, y: 20 };"
 		},
 		{
 			"tag": "h3",
-			"text": "泛型"
+			"text": "泛型 (Generics)"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "泛型允許我們為函數、介面或類別提供靈活的型別，使其適應不同的資料類型。"
 		},
 		{
 			"tag": "precode",
-			"text": ""
+			"text": "function identity<T>(arg: T): T {\n    return arg;\n}\nlet output = identity<string>('Hello');"
 		},
 		{
 			"tag": "h3",
-			"text": "索引型別"
+			"text": "索引型別 (Indexed Types)"
 		},
 		{
 			"tag": "p",
-			"text": ""
+			"text": "索引型別允許我們從物件中擷取特定屬性的型別。"
 		},
 		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
+			"tag": "precode",
+			"text": "interface Person {\n    name: string;\n    age: number;\n}\ntype PersonName = Person['name']; // 取得 name 屬性的型別"
 		},
 		{
 			"tag": "p",
