@@ -2741,95 +2741,8 @@
 			"text": "//main.js\n\n// 從 moduleA.js 匯入\nimport { message, greet } from './moduleA.js';\n\nconsole.log(message); // 輸出: 來自模組 A 的訊息\ngreet('使用者');    // 輸出: 你好, 使用者!"
 		},
 		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
 			"tag": "h2",
-			"text": "推薦的函式庫"
-		},
-		{
-			"tag": "h3",
-			"text": "動畫函式庫"
-		},
-		{
-			"tag": "mark",
-			"text": "GSAP"
-		},
-		{
-			"tag": "a",
-			"text": "https://gsap.com/"
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "h3",
-			"text": "圖表函式庫"
-		},
-		{
-			"tag": "mark",
-			"text": "Chart.js"
-		},
-		{
-			"tag": "a",
-			"text": "https://www.chartjs.org/"
-		},
-		{
-			"tag": "mark",
-			"text": "D3.js"
-		},
-		{
-			"tag": "a",
-			"text": "https://d3js.org/"
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "h3",
-			"text": "3D函式庫"
-		},
-		{
-			"tag": "mark",
-			"text": "Three.js"
-		},
-		{
-			"tag": "a",
-			"text": "https://threejs.org/"
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "h3",
-			"text": "地圖函式庫"
-		},
-		{
-			"tag": "mark",
-			"text": "leaflet.js"
-		},
-		{
-			"tag": "a",
-			"text": "https://leafletjs.com/"
-		}
-	],
-	[
-		{ "title": "Ajax🚧" },
-		{
-			"tag": "h2",
-			"text": "介紹"
+			"text": "Ajax"
 		},
 		{
 			"tag": "p",
@@ -2844,7 +2757,7 @@
 			"text": "常見的Ajax應用的例子是,我們在YouTube或是Google搜尋時,網站會根據我們前面打的幾個字,猜想我們想要搜尋的關鍵字是什麼。這就是不干擾現有頁面的顯示和行為的情況下,從服務器發送和獲得數據,並且更新網頁的方法。"
 		},
 		{
-			"tag": "h2",
+			"tag": "h3",
 			"text": "同步與異步"
 		},
 		{
@@ -2864,7 +2777,7 @@
 			"text": "此函數會設置一個計時器，一旦計時器時間到，計時器就會執行一個函數或指定的一段代碼；其中code是delay結束時要執行的程式碼，delay是在執行指定的函數或代碼之前計時器等待的時間(以毫秒為單位)，如果省略此參數則預設值為0，表示立即執行。"
 		},
 		{
-			"tag": "h3",
+			"tag": "b",
 			"text": "異步函數範例:"
 		},
 		{
@@ -2963,44 +2876,546 @@
 			"text": ""
 		},
 		{
-			"tag": "h2",
-			"text": "JQuery Ajax"
+			"tag": "p",
+			"text": ""
 		},
 		{
 			"tag": "p",
-			"text": "使用jquery提供的Ajax可以利用簡短的程式碼輕鬆的對API進行ajax請求。所以在請求前須先引入jquery API才能夠使用，例如以下程式碼，如想使用其它版本，請去官網或者cdn.js查詢。"
+			"text": ""
 		},
 		{
-			"tag": "b",
-			"text": "引入jquery"
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h2",
+			"text": "推薦的函式庫"
+		},
+		{
+			"tag": "h3",
+			"text": "動畫函式庫"
+		},
+		{
+			"tag": "mark",
+			"text": "GSAP"
+		},
+		{
+			"tag": "a",
+			"text": "https://gsap.com/"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h3",
+			"text": "圖表函式庫"
+		},
+		{
+			"tag": "mark",
+			"text": "Chart.js"
+		},
+		{
+			"tag": "a",
+			"text": "https://www.chartjs.org/"
+		},
+		{
+			"tag": "mark",
+			"text": "D3.js"
+		},
+		{
+			"tag": "a",
+			"text": "https://d3js.org/"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h3",
+			"text": "3D函式庫"
+		},
+		{
+			"tag": "mark",
+			"text": "Three.js"
+		},
+		{
+			"tag": "a",
+			"text": "https://threejs.org/"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "h3",
+			"text": "地圖函式庫"
+		},
+		{
+			"tag": "mark",
+			"text": "leaflet.js"
+		},
+		{
+			"tag": "a",
+			"text": "https://leafletjs.com/"
+		}
+	],
+	[
+		{ "title": "TypeScript🥑" },
+		{
+			"tag": "h2",
+			"text": "介紹"
+		},
+		{
+			"tag": "img",
+			"text": "img/tsc/01_tsc封面.png"
+		},
+		{
+			"tag": "p",
+			"text": "TypeScript 是一種由 Microsoft 開發的開源程式語言，它是 JavaScript 的一個超集。這意味著，任何合法的 JavaScript 程式碼都是合法的 TypeScript 程式碼。TypeScript 在 JavaScript 的基礎上添加了靜態型別系統，這使得開發者可以在編寫程式碼時就捕獲潛在的錯誤，提高程式碼的可讀性、可維護性和可靠性。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "靜態型別系統：在編寫程式碼時就明確地指定變數、函數參數和返回值的型別，有助於防止運行時錯誤。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "介面（Interface）： 定義物件的結構，確保物件具有特定的屬性和方法。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "類別（Class）： 支持面向物件程式設計，可以創建類別、繼承和多型。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "模組（Module）： 將程式碼分隔成不同的模組，提高程式碼的組織性和可重用性。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "泛型（Generic）： 創建可重用的程式碼，適用於不同型別的資料。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "裝飾器（Decorator）： 為類別、方法、屬性等添加額外的元數據。"
+		},
+		{
+			"tag": "h3",
+			"text": "TypeScript的優勢"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "大型應用程式開發： TypeScript 的靜態型別系統和面向物件特性非常適合開發大型複雜的應用程式。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "前端開發： TypeScript 可以與流行的前端框架（如 Angular、React、Vue）無縫集成，提高前端開發的效率和質量。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "後端開發： TypeScript 可以用於 Node.js 後端開發，提供強大的型別檢查和編譯功能。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "混合應用開發： TypeScript 可以用於開發混合應用程式，如 React Native。"
+		},
+		{
+			"tag": "h2",
+			"text": "開發環境的建立🚧"
+		},
+		{
+			"tag": "p",
+			"text": "後續再新..."
+		},
+		{
+			"tag": "h2",
+			"text": "類型的宣告(與類型章節再合併整理)"
+		},
+		{
+			"tag": "h3",
+			"text": "型別註記"
+		},
+		{
+			"tag": "p",
+			"text": "TypeScript 允許我們為變數指定型別，這有助於編譯器在編譯期間檢查型別是否匹配，避免運行時錯誤。"
 		},
 		{
 			"tag": "precode",
-			"text": "<script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=' crossorigin='anonymous'></script>"
+			"text": "let age: number = 30; // 數字型別\nlet name: string = 'Alice'; // 字串型別\nlet isStudent: boolean = true; // 布林型別"
 		},
 		{
-			"tag": "b",
-			"text": "基本語法"
+			"tag": "h3",
+			"text": "型別推論"
+		},
+		{
+			"tag": "p",
+			"text": "TypeScript 有強大的型別推論能力，在很多情況下，我們不需要顯式地指定型別，編譯器可以根據初始化的值自動推斷出變數的型別。"
 		},
 		{
 			"tag": "precode",
-			"text": "$.ajax({\n    method: '/*方法*/',\n    url: '/*發送請求的網址*/',\n    dataType: '/*資料型式*/',\n    data: { \n        //傳入的資料 \n    }\n})\n.done(function( response ) {\n     //成功接收資料執行的函式\n     console.log(response);     //查看接收到的資料\n\n}).fail(function( jqXHR, textStatus ) {\n    //請求失敗產生錯誤訊息\n    console.log( 'Request failed: ' + textStatus );     \n})"
+			"text": "let message = 'Hello'; // 型別為 string\nlet count = 10; // 型別為 number"
+		},
+		{
+			"tag": "h3",
+			"text": "任意型別"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "如果我們不確定變數的型別，可以使用 any 型別，但這會關閉型別檢查，因此建議盡量避免使用。"
+		},
+		{
+			"tag": "precode",
+			"text": "let value: any = 'Hello';\nvalue = 10;"
+		},
+		{
+			"tag": "h3",
+			"text": "介面 (interface)"
+		},
+		{
+			"tag": "p",
+			"text": "介面定義了物件的結構，可以確保物件具有特定的屬性和方法。"
+		},
+		{
+			"tag": "precode",
+			"text": "interface Person {\n    name: string;\n    age: number;\n}\n\nlet person: Person = {\n    name: 'Bob',\n    age: 25\n};"
+		},
+		{
+			"tag": "h3",
+			"text": "函數的型別宣告"
+		},
+		{
+			"tag": "p",
+			"text": "在 TypeScript 中，函數不僅可以有參數，還可以明確地指定參數的型別和返回值的型別。這種做法稱為 函數型別宣告，它能大幅提升程式碼的可讀性，並讓 TypeScript 編譯器能更好地進行型別檢查。"
+		},
+		{
+			"tag": "precode",
+			"text": "// 函式型別的定義方式\nlet myFunction: (param1: type1, param2: type2) => returnType;"
 		},
 		{
 			"tag": "b",
 			"text": "範例"
 		},
 		{
+			"tag": "precode",
+			"text": "function sum(a:number, b:number):number{\n    return a+b\n}\n\nlet result = sum(3, 5);\nconsole.log(result); // 输出：8"
+		},
+		{
 			"tag": "p",
-			"text": "如以下範例，ajax使用POST方法將JSON格式的資料發送到網址「/api/user.php」做請求，並傳入id數據，若請求成功則執行done區塊內的結果，並辨識接收到的狀態碼，如果為0則將訊息從網頁alert出來。並將需要的值放入變數內方便取用。若請求失敗則於主控台輸出失敗訊息。"
+			"text": "這個範例展示了 TypeScript 如何使用型別來定義函數，提高程式碼的可靠性和可讀性。通過指定參數和返回值的型別，可以讓編譯器在編譯階段就發現潛在的錯誤，避免在運行時出現問題。"
+		},
+		{
+			"tag": "h3",
+			"text": "字面量的類型宣告"
+		},
+		{
+			"tag": "p",
+			"text": "字面量類型 是一種非常特殊的型別，它將一個具體的值（字面量）本身作為一個型別。這意味著，被賦予這個型別的變數只能接受這個特定的值，不能是其他任何值。"
+		},
+		{
+			"tag": "b",
+			"text": "使用字面量的原因?"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "提高程式碼的精確性： 能夠更精確地描述變數的值的範圍，減少潛在的錯誤。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "增強型別檢查： 編譯器可以更嚴格地檢查變數的賦值是否正確。"
+		},
+		{
+			"tag": "p",
+			"class": "nli",
+			"text": "改善程式碼可讀性： 明確地表示變數的可能值，讓程式碼更容易理解。"
 		},
 		{
 			"tag": "precode",
-			"text": "//...部分程式碼省略\n\n$.ajax({\n    method: 'POST',\n    url: '/api/user.php',\n    dataType: 'json',\n    data: { \n        id: id \n    }\n})\n.done(function( response ) {\n    // console.log(response);\n    let status = response.status;\n\n    if(status==0){\n        alert(response.message);\n        return\n    }\n\n    account.textContent = response.user.account\n    name.textContent = response.user.name\n    email.textContent = response.user.email\n    phone.textContent = response.user.phone\n\n}).fail(function( jqXHR, textStatus ) {\n    console.log( 'Request failed: ' + textStatus );\n})"
+			"text": "// 字符串字面量\nlet direction: 'up' | 'down' | 'left' | 'right' = 'up';\n// 數字字面量\nlet statusCode: 200 | 404 | 500 = 200;\n// 布林字面量\nlet isLoading: true | false = false;"
+		},
+		{
+			"tag": "h2",
+			"text": "類型"
+		},
+		{
+			"tag": "h3",
+			"text": "布林值(boolean)"
 		},
 		{
 			"tag": "p",
-			"text": "[...🚧]"
+			"text": "表示真或假。"
+		},
+		{
+			"tag": "precode",
+			"text": "let isDone: boolean = false;"
+		},
+		{
+			"tag": "h3",
+			"text": "數字 (number)"
+		},
+		{
+			"tag": "p",
+			"text": "表示整數或浮點數。"
+		},
+		{
+			"tag": "precode",
+			"text": "let decimal: number = 6; \nlet hex: number = 0xf00d;"
+		},
+		{
+			"tag": "h3",
+			"text": "字串 (string)"
+		},
+		{
+			"tag": "p",
+			"text": "表示文本。"
+		},
+		{
+			"tag": "precode",
+			"text": "let color: string = 'blue'; \nlet fullName: string =Bob Bobbington;"
+		},
+		{
+			"tag": "h3",
+			"text": "任意型別 (any)"
+		},
+		{
+			"tag": "p",
+			"text": "表示任意型別，但不建議使用。"
+		},
+		{
+			"tag": "precode",
+			"text": "let notSure: any = 4;"
+		},
+		{
+			"tag": "p",
+			"class": "yellow",
+			"text": "如果我們不確定變數的型別，可以使用 any 型別，但這會關閉型別檢查，因此建議盡量避免使用。"
+		},
+		{
+			"tag": "h3",
+			"text": "空值 (null 和 undefined)"
+		},
+		{
+			"tag": "p",
+			"text": "表示變數沒有值。"
+		},
+		{
+			"tag": "precode",
+			"text": "let u: undefined = undefined; \nlet n: null = null;"
+		},
+		{
+			"tag": "h3",
+			"text": "陣列 (array)"
+		},
+		{
+			"tag": "p",
+			"text": "一組有序的值。"
+		},
+		{
+			"tag": "precode",
+			"text": "let list: number[] = [1, 2, 3];"
+		},
+		{
+			"tag": "h3",
+			"text": "元組 (tuple)"
+		},
+		{
+			"tag": "p",
+			"text": "一種特殊的陣列，其元素的型別和數量都是固定的。"
+		},
+		{
+			"tag": "precode",
+			"text": "let x: [string, number]; \nx = ['hello', 10];"
+		},
+		{
+			"tag": "h3",
+			"text": "列舉 (enum)"
+		},
+		{
+			"tag": "p",
+			"text": "一組命名常量。"
+		},
+		{
+			"tag": "precode",
+			"text": "enum Color {Red, Green, Blue}\nlet c: Color = Color.Green;"
+		},
+		{
+			"tag": "h3",
+			"text": "介面 (interface)"
+		},
+		{
+			"tag": "p",
+			"text": "定義物件的結構。如前節所提到的。"
+		},
+		{
+			"tag": "precode",
+			"text": "interface Person {\n    firstName: string;\n    lastName: string;\n}\n\nlet user: Person = {\n    firstName: 'Jane',\n    lastName: 'User'\n};"
+		},
+		{
+			"tag": "h3",
+			"text": "函數型別(Function Types)"
+		},
+		{
+			"tag": "p",
+			"text": "在 TypeScript 中，我們可以使用函數型別來描述函數的結構，包括參數的型別以及返回值的型別。"
+		},
+		{
+			"tag": "precode",
+			"text": "let add: (x: number, y: number) => number;\nadd = function (a: number, b: number): number {\n    return a + b;\n};"
+		},
+		{
+			"tag": "h3",
+			"text": "void"
+		},
+		{
+			"tag": "p",
+			"text": "void 表示函數沒有返回值，通常用於只執行某些動作但不回傳結果的函數。"
+		},
+		{
+			"tag": "precode",
+			"text": "function logMessage(message: string): void {\n    console.log(message);\n}"
+		},
+		{
+			"tag": "h3",
+			"text": "never"
+		},
+		{
+			"tag": "p",
+			"text": "never 代表函數不會有返回值，常見於拋出錯誤或進入無窮迴圈的函數。"
+		},
+		{
+			"tag": "precode",
+			"text": "function throwError(message: string): never {\n    throw new Error(message);\n}"
+		},
+		{
+			"tag": "h3",
+			"text": "null 和 undefined"
+		},
+		{
+			"tag": "p",
+			"text": "null 和 undefined 是 TypeScript 的基本型別，表示變數可能沒有值。"
+		},
+		{
+			"tag": "precode",
+			"text": "let u: undefined = undefined;\nlet n: null = null;"
+		},
+		{
+			"tag": "h3",
+			"text": " 聯合型別 (Union Types)"
+		},
+		{
+			"tag": "p",
+			"text": "聯合型別允許變數擁有多種可能的型別，使用 | 來表示。"
+		},
+		{
+			"tag": "precode",
+			"text": "let value: string | number;\nvalue = 'Hello';\nvalue = 42;"
+		},
+		{
+			"tag": "h3",
+			"text": "交集型別 (intersection)"
+		},
+		{
+			"tag": "p",
+			"text": "交集型別 (&) 允許變數同時擁有多個型別的屬性。"
+		},
+		{
+			"tag": "precode",
+			"text": "interface Person {\n    name: string;\n}\ninterface Employee {\n    employeeId: number;\n}\ntype EmployeePerson = Person & Employee;\nlet emp: EmployeePerson = { name: 'John', employeeId: 1234 };"
+		},
+		{
+			"tag": "h3",
+			"text": "字面量型別 (Literal Types)"
+		},
+		{
+			"tag": "p",
+			"text": "字面量型別允許變數只能擁有特定的值，通常用於限定可選擇的範圍。"
+		},
+		{
+			"tag": "precode",
+			"text": "let direction: 'up' | 'down' | 'left' | 'right' = 'up';"
+		},
+		{
+			"tag": "h3",
+			"text": "型別別名 (Type Alias)"
+		},
+		{
+			"tag": "p",
+			"text": "型別別名允許為複雜的型別定義一個簡短的名稱，提升可讀性與重用性。"
+		},
+		{
+			"tag": "precode",
+			"text": "type Point = {\n    x: number;\n    y: number;\n};\nlet p: Point = { x: 10, y: 20 };"
+		},
+		{
+			"tag": "h3",
+			"text": "泛型 (Generics)"
+		},
+		{
+			"tag": "p",
+			"text": "泛型允許我們為函數、介面或類別提供靈活的型別，使其適應不同的資料類型。"
+		},
+		{
+			"tag": "precode",
+			"text": "function identity<T>(arg: T): T {\n    return arg;\n}\nlet output = identity<string>('Hello');"
+		},
+		{
+			"tag": "h3",
+			"text": "索引型別 (Indexed Types)"
+		},
+		{
+			"tag": "p",
+			"text": "索引型別允許我們從物件中擷取特定屬性的型別。"
+		},
+		{
+			"tag": "precode",
+			"text": "interface Person {\n    name: string;\n    age: number;\n}\ntype PersonName = Person['name']; // 取得 name 屬性的型別"
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
+		},
+		{
+			"tag": "p",
+			"text": ""
 		}
 	],
 	[
@@ -3540,6 +3955,46 @@
 		{
 			"tag": "precode",
 			"text": "var ids = '';\nvar $listItems = $('li');\n\n$listItems.on('mouseover click', function () {\n    ids = this.id;\n    $listItems.children('span').remove();\n    $(this).append(' <span class='priority'>' + ids + '</span>');\n});\n\n$listItems.on('mouseout', function () {\n    $(this).children('span').remove();\n});"
+		},
+		{
+			"tag": "h2",
+			"text": "Ajax"
+		},
+		{
+			"tag": "p",
+			"text": "使用jquery提供的Ajax可以利用簡短的程式碼輕鬆的對API進行ajax請求。所以在請求前須先引入jquery API才能夠使用，例如以下程式碼，如想使用其它版本，請去官網或者cdn.js查詢。"
+		},
+		{
+			"tag": "h3",
+			"text": "引入jquery"
+		},
+		{
+			"tag": "precode",
+			"text": "<script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=' crossorigin='anonymous'></script>"
+		},
+		{
+			"tag": "h3",
+			"text": "基本語法"
+		},
+		{
+			"tag": "precode",
+			"text": "$.ajax({\n    method: '/*方法*/',\n    url: '/*發送請求的網址*/',\n    dataType: '/*資料型式*/',\n    data: { \n        //傳入的資料 \n    }\n})\n.done(function( response ) {\n     //成功接收資料執行的函式\n     console.log(response);     //查看接收到的資料\n\n}).fail(function( jqXHR, textStatus ) {\n    //請求失敗產生錯誤訊息\n    console.log( 'Request failed: ' + textStatus );     \n})"
+		},
+		{
+			"tag": "b",
+			"text": "範例"
+		},
+		{
+			"tag": "p",
+			"text": "如以下範例，ajax使用POST方法將JSON格式的資料發送到網址「/api/user.php」做請求，並傳入id數據，若請求成功則執行done區塊內的結果，並辨識接收到的狀態碼，如果為0則將訊息從網頁alert出來。並將需要的值放入變數內方便取用。若請求失敗則於主控台輸出失敗訊息。"
+		},
+		{
+			"tag": "precode",
+			"text": "//...部分程式碼省略\n\n$.ajax({\n    method: 'POST',\n    url: '/api/user.php',\n    dataType: 'json',\n    data: { \n        id: id \n    }\n})\n.done(function( response ) {\n    // console.log(response);\n    let status = response.status;\n\n    if(status==0){\n        alert(response.message);\n        return\n    }\n\n    account.textContent = response.user.account\n    name.textContent = response.user.name\n    email.textContent = response.user.email\n    phone.textContent = response.user.phone\n\n}).fail(function( jqXHR, textStatus ) {\n    console.log( 'Request failed: ' + textStatus );\n})"
+		},
+		{
+			"tag": "p",
+			"text": "[更新中...🚧]"
 		},
 		{
 			"tag": "p",
@@ -6356,463 +6811,6 @@
 			"text": "WebSocket🚧"
 		}
 	],
-	[{ "title": "Restful API🚧" }],
-	[
-		{ "title": "TypeScript🚧" },
-		{
-			"tag": "h2",
-			"text": "介紹"
-		},
-		{
-			"tag": "img",
-			"text": "img/tsc/01_tsc封面.png"
-		},
-		{
-			"tag": "p",
-			"text": "TypeScript 是一種由 Microsoft 開發的開源程式語言，它是 JavaScript 的一個超集。這意味著，任何合法的 JavaScript 程式碼都是合法的 TypeScript 程式碼。TypeScript 在 JavaScript 的基礎上添加了靜態型別系統，這使得開發者可以在編寫程式碼時就捕獲潛在的錯誤，提高程式碼的可讀性、可維護性和可靠性。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "靜態型別系統：在編寫程式碼時就明確地指定變數、函數參數和返回值的型別，有助於防止運行時錯誤。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "介面（Interface）： 定義物件的結構，確保物件具有特定的屬性和方法。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "類別（Class）： 支持面向物件程式設計，可以創建類別、繼承和多型。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "模組（Module）： 將程式碼分隔成不同的模組，提高程式碼的組織性和可重用性。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "泛型（Generic）： 創建可重用的程式碼，適用於不同型別的資料。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "裝飾器（Decorator）： 為類別、方法、屬性等添加額外的元數據。"
-		},
-		{
-			"tag": "h3",
-			"text": "TypeScript的優勢"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "大型應用程式開發： TypeScript 的靜態型別系統和面向物件特性非常適合開發大型複雜的應用程式。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "前端開發： TypeScript 可以與流行的前端框架（如 Angular、React、Vue）無縫集成，提高前端開發的效率和質量。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "後端開發： TypeScript 可以用於 Node.js 後端開發，提供強大的型別檢查和編譯功能。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "混合應用開發： TypeScript 可以用於開發混合應用程式，如 React Native。"
-		},
-		{
-			"tag": "h2",
-			"text": "開發環境的建立🚧"
-		},
-		{
-			"tag": "p",
-			"text": "後續再新..."
-		},
-		{
-			"tag": "h2",
-			"text": "類型的宣告(與類型章節再合併整理)"
-		},
-		{
-			"tag": "h3",
-			"text": "型別註記"
-		},
-		{
-			"tag": "p",
-			"text": "TypeScript 允許我們為變數指定型別，這有助於編譯器在編譯期間檢查型別是否匹配，避免運行時錯誤。"
-		},
-		{
-			"tag": "precode",
-			"text": "let age: number = 30; // 數字型別\nlet name: string = 'Alice'; // 字串型別\nlet isStudent: boolean = true; // 布林型別"
-		},
-		{
-			"tag": "h3",
-			"text": "型別推論"
-		},
-		{
-			"tag": "p",
-			"text": "TypeScript 有強大的型別推論能力，在很多情況下，我們不需要顯式地指定型別，編譯器可以根據初始化的值自動推斷出變數的型別。"
-		},
-		{
-			"tag": "precode",
-			"text": "let message = 'Hello'; // 型別為 string\nlet count = 10; // 型別為 number"
-		},
-		{
-			"tag": "h3",
-			"text": "任意型別"
-		},
-		{
-			"tag": "p",
-			"class": "yellow",
-			"text": "如果我們不確定變數的型別，可以使用 any 型別，但這會關閉型別檢查，因此建議盡量避免使用。"
-		},
-		{
-			"tag": "precode",
-			"text": "let value: any = 'Hello';\nvalue = 10;"
-		},
-		{
-			"tag": "h3",
-			"text": "介面 (interface)"
-		},
-		{
-			"tag": "p",
-			"text": "介面定義了物件的結構，可以確保物件具有特定的屬性和方法。"
-		},
-		{
-			"tag": "precode",
-			"text": "interface Person {\n    name: string;\n    age: number;\n}\n\nlet person: Person = {\n    name: 'Bob',\n    age: 25\n};"
-		},
-		{
-			"tag": "h3",
-			"text": "函數的型別宣告"
-		},
-		{
-			"tag": "p",
-			"text": "在 TypeScript 中，函數不僅可以有參數，還可以明確地指定參數的型別和返回值的型別。這種做法稱為 函數型別宣告，它能大幅提升程式碼的可讀性，並讓 TypeScript 編譯器能更好地進行型別檢查。"
-		},
-		{
-			"tag": "precode",
-			"text": "// 函式型別的定義方式\nlet myFunction: (param1: type1, param2: type2) => returnType;"
-		},
-		{
-			"tag": "b",
-			"text": "範例"
-		},
-		{
-			"tag": "precode",
-			"text": "function sum(a:number, b:number):number{\n    return a+b\n}\n\nlet result = sum(3, 5);\nconsole.log(result); // 输出：8"
-		},
-		{
-			"tag": "p",
-			"text": "這個範例展示了 TypeScript 如何使用型別來定義函數，提高程式碼的可靠性和可讀性。通過指定參數和返回值的型別，可以讓編譯器在編譯階段就發現潛在的錯誤，避免在運行時出現問題。"
-		},
-		{
-			"tag": "h3",
-			"text": "字面量的類型宣告"
-		},
-		{
-			"tag": "p",
-			"text": "字面量類型 是一種非常特殊的型別，它將一個具體的值（字面量）本身作為一個型別。這意味著，被賦予這個型別的變數只能接受這個特定的值，不能是其他任何值。"
-		},
-		{
-			"tag": "b",
-			"text": "使用字面量的原因?"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "提高程式碼的精確性： 能夠更精確地描述變數的值的範圍，減少潛在的錯誤。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "增強型別檢查： 編譯器可以更嚴格地檢查變數的賦值是否正確。"
-		},
-		{
-			"tag": "p",
-			"class": "nli",
-			"text": "改善程式碼可讀性： 明確地表示變數的可能值，讓程式碼更容易理解。"
-		},
-		{
-			"tag": "precode",
-			"text": "// 字符串字面量\nlet direction: 'up' | 'down' | 'left' | 'right' = 'up';\n// 數字字面量\nlet statusCode: 200 | 404 | 500 = 200;\n// 布林字面量\nlet isLoading: true | false = false;"
-		},
-		{
-			"tag": "h2",
-			"text": "類型"
-		},
-		{
-			"tag": "h3",
-			"text": "布林值(boolean)"
-		},
-		{
-			"tag": "p",
-			"text": "表示真或假。"
-		},
-		{
-			"tag": "precode",
-			"text": "let isDone: boolean = false;"
-		},
-		{
-			"tag": "h3",
-			"text": "數字 (number)"
-		},
-		{
-			"tag": "p",
-			"text": "表示整數或浮點數。"
-		},
-		{
-			"tag": "precode",
-			"text": "let decimal: number = 6; \nlet hex: number = 0xf00d;"
-		},
-		{
-			"tag": "h3",
-			"text": "字串 (string)"
-		},
-		{
-			"tag": "p",
-			"text": "表示文本。"
-		},
-		{
-			"tag": "precode",
-			"text": "let color: string = 'blue'; \nlet fullName: string =Bob Bobbington;"
-		},
-		{
-			"tag": "h3",
-			"text": "任意型別 (any)"
-		},
-		{
-			"tag": "p",
-			"text": "表示任意型別，但不建議使用。"
-		},
-		{
-			"tag": "precode",
-			"text": "let notSure: any = 4;"
-		},
-		{
-			"tag": "p",
-			"class": "yellow",
-			"text": "如果我們不確定變數的型別，可以使用 any 型別，但這會關閉型別檢查，因此建議盡量避免使用。"
-		},
-		{
-			"tag": "h3",
-			"text": "空值 (null 和 undefined)"
-		},
-		{
-			"tag": "p",
-			"text": "表示變數沒有值。"
-		},
-		{
-			"tag": "precode",
-			"text": "let u: undefined = undefined; \nlet n: null = null;"
-		},
-		{
-			"tag": "h3",
-			"text": "陣列 (array)"
-		},
-		{
-			"tag": "p",
-			"text": "一組有序的值。"
-		},
-		{
-			"tag": "precode",
-			"text": "let list: number[] = [1, 2, 3];"
-		},
-		{
-			"tag": "h3",
-			"text": "元組 (tuple)"
-		},
-		{
-			"tag": "p",
-			"text": "一種特殊的陣列，其元素的型別和數量都是固定的。"
-		},
-		{
-			"tag": "precode",
-			"text": "let x: [string, number]; \nx = ['hello', 10];"
-		},
-		{
-			"tag": "h3",
-			"text": "列舉 (enum)"
-		},
-		{
-			"tag": "p",
-			"text": "一組命名常量。"
-		},
-		{
-			"tag": "precode",
-			"text": "enum Color {Red, Green, Blue}\nlet c: Color = Color.Green;"
-		},
-		{
-			"tag": "h3",
-			"text": "介面 (interface)"
-		},
-		{
-			"tag": "p",
-			"text": "定義物件的結構。如前節所提到的。"
-		},
-		{
-			"tag": "precode",
-			"text": "interface Person {\n    firstName: string;\n    lastName: string;\n}\n\nlet user: Person = {\n    firstName: 'Jane',\n    lastName: 'User'\n};"
-		},
-		{
-			"tag": "h3",
-			"text": "函數型別(Function Types)"
-		},
-		{
-			"tag": "p",
-			"text": "在 TypeScript 中，我們可以使用函數型別來描述函數的結構，包括參數的型別以及返回值的型別。"
-		},
-		{
-			"tag": "precode",
-			"text": "let add: (x: number, y: number) => number;\nadd = function (a: number, b: number): number {\n    return a + b;\n};"
-		},
-		{
-			"tag": "h3",
-			"text": "void"
-		},
-		{
-			"tag": "p",
-			"text": "void 表示函數沒有返回值，通常用於只執行某些動作但不回傳結果的函數。"
-		},
-		{
-			"tag": "precode",
-			"text": "function logMessage(message: string): void {\n    console.log(message);\n}"
-		},
-		{
-			"tag": "h3",
-			"text": "never"
-		},
-		{
-			"tag": "p",
-			"text": "never 代表函數不會有返回值，常見於拋出錯誤或進入無窮迴圈的函數。"
-		},
-		{
-			"tag": "precode",
-			"text": "function throwError(message: string): never {\n    throw new Error(message);\n}"
-		},
-		{
-			"tag": "h3",
-			"text": "null 和 undefined"
-		},
-		{
-			"tag": "p",
-			"text": "null 和 undefined 是 TypeScript 的基本型別，表示變數可能沒有值。"
-		},
-		{
-			"tag": "precode",
-			"text": "let u: undefined = undefined;\nlet n: null = null;"
-		},
-		{
-			"tag": "h3",
-			"text": " 聯合型別 (Union Types)"
-		},
-		{
-			"tag": "p",
-			"text": "聯合型別允許變數擁有多種可能的型別，使用 | 來表示。"
-		},
-		{
-			"tag": "precode",
-			"text": "let value: string | number;\nvalue = 'Hello';\nvalue = 42;"
-		},
-		{
-			"tag": "h3",
-			"text": "交集型別 (intersection)"
-		},
-		{
-			"tag": "p",
-			"text": "交集型別 (&) 允許變數同時擁有多個型別的屬性。"
-		},
-		{
-			"tag": "precode",
-			"text": "interface Person {\n    name: string;\n}\ninterface Employee {\n    employeeId: number;\n}\ntype EmployeePerson = Person & Employee;\nlet emp: EmployeePerson = { name: 'John', employeeId: 1234 };"
-		},
-		{
-			"tag": "h3",
-			"text": "字面量型別 (Literal Types)"
-		},
-		{
-			"tag": "p",
-			"text": "字面量型別允許變數只能擁有特定的值，通常用於限定可選擇的範圍。"
-		},
-		{
-			"tag": "precode",
-			"text": "let direction: 'up' | 'down' | 'left' | 'right' = 'up';"
-		},
-		{
-			"tag": "h3",
-			"text": "型別別名 (Type Alias)"
-		},
-		{
-			"tag": "p",
-			"text": "型別別名允許為複雜的型別定義一個簡短的名稱，提升可讀性與重用性。"
-		},
-		{
-			"tag": "precode",
-			"text": "type Point = {\n    x: number;\n    y: number;\n};\nlet p: Point = { x: 10, y: 20 };"
-		},
-		{
-			"tag": "h3",
-			"text": "泛型 (Generics)"
-		},
-		{
-			"tag": "p",
-			"text": "泛型允許我們為函數、介面或類別提供靈活的型別，使其適應不同的資料類型。"
-		},
-		{
-			"tag": "precode",
-			"text": "function identity<T>(arg: T): T {\n    return arg;\n}\nlet output = identity<string>('Hello');"
-		},
-		{
-			"tag": "h3",
-			"text": "索引型別 (Indexed Types)"
-		},
-		{
-			"tag": "p",
-			"text": "索引型別允許我們從物件中擷取特定屬性的型別。"
-		},
-		{
-			"tag": "precode",
-			"text": "interface Person {\n    name: string;\n    age: number;\n}\ntype PersonName = Person['name']; // 取得 name 屬性的型別"
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		},
-		{
-			"tag": "p",
-			"text": ""
-		}
-	]
+	[{ "title": "Restful API🚧" }]
+	
 ]

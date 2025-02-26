@@ -45,7 +45,7 @@ getJson().then(function (data) {
 	let contents = "";
 	let i = 0;
 
-	LoadContents(11); //開發時暫時調用
+	LoadContents(2); //開發時暫時調用
 
 	//載入頁面
 	function LoadContents(code) {
@@ -62,8 +62,10 @@ getJson().then(function (data) {
 		for (let j = 1; j < data[i].length; j++) {
 			let tag = data[i][j].tag;
 			let text = escapeHtml(data[i][j].text); //轉換字符避免json中有"<"or">"會產生異常顯示
-			let style = data[i][j].style !== "" ? ` style=${data[i][j].style}` : "";
-			let class_ = data[i][j].class !== "" ? ` class=${data[i][j].class}` : "";
+			let style =
+				data[i][j].style !== "" ? ` style=${data[i][j].style}` : "";
+			let class_ =
+				data[i][j].class !== "" ? ` class=${data[i][j].class}` : "";
 			// let children = data[i][j].children;
 
 			if (tag == "precode") {
@@ -142,7 +144,12 @@ function clickNav2() {
 
 //轉換字元
 function escapeHtml(str) {
-	return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+	return str
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/"/g, "&quot;")
+		.replace(/'/g, "&#039;");
 }
 
 //滾動滑鼠打開與收合navbar的功能
