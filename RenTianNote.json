@@ -3348,15 +3348,67 @@
 		},
 		{
 			"tag": "h3",
+			"text": "物件(Object)"
+		},
+		{
+			"tag": "p",
+			"text": "在 TypeScript 中，我們通常 不會使用 Object 作為型別，而是選擇更具體的型別，如介面 (interface)、型別別名 (type) 或直接指定物件的結構。"
+		},
+		{
+			"tag": "b",
+			"text": "Object 型別過於寬鬆，無法獲得型別檢查"
+		},
+		{
+			"tag": "p",
+			"text": "當你宣告變數的型別為 Object，TypeScript 只會知道它是一個物件，但無法檢查內部的屬性。"
+		},
+		{
+			"tag": "precode",
+			"text": "let obj: Object = { name: 'Alice', age: 25 };\n\nconsole.log(obj.name); // ❌ 報錯：Property 'name' does not exist on type 'Object'"
+		},
+		{
+			"tag": "b",
+			"text": "Object 無法限制屬性"
+		},
+		{
+			"tag": "p",
+			"text": "如果使用 Object，你無法指定物件的結構，因此 TypeScript 無法提供型別保護。"
+		},
+		{
+			"tag": "precode",
+			"text": "function printPerson(person: Object) {\n    console.log(person.name); // ❌ 報錯：Property 'name' does not exist on type 'Object'\n}\n\nprintPerson({ name: 'Bob', age: 30 });\n\n\nfunction printPerson(person: Object) {\n    console.log(person.name); // ❌ 報錯：Property 'name' does not exist on type 'Object'\n}\n\nprintPerson({ name: 'Bob', age: 30 });\n\n\n"
+		},
+		{
+			"tag": "b",
+			"text": "Object 無法提供自動補全"
+		},
+		{
+			"tag": "precode",
+			"text": "let obj: Object = { name: 'Charlie', age: 28 };\nobj.name; // ❌ TypeScript 不知道 name 存不存在，無法自動補全\n\n\nlet obj: { name: string; age: number } = { name: 'Charlie', age: 28 };\nconsole.log(obj.name); // ✅ 正確，不會報錯"
+		},
+		{
+			"tag": "b",
+			"text": "Object 無法使用方法 (Object ≠ {})"
+		},
+		{
+			"tag": "p",
+			"text": "Object 代表所有非 null 和 undefined 的值，但 TypeScript 並不認為 Object 就是一般物件 {}。"
+		},
+		{
+			"tag": "precode",
+			"text": "//TypeScript 不認為 obj 是 string，因此 toUpperCase() 不能用。\nlet obj: Object = { name: 'Daisy' };\nobj.toUpperCase(); // ❌ 報錯：Property 'toUpperCase' does not exist on type 'Object'\n\nlet obj: string = 'Hello';\nconsole.log(obj.toUpperCase()); // ✅ 正確\n"
+		},
+		{
+			"tag": "h3",
 			"text": "陣列 (array)"
 		},
 		{
 			"tag": "p",
-			"text": "一組有序的值。"
+			"text": "一組有序的值，有著以下兩種聲明方式："
 		},
 		{
 			"tag": "precode",
-			"text": "let list: number[] = [1, 2, 3];"
+			"text": "let list1: number[];\nlist1 =  [1, 2, 3];    //✅\n\nlet list2: Array<number>\nlist2 =  [1, 2, 3];    //✅"
 		},
 		{
 			"tag": "h3",
@@ -3364,7 +3416,7 @@
 		},
 		{
 			"tag": "p",
-			"text": "一種特殊的陣列，其元素的型別和數量都是固定的。"
+			"text": "一種固定長度的陣列(效能較好)，其元素的型別和數量都是固定的。"
 		},
 		{
 			"tag": "precode",
